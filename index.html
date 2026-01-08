@@ -139,19 +139,33 @@ header h1{color:var(--accent)}
   margin-top:40px;
 }
 .price-card{
-  max-width:650px;
+  max-width:750px; /* زودنا العرض */
   background:#fff;
-  padding:32px;
+  padding:48px; /* زودنا البادينج */
   border-radius:20px;
   text-align:center;
   box-shadow:0 12px 36px rgba(0,0,0,0.1);
+  font-size:1.2rem; /* كبرنا حجم الخط */
+}
+
+.price-card h2{
+  font-size:2.2rem; /* كبرنا حجم العنوان */
+  margin-bottom:24px;
+}
+
+.price-card ul{
+  list-style:none;
+  font-size:1.3rem; /* كبرنا حجم النص */
+  line-height:2.2;
+  margin:20px 0;
 }
 
 .btn{
   display:inline-block;
-  padding:16px 34px;
-  border-radius:12px;
+  padding:20px 40px; /* زودنا البادينج للزر */
+  border-radius:14px;
   font-weight:900;
+  font-size:1.3rem; /* كبرنا خط الزر */
 }
 .btn-primary{
   background:var(--gold);
@@ -258,12 +272,12 @@ footer{
     </div>
 
     <div class="card">
-      <h3>🗣️ Native German Speakers</h3>
+      <h3>🗣️ جلسات محادثة مع متحدثين أصليين (Conversation Sessions with Native Speakers)</h3>
       <p class="small">محادثة ونطق وتصحيح حقيقي</p>
     </div>
 
     <div class="card">
-      <h3>🤖 AI Training</h3>
+      <h3>🤖 تدريب مع الذكاء الصناعي متاح 24/7 (AI Training Available 24/7)</h3>
       <p class="small">محادثة يومية – تصحيح تلقائي – متابعة مستمرة</p>
     </div>
 
@@ -281,7 +295,7 @@ footer{
   <div class="price-card">
     <h2 style="color:var(--accent)">💳 اشترك الآن وابدأ طريقك لألمانيا</h2>
 
-    <ul style="list-style:none;font-size:18px;line-height:2;margin:20px 0">
+    <ul>
       <li>✅ دفع كاش</li>
       <li>✅ تقسيط شهري مريح</li>
       <li>💳 ValU – Souhoola – Aman</li>
