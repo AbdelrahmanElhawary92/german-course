@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ian Academy | كورسات اللغة الألمانية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(to right, #eef2f7, #d9e2ec);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #1E3A8A;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+
+    .courses {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 50px 20px;
+      gap: 30px;
+    }
+
+    .course-card {
+      background-color: #fff;
+      border-radius: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      padding: 35px 25px;
+      text-align: center;
+      flex: 1 1 300px;
+      max-width: 350px;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    .course-card h2 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      color: #1E3A8A;
+      font-weight: 700;
+    }
+
+    .course-card p {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: #D97706;
+      margin-bottom: 20px;
+    }
+
+    .features {
+      margin-top: 15px;
+      font-size: 1em;
+      color: #1E3A8A;
+      text-align: left;
+      list-style: none;
+      padding: 0;
+    }
+
+    .features li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .features li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #16A34A;
+      font-weight: bold;
+    }
+
+    .enroll-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      background-color: #1E3A8A;
+      color: #fff;
+      border-radius: 15px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1em;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .enroll-btn:hover {
+      background-color: #3B82F6;
+      transform: translateY(-3px);
+    }
+
+    .offer {
+      background: #FACC15;
+      color: #1E3A8A;
+      border-radius: 20px;
+      padding: 25px 20px;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.15em;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .offer:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #1E3A8A;
+      color: #fff;
+      margin-top: 50px;
+      font-size: 1.1em;
+    }
+
+    @media(max-width: 1000px) {
+      .courses {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ian Academy</h1>
+    <p>كورسات اللغة الألمانية لجميع المستويات - أونلاين بالكامل</p>
+  </header>
+
+  <section class="courses">
+    <!-- مستويات فردية -->
+    <div class="course-card">
+      <h2>A1</h2>
+      <p>المستوى المبتدئ</p>
+      <p>المدة: شهرين</p>
+      <p class="price">10 آلاف جنيه مصري</p>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+        <li>8 محاضرات شهريًا (2 أسبوعيًا)</li>
+        <li>جلسات دورية مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 مع الذكاء الاصطناعي على النطق والتحدث</li>
+        <li>طرق الدفع: كاش أو تقسيط عبر فاليو / سهولة / أمان / جميع البطاقات البنكية</li>
+      </ul>
+      <a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في كورس اللغة الألمانية" target="_blank" class="enroll-btn">سجل الآن</a>
+    </div>
+
+    <div class="course-card">
+      <h2>A2</h2>
+      <p>المستوى الأساسي</p>
+      <p>المدة: شهرين</p>
+      <p class="price">10 آلاف جنيه مصري</p>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+        <li>8 محاضرات شهريًا (2 أسبوعيًا)</li>
+        <li>جلسات دورية مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 مع الذكاء الاصطناعي على النطق والتحدث</li>
+        <li>طرق الدفع: كاش أو تقسيط عبر فاليو / سهولة / أمان / جميع البطاقات البنكية</li>
+      </ul>
+      <a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في كورس اللغة الألمانية" target="_blank" class="enroll-btn">سجل الآن</a>
+    </div>
+
+    <div class="course-card">
+      <h2>B1</h2>
+      <p>المستوى المتوسط</p>
+      <p>المدة: شهرين</p>
+      <p class="price">10 آلاف جنيه مصري</p>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+        <li>8 محاضرات شهريًا (2 أسبوعيًا)</li>
+        <li>جلسات دورية مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 مع الذكاء الاصطناعي على النطق والتحدث</li>
+        <li>طرق الدفع: كاش أو تقسيط عبر فاليو / سهولة / أمان / جميع البطاقات البنكية</li>
+      </ul>
+      <a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في كورس اللغة الألمانية" target="_blank" class="enroll-btn">سجل الآن</a>
+    </div>
+
+    <div class="course-card">
+      <h2>B2</h2>
+      <p>المستوى المتقدم</p>
+      <p>المدة: شهرين</p>
+      <p class="price">10 آلاف جنيه مصري</p>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+        <li>8 محاضرات شهريًا (2 أسبوعيًا)</li>
+        <li>جلسات دورية مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 مع الذكاء الاصطناعي على النطق والتحدث</li>
+        <li>طرق الدفع: كاش أو تقسيط عبر فاليو / سهولة / أمان / جميع البطاقات البنكية</li>
+      </ul>
+      <a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في كورس اللغة الألمانية" target="_blank" class="enroll-btn">سجل الآن</a>
+    </div>
+
+    <div class="course-card">
+      <h2>C1</h2>
+      <p>المستوى المتقدم جدًا</p>
+      <p>المدة: شهرين</p>
+      <p class="price">10 آلاف جنيه مصري</p>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+        <li>8 محاضرات شهريًا (2 أسبوعيًا)</li>
+        <li>جلسات دورية مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 مع الذكاء الاصطناعي على النطق والتحدث</li>
+        <li>طرق الدفع: كاش أو تقسيط عبر فاليو / سهولة / أمان / جميع البطاقات البنكية</li>
+      </ul>
+      <a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في كورس اللغة الألمانية" target="_blank" class="enroll-btn">سجل الآن</a>
+    </div>
+
+    <!-- عرض خاص الثلاث مستويات -->
+    <div class="course-card offer">
+      <h2>عرض خاص</h2>
+      <p>المستويات الثلاثة: A1 + A2 + B1</p>
+      <p>المدة: 6 شهور</p>
+      <div class="price" style="text-align: center; line-height: 1.4;">
+        <div style="font-size: 1.8em; font-weight: bold; color: #D97706;">25 ألف جنيه مصري</div>
+        <div style="font-size: 1.1em; color: #1E3A8A; margin: 5px 0;">بدلاً من</div>
+        <div style="font-size: 1.2em; color: #DC2626; text-decoration: line-through;">30 ألف جنيه مصري</div>
+      </div>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+        <li>8 محاضرات شهريًا (2 أسبوعيًا)</li>
+        <li>جلسات دورية مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 مع الذكاء الاصطناعي على النطق والتحدث</li>
+        <li>طرق الدفع: كاش أو تقسيط عبر فاليو / سهولة / أمان / جميع البطاقات البنكية</li>
+      </ul>
+      <p style="margin-top: 10px; font-size: 0.95em; color: #1E3A8A; font-weight: bold;">
+        مناسب للراغبين في العمل في وظائف خدمة العملاء، ولمن يريد السفر للتدريب المهني، ومناسب لبعض الوظائف مثل متخصصي البرمجيات وتكنولوجيا المعلومات.
+      </p>
+      <a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في كورس اللغة الألمانية" target="_blank" class="enroll-btn">سجل الآن</a>
+    </div>
+
+    <!-- عرض خاص الأربع مستويات -->
+    <div class="course-card offer" style="background: #4ADE80; color: #1E3A8A;">
+      <h2>عرض مميز</h2>
+      <p>المستويات الأربع: A1 + A2 + B1 + B2</p>
+      <p>المدة: 8 شهور</p>
+      <div class="price" style="text-align: center; line-height: 1.4;">
+        <div style="font-size: 1.8em; font-weight: bold; color: #065F46;">32 ألف جنيه مصري</div>
+        <div style="font-size: 1.1em; color: #1E3A8A; margin: 5px 0;">بدلاً من</div>
+        <div style="font-size: 1.2em; color: #DC2626; text-decoration: line-through;">40 ألف جنيه مصري</div>
+      </div>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+        <li>8 محاضرات شهريًا (2 أسبوعيًا)</li>
+        <li>جلسات دورية مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 مع الذكاء الاصطناعي على النطق والتحدث</li>
+        <li>طرق الدفع: كاش أو تقسيط عبر فاليو / سهولة / أمان / جميع البطاقات البنكية</li>
+      </ul>
+      <p style="margin-top: 10px; font-size: 0.95em; color: #065F46; font-weight: bold;">
+        مناسب للراغبين في العمل في المهن الطبية كالتمريض، ومناسب لمن يريد تحسين اللغة أكثر للعمل في باقي الوظائف.
+      </p>
+      <a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في كورس اللغة الألمانية" target="_blank" class="enroll-btn" style="background-color: #065F46;">سجل الآن</a>
+    </div>
+
+    <!-- عرض خاص الخمس مستويات -->
+    <div class="course-card offer" style="background: #60A5FA; color: #1E3A8A;">
+      <h2>عرض شامل</h2>
+      <p>المستويات الخمسة: A1 + A2 + B1 + B2 + C1</p>
+      <p>المدة: 10 شهور</p>
+      <div class="price" style="text-align: center; line-height: 1.4;">
+        <div style="font-size: 1.8em; font-weight: bold; color: #1E3A8A;">40 ألف جنيه مصري</div>
+        <div style="font-size: 1.1em; color: #1E3A8A; margin: 5px 0;">بدلاً من</div>
+        <div style="font-size: 1.2em; color: #DC2626; text-decoration: line-through;">50 ألف جنيه مصري</div>
+      </div>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+        <li>8 محاضرات شهريًا (2 أسبوعيًا)</li>
+        <li>جلسات دورية مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 مع الذكاء الاصطناعي على النطق والتحدث</li>
+        <li>طرق الدفع: كاش أو تقسيط عبر فاليو / سهولة / أمان / جميع البطاقات البنكية</li>
+      </ul>
+      <p style="margin-top: 10px; font-size: 0.95em; color: #1E3A8A; font-weight: bold;">
+        مناسب للراغبين في الدراسة، خصوصًا الماجستير والدكتوراه باللغة الألمانية، ومناسب للأطباء والمهندسين المدنيين والمعماريين وبعض التخصصات الأخرى.
+      </p>
+      <a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في كورس اللغة الألمانية" target="_blank" class="enroll-btn" style="background-color: #1E3A8A;">سجل الآن</a>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2026 Ian Academy. كل الحقوق محفوظة.</p>
+  </footer>
+</body>
+</html>
