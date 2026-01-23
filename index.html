@@ -1,113 +1,65 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ian Academy | كورسات اللغة الألمانية والتقنية</title>
+  <meta name="description" content="تعلم الألمانية من A1 إلى C1 + مهارات مهنية وتقنية مع مشاريع عملية. احجز مكانك الآن!">
 
-<title>Ian Academy | كورسات اللغة الألمانية</title>
-<meta name="description" content="تعلم اللغة الألمانية من A1 إلى C1 بأسلوب عملي، Native Speakers، وذكاء اصطناعي.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ian Academy | كورسات اللغة الألمانية والتقنية">
+  <meta property="og:description" content="تعلم الألمانية من A1 إلى C1 + مهارات مهنية وتقنية مع مشاريع عملية. احجز مكانك الآن!">
+  <meta property="og:url" content="https://abdelrahmanelhawary92.github.io/german-course/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/AbdelrahmanElhawary92/german-course/main/Image%205.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ian Academy | كورسات اللغة الألمانية">
-<meta property="og:description" content="تعلم اللغة الألمانية من A1 إلى C1 بأسلوب عملي، Native Speakers، وذكاء اصطناعي.">
-<meta property="og:image" content="https://abdelrahmanelhawary92.github.io/german-course/main.jpg">
-<meta property="og:url" content="https://abdelrahmanelhawary92.github.io/german-course/">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ian Academy | كورسات اللغة الألمانية والتقنية">
+  <meta name="twitter:description" content="تعلم الألمانية من A1 إلى C1 + مهارات مهنية وتقنية مع مشاريع عملية. احجز مكانك الآن!">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/AbdelrahmanElhawary92/german-course/main/Image%205.png">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ian Academy | كورسات اللغة الألمانية">
-<meta name="twitter:description" content="تعلم اللغة الألمانية من A1 إلى C1 بأسلوب عملي، Native Speakers، وذكاء اصطناعي.">
-<meta name="twitter:image" content="https://abdelrahmanelhawary92.github.io/german-course/main.jpg">
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-<title>Ian Academy | كورسات اللغة الألمانية</title>
-<meta name="description" content="تعلم اللغة الألمانية من A1 إلى C1 بأسلوب عملي، Native Speakers، وذكاء اصطناعي.">
+
 
 <style>
-:root{
-  --accent:#00bfff;
-  --gold:#facc15;
-  --dark:#0a0a0a;
-  --muted:#6b7280;
-}
-
+:root{--accent:#00bfff;--gold:#facc15;--dark:#0a0a0a;--muted:#6b7280}
 *{box-sizing:border-box;margin:0;padding:0}
-
-body{
-  font-family:"Segoe UI",Tahoma,Arial;
-  background:#f7fbff;
-  color:#0f1724;
-  line-height:1.7;
-}
-
-a{text-decoration:none;color:inherit}
-
-/* ===== Header ===== */
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px;
-  background:linear-gradient(90deg,var(--dark),#062a44);
-  color:#fff;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-header h1{color:var(--accent)}
-.nav-links{display:flex;gap:18px}
-.nav-links a{font-weight:800}
-
-/* ===== Layout ===== */
-.container{
-  max-width:1000px;
-  margin:30px auto;
-  padding:0 18px;
-}
-
-.intro{
-  background:#fff;
-  padding:28px;
-  border-radius:16px;
-  box-shadow:0 8px 30px rgba(0,0,0,0.06);
-  margin-bottom:26px;
-}
-
-/* ===== Profile ===== */
-.profile{
-  display:flex;
-  gap:20px;
-  align-items:center;
-}
-.profile img{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-}
-.pill{
-  background:#eef2ff;
-  padding:6px 16px;
-  border-radius:999px;
-  font-weight:900;
-  display:inline-block;
-  margin:10px 0;
-}
-
-/* ===== Grid & Cards ===== */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-  margin-top:20px;
-}
-.card{
-  background:#fff;
-  padding:22px;
-  border-radius:14px;
-  box-shadow:0 6px 22px rgba(0,0,0,0.05);
-}
+body{font-family:'Segoe UI',Tahoma,Arial,Helvetica,sans-serif;background:#f7fbff;color:#0f1724;line-height:1.6}
+a{color:inherit;text-decoration:none}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 18px;background:linear-gradient(90deg,var(--dark),#062a44);color:#fff;position:sticky;top:0;z-index:1000}
+header h1{color:var(--accent);font-size:1.8rem;order:2}
+.nav-links{display:flex;gap:20px;order:1}
+.nav-links a{font-weight:700;color:#fff;transition:0.3s}
+.nav-links a:hover{color:var(--gold)}
+.container{max-width:980px;margin:24px auto;padding:0 18px}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:800;transition:0.3s}
+.btn-primary{background:var(--gold);color:#000;border:2px solid #fff}
+.intro{background:#fff;padding:28px;border-radius:14px;box-shadow:0 6px 30px rgba(2,6,23,0.06);margin-bottom:22px}
+.profile{display:flex;gap:18px;align-items:center}
+.profile img{width:120px;height:120px;border-radius:50%}
+.pill{display:inline-block;background:#eef2ff;padding:6px 12px;border-radius:999px;font-weight:800;margin-top:10px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+.card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.04)}
 .card h3{color:var(--accent)}
 .small{color:var(--muted)}
+.pricing{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px}
+.price-card{flex:1;min-width:260px;background:linear-gradient(180deg,#fff,#fbfbff);padding:22px;border-radius:14px;text-align:center;border:1px solid rgba(2,6,23,0.06)}
+.price-old{text-decoration:line-through;color:#9ca3af;font-weight:700;font-size:1.2rem}
+.price-now{font-size:2.4rem;color:#b45309;font-weight:900;margin:10px 0}
+.price-note{font-size:1rem;color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin-top:18px}
+th,td{border:1px solid rgba(0,0,0,0.1);padding:12px;text-align:right}
+th{background:#f0f4ff;color:var(--accent)}
+footer{margin-top:32px;background:#0b1220;color:#cbd5e1;padding:26px;text-align:center}
+.whatsapp{position:fixed;left:18px;bottom:18px;background:#25d366;color:#fff;padding:12px 18px;border-radius:999px;font-weight:900}
+@media(max-width:768px){.grid{grid-template-columns:1fr}.profile{flex-direction:column;text-align:center}.nav-links{flex-direction:column;gap:10px}}
+
 
 /* ===== Video Section ===== */
 .video-section{
@@ -120,7 +72,7 @@ header h1{color:var(--accent)}
 }
 
 .video-section h2{
-  color:var(--accent);
+  color:#00bfff;
   font-size:2rem;
   margin-bottom:12px;
 }
@@ -148,100 +100,73 @@ header h1{color:var(--accent)}
   height:100%;
 }
 
-/* ===== Pricing ===== */
-.pricing{
-  display:flex;
-  justify-content:center;
-  margin-top:40px;
-}
-.price-card{
-  max-width:750px; /* زودنا العرض */
-  background:#fff;
-  padding:48px; /* زودنا البادينج */
-  border-radius:20px;
-  text-align:center;
-  box-shadow:0 12px 36px rgba(0,0,0,0.1);
-  font-size:1.2rem; /* كبرنا حجم الخط */
-}
 
-.price-card h2{
-  font-size:2.2rem; /* كبرنا حجم العنوان */
-  margin-bottom:24px;
-}
-
-.price-card ul{
-  list-style:none;
-  font-size:1.3rem; /* كبرنا حجم النص */
-  line-height:2.2;
-  margin:20px 0;
-}
-
-.btn{
-  display:inline-block;
-  padding:20px 40px; /* زودنا البادينج للزر */
-  border-radius:14px;
-  font-weight:900;
-  font-size:1.3rem; /* كبرنا خط الزر */
-}
-.btn-primary{
-  background:var(--gold);
-  color:#000;
-}
-
-/* ===== Footer ===== */
-footer{
-  background:#0b1220;
-  color:#cbd5e1;
-  text-align:center;
-  padding:28px;
-  margin-top:50px;
-}
-
-.whatsapp{
-  position:fixed;
-  left:18px;
-  bottom:18px;
-  background:#25d366;
-  color:#fff;
-  padding:14px 22px;
-  border-radius:999px;
-  font-weight:900;
-}
-
-/* ===== Mobile ===== */
-@media(max-width:768px){
-  .grid{grid-template-columns:1fr}
-  .profile{flex-direction:column;text-align:center}
-  .nav-links{flex-direction:column;gap:10px}
-}
 </style>
 </head>
-
 <body>
 
 <header>
   <h1>🎓 Ian Academy</h1>
   <nav class="nav-links">
+    <a href="#home">الرئيسية</a>
     <a href="#about">عن الأكاديمية</a>
-    <a href="#instructor">المحاضر</a>
-    <a href="#courses">الكورسات</a>
-    <a href="#contact">الاشتراك</a>
+    <a href="#founder">عن المؤسس</a>
+    <a href="#courses">الدورات والكورسات</a>
+    <a href="#team">فريق الأكاديمية</a>
+    <a href="#career-programs">البرامج المهنية</a>
+    <a href="#contact">تواصل معنا</a>
   </nav>
 </header>
 
-<main class="container">
+<main class="container" id="home">
 
-<!-- ===== About ===== -->
 <section class="intro" id="about">
   <h2>عن الأكاديمية</h2>
   <p>
-    <strong>Ian Academy</strong> متخصصة في تعليم اللغة الألمانية
-    بأسلوب عملي حقيقي يُستخدم في الدراسة والعمل داخل ألمانيا.
+    🎓 <strong>Ian Academy</strong> هي أكاديمية رائدة تقدم برامج متميزة في <strong>اللغة الألمانية</strong>، 
+    بالإضافة إلى <strong>كورسات هندسية وتقنية</strong> متخصصة، يقدمها محترفون يعملون فعليًا في السوق الألماني.
   </p>
-  <p>🎯 مش حفظ قواعد — ده فهم + كلام + استخدام فعلي</p>
+  <p>
+    💡 محاضرات مباشرة مع <strong>ناطقين أصليين بالألمانية</strong> | تدريب متطور بالذكاء الاصطناعي | إعداد عملي وحقيقي لسوق العمل في ألمانيا
+  </p>
+  
+  <div style="margin-top:18px">
+    <h3>📚 كورسات اللغة الألمانية A1 → C1</h3>
+    <p>
+      تأسيس قوي من الصفر، قواعد منظمة، محادثة عملية، نطق صحيح، واستماع بأسلوب واقعي يجهزك للعمل أو الدراسة في ألمانيا.
+    </p>
+  </div>
+
+  <div style="margin-top:18px">
+  <h3>💻 كورسات هندسية وتقنية</h3>
+  <p>
+    برامج متقدمة في <strong>الإلكترونيات، الأنظمة المدمجة، الروبوتات، الشبكات، وأمن المعلومات</strong>، 
+    بالإضافة إلى <strong>الهندسة المعمارية والمدنية</strong>، 
+    مصممة لتجهيزك لمتطلبات سوق العمل الفعلي في جميع التخصصات الهندسية.
+  </p>
+</div>
+
+
+  <div style="margin-top:18px">
+    <h3>🏥 كورسات متخصصة للمهن الطبية</h3>
+    <p>
+      دورات متخصصة في <strong>الألمانية العملية للأطباء، التمريض، والصيدلة والمهن الطبية الأخرى</strong>، 
+      تشمل مصطلحات طبية، محادثات عملية في المستشفيات، وسيناريوهات واقعية للتواصل مع المرضى والزملاء في بيئة العمل الألمانية.
+    </p>
+  </div>
 </section>
 
-<!-- ===== Video ===== -->
+<section class="intro" id="founder">
+  <div class="profile">
+    <img src="AE.png" alt="Abdelrahman Elhawary">
+    <div>
+      <h2>المهندس عبدالرحمن الهواري</h2>
+      <div class="pill">المؤسس والمدير التنفيذي</div>
+      <p class="small">مهندس يعمل في السوق الألماني بخبرة أكثر من 8 سنوات، ومحاضر لغة ألمانية بخبرة تتجاوز 4 سنوات في تدريب الطلاب على اللغة الألمانية العملية المستخدمة في الدراسة والعمل والحياة اليومية.</p>
+    </div>
+  </div>
+</section>
+
 <section class="video-section">
   <h2>🎥 أسلوب الشرح في Ian Academy</h2>
   <p>
@@ -256,92 +181,253 @@ footer{
   </div>
 </section>
 
-<!-- ===== Instructor ===== -->
-<section class="intro" id="instructor">
-  <div class="profile">
-    <img src="AE.png" alt="Abdelrahman Elhawary">
-    <div>
-      <h2>المهندس عبدالرحمن الهواري</h2>
-      <div class="pill">المحاضر والمؤسس</div>
-      <p class="small">
-        مهندس يعمل في السوق الألماني بخبرة أكثر من 8 سنوات،
-        ومحاضر لغة ألمانية بأسلوب عملي موجه لسوق العمل.
-      </p>
-    </div>
+
+<section class="grid" id="courses">
+  <div class="card">
+    <h3>كورسات اللغة الألمانية A1 → C1</h3>
+    <p class="small">تأسيس قوي، قواعد، محادثة، نطق، واستماع بأسلوب عملي حقيقي.</p>
+  </div>
+  <div class="card">
+    <h3>عرض خاص: 3 مستويات</h3>
+    <p class="small">باقة A1 + A2 + B1 بخطة واضحة للوصول لمستوى يؤهلك للعمل أو الدراسة في ألمانيا.</p>
+  </div>
+  <div class="card">
+    <h3>محاضرات مع ناطقين ألمان</h3>
+    <p class="small">تدريب مباشر على المحادثة والنطق الصحيح مع Native German Speakers.</p>
+  </div>
+  <div class="card">
+    <h3>تدريب بالذكاء الاصطناعي (AI)</h3>
+    <p class="small">محادثة يومية، تصحيح تلقائي، وتقييم مستمر لمستواك باستخدام أدوات ذكية.</p>
+  </div>
+  <div class="card">
+    <h3>الألمانية لسوق العمل</h3>
+    <p class="small">✔️ مقابلات العمل <br>✔️ التواصل داخل الشركات <br>✔️ المصطلحات المهنية <br>✔️ سيناريوهات حقيقية من السوق الألماني</p>
+  </div>
+  
+  <div class="card">
+  <h3>كورسات ألماني متخصصة حسب المجال</h3>
+  <p class="small">
+    تعلم اللغة الألمانية العملية المطلوبة في سوق العمل مع مصطلحات ومواقف حقيقية لكل تخصص:
+  </p>
+  <ul class="small">
+    <li>🏛️ <strong>الهندسة المعمارية والمدنية:</strong> مصطلحات البناء، المخططات، والتواصل مع فرق العمل.</li>
+    <li>🏥 <strong>الأطباء والمهن الطبية:</strong> مصطلحات طبية، محادثات مع المرضى والزملاء، وسيناريوهات المستشفيات.</li>
+    <li>🩺 <strong>التمريض:</strong> محادثات يومية مع المرضى، تعليمات الرعاية، والتواصل داخل فرق التمريض.</li>
+    <li>💻 <strong>تكنولوجيا المعلومات والمبرمجين:</strong> مصطلحات تقنية، التراسل مع فرق دولية، وشرح المشاريع البرمجية.</li>
+  </ul>
+</div>
+
+  <div class="card">
+    <h3>كورسات هندسية وتقنية</h3>
+    <p class="small">إلكترونيات، أنظمة مدمجة، روبوتات، شبكات، وأمن معلومات.</p>
+  </div>
+  <div class="card">
+    <h3>محاضرين من السوق الألماني</h3>
+    <p class="small">فريق من المهندسين والمحاضرين يعملون فعليًا داخل شركات ألمانية.</p>
   </div>
 </section>
 
-<!-- ===== Courses ===== -->
-<section class="intro" id="courses">
-  <h2>📚 كورسات اللغة الألمانية</h2>
-  <p class="pill">المستويات الكاملة: A1 – A2 – B1 – B2 – C1</p>
-
-  <div class="grid">
-    <div class="card">
-      <h3>🇩🇪 الألمانية من A1 إلى C1</h3>
-      <p class="small">تأسيس قوي – قواعد – محادثة – نطق – استماع</p>
-    </div>
-
-    <div class="card">
-      <h3>🔥 عرض خاص – 3 مستويات</h3>
-      <p class="small"><strong>A1 + A2 + B1</strong> بخطة واضحة لسوق العمل</p>
-    </div>
-
-    <div class="card">
-      <h3>🗣️ جلسات محادثة مع متحدثين أصليين (Conversation Sessions with Native Speakers)</h3>
-      <p class="small">محادثة ونطق وتصحيح حقيقي</p>
-    </div>
-
-    <div class="card">
-      <h3>🤖 تدريب مع الذكاء الصناعي متاح 24/7 (AI Training Available 24/7)</h3>
-      <p class="small">محادثة يومية – تصحيح تلقائي – متابعة مستمرة</p>
-    </div>
-
-    <div class="card">
-      <h3>💼 الألمانية لسوق العمل</h3>
-      <p class="small">
-        مقابلات – تواصل شركات – مصطلحات – سيناريوهات حقيقية
-      </p>
-    </div>
-  </div>
-
-  <!-- ===== زر الأسعار والعروض ===== -->
-  <div style="text-align:center; margin-top:30px;">
-    <a class="btn btn-primary" href="prices.html">
-      💰 الأسعار والعروض
-    </a>
-  </div>
+<section class="intro" id="team">
+  <h2>👨‍🏫 فريق Ian Academy</h2>
+  <p>نمتلك مجموعة ماهرة من المحاضرين في اللغة الألمانية والتخصصات الهندسية والتقنية، يتميزون بـ:</p>
+  <ul class="small">
+    <li>✔️ خبرة عملية حقيقية في السوق الألماني</li>
+    <li>✔️ أسلوب شرح بسيط واحترافي</li>
+    <li>✔️ متابعة مستمرة ودعم فعلي للطلاب</li>
+  </ul>
 </section>
 
-<!-- ===== Pricing ===== -->
+<section class="intro">
+  <h2>🎯 لماذا Ian Academy؟</h2>
+  <ul class="small">
+    <li>✔️ تعلم حقيقي وليس حفظ فقط</li>
+    <li>✔️ تجهيز فعلي للدراسة والعمل في ألمانيا</li>
+    <li>✔️ تأهيل للعمل في بلدك أو خارجها داخل الشركات الدولية (تكنولوجيا – اتصالات – خدمة عملاء)</li>
+    <li>✔️ لغة + تقنية + خبرة سوق</li>
+  </ul>
+</section>
+
+<section class="intro">
+  <h2>💡 كيف تختار كورس مناسب لك؟</h2>
+  <p>المقارنة بين التعليم التقليدي ونظام كورسات Ian Academy الموجه لسوق العمل:</p>
+  <table>
+    <tr>
+      <th>العنصر</th>
+      <th>التعليم التقليدي</th>
+      <th>نظام Ian Academy</th>
+    </tr>
+    <tr>
+      <td>أسلوب التعليم</td>
+      <td>حفظ قواعد وكتب</td>
+      <td>لغة عملية + محادثة + تطبيق على تخصصك (أطباء، تمريض، مهندسين، IT)</td>
+    </tr>
+    <tr>
+      <td>التركيز</td>
+      <td>امتحانات ونظريات</td>
+      <td>لغة + مهارات مهنية + تطبيق عملي في التخصص</td>
+    </tr>
+    <tr>
+      <td>المحادثة</td>
+      <td>محدودة</td>
+      <td>يومية مع Native + AI لتصحيح الأخطاء</td>
+    </tr>
+    <tr>
+      <td>التخصص المهني</td>
+      <td>عام جدًا</td>
+      <td>موجه حسب المجال: أطباء، تمريض، مهندسين، IT</td>
+    </tr>
+    <tr>
+      <td>المتابعة</td>
+      <td>تنتهي بانتهاء الكورس</td>
+      <td>مستمرة حتى بعد انتهاء الكورس</td>
+    </tr>
+    <tr>
+      <td>الاستعداد لسوق العمل</td>
+      <td>ضعيف</td>
+      <td>قوي جدًا (لغة + خبرة عملية + سيناريوهات حقيقية)</td>
+    </tr>
+    <tr>
+      <td>النتيجة</td>
+      <td>لغة بدون تطبيق عملي</td>
+      <td>جاهزية حقيقية للغة + تخصصك + سوق العمل</td>
+    </tr>
+  </table>
+</section>
+<section class="grid" id="career-programs">
+  <h2 style="margin-bottom:18px; color:var(--accent); text-align:center;">🚀 البرامج المهنية المتكاملة للتأهيل لسوق العمل</h2>
+  <div style="
+  background: linear-gradient(90deg, #00bfff, #00e5ff);
+  color: #fff;
+  padding: 18px 24px;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.6;
+  box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+  margin-bottom: 22px;
+">
+  🚀 برامج تبدأ من الصفر لتعلم <strong>مهارات الوظيفة العملية</strong> + 
+  <strong>الألمانية اليومية</strong> للتواصل و<strong>التقنية والفنية باللُغة الألمانية</strong>، 
+  لتجهيزك للعمل بثقة في ألمانيا، سواء عن بعد أو مع الشركات في بلدك.
+</div>
+
+
+  <div class="card" style="background:#e0f7fa; border-left:5px solid #00bfff;">
+    <h3 style="color:#0077b6;">Machine Learning / AI Engineer</h3>
+    <p class="small" style="font-size:1rem; line-height:1.6; color:#023e8a;">
+      🔹 تعلم أساسيات الذكاء الاصطناعي وتطبيقات الـ Machine Learning.<br>
+      🔹 الألمانية اليومية للتواصل مع الفرق وشرح المشاريع.<br>
+      🔹 مشاريع عملية على بيانات حقيقية وتدريب نماذج AI.
+    </p>
+  </div>
+
+  <div class="card" style="background:#e8f5e9; border-left:5px solid #43a047;">
+    <h3 style="color:#2e7d32;">Web Developer</h3>
+    <p class="small" style="font-size:1rem; line-height:1.6; color:#1b5e20;">
+      🔹 تعلم البرمجة وتطوير المواقع من الصفر.<br>
+      🔹 الألمانية اليومية لمشاركة الأفكار وشرح المشاريع للفرق.<br>
+      🔹 مشاريع عملية حقيقية لتطبيق المهارات.
+    </p>
+  </div>
+
+  <div class="card" style="background:#fff3e0; border-left:5px solid #fb8c00;">
+    <h3 style="color:#ef6c00;">Embedded Software Engineer</h3>
+    <p class="small" style="font-size:1rem; line-height:1.6; color:#e65100;">
+      🔹 تعلم برمجة الأنظمة المدمجة من الصفر.<br>
+      🔹 الألمانية اليومية لتبادل المعلومات والمهام مع الزملاء.<br>
+      🔹 مشاريع عملية على وحدات Embedded حقيقية.
+    </p>
+  </div>
+
+  <div class="card" style="background:#f3e5f5; border-left:5px solid #8e24aa;">
+    <h3 style="color:#6a1b9a;">Cyber Security Engineer</h3>
+    <p class="small" style="font-size:1rem; line-height:1.6; color:#4a148c;">
+      🔹 تعلم الأمن السيبراني وحماية المعلومات من الصفر.<br>
+      🔹 الألمانية اليومية لشرح الإجراءات والتواصل مع الفريق.<br>
+      🔹 سيناريوهات عملية لتطبيق المهارات.
+    </p>
+  </div>
+
+  <div class="card" style="background:#fffde7; border-left:5px solid #fbc02d;">
+    <h3 style="color:#f9a825;">Robotics Software Engineer</h3>
+    <p class="small" style="font-size:1rem; line-height:1.6; color:#f57f17;">
+      🔹 تعلم برمجة الروبوتات من البداية.<br>
+      🔹 الألمانية اليومية للتواصل وشرح المشاريع ضمن الفريق.<br>
+      🔹 مشاريع عملية تحاكي بيئة عمل الروبوتات.
+    </p>
+  </div>
+
+  <div class="card" style="background:#e1f5fe; border-left:5px solid #039be5;">
+    <h3 style="color:#0277bd;">DevOps Engineer</h3>
+    <p class="small" style="font-size:1rem; line-height:1.6; color:#01579b;">
+      🔹 تعلم إدارة السيرفرات وأدوات DevOps من الصفر.<br>
+      🔹 الألمانية اليومية للتواصل اليومي مع الفريق وشرح المهام.<br>
+      🔹 تدريب عملي على أدوات DevOps حقيقية.
+    </p>
+  </div>
+
+  <div class="card" style="background:#fce4ec; border-left:5px solid #d81b60;">
+    <h3 style="color:#c2185b;">Project Manager / Coordinator</h3>
+    <p class="small" style="font-size:1rem; line-height:1.6; color:#880e4f;">
+      🔹 تعلم إدارة المشاريع والتنسيق بين الفرق.<br>
+      🔹 الألمانية اليومية لكتابة الخطط والتواصل مع الفرق.<br>
+      🔹 مشاريع محاكاة لإدارة المشاريع الواقعية.
+    </p>
+  </div>
+
+  <div class="card" style="background:#fff8e1; border-left:5px solid #ffa000;">
+    <h3 style="color:#ff8f00;">Office 365 Admin</h3>
+    <p class="small" style="font-size:1rem; line-height:1.6; color:#ff6f00;">
+      🔹 تعلم إدارة Office 365 والصلاحيات من الصفر.<br>
+      🔹 الألمانية اليومية للتواصل مع المستخدمين والفرق.<br>
+      🔹 سيناريوهات عملية على بيئة حقيقية.
+    </p>
+  </div>
+
+</section>
+
+
 <section class="pricing" id="contact">
   <div class="price-card">
-    <h2 style="color:var(--accent)">💳 اشترك الآن وابدأ طريقك لألمانيا</h2>
-
-    <ul>
-      <li>✅ دفع كاش</li>
-      <li>✅ تقسيط شهري مريح</li>
-      <li>💳 ValU – Souhoola – Aman</li>
-      <li>🏦 جميع الكروت البنكية</li>
+    <h2 style="color:var(--accent); font-size:2rem;">💳 اشترك الآن وادفع بسهولة!</h2>
+    <p style="font-size:1.3rem; color:#0f1724; line-height:1.8; margin:15px 0;">
+      ✅ ادفع كاش المبلغ كامل<br>
+      ✅ أو استمتع بخدمة <strong>التقسيط الشهري المريح</strong> بدون أي تعقيد
+    </p>
+    <h3 style="color:var(--accent); font-size:1.4rem;">طرق التقسيط المتاحة</h3>
+    <ul style="list-style:none; padding:0; font-size:1.2rem; color:#333; line-height:1.8; margin-top:8px;">
+      <li>💳 <strong>ValU</strong> – أقساط مرنة تصل حتى 60 شهر</li>
+      <li>💳 <strong>Souhoola</strong> – تقسيط سريع وسهل</li>
+      <li>💳 <strong>Aman</strong> – خيارات تقسيط متنوعة</li>
+      <li>🏦 <strong>البنوك المصرية</strong> – تقسيط مباشر للكريديت كارد</li>
     </ul>
+    <p style="margin-top:20px; font-weight:bold; font-size:1.25rem; color:#1d3557;">
+      ✨ اشترك الآن واختر الطريقة الأنسب لك!<br>
+      📌 سهل – آمن – بدون متاعب
+    </p>
+	
+	<div style="text-align:center; margin-top:30px;">
+  <a class="btn btn-primary" href="prices.html">
+    💰 الأسعار والعروض
+  </a>
+</div>
 
-    <a class="btn btn-primary" href="https://wa.me/201159682355" target="_blank">
-      🚀 احجز مكانك الآن
-    </a>
+    <div class="price-note">
+      🔥 عرض لفترة محدودة جدًا <br>
+      كورسات اللغة الألمانية + محادثة + AI + متابعة كاملة
+    </div>
+    <div style="margin-top:14px">
+      <a class="btn btn-primary" href="https://wa.me/201159682355" target="_blank">احجز مكانك الآن</a>
+    </div>
   </div>
 </section>
 
-</main>
-
 <footer>
-  © 2026 Ian Academy — جميع الحقوق محفوظة
+  <p>© 2026 Ian Academy — جميع الحقوق محفوظة</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/201159682355" target="_blank">
-  📲 واتساب
-</a>
+<a class="whatsapp" href="https://wa.me/201159682355" target="_blank">📲 تواصل الآن على واتساب</a>
 
 </body>
 </html>
-
-
