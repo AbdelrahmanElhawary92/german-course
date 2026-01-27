@@ -13,20 +13,26 @@
       padding: 0;
       color: #333;
     }
+
     header {
       text-align: center;
       padding: 50px 20px;
       background-color: #1E3A8A;
       color: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
+
     header h1 {
       font-size: 3em;
       margin: 0;
+      font-weight: 700;
     }
+
     header p {
       font-size: 1.5em;
       margin-top: 10px;
     }
+
     .courses {
       display: flex;
       flex-wrap: wrap;
@@ -34,6 +40,7 @@
       padding: 50px 20px;
       gap: 30px;
     }
+
     .course-card {
       background-color: #fff;
       border-radius: 25px;
@@ -44,37 +51,54 @@
       max-width: 350px;
       transition: transform 0.4s, box-shadow 0.4s;
     }
+
     .course-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 30px rgba(0,0,0,0.25);
     }
+
     .course-card h2 {
       font-size: 2em;
+      margin-bottom: 15px;
       color: #1E3A8A;
+      font-weight: 700;
     }
+
+    .course-card p {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+
     .price {
       font-size: 1.6em;
       font-weight: bold;
       color: #D97706;
-      margin: 20px 0;
+      margin-bottom: 20px;
     }
+
     .features {
+      margin-top: 15px;
+      font-size: 1em;
+      color: #1E3A8A;
+      text-align: left;
       list-style: none;
       padding: 0;
-      text-align: right;
-      color: #1E3A8A;
     }
+
     .features li {
       margin-bottom: 10px;
-      padding-right: 25px;
       position: relative;
+      padding-left: 25px;
     }
+
     .features li::before {
       content: "✔";
       position: absolute;
-      right: 0;
+      left: 0;
       color: #16A34A;
+      font-weight: bold;
     }
+
     .enroll-btn {
       display: inline-block;
       margin-top: 20px;
@@ -84,101 +108,214 @@
       border-radius: 15px;
       text-decoration: none;
       font-weight: 700;
+      font-size: 1.1em;
+      transition: background-color 0.3s, transform 0.3s;
     }
+
+    .enroll-btn:hover {
+      background-color: #3B82F6;
+      transform: translateY(-3px);
+    }
+
     .offer {
-      background: #FACC15;
+      border-radius: 20px;
+      padding: 25px 20px;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.15em;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
     }
+
+    .offer-yellow { background: #FACC15; color: #1E3A8A; }
+    .offer-green { background: #4ADE80; color: #1E3A8A; }
+    .offer-blue { background: #60A5FA; color: #1E3A8A; }
+    .offer-red { background: #F87171; color: #fff; }
+
+    .offer:hover {
+      transform: scale(1.05);
+    }
+
     footer {
       text-align: center;
-      padding: 40px;
+      padding: 40px 20px;
       background-color: #1E3A8A;
       color: #fff;
       margin-top: 50px;
+      font-size: 1.1em;
+    }
+
+    @media(max-width: 1000px) {
+      .courses {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
-
 <body>
+  <header>
+    <h1>Ian Academy</h1>
+    <p>كورسات اللغة الألمانية لجميع المستويات - أونلاين بالكامل</p>
+  </header>
 
-<header>
-  <h1>Ian Academy</h1>
-  <p>كورسات اللغة الألمانية لجميع المستويات - أونلاين بالكامل</p>
-</header>
+  <section class="courses">
 
-<section class="courses">
+    <!-- ==== المستويات الفردية ==== -->
+    <div class="course-card">
+      <h2>A1</h2>
+      <p>المستوى المبتدئ</p>
+      <p>نظام الدراسة: عادي / مكثف / مكثف جدًا</p>
+      <p>⏱️ المدة وعدد الأيام يتم تحديدهم حسب نظام الكورس</p>
+      <p class="price">10 آلاف جنيه مصري</p>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+        <li>جلسات مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 بالذكاء الاصطناعي</li>
+        <li>طرق الدفع: كاش أو تقسيط عبر فاليو / جميع البطاقات البنكية</li>
+      </ul>
+<a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في كورس A1" target="_blank" class="enroll-btn">سجل الآن</a>
+    </div>
 
-  <!-- A1 -->
-  <div class="course-card">
-    <h2>A1</h2>
-    <p>المستوى المبتدئ</p>
-    <p><strong>نظام الدراسة:</strong> عادي / مكثف / مكثف جدًا</p>
-    <p style="font-size:0.95em;color:#555;">⏱️ المدة وعدد الأيام يتم تحديدهم حسب نظام الكورس</p>
-    <p class="price">10 آلاف جنيه مصري</p>
-    <ul class="features">
-      <li>جروب من 10 – 14 طالب</li>
-      <li>عدد المحاضرات يختلف حسب نظام الكورس</li>
-      <li>جلسات مع متحدثين ألمان أصليين</li>
-      <li>تدريب 24/7 بالذكاء الاصطناعي</li>
-    </ul>
-    <a href="https://wa.me/201159682355" class="enroll-btn">سجل الآن</a>
-  </div>
+    <div class="course-card">
+      <h2>A2</h2>
+      <p>المستوى الأساسي</p>
+      <p>نظام الدراسة: عادي / مكثف / مكثف جدًا</p>
+      <p>⏱️ المدة وعدد الأيام يتم تحديدهم حسب نظام الكورس</p>
+      <p class="price">10 آلاف جنيه مصري</p>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+        <li>جلسات مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 بالذكاء الاصطناعي</li>
+        <li>طرق الدفع: كاش أو تقسيط عبر فاليو / جميع البطاقات البنكية</li>
+      </ul>
+<a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في كورس A2" target="_blank" class="enroll-btn">سجل الآن</a>
+    </div>
 
-  <!-- A2 -->
-  <div class="course-card">
-    <h2>A2</h2>
-    <p>المستوى الأساسي</p>
-    <p><strong>نظام الدراسة:</strong> عادي / مكثف / مكثف جدًا</p>
-    <p style="font-size:0.95em;color:#555;">⏱️ المدة وعدد الأيام يتم تحديدهم حسب نظام الكورس</p>
-    <p class="price">10 آلاف جنيه مصري</p>
-    <ul class="features">
-      <li>جروب من 10 – 14 طالب</li>
-      <li>عدد المحاضرات حسب النظام</li>
-      <li>جلسات محادثة دورية</li>
-      <li>تدريب مستمر بالذكاء الاصطناعي</li>
-    </ul>
-    <a href="https://wa.me/201159682355" class="enroll-btn">سجل الآن</a>
-  </div>
+    <div class="course-card">
+      <h2>B1</h2>
+      <p>المستوى المتوسط</p>
+      <p>نظام الدراسة: عادي / مكثف / مكثف جدًا</p>
+      <p>⏱️ المدة وعدد الأيام يتم تحديدهم حسب نظام الكورس</p>
+      <p class="price">10 آلاف جنيه مصري</p>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+        <li>جلسات مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 بالذكاء الاصطناعي</li>
+        <li>طرق الدفع: كاش أو تقسيط عبر فاليو / جميع البطاقات البنكية</li>
+      </ul>
+<a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في كورس B1" target="_blank" class="enroll-btn">سجل الآن</a>
+    </div>
 
-  <!-- B1 -->
-  <div class="course-card">
-    <h2>B1</h2>
-    <p>المستوى المتوسط</p>
-    <p><strong>نظام الدراسة:</strong> عادي / مكثف / مكثف جدًا</p>
-    <p style="font-size:0.95em;color:#555;">⏱️ المدة وعدد الأيام يتم تحديدهم حسب نظام الكورس</p>
-    <p class="price">10 آلاف جنيه مصري</p>
-    <ul class="features">
-      <li>تحضير للعمل والسفر</li>
-      <li>محادثة مكثفة</li>
-      <li>تدريب عملي على اللغة</li>
-    </ul>
-    <a href="https://wa.me/201159682355" class="enroll-btn">سجل الآن</a>
-  </div>
+    <div class="course-card">
+      <h2>B2</h2>
+      <p>المستوى المتقدم</p>
+      <p>نظام الدراسة: عادي / مكثف / مكثف جدًا</p>
+      <p>⏱️ المدة وعدد الأيام يتم تحديدهم حسب نظام الكورس</p>
+      <p class="price">10 آلاف جنيه مصري</p>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+        <li>جلسات مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 بالذكاء الاصطناعي</li>
+        <li>طرق الدفع: كاش أو تقسيط عبر فاليو / جميع البطاقات البنكية</li>
+      </ul>
+<a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في كورس B2" target="_blank" class="enroll-btn">سجل الآن</a>
+    </div>
 
-  <!-- B2 -->
-  <div class="course-card">
-    <h2>B2</h2>
-    <p>المستوى المتقدم</p>
-    <p><strong>نظام الدراسة:</strong> عادي / مكثف / مكثف جدًا</p>
-    <p style="font-size:0.95em;color:#555;">⏱️ المدة وعدد الأيام يتم تحديدهم حسب نظام الكورس</p>
-    <p class="price">10 آلاف جنيه مصري</p>
-    <a href="https://wa.me/201159682355" class="enroll-btn">سجل الآن</a>
-  </div>
+    <div class="course-card">
+      <h2>C1</h2>
+      <p>المستوى المتقدم جدًا</p>
+      <p>نظام الدراسة: عادي / مكثف / مكثف جدًا</p>
+      <p>⏱️ المدة وعدد الأيام يتم تحديدهم حسب نظام الكورس</p>
+      <p class="price">10 آلاف جنيه مصري</p>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+        <li>جلسات مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 بالذكاء الاصطناعي</li>
+        <li>طرق الدفع: كاش أو تقسيط عبر فاليو / جميع البطاقات البنكية</li>
+      </ul>
+<a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في كورس C1" target="_blank" class="enroll-btn">سجل الآن</a>
+    </div>
 
-  <!-- C1 -->
-  <div class="course-card">
-    <h2>C1</h2>
-    <p>المستوى المتقدم جدًا</p>
-    <p><strong>نظام الدراسة:</strong> عادي / مكثف / مكثف جدًا</p>
-    <p style="font-size:0.95em;color:#555;">⏱️ المدة وعدد الأيام يتم تحديدهم حسب نظام الكورس</p>
-    <p class="price">10 آلاف جنيه مصري</p>
-    <a href="https://wa.me/201159682355" class="enroll-btn">سجل الآن</a>
-  </div>
+    <!-- عروض خاصة والكورسات المهنية تبقى كما هي -->
+    <!-- ... (تظل باقي الكروت كما هي بدون تغيير) ... -->
 
-</section>
 
-<footer>
-  <p>© 2026 Ian Academy. كل الحقوق محفوظة.</p>
-</footer>
 
+
+
+    <!-- عروض خاصة -->
+    <div class="course-card offer offer-yellow">
+      <h2>عرض خاص</h2>
+      <p>المستويات: A1 + A2 + B1</p>
+ <p>نظام الدراسة: عادي / مكثف / مكثف جدًا</p>
+      <p>⏱️ المدة وعدد الأيام يتم تحديدهم حسب نظام الكورس</p>     
+	  <p class="price">25 ألف جنيه مصري <span style="text-decoration: line-through; color:#DC2626;">30 ألف</span></p>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+        
+        <li>جلسات مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 بالذكاء الاصطناعي</li>
+      </ul>
+<a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في عرض خاص 3 مستويات" target="_blank" class="enroll-btn">سجل الآن</a>
+    </div>
+
+    <div class="course-card offer offer-green">
+      <h2>عرض مميز</h2>
+      <p>المستويات: A1 + A2 + B1 + B2</p>
+       <p>نظام الدراسة: عادي / مكثف / مكثف جدًا</p>
+      <p>⏱️ المدة وعدد الأيام يتم تحديدهم حسب نظام الكورس</p>
+      <p class="price">32 ألف جنيه مصري <span style="text-decoration: line-through; color:#DC2626;">40 ألف</span></p>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+        
+        <li>جلسات مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 بالذكاء الاصطناعي</li>
+      </ul>
+<a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في عرض مميز 4 مستويات" target="_blank" class="enroll-btn">سجل الآن</a>
+    </div>
+
+    <div class="course-card offer offer-blue">
+      <h2>عرض شامل</h2>
+      <p>المستويات: A1 + A2 + B1 + B2 + C1</p>
+       <p>نظام الدراسة: عادي / مكثف / مكثف جدًا</p>
+      <p>⏱️ المدة وعدد الأيام يتم تحديدهم حسب نظام الكورس</p>
+      <p class="price">40 ألف جنيه مصري <span style="text-decoration: line-through; color:#DC2626;">50 ألف</span></p>
+      <ul class="features">
+        <li>جروب من 10 – 14 طالب</li>
+      
+        <li>جلسات مع متحدثين ألمان أصليين</li>
+        <li>تدريب 24/7 بالذكاء الاصطناعي</li>
+      </ul>
+<a href="https://wa.me/201159682355?text=مرحبًا، أرغب في التسجيل في العرض الشامل 5 مستويات" target="_blank" class="enroll-btn">سجل الآن</a>
+    </div>
+
+    <!-- البرنامج المهني والكورسات المتخصصة -->
+    <div class="course-card offer offer-red">
+      <h2>البرنامج المهني الكامل + كورسات متخصصة</h2>
+      <p>تعلم اللغة الألمانية المتقدمة + كورسات تقنية ومهنية</p>
+      <p>المدة: حسب البرنامج</p>
+      <ul class="features">
+        <li>البرنامج المهني الكامل للتأهيل لسوق العمل في ألمانيا</li>
+        <li>كورسات اللغة المتخصصة حسب المجال: أعمال، طب، هندسة، تكنولوجيا</li>
+        <li>كورسات تقنية متقدمة: برمجة، روبوتات، أنظمة مضمنة، PLC، IoT</li>
+        <li>جلسات حية مع خبراء ومتحدثين أصليين</li>
+        <li>تدريب 24/7 بالذكاء الاصطناعي على اللغة والمهارات التقنية</li>
+      </ul>
+<a href="https://wa.me/201159682355?text=مرحبًا، أرغب في معرفة تفاصيل البرنامج المهني + الكورسات المتخصصة" target="_blank" class="enroll-btn">اسأل الآن</a>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2026 Ian Academy. كل الحقوق محفوظة.</p>
+  </footer>
 </body>
 </html>
+
+
+
+
+
+
+
