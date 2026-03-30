@@ -31,6 +31,7 @@
       --card:#ffffff;
       --danger:#b91c1c;
       --success:#15803d;
+      --warning:#b45309;
     }
 
     *{
@@ -181,6 +182,57 @@
       text-align:center;
     }
 
+    .urgency-box{
+      margin-top:18px;
+      padding:18px;
+      border-radius:16px;
+      background:#fff7ed;
+      border:1px solid rgba(180,83,9,0.18);
+      box-shadow:0 6px 20px rgba(180,83,9,0.08);
+    }
+
+    .urgency-title{
+      font-size:1rem;
+      font-weight:900;
+      color:var(--warning);
+      margin-bottom:8px;
+      text-align:center;
+    }
+
+    .countdown{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    .time-box{
+      min-width:88px;
+      background:#fff;
+      border:1px solid rgba(2,6,23,0.08);
+      border-radius:14px;
+      padding:12px 10px;
+      text-align:center;
+      box-shadow:0 4px 15px rgba(2,6,23,0.05);
+    }
+
+    .time-value{
+      display:block;
+      font-size:1.55rem;
+      font-weight:900;
+      color:var(--danger);
+      line-height:1.1;
+    }
+
+    .time-label{
+      display:block;
+      font-size:0.85rem;
+      color:var(--muted);
+      margin-top:4px;
+      font-weight:700;
+    }
+
     .btn{
       display:inline-block;
       padding:14px 26px;
@@ -289,10 +341,21 @@
       border:1px solid rgba(2,6,23,0.06);
       transition:0.3s;
       box-shadow:0 6px 25px rgba(2,6,23,0.06);
+      position:relative;
+      overflow:hidden;
     }
 
-    .price-card:hover{
-      box-shadow:0 12px 40px rgba(0,0,0,0.15);
+    .price-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(250,204,21,0.10), rgba(0,191,255,0.06));
+      pointer-events:none;
+    }
+
+    .price-card > *{
+      position:relative;
+      z-index:1;
     }
 
     .scarcity{
@@ -311,17 +374,42 @@
     }
 
     .price-now{
-      font-size:2.6rem;
+      font-size:2.8rem;
       color:#b45309;
       font-weight:900;
-      margin:12px 0;
+      margin:12px 0 4px;
       display:block;
     }
 
-    .pricing-note{
+    .save-badge{
+      display:inline-block;
       margin-top:10px;
+      background:#dcfce7;
+      color:#166534;
+      font-weight:900;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid rgba(22,101,52,0.12);
+    }
+
+    .pricing-note{
+      margin-top:12px;
       color:var(--success);
       font-weight:800;
+    }
+
+    .seats-left-box{
+      margin-top:16px;
+      padding:14px;
+      border-radius:14px;
+      background:#fef2f2;
+      border:1px solid rgba(185,28,28,0.12);
+      font-weight:800;
+    }
+
+    .seats-left-number{
+      color:var(--danger);
+      font-weight:900;
     }
 
     footer{
@@ -381,8 +469,13 @@
       }
 
       .pill,
-      .highlight-bar{
+      .highlight-bar,
+      .urgency-box{
         font-size:0.95rem;
+      }
+
+      .time-box{
+        min-width:74px;
       }
 
       .whatsapp{
@@ -421,7 +514,7 @@
 
     <!-- About Course -->
     <section class="intro" id="course">
-      <h2 class="hero-title" id="heroTitle">🇩🇪 Intensiver Deutsch Konversationskurs (8 Tage) – Online | A2 / B1</h2>
+      <h2 class="hero-title" id="heroTitle">🇩🇪 Intensiver Deutsch Konversationskurs (7 Tage) – Online | A2 / B1</h2>
 
       <p class="hero-text" id="heroText">
         🗨️ Ein praxisorientierter Deutsch-Konversationskurs.<br>
@@ -430,17 +523,39 @@
       </p>
 
       <div class="pill" id="heroPill">
-        🇩🇪 Intensiv-Bootcamp | 2 Stunden täglich | Nur 5 Teilnehmer | Praktische Konversation mit German Native Speaker
+        🇩🇪 Intensiv-Bootcamp | 2 Stunden täglich | Nur 6 Teilnehmer | Praktische Konversation mit German Native Speaker
       </div>
 
       <div class="highlight-bar" id="highlightBar">
         2 Stunden täglich: Training + direkte praktische Konversation mit German Native Speaker
       </div>
 
+      <div class="urgency-box">
+        <div class="urgency-title" id="urgencyTitle">🔥 Sonderpreis endet bald</div>
+        <div class="countdown" id="countdown">
+          <div class="time-box">
+            <span class="time-value" id="days">00</span>
+            <span class="time-label" id="daysLabel">Tage</span>
+          </div>
+          <div class="time-box">
+            <span class="time-value" id="hours">00</span>
+            <span class="time-label" id="hoursLabel">Stunden</span>
+          </div>
+          <div class="time-box">
+            <span class="time-value" id="minutes">00</span>
+            <span class="time-label" id="minutesLabel">Minuten</span>
+          </div>
+          <div class="time-box">
+            <span class="time-value" id="seconds">00</span>
+            <span class="time-label" id="secondsLabel">Sekunden</span>
+          </div>
+        </div>
+      </div>
+
       <div class="cta-inline center">
         <a class="btn btn-primary"
            id="heroCta"
-           href="https://wa.me/201159682355?text=Ich%20m%C3%B6chte%20mich%20f%C3%BCr%20den%20intensiven%20Deutsch%20Konversationskurs%20(8%20Tage)%20f%C3%BCr%20A2%2FB1%20anmelden"
+           href="https://wa.me/201159682355?text=Ich%20m%C3%B6chte%20mich%20f%C3%BCr%20den%20intensiven%20Deutsch%20Konversationskurs%20(7%20Tage)%20f%C3%BCr%20A2%2FB1%20anmelden"
            target="_blank">
           📲 Jetzt buchen
         </a>
@@ -459,10 +574,10 @@
     <section class="intro" id="details">
       <h2 class="section-title" id="detailsTitle">📌 Kursdetails</h2>
       <ul class="features-full">
-        <li id="details1">🗓️ Dauer: 8 aufeinanderfolgende Tage (Intensiv-Bootcamp)</li>
-        <li id="details2">📚 Anzahl der Einheiten: 8 Einheiten (eine pro Tag)</li>
+        <li id="details1">🗓️ Dauer: 7 aufeinanderfolgende Tage (Intensiv-Bootcamp)</li>
+        <li id="details2">📚 Anzahl der Einheiten: 7 Einheiten (eine pro Tag)</li>
         <li id="details3">⏱️ Dauer pro Einheit: 2 Stunden täglich</li>
-        <li id="details4">👥 Teilnehmerzahl: maximal 5 Teilnehmer für optimale Interaktion</li>
+        <li id="details4">👥 Teilnehmerzahl: maximal 6 Teilnehmer für optimale Interaktion</li>
         <li id="details5">🎯 Empfohlenes Niveau: A2 / B1 (der Kurs ist auf Konversation fokussiert)</li>
         <li id="details6">🗣️ Hauptfokus: Speaking – Fluency – Confidence</li>
         <li id="details7">💡 100% praxisnah mit Role Plays und direkter Korrektur</li>
@@ -513,7 +628,7 @@
       <div class="profile">
         <img src="x.jpg" alt="Abdelrahman Elhawary">
         <div>
-          <h3 id="instructorName"> Abdelrahman Elhawary</h3>
+          <h3 id="instructorName">Abdelrahman Elhawary</h3>
           <div class="pill" id="instructorRole">Gründer und Geschäftsführer</div>
           <p class="small" style="margin-top:12px;" id="instructorText">
             Ingenieur mit Erfahrung im deutschen Markt sowie Deutschdozent mit mehr als 4 Jahren Erfahrung
@@ -528,21 +643,29 @@
       <div class="price-card">
         <h2 class="section-title" id="pricingTitle">💰 Preis & Buchung</h2>
 
-        <p class="scarcity" id="scarcityText">⚠️ Begrenzte Plätze — maximal 5 Teilnehmer</p>
+        <p class="scarcity" id="scarcityText">⚠️ Begrenzte Plätze — maximal 6 Teilnehmer</p>
 
         <p class="small" style="margin-top:14px;" id="currentPriceLabel">
           Aktueller Preis:
         </p>
 
-        <span class="price-now">100€</span>
-        <span class="price-old">150€</span>
+        <span class="price-now" id="priceNow">130€</span>
+        <span class="price-old" id="priceOld">200€</span>
+
+        <div class="save-badge" id="saveBadge">✅ Du sparst jetzt 70€</div>
+
+        <div class="seats-left-box">
+          <span id="seatsLeftText">🔥 Noch </span>
+          <span class="seats-left-number" id="seatsLeftNumber">2</span>
+          <span id="seatsLeftSuffix"> Plätze verfügbar</span>
+        </div>
 
         <p class="pricing-note" id="pricingNote">Jetzt buchen, bevor alle Plätze vergeben sind</p>
 
         <div style="margin-top:22px; text-align:center;">
           <a class="btn btn-primary"
              id="pricingCta"
-             href="https://wa.me/201159682355?text=Ich%20m%C3%B6chte%20mich%20f%C3%BCr%20den%20intensiven%20Deutsch%20Konversationskurs%20(8%20Tage)%20f%C3%BCr%20A2%2FB1%20anmelden"
+             href="https://wa.me/201159682355?text=Ich%20m%C3%B6chte%20mich%20f%C3%BCr%20den%20intensiven%20Deutsch%20Konversationskurs%20(7%20Tage)%20f%C3%BCr%20A2%2FB1%20anmelden"
              target="_blank">
             📲 Jetzt buchen
           </a>
@@ -559,6 +682,9 @@
   <a class="whatsapp" id="whatsappBtn" href="https://wa.me/201159682355" target="_blank">📲 Jetzt per WhatsApp kontaktieren</a>
 
   <script>
+    const maxSeats = 6;
+    let seatsLeft = 2;
+
     const translations = {
       de: {
         htmlLang: "de",
@@ -577,16 +703,21 @@
         navPricing: "Preis & Buchung",
         heroTitle: "🇩🇪 Intensiver Deutsch Konversationskurs (7 Tage) – Online | A2 / B1",
         heroText: "🗨️ Ein praxisorientierter Deutsch-Konversationskurs.<br>In jeder Einheit von zwei Stunden: praktisches Training und direkte Anleitung, danach Live-Konversation mit einem <em>German Native Speaker</em> in der zweiten Stunde – mit voller Begleitung durch den Dozenten.",
-        heroPill: "🇩🇪 Intensiv-Bootcamp | 2 Stunden täglich | Nur 5 Teilnehmer | Praktische Konversation mit German Native Speaker",
+        heroPill: "🇩🇪 Intensiv-Bootcamp | 2 Stunden täglich | Nur 6 Teilnehmer | Praktische Konversation mit German Native Speaker",
         highlightBar: "2 Stunden täglich: Training + direkte praktische Konversation mit German Native Speaker",
+        urgencyTitle: "🔥 Sonderpreis endet bald",
+        daysLabel: "Tage",
+        hoursLabel: "Stunden",
+        minutesLabel: "Minuten",
+        secondsLabel: "Sekunden",
         heroCta: "📲 Jetzt buchen",
-        heroCtaLink: "https://wa.me/201159682355?text=Ich%20m%C3%B6chte%20mich%20f%C3%BCr%20den%20intensiven%20Deutsch%20Konversationskurs%20(8%20Tage)%20f%C3%BCr%20A2%2FB1%20anmelden",
+        heroCtaLink: "https://wa.me/201159682355?text=Ich%20m%C3%B6chte%20mich%20f%C3%BCr%20den%20intensiven%20Deutsch%20Konversationskurs%20(7%20Tage)%20f%C3%BCr%20A2%2FB1%20anmelden",
         videoCaption: "🎥 Kursvorstellungsvideo",
         detailsTitle: "📌 Kursdetails",
         details1: "🗓️ Dauer: 7 aufeinanderfolgende Tage (Intensiv-Bootcamp)",
         details2: "📚 Anzahl der Einheiten: 7 Einheiten (eine pro Tag)",
         details3: "⏱️ Dauer pro Einheit: 2 Stunden täglich",
-        details4: "👥 Teilnehmerzahl: maximal 5 Teilnehmer für optimale Interaktion",
+        details4: "👥 Teilnehmerzahl: maximal 6 Teilnehmer für optimale Interaktion",
         details5: "🎯 Empfohlenes Niveau: A2 / B1 (der Kurs ist auf Konversation fokussiert)",
         details6: "🗣️ Hauptfokus: Speaking – Fluency – Confidence",
         details7: "💡 100% praxisnah mit Role Plays und direkter Korrektur",
@@ -610,18 +741,22 @@
         featuresCta: "📲 Jetzt buchen",
         featuresCtaLink: "https://wa.me/201159682355?text=Ich%20m%C3%B6chte%20mich%20f%C3%BCr%20den%20Deutsch-Konversationskurs%20anmelden",
         instructorTitle: "👨‍🏫 Über den Dozenten",
-        instructorName: " Abdelrahman Elhawary",
+        instructorName: "Abdelrahman Elhawary",
         instructorRole: "Gründer und Geschäftsführer",
         instructorText: "Ingenieur mit Erfahrung im deutschen Markt sowie Deutschdozent mit mehr als 4 Jahren Erfahrung in der Ausbildung von Lernenden für praktisches Deutsch in Studium, Beruf und Alltag.",
         pricingTitle: "💰 Preis & Buchung",
-        scarcityText: "⚠️ Begrenzte Plätze — maximal 5 Teilnehmer",
+        scarcityText: "⚠️ Begrenzte Plätze — maximal 6 Teilnehmer",
         currentPriceLabel: "Aktueller Preis:",
+        saveBadge: "✅ Du sparst jetzt 70€",
+        seatsLeftText: "🔥 Noch ",
+        seatsLeftSuffix: " Plätze verfügbar",
         pricingNote: "Jetzt buchen, bevor alle Plätze vergeben sind",
         pricingCta: "📲 Jetzt buchen",
-        pricingCtaLink: "https://wa.me/201159682355?text=Ich%20m%C3%B6chte%20mich%20f%C3%BCr%20den%20intensiven%20Deutsch%20Konversationskurs%20(8%20Tage)%20f%C3%BCr%20A2%2FB1%20anmelden",
+        pricingCtaLink: "https://wa.me/201159682355?text=Ich%20m%C3%B6chte%20mich%20f%C3%BCr%20den%20intensiven%20Deutsch%20Konversationskurs%20(7%20Tage)%20f%C3%BCr%20A2%2FB1%20anmelden",
         footerText: "© 2026 Ian Academy — Alle Rechte vorbehalten",
         whatsappBtn: "📲 Jetzt per WhatsApp kontaktieren"
       },
+
       en: {
         htmlLang: "en",
         htmlDir: "ltr",
@@ -639,16 +774,21 @@
         navPricing: "Pricing & Booking",
         heroTitle: "🇩🇪 Intensive German Conversation Course (7 Days) – Online | A2 / B1",
         heroText: "🗨️ A practical German conversation program.<br>In each 2-hour session: practical training and direct guidance, followed by a live speaking practice session with a <em>German Native Speaker</em> during the second hour, with full support from the instructor.",
-        heroPill: "🇩🇪 Intensive Bootcamp | 2 Hours Daily | Only 5 Students | Practical Conversation with German Native Speaker",
+        heroPill: "🇩🇪 Intensive Bootcamp | 2 Hours Daily | Only 6 Students | Practical Conversation with German Native Speaker",
         highlightBar: "2 hours daily: training + direct live practical conversation with German Native Speaker",
+        urgencyTitle: "🔥 Special price ends soon",
+        daysLabel: "Days",
+        hoursLabel: "Hours",
+        minutesLabel: "Minutes",
+        secondsLabel: "Seconds",
         heroCta: "📲 Book Your Seat Now",
-        heroCtaLink: "https://wa.me/201159682355?text=I%20want%20to%20join%20the%20intensive%20German%20conversation%20course%20(8%20days)%20for%20A2%2FB1",
+        heroCtaLink: "https://wa.me/201159682355?text=I%20want%20to%20join%20the%20intensive%20German%20conversation%20course%20(7%20days)%20for%20A2%2FB1",
         videoCaption: "🎥 Course introduction video",
         detailsTitle: "📌 Course Details",
         details1: "🗓️ Duration: 7 consecutive days (intensive bootcamp)",
         details2: "📚 Number of sessions: 7 sessions (one session per day)",
         details3: "⏱️ Session duration: 2 hours daily",
-        details4: "👥 Group size: maximum 5 students for better interaction",
+        details4: "👥 Group size: maximum 6 students for better interaction",
         details5: "🎯 Required level: A2 / B1 (this course focuses on conversation only)",
         details6: "🗣️ Main focus: Speaking – Fluency – Confidence",
         details7: "💡 100% practical method with role plays and direct correction",
@@ -676,14 +816,18 @@
         instructorRole: "Founder & CEO",
         instructorText: "An engineer working with the German market and a German language instructor with over 4 years of experience in training students in practical German for study, work, and daily life.",
         pricingTitle: "💰 Pricing & Booking",
-        scarcityText: "⚠️ Limited seats — maximum 5 students only",
+        scarcityText: "⚠️ Limited seats — maximum 6 students only",
         currentPriceLabel: "Current price:",
+        saveBadge: "✅ You save 70€ now",
+        seatsLeftText: "🔥 Only ",
+        seatsLeftSuffix: " seats left",
         pricingNote: "Book now before all seats are filled",
         pricingCta: "📲 Book Your Seat Now",
-        pricingCtaLink: "https://wa.me/201159682355?text=I%20want%20to%20join%20the%20intensive%20German%20conversation%20course%20(8%20days)%20for%20A2%2FB1",
+        pricingCtaLink: "https://wa.me/201159682355?text=I%20want%20to%20join%20the%20intensive%20German%20conversation%20course%20(7%20days)%20for%20A2%2FB1",
         footerText: "© 2026 Ian Academy — All rights reserved",
         whatsappBtn: "📲 Contact now on WhatsApp"
       },
+
       ar: {
         htmlLang: "ar",
         htmlDir: "rtl",
@@ -701,140 +845,196 @@
         navPricing: "الحجز والسعر",
         heroTitle: "🇩🇪 كورس محادثة ألماني مكثف (7 أيام) – أونلاين | A2 / B1",
         heroText: "🗨️ برنامج محادثة ألماني عملي يقدّمه <strong>المهندس عبدالرحمن الهواري</strong>.<br>في كل محاضرة لمدة ساعتين: تدريب عملي وتوجيه مباشر، ثم تطبيق حي للمحادثة بمشاركة <em>German Native Speaker</em> خلال الساعة الثانية مع متابعة كاملة من المحاضر.",
-        heroPill: "🇩🇪 Bootcamp مكثف | ساعتان يوميًا | 5 طلاب فقط | محادثة عملية مع German Native Speaker",
+        heroPill: "🇩🇪 Bootcamp مكثف | ساعتان يوميًا | 6 طلاب فقط | محادثة عملية مع German Native Speaker",
         highlightBar: "2 ساعات يوميًا: تدريب + محادثة عملية مباشرة بمشاركة German Native Speaker",
+        urgencyTitle: "🔥 السعر الخاص سينتهي قريبًا",
+        daysLabel: "يوم",
+        hoursLabel: "ساعة",
+        minutesLabel: "دقيقة",
+        secondsLabel: "ثانية",
         heroCta: "📲 احجز مكانك الآن",
-        heroCtaLink: "https://wa.me/201159682355?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%83%D9%88%D8%B1%D8%B3%20%D9%85%D8%AD%D8%A7%D8%AF%D8%AB%D8%A9%20%D8%A3%D9%84%D9%85%D8%A7%D9%86%D9%8A%20%D9%85%D9%83%D8%AB%D9%81%20(8%20%D8%A3%D9%8A%D8%A7%D9%85)%20%D9%84%D9%85%D8%B3%D8%AA%D9%88%D9%89%20A2%2FB1",
+        heroCtaLink: "https://wa.me/201159682355?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%83%D9%88%D8%B1%D8%B3%20%D9%85%D8%AD%D8%A7%D8%AF%D8%AB%D8%A9%20%D8%A3%D9%84%D9%85%D8%A7%D9%86%D9%8A%20%D9%85%D9%83%D8%AB%D9%81%20(7%20%D8%A3%D9%8A%D8%A7%D9%85)%20%D9%84%D9%85%D8%B3%D8%AA%D9%88%D9%89%20A2%2FB1",
         videoCaption: "🎥 فيديو الشرح للكورس",
         detailsTitle: "📌 تفاصيل الكورس",
         details1: "🗓️ المدة: 7 أيام متتالية (Bootcamp مكثف)",
-        details2: "📚 عدد المحاضرات: 7 محاضرات (محاضرة يوميًا)",
+        details2: "📚 عدد المحاضرات: 7 محاضرات (محاضرة كل يوم)",
         details3: "⏱️ مدة المحاضرة: ساعتان يوميًا",
-        details4: "👥 عدد الطلاب: حد أقصى 5 طلاب لضمان التفاعل",
-        details5: "🎯 المستوى المطلوب: A2 / B1 (الكورس مخصص للمحادثة فقط)",
+        details4: "👥 عدد الطلاب: بحد أقصى 6 طلاب لضمان أفضل تفاعل",
+        details5: "🎯 المستوى المناسب: A2 / B1 (الكورس يركز على المحادثة)",
         details6: "🗣️ التركيز الأساسي: Speaking – Fluency – Confidence",
-        details7: "💡 أسلوب عملي 100% مع Role Plays وتصحيح مباشر",
-        forWhoTitle: "🎯 هذا الكورس مناسب لك إذا كنت:",
-        forWho1: "تستطيع فهم الألمانية لكن تجد صعوبة في التحدث",
-        forWho2: "مستواك A2 أو B1 وتريد تحسين المحادثة بسرعة",
+        details7: "💡 تدريب عملي 100% مع Role Plays وتصحيح مباشر",
+        forWhoTitle: "🎯 الكورس مناسب لك إذا كنت:",
+        forWho1: "تفهم الألماني لكن عندك صعوبة في الكلام",
+        forWho2: "في مستوى A2 أو B1 وتريد تحسين المحادثة بسرعة",
         forWho3: "تستعد للعمل أو الدراسة في ألمانيا",
         forWho4: "تريد كسر حاجز الخوف من التحدث بالألمانية",
-        forWho5: "تريد ممارسة اللغة في مواقف واقعية وبشكل عملي يومي",
+        forWho5: "تريد ممارسة اللغة يوميًا في مواقف واقعية",
         featuresTitle: "🎯 مميزات الكورس",
         features1: "🗣️ تحسين المحادثة والثقة في التحدث بالألمانية",
-        features2: "📖 تعلم اللغة العملية المستخدمة في العمل والحياة اليومية",
-        features3: "🗨️ ساعة محادثة يومية عملية بمشاركة <em>German Native Speaker</em> مع وجود المحاضر طوال الجلسة",
-        features4: "✅ تصحيح النطق، التعبيرات الاصطلاحية، والمفردات الواقعية",
-        features5: "💻 مجموعات صغيرة لضمان وقت كافٍ لكل طالب",
-        features6: "💼 مناسب للغرض المهني أو الاستخدام اليومي",
-        features7: "🎯 التفاعل العملي اليومي مع اللغة",
-        features8: "📝 تمارين عملية بعد كل محاضرة",
-        features9: "👥 متابعة فردية لكل طالب لضمان التقدم",
-        features10: "🏆 إعداد الطلاب لاستخدام اللغة في العمل والدراسة والحياة اليومية",
+        features2: "📖 ألماني عملي للحياة اليومية والعمل",
+        features3: "🗨️ ساعة محادثة عملية يومية مع <em>German Native Speaker</em> مع متابعة المحاضر طوال الجلسة",
+        features4: "✅ تصحيح النطق والتعبيرات العملية والمفردات الواقعية",
+        features5: "💻 مجموعات صغيرة لضمان وقت كافٍ للكلام لكل طالب",
+        features6: "💼 مناسب للأهداف المهنية والاستخدام اليومي",
+        features7: "🎯 تفاعل عملي يومي مع اللغة",
+        features8: "📝 تدريبات عملية بعد كل محاضرة",
+        features9: "👥 متابعة فردية لكل طالب لضمان التطور",
+        features10: "🏆 إعداد لاستخدام الألمانية في العمل والدراسة والحياة اليومية",
         featuresCta: "📲 احجز مكانك الآن",
-        featuresCtaLink: "https://wa.me/201159682355?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%83%D9%88%D8%B1%D8%B3%20%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D8%AF%D8%AB%D8%A9%20%D8%A7%D9%84%D8%A3%D9%84%D9%85%D8%A7%D9%86%D9%8A",
+        featuresCtaLink: "https://wa.me/201159682355?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%83%D9%88%D8%B1%D8%B3%20%D9%85%D8%AD%D8%A7%D8%AF%D8%AB%D8%A9%20%D8%A3%D9%84%D9%85%D8%A7%D9%86%D9%8A",
         instructorTitle: "👨‍🏫 عن المحاضر",
-        instructorName: "المهندس عبدالرحمن الهواري",
+        instructorName: "Abdelrahman Elhawary",
         instructorRole: "المؤسس والمدير التنفيذي",
-        instructorText: "مهندس يعمل في السوق الألماني، ومحاضر لغة ألمانية بخبرة تتجاوز 4 سنوات في تدريب الطلاب على اللغة الألمانية العملية المستخدمة في الدراسة والعمل والحياة اليومية.",
+        instructorText: "مهندس لديه خبرة في السوق الألماني ومحاضر لغة ألمانية بخبرة تزيد عن 4 سنوات في تدريب الطلاب على الألمانية العملية للدراسة والعمل والحياة اليومية.",
         pricingTitle: "💰 السعر والحجز",
-        scarcityText: "⚠️ الأماكن محدودة — الحد الأقصى 5 طلاب فقط",
+        scarcityText: "⚠️ الأماكن محدودة — بحد أقصى 6 طلاب",
         currentPriceLabel: "السعر الحالي:",
+        saveBadge: "✅ أنت توفّر الآن 70€",
+        seatsLeftText: "🔥 متبقي ",
+        seatsLeftSuffix: " أماكن فقط",
         pricingNote: "احجز الآن قبل اكتمال العدد",
         pricingCta: "📲 احجز مكانك الآن",
-        pricingCtaLink: "https://wa.me/201159682355?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%83%D9%88%D8%B1%D8%B3%20%D9%85%D8%AD%D8%A7%D8%AF%D8%AB%D8%A9%20%D8%A3%D9%84%D9%85%D8%A7%D9%86%D9%8A%20%D9%85%D9%83%D8%AB%D9%81%20(8%20%D8%A3%D9%8A%D8%A7%D9%85)%20%D9%84%D9%85%D8%B3%D8%AA%D9%88%D9%89%20A2%2FB1",
+        pricingCtaLink: "https://wa.me/201159682355?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D9%83%D9%88%D8%B1%D8%B3%20%D9%85%D8%AD%D8%A7%D8%AF%D8%AB%D8%A9%20%D8%A3%D9%84%D9%85%D8%A7%D9%86%D9%8A%20%D9%85%D9%83%D8%AB%D9%81%20(7%20%D8%A3%D9%8A%D8%A7%D9%85)%20%D9%84%D9%85%D8%B3%D8%AA%D9%88%D9%89%20A2%2FB1",
         footerText: "© 2026 Ian Academy — جميع الحقوق محفوظة",
-        whatsappBtn: "📲 تواصل الآن على واتساب"
+        whatsappBtn: "📲 تواصل الآن عبر واتساب"
       }
     };
 
+    function setMetaContent(selector, value) {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute("content", value);
+    }
+
     function setLanguage(lang) {
       const t = translations[lang];
+      if (!t) return;
 
       document.documentElement.lang = t.htmlLang;
       document.documentElement.dir = t.htmlDir;
-      document.body.style.direction = t.htmlDir;
-
       document.title = t.title;
-      document.querySelector('meta[name="description"]').setAttribute('content', t.description);
-      document.querySelector('meta[property="og:title"]').setAttribute('content', t.ogTitle);
-      document.querySelector('meta[property="og:description"]').setAttribute('content', t.ogDescription);
-      document.querySelector('meta[name="twitter:title"]').setAttribute('content', t.twitterTitle);
-      document.querySelector('meta[name="twitter:description"]').setAttribute('content', t.twitterDescription);
 
-      document.getElementById('navCourse').innerHTML = t.navCourse;
-      document.getElementById('navDetails').innerHTML = t.navDetails;
-      document.getElementById('navForWho').innerHTML = t.navForWho;
-      document.getElementById('navFeatures').innerHTML = t.navFeatures;
-      document.getElementById('navInstructor').innerHTML = t.navInstructor;
-      document.getElementById('navPricing').innerHTML = t.navPricing;
+      setMetaContent('meta[name="description"]', t.description);
+      setMetaContent('meta[property="og:title"]', t.ogTitle);
+      setMetaContent('meta[property="og:description"]', t.ogDescription);
+      setMetaContent('meta[name="twitter:title"]', t.twitterTitle);
+      setMetaContent('meta[name="twitter:description"]', t.twitterDescription);
 
-      document.getElementById('heroTitle').innerHTML = t.heroTitle;
-      document.getElementById('heroText').innerHTML = t.heroText;
-      document.getElementById('heroPill').innerHTML = t.heroPill;
-      document.getElementById('highlightBar').innerHTML = t.highlightBar;
-      document.getElementById('heroCta').innerHTML = t.heroCta;
-      document.getElementById('heroCta').href = t.heroCtaLink;
-      document.getElementById('videoCaption').innerHTML = t.videoCaption;
+      const mapping = {
+        navCourse: t.navCourse,
+        navDetails: t.navDetails,
+        navForWho: t.navForWho,
+        navFeatures: t.navFeatures,
+        navInstructor: t.navInstructor,
+        navPricing: t.navPricing,
+        heroTitle: t.heroTitle,
+        heroText: t.heroText,
+        heroPill: t.heroPill,
+        highlightBar: t.highlightBar,
+        urgencyTitle: t.urgencyTitle,
+        daysLabel: t.daysLabel,
+        hoursLabel: t.hoursLabel,
+        minutesLabel: t.minutesLabel,
+        secondsLabel: t.secondsLabel,
+        heroCta: t.heroCta,
+        videoCaption: t.videoCaption,
+        detailsTitle: t.detailsTitle,
+        details1: t.details1,
+        details2: t.details2,
+        details3: t.details3,
+        details4: t.details4,
+        details5: t.details5,
+        details6: t.details6,
+        details7: t.details7,
+        forWhoTitle: t.forWhoTitle,
+        forWho1: t.forWho1,
+        forWho2: t.forWho2,
+        forWho3: t.forWho3,
+        forWho4: t.forWho4,
+        forWho5: t.forWho5,
+        featuresTitle: t.featuresTitle,
+        features1: t.features1,
+        features2: t.features2,
+        features3: t.features3,
+        features4: t.features4,
+        features5: t.features5,
+        features6: t.features6,
+        features7: t.features7,
+        features8: t.features8,
+        features9: t.features9,
+        features10: t.features10,
+        featuresCta: t.featuresCta,
+        instructorTitle: t.instructorTitle,
+        instructorName: t.instructorName,
+        instructorRole: t.instructorRole,
+        instructorText: t.instructorText,
+        pricingTitle: t.pricingTitle,
+        scarcityText: t.scarcityText,
+        currentPriceLabel: t.currentPriceLabel,
+        saveBadge: t.saveBadge,
+        seatsLeftText: t.seatsLeftText,
+        seatsLeftSuffix: t.seatsLeftSuffix,
+        pricingNote: t.pricingNote,
+        pricingCta: t.pricingCta,
+        footerText: t.footerText,
+        whatsappBtn: t.whatsappBtn
+      };
 
-      document.getElementById('detailsTitle').innerHTML = t.detailsTitle;
-      document.getElementById('details1').innerHTML = t.details1;
-      document.getElementById('details2').innerHTML = t.details2;
-      document.getElementById('details3').innerHTML = t.details3;
-      document.getElementById('details4').innerHTML = t.details4;
-      document.getElementById('details5').innerHTML = t.details5;
-      document.getElementById('details6').innerHTML = t.details6;
-      document.getElementById('details7').innerHTML = t.details7;
-
-      document.getElementById('forWhoTitle').innerHTML = t.forWhoTitle;
-      document.getElementById('forWho1').innerHTML = t.forWho1;
-      document.getElementById('forWho2').innerHTML = t.forWho2;
-      document.getElementById('forWho3').innerHTML = t.forWho3;
-      document.getElementById('forWho4').innerHTML = t.forWho4;
-      document.getElementById('forWho5').innerHTML = t.forWho5;
-
-      document.getElementById('featuresTitle').innerHTML = t.featuresTitle;
-      document.getElementById('features1').innerHTML = t.features1;
-      document.getElementById('features2').innerHTML = t.features2;
-      document.getElementById('features3').innerHTML = t.features3;
-      document.getElementById('features4').innerHTML = t.features4;
-      document.getElementById('features5').innerHTML = t.features5;
-      document.getElementById('features6').innerHTML = t.features6;
-      document.getElementById('features7').innerHTML = t.features7;
-      document.getElementById('features8').innerHTML = t.features8;
-      document.getElementById('features9').innerHTML = t.features9;
-      document.getElementById('features10').innerHTML = t.features10;
-      document.getElementById('featuresCta').innerHTML = t.featuresCta;
-      document.getElementById('featuresCta').href = t.featuresCtaLink;
-
-      document.getElementById('instructorTitle').innerHTML = t.instructorTitle;
-      document.getElementById('instructorName').innerHTML = t.instructorName;
-      document.getElementById('instructorRole').innerHTML = t.instructorRole;
-      document.getElementById('instructorText').innerHTML = t.instructorText;
-
-      document.getElementById('pricingTitle').innerHTML = t.pricingTitle;
-      document.getElementById('scarcityText').innerHTML = t.scarcityText;
-      document.getElementById('currentPriceLabel').innerHTML = t.currentPriceLabel;
-      document.getElementById('pricingNote').innerHTML = t.pricingNote;
-      document.getElementById('pricingCta').innerHTML = t.pricingCta;
-      document.getElementById('pricingCta').href = t.pricingCtaLink;
-
-      document.getElementById('footerText').innerHTML = t.footerText;
-      document.getElementById('whatsappBtn').innerHTML = t.whatsappBtn;
-
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.remove('active');
+      Object.entries(mapping).forEach(([id, value]) => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = value;
       });
-      document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
 
-      localStorage.setItem('selectedLanguage', lang);
+      document.getElementById("heroCta").href = t.heroCtaLink;
+      document.getElementById("featuresCta").href = t.featuresCtaLink;
+      document.getElementById("pricingCta").href = t.pricingCtaLink;
+
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+      });
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
-      const savedLanguage = localStorage.getItem('selectedLanguage') || 'de';
-      setLanguage(savedLanguage);
+    function updateSeatsDisplay() {
+      const seatsNumber = document.getElementById("seatsLeftNumber");
+      if (seatsNumber) seatsNumber.textContent = seatsLeft;
+    }
+
+    function initCountdown() {
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 3);
+      targetDate.setHours(23, 59, 59, 999);
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate.getTime() - now;
+
+        if (distance <= 0) {
+          document.getElementById("days").textContent = "00";
+          document.getElementById("hours").textContent = "00";
+          document.getElementById("minutes").textContent = "00";
+          document.getElementById("seconds").textContent = "00";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = String(days).padStart(2, "0");
+        document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+        document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+        document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setLanguage("de");
+      updateSeatsDisplay();
+      initCountdown();
     });
   </script>
-
 </body>
 </html>
