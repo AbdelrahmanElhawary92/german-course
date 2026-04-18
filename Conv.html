@@ -1,192 +1,184 @@
 <!DOCTYPE html>
-<html lang="de" dir="ltr">
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Deutsch Konversationskurs (7 Tage) | A2 / B1 | Ian Academy</title>
+<title>Deutsch Speaking Bootcamp (7 Tage) | Ian Academy</title>
 
-  <meta name="description" content="Intensiver 7-tägiger Deutsch-Konversationskurs (2 Stunden täglich) für A2/B1. Fokus auf echte Kommunikation, kleine Gruppen und direkte Korrektur.">
-
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      margin:0;
-      background:#f6f9ff;
-      color:#111;
-      line-height:1.7;
-    }
-
-    header{
-      background:#0b0f1a;
-      color:#fff;
-      padding:18px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-
-    header h1{
-      color:#00bfff;
-      margin:0;
-    }
-
-    .lang button{
-      margin:5px;
-      padding:8px 14px;
-      border:none;
-      cursor:pointer;
-      border-radius:8px;
-      font-weight:bold;
-    }
-
-    .container{
-      max-width:900px;
-      margin:auto;
-      padding:20px;
-    }
-
-    .card{
-      background:#fff;
-      padding:25px;
-      margin:20px 0;
-      border-radius:15px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.08);
-    }
-
-    .price{
-      font-size:32px;
-      font-weight:bold;
-      color:#b45309;
-    }
-
-    .old{
-      text-decoration:line-through;
-      color:#888;
-      margin-left:10px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:12px 22px;
-      background:#ffd700;
-      color:#000;
-      font-weight:bold;
-      border-radius:10px;
-      text-decoration:none;
-      margin-top:10px;
-    }
-  </style>
+<style>
+body{margin:0;font-family:Arial;background:#f6f9ff;color:#111;line-height:1.7}
+.container{max-width:900px;margin:auto;padding:20px}
+.card{background:#fff;padding:25px;margin:18px 0;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.08)}
+.btn{display:inline-block;padding:14px 22px;background:#ffd700;color:#000;font-weight:bold;border-radius:10px;text-decoration:none}
+.lang{display:flex;gap:10px;justify-content:flex-end}
+.lang button{padding:8px 14px;border:none;border-radius:8px;cursor:pointer;font-weight:bold}
+.price{font-size:34px;font-weight:bold;color:#b45309}
+.old{text-decoration:line-through;color:#999;margin-left:8px}
+.highlight{color:#b91c1c;font-weight:bold}
+.center{text-align:center}
+.video{width:100%;border-radius:12px;margin-top:10px}
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>Ian Academy</h1>
-
-  <div class="lang">
-    <button onclick="setLang('de')">DE</button>
-    <button onclick="setLang('ar')">AR</button>
-  </div>
-</header>
-
 <div class="container">
 
-  <!-- HERO -->
-  <div class="card">
-    <h2 id="title">Deutsch Konversationskurs (7 Tage) – A2 / B1</h2>
+<!-- LANGUAGE SWITCH -->
+<div class="lang">
+  <button onclick="setLang('de')">DE</button>
+  <button onclick="setLang('ar')">AR</button>
+</div>
 
-    <p id="desc">
-      Intensives 7-tägiges Speaking-Bootcamp für Deutsch in <b>Deutschland</b> (2 Stunden täglich).
-      Der Fokus liegt auf echter Kommunikation und flüssigem Sprechen, nicht auf Theorie.
-    </p>
+<!-- HERO -->
+<div class="card center">
 
-    <!-- VIDEO -->
-    <video width="100%" controls style="border-radius:12px;">
-      <source src="your-video.mp4" type="video/mp4">
-      Ihr Browser unterstützt dieses Videoformat nicht.
-    </video>
+  <h1 id="title">Sprich Deutsch in 7 Tagen ohne Angst</h1>
 
-    <p><b id="note">📍 Der Kurs richtet sich an Personen, die in Deutschland leben</b></p>
+  <p id="subtitle">
+    Intensives Speaking Bootcamp für Deutsch in Deutschland – 2 Stunden täglich.
+  </p>
 
-    <a class="btn" href="https://wa.me/201159682355">Jetzt buchen</a>
+  <p class="highlight" id="hook">
+    ❌ Kein Theorie-Lernen – nur echte Konversation
+  </p>
+
+  <a class="btn" href="https://wa.me/201159682355" id="cta1">
+    📲 Jetzt Platz sichern
+  </a>
+
+</div>
+
+<!-- VIDEO -->
+<div class="card">
+  <h2 id="videoTitle">🎥 Kursvideo</h2>
+
+  <video class="video" controls>
+    <source src="your-video.mp4" type="video/mp4">
+  </video>
+
+  <p class="center" id="videoText">
+    7 Tage – 2 Stunden täglich – echte Gespräche
+  </p>
+</div>
+
+<!-- DETAILS -->
+<div class="card">
+  <h2 id="detailsTitle">Kursdetails</h2>
+
+  <ul>
+    <li id="d1">7 Tage Intensivkurs</li>
+    <li id="d2">2 Stunden täglich</li>
+    <li id="d3">Maximal 6–10 Teilnehmer</li>
+    <li id="d4">Fokus: Speaking & Fluency</li>
+    <li id="d5">A2 / B1 Niveau</li>
+  </ul>
+</div>
+
+<!-- PRICE -->
+<div class="card center">
+
+  <h2 id="priceTitle">Preis</h2>
+
+  <div class="price">
+    100€ <span class="old">170€</span>
   </div>
 
-  <!-- DETAILS -->
-  <div class="card">
-    <h3 id="detailsTitle">Kursdetails</h3>
-    <ul>
-      <li id="d1">7 aufeinanderfolgende Tage</li>
-      <li id="d2">2 Stunden täglich</li>
-      <li id="d3">Maximal 10 Teilnehmer</li>
-      <li id="d4">Fokus auf Sprechen und Sprachflüssigkeit</li>
-      <li id="d5">Niveau A2 / B1</li>
-    </ul>
-  </div>
+  <p class="highlight" id="scarcity">🔥 Begrenzte Plätze</p>
 
-  <!-- PRICING -->
-  <div class="card">
-    <h3 id="priceTitle">Preis</h3>
+  <a class="btn" href="https://wa.me/201159682355" id="cta2">
+    📲 Jetzt buchen
+  </a>
 
-    <div>
-      <span class="price">100€</span>
-      <span class="old">170€</span>
-    </div>
+</div>
 
-    <p id="priceNote">Begrenztes Angebot – jetzt anmelden</p>
+<!-- SOCIAL PROOF -->
+<div class="card">
+  <h2 id="reviewsTitle">Ergebnisse</h2>
 
-    <a class="btn" href="https://wa.me/201159682355">Jetzt sichern</a>
-  </div>
+  <p id="r1">“Ich spreche jetzt viel sicherer.” – Ahmed</p>
+  <p id="r2">“Sehr praktisch und effektiv.” – Sarah</p>
+  <p id="r3">“Endlich frei sprechen gelernt.” – Nour</p>
+</div>
 
 </div>
 
 <script>
-const lang = {
-  de:{
-    title:"Deutsch Konversationskurs (7 Tage) – A2 / B1",
-    desc:"Intensives 7-tägiges Speaking-Bootcamp für Deutsch in Deutschland (2 Stunden täglich). Der Fokus liegt auf echter Kommunikation und flüssigem Sprechen, nicht auf Theorie.",
-    note:"📍 Der Kurs richtet sich an Personen, die in Deutschland leben",
-    detailsTitle:"Kursdetails",
-    d1:"7 aufeinanderfolgende Tage",
-    d2:"2 Stunden täglich",
-    d3:"Maximal 10 Teilnehmer",
-    d4:"Fokus auf Sprechen und Sprachflüssigkeit",
-    d5:"Niveau A2 / B1",
-    priceTitle:"Preis",
-    priceNote:"Begrenztes Angebot – jetzt anmelden"
-  },
 
-  ar:{
-    title:"كورس محادثة ألماني مكثف (7 أيام) – A2 / B1",
-    desc:"برنامج مكثف لمدة 7 أيام لتعلم المحادثة الألمانية في ألمانيا (ساعتين يوميًا) مع التركيز على الكلام والطلاقة وليس القواعد.",
-    note:"📍 الكورس موجه للأشخاص المقيمين في ألمانيا",
-    detailsTitle:"تفاصيل الكورس",
-    d1:"7 أيام متتالية",
-    d2:"ساعتان يوميًا",
-    d3:"بحد أقصى 10 طلاب",
-    d4:"التركيز على المحادثة والطلاقة",
-    d5:"المستوى A2 / B1",
-    priceTitle:"السعر",
-    priceNote:"عرض محدود – احجز الآن"
-  }
+const text = {
+
+de:{
+title:"Sprich Deutsch in 7 Tagen ohne Angst",
+subtitle:"Intensives Speaking Bootcamp für Deutsch in Deutschland – 2 Stunden täglich.",
+hook:"❌ Kein Theorie-Lernen – nur echte Konversation",
+videoTitle:"🎥 Kursvideo",
+videoText:"7 Tage – 2 Stunden täglich – echte Gespräche",
+detailsTitle:"Kursdetails",
+d1:"7 Tage Intensivkurs",
+d2:"2 Stunden täglich",
+d3:"Maximal 6–10 Teilnehmer",
+d4:"Fokus: Speaking & Fluency",
+d5:"A2 / B1 Niveau",
+priceTitle:"Preis",
+scarcity:"🔥 Begrenzte Plätze",
+cta:"📲 Jetzt buchen",
+reviewsTitle:"Ergebnisse",
+r1:"“Ich spreche jetzt viel sicherer.” – Ahmed",
+r2:"“Sehr praktisch und effektiv.” – Sarah",
+r3:"“Endlich frei sprechen gelernt.” – Nour"
+},
+
+ar:{
+title:"اتكلم ألماني في 7 أيام بدون خوف",
+subtitle:"برنامج مكثف للمحادثة الألمانية في ألمانيا – ساعتين يوميًا.",
+hook:"❌ بدون مذاكرة نظري – محادثة حقيقية فقط",
+videoTitle:"🎥 فيديو الكورس",
+videoText:"7 أيام – ساعتين يوميًا – محادثة حقيقية",
+detailsTitle:"تفاصيل الكورس",
+d1:"7 أيام مكثفة",
+d2:"ساعتين يوميًا",
+d3:"بحد أقصى 6–10 طلاب",
+d4:"التركيز على المحادثة والطلاقة",
+d5:"مستوى A2 / B1",
+priceTitle:"السعر",
+scarcity:"🔥 أماكن محدودة",
+cta:"📲 احجز الآن",
+reviewsTitle:"النتائج",
+r1:"“بقيت بتكلم بثقة أكتر” – أحمد",
+r2:"“كورس عملي جدًا ومفيد” – سارة",
+r3:"“اتكلمت لأول مرة بطلاقة” – نور"
+}
+
 };
 
 function setLang(l){
-  document.getElementById("title").innerText = lang[l].title;
-  document.getElementById("desc").innerText = lang[l].desc;
-  document.getElementById("note").innerText = lang[l].note;
+document.getElementById("title").innerText=text[l].title;
+document.getElementById("subtitle").innerText=text[l].subtitle;
+document.getElementById("hook").innerText=text[l].hook;
 
-  document.getElementById("detailsTitle").innerText = lang[l].detailsTitle;
-  document.getElementById("d1").innerText = lang[l].d1;
-  document.getElementById("d2").innerText = lang[l].d2;
-  document.getElementById("d3").innerText = lang[l].d3;
-  document.getElementById("d4").innerText = lang[l].d4;
-  document.getElementById("d5").innerText = lang[l].d5;
+document.getElementById("videoTitle").innerText=text[l].videoTitle;
+document.getElementById("videoText").innerText=text[l].videoText;
 
-  document.getElementById("priceTitle").innerText = lang[l].priceTitle;
-  document.getElementById("priceNote").innerText = lang[l].priceNote;
+document.getElementById("detailsTitle").innerText=text[l].detailsTitle;
+document.getElementById("d1").innerText=text[l].d1;
+document.getElementById("d2").innerText=text[l].d2;
+document.getElementById("d3").innerText=text[l].d3;
+document.getElementById("d4").innerText=text[l].d4;
+document.getElementById("d5").innerText=text[l].d5;
+
+document.getElementById("priceTitle").innerText=text[l].priceTitle;
+document.getElementById("scarcity").innerText=text[l].scarcity;
+
+document.getElementById("cta1").innerText=text[l].cta;
+document.getElementById("cta2").innerText=text[l].cta;
+
+document.getElementById("reviewsTitle").innerText=text[l].reviewsTitle;
+document.getElementById("r1").innerText=text[l].r1;
+document.getElementById("r2").innerText=text[l].r2;
+document.getElementById("r3").innerText=text[l].r3;
 }
+
 </script>
 
 </body>
