@@ -18,6 +18,9 @@ body{margin:0;font-family:Arial;background:#f6f9ff;color:#111;line-height:1.7}
 .highlight{color:#b91c1c;font-weight:bold}
 .center{text-align:center}
 .video{width:100%;border-radius:12px;margin-top:10px}
+.review{background:#f8fafc;border-left:4px solid #00bfff;padding:12px;margin:10px 0;border-radius:8px}
+.name{font-weight:bold}
+.small{font-size:13px;color:#666}
 </style>
 </head>
 
@@ -93,6 +96,33 @@ body{margin:0;font-family:Arial;background:#f6f9ff;color:#111;line-height:1.7}
 
 </div>
 
+<!-- REVIEWS -->
+<div class="card">
+
+<h2 id="reviewTitle">💬 Erfahrungen von Teilnehmern</h2>
+
+<div class="review">
+  <div class="name">Ahmed M. <span class="small">– München</span></div>
+  <p>„Ich habe vorher kaum gesprochen. Nach dem Kurs fühle ich mich viel sicherer im Alltag.“</p>
+</div>
+
+<div class="review">
+  <div class="name">Sarah K. <span class="small">– Berlin</span></div>
+  <p>„Sehr praktisch aufgebaut. Keine langweiligen Regeln, sondern echtes Sprechen.“</p>
+</div>
+
+<div class="review">
+  <div class="name">Nour H. <span class="small">– Köln</span></div>
+  <p>„Endlich habe ich angefangen frei zu sprechen, ohne ständig zu übersetzen.“</p>
+</div>
+
+<div class="review">
+  <div class="name">Omar S. <span class="small">– Hamburg</span></div>
+  <p>„Die Korrekturen während des Sprechens waren extrem hilfreich.“</p>
+</div>
+
+</div>
+
 </div>
 
 <script>
@@ -113,7 +143,8 @@ d4:"Fokus: Speaking & Fluency",
 d5:"A2 / B1 Niveau",
 priceTitle:"Preis",
 scarcity:"🔥 Begrenzte Plätze",
-cta:"📲 Jetzt buchen"
+cta:"📲 Jetzt buchen",
+reviewTitle:"💬 Erfahrungen von Teilnehmern"
 },
 
 ar:{
@@ -130,12 +161,14 @@ d4:"التركيز على المحادثة والطلاقة",
 d5:"مستوى A2 / B1",
 priceTitle:"السعر",
 scarcity:"🔥 أماكن محدودة",
-cta:"📲 احجز الآن"
+cta:"📲 احجز الآن",
+reviewTitle:"💬 آراء الطلاب"
 }
 
 };
 
 function setLang(l){
+
 document.getElementById("title").innerText=text[l].title;
 document.getElementById("subtitle").innerText=text[l].subtitle;
 document.getElementById("hook").innerText=text[l].hook;
@@ -155,6 +188,9 @@ document.getElementById("scarcity").innerText=text[l].scarcity;
 
 document.getElementById("cta1").innerText=text[l].cta;
 document.getElementById("cta2").innerText=text[l].cta;
+
+document.getElementById("reviewTitle").innerText=text[l].reviewTitle;
+
 }
 
 </script>
