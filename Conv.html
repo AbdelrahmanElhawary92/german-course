@@ -6,85 +6,98 @@
 
   <title>Deutsch Konversationskurs (7 Tage) | A2 / B1 | Ian Academy</title>
 
-  <meta name="description" content="7-Tage Deutsch Speaking Bootcamp für Menschen in Deutschland (A2/B1). 2 Stunden täglich Konversation + Native Speaker + direkte Korrektur. Preis: 100€">
+  <meta name="description" content="Intensiver 7-Tage Deutsch Konversationskurs (2 Stunden täglich) für A2/B1 in Deutschland. Fokus auf Speaking, kleine Gruppen und direkte Korrektur.">
+
+  <meta property="og:title" content="Deutsch Konversationskurs (7 Tage) | Ian Academy">
+  <meta property="og:description" content="7 Tage intensives Speaking Bootcamp für Deutsch (A2/B1) – speziell für Lernende in Deutschland.">
+  <meta property="og:type" content="website">
 
   <style>
     body{
+      font-family: Arial, sans-serif;
       margin:0;
-      font-family:Arial;
-      background:#f7fbff;
+      background:#f6f9ff;
       color:#111;
+      line-height:1.7;
     }
 
     header{
-      background:#0a0a0a;
+      background:#0b0f1a;
       color:#fff;
       padding:18px;
       display:flex;
       justify-content:space-between;
       align-items:center;
+      flex-wrap:wrap;
     }
 
-    h1{color:#00bfff;margin:0}
+    header h1{
+      color:#00bfff;
+      margin:0;
+    }
 
-    .hero{
+    .lang button{
+      margin:5px;
+      padding:8px 14px;
+      border:none;
+      cursor:pointer;
+      border-radius:8px;
+      font-weight:bold;
+    }
+
+    .container{
       max-width:900px;
-      margin:40px auto;
+      margin:auto;
+      padding:20px;
+    }
+
+    .card{
       background:#fff;
       padding:25px;
-      border-radius:14px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      margin:20px 0;
+      border-radius:15px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
     }
 
     .price{
-      font-size:42px;
+      font-size:32px;
       font-weight:bold;
       color:#b45309;
-      margin:10px 0;
     }
 
-    .badge{
-      display:inline-block;
-      padding:8px 12px;
-      background:#dcfce7;
-      border-radius:999px;
-      font-weight:bold;
-      color:#166534;
+    .old{
+      text-decoration:line-through;
+      color:#888;
+      margin-left:10px;
     }
 
-    .cta{
+    .btn{
       display:inline-block;
-      margin-top:18px;
-      padding:14px 22px;
-      background:#facc15;
+      padding:12px 22px;
+      background:#ffd700;
       color:#000;
       font-weight:bold;
+      border-radius:10px;
       text-decoration:none;
-      border-radius:10px;
+      margin-top:10px;
     }
 
-    .box{
-      background:#eef6ff;
-      padding:12px;
-      border-radius:10px;
-      margin-top:15px;
-      font-weight:bold;
-    }
-
-    video{
+    .video{
       width:100%;
-      margin-top:20px;
       border-radius:12px;
+      margin-top:15px;
     }
 
     ul{
-      line-height:1.8;
+      padding-left:20px;
     }
 
-    .note{
-      margin-top:12px;
-      font-weight:bold;
-      color:#0f172a;
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#0b0f1a;
+      color:#aaa;
+      margin-top:40px;
     }
   </style>
 </head>
@@ -93,53 +106,113 @@
 
 <header>
   <h1>Ian Academy</h1>
+
+  <div class="lang">
+    <button onclick="setLang('de')">DE</button>
+    <button onclick="setLang('ar')">AR</button>
+  </div>
 </header>
 
-<div class="hero">
+<div class="container">
 
-  <h2>🇩🇪 Deutsch Konversationskurs (7 Tage Bootcamp)</h2>
+  <!-- HERO -->
+  <div class="card">
+    <h2 id="title">Deutsch Konversationskurs (7 Tage) – A2 / B1</h2>
 
-  <p>
-    🎯 هذا الكورس مخصص للأشخاص الموجودين في <b>ألمانيا</b> أو الذين يستعدون للاندماج في المجتمع الألماني.<br><br>
+    <p id="desc">
+      Intensives Speaking Bootcamp für Deutsch in <b>Deutschland</b> – 2 Stunden täglich für 7 Tage.
+      Fokus auf echte Konversation, nicht Theorie.
+    </p>
 
-    7 أيام تدريب محادثة حقيقية (بدون حفظ قواعد).<br>
-    ساعتين يوميًا: Speaking + تصحيح مباشر + تدريب مع Native Speaker.
-  </p>
+    <!-- VIDEO -->
+    <video class="video" controls>
+      <source src="your-video.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
 
-  <!-- 🎥 VIDEO -->
-  <video controls>
-    <source src="demo.mp4" type="video/mp4">
-    Your browser does not support video.
-  </video>
+    <p><b id="note">📍 Dieser Kurs richtet sich an Menschen in Deutschland</b></p>
 
-  <div class="box">
-    🔥 التركيز: تحدث الألمانية بثقة داخل ألمانيا<br>
-    👥 مجموعات صغيرة (حتى 10 طلاب)<br>
-    🇩🇪 محادثة واقعية للحياة والعمل في ألمانيا
+    <a class="btn" href="https://wa.me/201159682355">Jetzt buchen</a>
   </div>
 
-  <div class="price">100€</div>
+  <!-- DETAILS -->
+  <div class="card">
+    <h3 id="detailsTitle">Kursdetails</h3>
+    <ul>
+      <li id="d1">7 Tage hintereinander</li>
+      <li id="d2">2 Stunden täglich</li>
+      <li id="d3">Maximal 10 Teilnehmer</li>
+      <li id="d4">Fokus: Speaking & Fluency</li>
+      <li id="d5">A2 / B1 Niveau</li>
+    </ul>
+  </div>
 
-  <span class="badge">🔥 Launch Price (Limited Seats)</span>
+  <!-- PRICING -->
+  <div class="card">
+    <h3 id="priceTitle">Preis</h3>
 
-  <p class="note">
-    📍 مناسب للأشخاص في ألمانيا (Work / Study / Daily Life Integration)
-  </p>
+    <div>
+      <span class="price">100€</span>
+      <span class="old">170€</span>
+    </div>
 
-  <a class="cta"
-     href="https://wa.me/201159682355?text=Ich%20möchte%20am%207-Tage%20Deutsch%20Konversationskurs%20teilnehmen">
-    📲 Jetzt buchen
-  </a>
+    <p id="priceNote">Limited Offer – jetzt buchen</p>
 
-  <h3>Für wen?</h3>
-  <ul>
-    <li>A2 / B1 Niveau</li>
-    <li>Du lebst in Deutschland oder planst nach Deutschland zu gehen</li>
-    <li>Du kannst Deutsch verstehen aber nicht sprechen</li>
-    <li>Du willst schnell flüssig werden im Alltag & Job</li>
-  </ul>
+    <a class="btn" href="https://wa.me/201159682355">Jetzt sichern</a>
+  </div>
 
 </div>
+
+<footer>
+  © 2026 Ian Academy
+</footer>
+
+<script>
+const lang = {
+  de:{
+    title:"Deutsch Konversationskurs (7 Tage) – A2 / B1",
+    desc:"Intensives Speaking Bootcamp für Deutsch in Deutschland – 2 Stunden täglich für 7 Tage. Fokus auf echte Konversation, nicht Theorie.",
+    note:"📍 Dieser Kurs richtet sich an Menschen in Deutschland",
+    detailsTitle:"Kursdetails",
+    d1:"7 Tage hintereinander",
+    d2:"2 Stunden täglich",
+    d3:"Maximal 10 Teilnehmer",
+    d4:"Fokus: Speaking & Fluency",
+    d5:"A2 / B1 Niveau",
+    priceTitle:"Preis",
+    priceNote:"Limited Offer – jetzt buchen"
+  },
+  ar:{
+    title:"كورس محادثة ألماني مكثف (7 أيام) – A2 / B1",
+    desc:"برنامج مكثف لتعلم المحادثة الألمانية في ألمانيا لمدة 7 أيام (ساعتين يوميًا) مع تركيز على الكلام فقط وليس القواعد.",
+    note:"📍 الكورس موجه للناس المقيمين في ألمانيا",
+    detailsTitle:"تفاصيل الكورس",
+    d1:"7 أيام متتالية",
+    d2:"ساعتين يوميًا",
+    d3:"بحد أقصى 10 طلاب",
+    d4:"التركيز على المحادثة والطلاقة",
+    d5:"مستوى A2 / B1",
+    priceTitle:"السعر",
+    priceNote:"عرض محدود – احجز الآن"
+  }
+};
+
+function setLang(l){
+  document.getElementById("title").innerText = lang[l].title;
+  document.getElementById("desc").innerText = lang[l].desc;
+  document.getElementById("note").innerText = lang[l].note;
+
+  document.getElementById("detailsTitle").innerText = lang[l].detailsTitle;
+  document.getElementById("d1").innerText = lang[l].d1;
+  document.getElementById("d2").innerText = lang[l].d2;
+  document.getElementById("d3").innerText = lang[l].d3;
+  document.getElementById("d4").innerText = lang[l].d4;
+  document.getElementById("d5").innerText = lang[l].d5;
+
+  document.getElementById("priceTitle").innerText = lang[l].priceTitle;
+  document.getElementById("priceNote").innerText = lang[l].priceNote;
+}
+</script>
 
 </body>
 </html>
