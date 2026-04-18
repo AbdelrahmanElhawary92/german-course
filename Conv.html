@@ -1,197 +1,238 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Deutsch Speaking Bootcamp (7 Tage) | Ian Academy</title>
+  <title>Deutsch Speaking Bootcamp (7 Tage) | A2/B1</title>
 
-<style>
-body{margin:0;font-family:Arial;background:#f6f9ff;color:#111;line-height:1.7}
-.container{max-width:900px;margin:auto;padding:20px}
-.card{background:#fff;padding:25px;margin:18px 0;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.08)}
-.btn{display:inline-block;padding:14px 22px;background:#ffd700;color:#000;font-weight:bold;border-radius:10px;text-decoration:none}
-.lang{display:flex;gap:10px;justify-content:flex-end}
-.lang button{padding:8px 14px;border:none;border-radius:8px;cursor:pointer;font-weight:bold}
-.price{font-size:34px;font-weight:bold;color:#b45309}
-.old{text-decoration:line-through;color:#999;margin-left:8px}
-.highlight{color:#b91c1c;font-weight:bold}
-.center{text-align:center}
-.video{width:100%;border-radius:12px;margin-top:10px}
-.review{background:#f8fafc;border-left:4px solid #00bfff;padding:12px;margin:10px 0;border-radius:8px}
-.name{font-weight:bold}
-.small{font-size:13px;color:#666}
-</style>
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#f5f7fb;
+      color:#111;
+    }
+
+    header{
+      background:#0b0f1a;
+      color:#fff;
+      padding:15px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    header h1{
+      color:#00bfff;
+      margin:0;
+    }
+
+    .lang button{
+      margin:3px;
+      padding:8px 12px;
+      border-radius:8px;
+      border:none;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    .container{
+      max-width:900px;
+      margin:auto;
+      padding:20px;
+    }
+
+    .card{
+      background:#fff;
+      padding:25px;
+      margin:20px 0;
+      border-radius:15px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .btn{
+      display:inline-block;
+      background:#ffd700;
+      padding:12px 20px;
+      border-radius:10px;
+      text-decoration:none;
+      color:#000;
+      font-weight:bold;
+      margin-top:10px;
+    }
+
+    .video{
+      width:100%;
+      border-radius:12px;
+      margin-top:10px;
+    }
+
+    .price{
+      font-size:28px;
+      font-weight:bold;
+      color:#b45309;
+    }
+
+    .old{
+      text-decoration:line-through;
+      color:#777;
+      margin-left:10px;
+    }
+
+    .review{
+      background:#f8f9ff;
+      padding:15px;
+      margin:10px 0;
+      border-radius:10px;
+      border-left:4px solid #00bfff;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#0b0f1a;
+      color:#aaa;
+    }
+  </style>
 </head>
 
 <body>
 
+<header>
+  <h1>Ian Academy</h1>
+  <div class="lang">
+    <button onclick="setLang('de')">DE</button>
+    <button onclick="setLang('ar')">AR</button>
+  </div>
+</header>
+
 <div class="container">
 
-<!-- LANGUAGE SWITCH -->
-<div class="lang">
-  <button onclick="setLang('de')">DE</button>
-  <button onclick="setLang('ar')">AR</button>
-</div>
+  <!-- HERO -->
+  <div class="card">
+    <h2 id="title"></h2>
 
-<!-- HERO -->
-<div class="card center">
+    <p id="desc"></p>
 
-  <h1 id="title">Sprich Deutsch in 7 Tagen ohne Angst</h1>
+    <!-- VIDEO -->
+    <video class="video" controls>
+      <source src="your-video.mp4" type="video/mp4">
+    </video>
 
-  <p id="subtitle">
-    Intensives Speaking Bootcamp für Deutsch in Deutschland – 2 Stunden täglich.
-  </p>
+    <p id="note"></p>
 
-  <p class="highlight" id="hook">
-    ❌ Kein Theorie-Lernen – nur echte Konversation
-  </p>
-
-  <a class="btn" href="https://wa.me/201159682355" id="cta1">
-    📲 Jetzt Platz sichern
-  </a>
-
-</div>
-
-<!-- VIDEO -->
-<div class="card">
-  <h2 id="videoTitle">🎥 Kursvideo</h2>
-
-  <video class="video" controls>
-    <source src="your-video.mp4" type="video/mp4">
-  </video>
-
-  <p class="center" id="videoText">
-    7 Tage – 2 Stunden täglich – echte Gespräche
-  </p>
-</div>
-
-<!-- DETAILS -->
-<div class="card">
-  <h2 id="detailsTitle">Kursdetails</h2>
-
-  <ul>
-    <li id="d1">7 Tage Intensivkurs</li>
-    <li id="d2">2 Stunden täglich</li>
-    <li id="d3">Maximal 6–10 Teilnehmer</li>
-    <li id="d4">Fokus: Speaking & Fluency</li>
-    <li id="d5">A2 / B1 Niveau</li>
-  </ul>
-</div>
-
-<!-- PRICE -->
-<div class="card center">
-
-  <h2 id="priceTitle">Preis</h2>
-
-  <div class="price">
-    100€ <span class="old">170€</span>
+    <a class="btn" href="https://wa.me/201159682355" id="cta1">Jetzt anmelden</a>
   </div>
 
-  <p class="highlight" id="scarcity">🔥 Begrenzte Plätze</p>
+  <!-- VALUE -->
+  <div class="card">
+    <h3 id="detailsTitle"></h3>
+    <ul>
+      <li id="d1"></li>
+      <li id="d2"></li>
+      <li id="d3"></li>
+      <li id="d4"></li>
+    </ul>
+  </div>
 
-  <a class="btn" href="https://wa.me/201159682355" id="cta2">
-    📲 Jetzt buchen
-  </a>
+  <!-- REVIEWS -->
+  <div class="card">
+    <h3 id="reviewTitle"></h3>
 
-</div>
+    <div class="review" id="r1"></div>
+    <div class="review" id="r2"></div>
+    <div class="review" id="r3"></div>
+  </div>
 
-<!-- REVIEWS -->
-<div class="card">
+  <!-- PRICE -->
+  <div class="card">
+    <h3 id="priceTitle"></h3>
+    <div>
+      <span class="price">100€</span>
+      <span class="old">170€</span>
+    </div>
 
-<h2 id="reviewTitle">💬 Erfahrungen von Teilnehmern</h2>
+    <p id="priceNote"></p>
 
-<div class="review">
-  <div class="name">Ahmed M. <span class="small">– München</span></div>
-  <p>„Ich habe vorher kaum gesprochen. Nach dem Kurs fühle ich mich viel sicherer im Alltag.“</p>
-</div>
-
-<div class="review">
-  <div class="name">Sarah K. <span class="small">– Berlin</span></div>
-  <p>„Sehr praktisch aufgebaut. Keine langweiligen Regeln, sondern echtes Sprechen.“</p>
-</div>
-
-<div class="review">
-  <div class="name">Nour H. <span class="small">– Köln</span></div>
-  <p>„Endlich habe ich angefangen frei zu sprechen, ohne ständig zu übersetzen.“</p>
-</div>
-
-<div class="review">
-  <div class="name">Omar S. <span class="small">– Hamburg</span></div>
-  <p>„Die Korrekturen während des Sprechens waren extrem hilfreich.“</p>
-</div>
-
-</div>
+    <a class="btn" href="https://wa.me/201159682355" id="cta2">Jetzt sichern</a>
+  </div>
 
 </div>
+
+<footer>
+  © 2026 Ian Academy
+</footer>
 
 <script>
 
-const text = {
+const lang = {
 
-de:{
-title:"Sprich Deutsch in 7 Tagen ohne Angst",
-subtitle:"Intensives Speaking Bootcamp für Deutsch in Deutschland – 2 Stunden täglich.",
-hook:"❌ Kein Theorie-Lernen – nur echte Konversation",
-videoTitle:"🎥 Kursvideo",
-videoText:"7 Tage – 2 Stunden täglich – echte Gespräche",
-detailsTitle:"Kursdetails",
-d1:"7 Tage Intensivkurs",
-d2:"2 Stunden täglich",
-d3:"Maximal 6–10 Teilnehmer",
-d4:"Fokus: Speaking & Fluency",
-d5:"A2 / B1 Niveau",
-priceTitle:"Preis",
-scarcity:"🔥 Begrenzte Plätze",
-cta:"📲 Jetzt buchen",
-reviewTitle:"💬 Erfahrungen von Teilnehmern"
-},
+  de:{
+    title:"Deutsch Speaking Bootcamp (7 Tage) – A2 / B1",
+    desc:"Intensives 7-Tage Programm für schnelle Sprachpraxis in Deutschland. Fokus auf echtes Sprechen, nicht Theorie.",
+    note:"📍 Entwickelt für Menschen in Deutschland (Migranten, Studenten, Berufstätige)",
+    detailsTitle:"Was du bekommst",
+    d1:"7 Tage intensives Speaking Training",
+    d2:"2 Stunden täglich Live Practice",
+    d3:"Kleine Gruppen (max. 10 Personen)",
+    d4:"Fokus auf Alltag + Job Kommunikation",
 
-ar:{
-title:"اتكلم ألماني في 7 أيام بدون خوف",
-subtitle:"برنامج مكثف للمحادثة الألمانية في ألمانيا – ساعتين يوميًا.",
-hook:"❌ بدون مذاكرة نظري – محادثة حقيقية فقط",
-videoTitle:"🎥 فيديو الكورس",
-videoText:"7 أيام – ساعتين يوميًا – محادثة حقيقية",
-detailsTitle:"تفاصيل الكورس",
-d1:"7 أيام مكثفة",
-d2:"ساعتين يوميًا",
-d3:"بحد أقصى 6–10 طلاب",
-d4:"التركيز على المحادثة والطلاقة",
-d5:"مستوى A2 / B1",
-priceTitle:"السعر",
-scarcity:"🔥 أماكن محدودة",
-cta:"📲 احجز الآن",
-reviewTitle:"💬 آراء الطلاب"
-}
+    reviewTitle:"Erfahrungen von Teilnehmern",
+    r1:"„Nach 5 Tagen konnte ich endlich im Supermarkt auf Deutsch sprechen. Sehr praxisnah!“ – Teilnehmer (Berlin)",
+    r2:"„Besser als jede Sprachschule hier. Sehr direkt und verständlich.“ – Student (Hamburg)",
+    r3:"„Ich habe endlich Vertrauen beim Sprechen bekommen.“ – Teilnehmer (München)",
 
+    priceTitle:"Preis",
+    priceNote:"Limited Spots – schnell buchen",
+    cta:"Jetzt anmelden"
+  },
+
+  ar:{
+    title:"كورس محادثة ألماني مكثف (7 أيام) – A2 / B1",
+    desc:"برنامج سريع لتعلم المحادثة الألمانية في ألمانيا خلال 7 أيام مع تركيز على التحدث فقط.",
+    note:"📍 موجه للمقيمين في ألمانيا (طلاب – مهاجرين – موظفين)",
+    detailsTitle:"ماذا ستحصل عليه",
+    d1:"7 أيام تدريب مكثف على المحادثة",
+    d2:"ساعتين يوميًا تطبيق عملي",
+    d3:"مجموعات صغيرة (10 طلاب فقط)",
+    d4:"تركيز على الحياة اليومية والعمل",
+
+    reviewTitle:"آراء الطلاب",
+    r1:"„بعد 5 أيام بدأت أتكلم في السوبر ماركت بسهولة“ – طالب",
+    r2:"„أفضل من مراكز اللغة التقليدية“ – متعلم",
+    r3:"„أخيرًا بدأت أثق في نفسي أثناء الكلام“ – متعلم",
+
+    priceTitle:"السعر",
+    priceNote:"عدد محدود – احجز الآن",
+    cta:"احجز الآن"
+  }
 };
 
 function setLang(l){
+  document.getElementById("title").innerText = lang[l].title;
+  document.getElementById("desc").innerText = lang[l].desc;
+  document.getElementById("note").innerText = lang[l].note;
 
-document.getElementById("title").innerText=text[l].title;
-document.getElementById("subtitle").innerText=text[l].subtitle;
-document.getElementById("hook").innerText=text[l].hook;
+  document.getElementById("detailsTitle").innerText = lang[l].detailsTitle;
+  document.getElementById("d1").innerText = lang[l].d1;
+  document.getElementById("d2").innerText = lang[l].d2;
+  document.getElementById("d3").innerText = lang[l].d3;
+  document.getElementById("d4").innerText = lang[l].d4;
 
-document.getElementById("videoTitle").innerText=text[l].videoTitle;
-document.getElementById("videoText").innerText=text[l].videoText;
+  document.getElementById("reviewTitle").innerText = lang[l].reviewTitle;
+  document.getElementById("r1").innerText = lang[l].r1;
+  document.getElementById("r2").innerText = lang[l].r2;
+  document.getElementById("r3").innerText = lang[l].r3;
 
-document.getElementById("detailsTitle").innerText=text[l].detailsTitle;
-document.getElementById("d1").innerText=text[l].d1;
-document.getElementById("d2").innerText=text[l].d2;
-document.getElementById("d3").innerText=text[l].d3;
-document.getElementById("d4").innerText=text[l].d4;
-document.getElementById("d5").innerText=text[l].d5;
+  document.getElementById("priceTitle").innerText = lang[l].priceTitle;
+  document.getElementById("priceNote").innerText = lang[l].priceNote;
 
-document.getElementById("priceTitle").innerText=text[l].priceTitle;
-document.getElementById("scarcity").innerText=text[l].scarcity;
-
-document.getElementById("cta1").innerText=text[l].cta;
-document.getElementById("cta2").innerText=text[l].cta;
-
-document.getElementById("reviewTitle").innerText=text[l].reviewTitle;
-
+  document.getElementById("cta1").innerText = lang[l].cta;
+  document.getElementById("cta2").innerText = lang[l].cta;
 }
+
+setLang('de');
 
 </script>
 
