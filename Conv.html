@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Deutsch Speaking Bootcamp (7 Tage) | A2/B1</title>
+  <title>Deutsch Speaking Bootcamp | B1</title>
 
   <style>
     body{
       margin:0;
       font-family: Arial, sans-serif;
-      background:#f5f7fb;
+      background: linear-gradient(135deg,#eef2ff,#f5f7fb);
       color:#111;
     }
 
@@ -26,6 +26,15 @@
     header h1{
       color:#00bfff;
       margin:0;
+    }
+
+    .badge{
+      background:#ffcc00;
+      color:#000;
+      padding:5px 10px;
+      border-radius:8px;
+      font-weight:bold;
+      font-size:12px;
     }
 
     .lang button{
@@ -48,13 +57,18 @@
       padding:25px;
       margin:20px 0;
       border-radius:15px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      box-shadow:0 8px 25px rgba(0,0,0,0.08);
+      transition:0.2s;
+    }
+
+    .card:hover{
+      transform:translateY(-2px);
     }
 
     .btn{
       display:inline-block;
-      background:#ffd700;
-      padding:12px 20px;
+      background:linear-gradient(90deg,#ffcc00,#ff9900);
+      padding:14px 22px;
       border-radius:10px;
       text-decoration:none;
       color:#000;
@@ -69,15 +83,16 @@
     }
 
     .price{
-      font-size:28px;
+      font-size:32px;
       font-weight:bold;
-      color:#b45309;
+      color:#1a8f00;
     }
 
     .old{
       text-decoration:line-through;
-      color:#777;
+      color:#888;
       margin-left:10px;
+      font-size:18px;
     }
 
     .review{
@@ -101,10 +116,7 @@
 
 <header>
   <h1>Ian Academy</h1>
-  <div class="lang">
-    <button onclick="setLang('de')">DE</button>
-    <button onclick="setLang('ar')">AR</button>
-  </div>
+  <div class="badge">🔥 B1 SPEAKING BOOTCAMP</div>
 </header>
 
 <div class="container">
@@ -115,7 +127,6 @@
 
     <p id="desc"></p>
 
-    <!-- VIDEO -->
     <video class="video" controls>
       <source src="your-video.mp4" type="video/mp4">
     </video>
@@ -148,9 +159,10 @@
   <!-- PRICE -->
   <div class="card">
     <h3 id="priceTitle"></h3>
+
     <div>
-      <span class="price">100€</span>
-      <span class="old">170€</span>
+      <span class="price">150€</span>
+      <span class="old">200€</span>
     </div>
 
     <p id="priceNote"></p>
@@ -169,42 +181,42 @@
 const lang = {
 
   de:{
-    title:"Deutsch Speaking Bootcamp (7 Tage) – A2 / B1",
-    desc:"Intensives 7-Tage Programm für schnelle Sprachpraxis in Deutschland. Fokus auf echtes Sprechen, nicht Theorie.",
-    note:"📍 Entwickelt für Menschen in Deutschland (Migranten, Studenten, Berufstätige)",
+    title:"Deutsch Speaking Bootcamp (7 Tage) – B1 Level",
+    desc:"Intensives 7-Tage Speaking Training für Menschen in Deutschland. Fokus: echtes Sprechen im Alltag & Job.",
+    note:"📍 Für B1 Level Lernende in Deutschland (Job – Studium – Integration)",
     detailsTitle:"Was du bekommst",
     d1:"7 Tage intensives Speaking Training",
-    d2:"2 Stunden täglich Live Practice",
+    d2:"2 Stunden tägliche Live Practice",
     d3:"Kleine Gruppen (max. 10 Personen)",
-    d4:"Fokus auf Alltag + Job Kommunikation",
+    d4:"Fokus auf echte Kommunikation im Alltag & Job",
 
     reviewTitle:"Erfahrungen von Teilnehmern",
-    r1:"„Nach 5 Tagen konnte ich endlich im Supermarkt auf Deutsch sprechen. Sehr praxisnah!“ – Teilnehmer (Berlin)",
-    r2:"„Besser als jede Sprachschule hier. Sehr direkt und verständlich.“ – Student (Hamburg)",
-    r3:"„Ich habe endlich Vertrauen beim Sprechen bekommen.“ – Teilnehmer (München)",
+    r1:"„Nach dem Bootcamp konnte ich endlich im Job auf Deutsch sprechen.“ – Teilnehmer",
+    r2:"„Sehr praxisnah, kein langweiliges Grammatiklernen.“ – Student",
+    r3:"„Ich habe viel mehr Selbstvertrauen beim Sprechen.“ – Teilnehmer",
 
     priceTitle:"Preis",
-    priceNote:"Limited Spots – schnell buchen",
+    priceNote:"⚡ Limited Spots – nur 10 Plätze verfügbar",
     cta:"Jetzt anmelden"
   },
 
   ar:{
-    title:"كورس محادثة ألماني مكثف (7 أيام) – A2 / B1",
-    desc:"برنامج سريع لتعلم المحادثة الألمانية في ألمانيا خلال 7 أيام مع تركيز على التحدث فقط.",
-    note:"📍 موجه للمقيمين في ألمانيا (طلاب – مهاجرين – موظفين)",
+    title:"بوت كامب محادثة ألماني (7 أيام) – مستوى B1",
+    desc:"برنامج مكثف لمدة 7 أيام لتقوية المحادثة الألمانية في الحياة والعمل داخل ألمانيا.",
+    note:"📍 موجه لمستوى B1 في ألمانيا (عمل – دراسة – اندماج)",
     detailsTitle:"ماذا ستحصل عليه",
     d1:"7 أيام تدريب مكثف على المحادثة",
-    d2:"ساعتين يوميًا تطبيق عملي",
+    d2:"ساعتين يوميًا تدريب مباشر",
     d3:"مجموعات صغيرة (10 طلاب فقط)",
-    d4:"تركيز على الحياة اليومية والعمل",
+    d4:"تركيز على التواصل الحقيقي في الحياة والعمل",
 
     reviewTitle:"آراء الطلاب",
-    r1:"„بعد 5 أيام بدأت أتكلم في السوبر ماركت بسهولة“ – طالب",
-    r2:"„أفضل من مراكز اللغة التقليدية“ – متعلم",
-    r3:"„أخيرًا بدأت أثق في نفسي أثناء الكلام“ – متعلم",
+    r1:"„بعد البوت كامب بدأت أتكلم في الشغل بثقة“",
+    r2:"„تجربة عملية جدًا ومفيدة“",
+    r3:"„فرق كبير في ثقتي أثناء الكلام“",
 
     priceTitle:"السعر",
-    priceNote:"عدد محدود – احجز الآن",
+    priceNote:"⚡ عدد محدود جدًا – 10 أماكن فقط",
     cta:"احجز الآن"
   }
 };
