@@ -1,236 +1,191 @@
 
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>احترف التحدث بالألمانية في 7 أيام</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>كورس المحادثة الألماني</title>
+  <style>
+    body {
+      font-family: 'Tahoma', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f7f9ff, #eef7ff);
+      color: #111;
+      direction: rtl;
+      text-align: right;
+    }
 
-<style>
-body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg,#0b1220,#1e293b,#0f172a);
-  color:#e5e7eb;
-}
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
 
-/* CONTAINER */
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:20px;
-}
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
 
-/* HERO */
-.hero{
-  text-align:center;
-  padding:45px 20px;
-}
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 15px;
+      color: #1a1a1a;
+    }
 
-.badge{
-  background: linear-gradient(90deg,#38bdf8,#22c55e);
-  color:#0f172a;
-  padding:6px 14px;
-  border-radius:20px;
-  font-weight:bold;
-  display:inline-block;
-  margin-bottom:15px;
-  font-size:13px;
-}
+    .hero p {
+      font-size: 22px;
+      color: #444;
+    }
 
-h1{
-  font-size:34px;
-  margin-bottom:10px;
-  color:#ffffff;
-}
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 16px 30px;
+      background: linear-gradient(135deg, #ff4d6d, #ff8a5b);
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-.highlight{
-  color:#38bdf8;
-}
+    .btn:hover {
+      transform: scale(1.05);
+    }
 
-p{
-  color:#cbd5e1;
-}
+    section {
+      margin-top: 70px;
+    }
 
-/* CARD */
-.card{
-  background: rgba(255,255,255,0.05);
-  padding:20px;
-  border-radius:16px;
-  margin:15px 0;
-  border:1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(8px);
-}
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 34px;
+      color: #222;
+    }
 
-h3{
-  color:#ffffff;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
 
-/* URGENCY */
-.urgency{
-  background: linear-gradient(90deg,#ef4444,#f97316);
-  padding:10px;
-  border-radius:12px;
-  text-align:center;
-  font-weight:bold;
-  margin-top:10px;
-  color:white;
-}
+    .card {
+      border: none;
+      padding: 25px;
+      border-radius: 18px;
+      background: white;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      font-size: 18px;
+    }
 
-/* BUTTON */
-.btn{
-  display:block;
-  text-align:center;
-  background: linear-gradient(90deg,#38bdf8,#22c55e);
-  color:#0b1220;
-  padding:15px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:bold;
-  margin-top:15px;
-  font-size:18px;
-}
+    .highlight {
+      background: linear-gradient(135deg, #111, #333);
+      color: white;
+      padding: 50px;
+      border-radius: 20px;
+      text-align: center;
+    }
 
-.btn:hover{
-  opacity:0.9;
-}
+    .small {
+      color: #ccc;
+      font-size: 15px;
+    }
 
-/* LIST */
-.list li{
-  margin:10px 0;
-  color:#cbd5e1;
-}
+    /* Video Section */
+    .video-section {
+      text-align: center;
+    }
 
-/* PRICE */
-.price{
-  font-size:36px;
-  font-weight:bold;
-  color:#22c55e;
-}
+    .video-box {
+      margin-top: 20px;
+      background: #000;
+      border-radius: 20px;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
 
-.old{
-  text-decoration:line-through;
-  color:#94a3b8;
-  margin-left:10px;
-  font-size:18px;
-}
-
-/* VIDEO */
-.video-box{
-  width:100%;
-  height:270px;
-  background:#000;
-  border-radius:15px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#94a3b8;
-  font-weight:bold;
-  margin-top:10px;
-  border:1px solid rgba(255,255,255,0.1);
-}
-
-.small{
-  font-size:13px;
-  opacity:0.8;
-  text-align:center;
-}
-</style>
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+  <div class="container">
 
-<!-- HERO -->
-<div class="hero">
+    <!-- Hero -->
+    <div class="hero">
+      <h1>كورس المحادثة الألماني المكثف 🚀</h1>
+      <p>7 أيام فقط لتتكلم ألماني بثقة بدون خوف أو ترجمة في دماغك</p>
+      <a href="#" class="btn">سجل الآن – الأماكن محدودة</a>
+    </div>
 
-<div class="badge">🔥 أقوى بوت كامب محادثة ألماني B1</div>
+    <!-- Video Section -->
+    <section class="video-section">
+      <h2>شاهد جزء من السيشن الحقيقي 🎥</h2>
+      <div class="video-box">
+        هنا مكان الفيديو (سيشن فعلي + شرح الدورة)
+      </div>
+    </section>
 
-<h1>
-عايز تتكلم ألماني بثقة في الشغل؟<br>
-<span class="highlight">في 7 أيام بس</span>
-</h1>
+    <!-- Problem -->
+    <section>
+      <h2>المشكلة الحقيقية</h2>
+      <div class="grid">
+        <div class="card">تفهم الألماني لكن لا تستطيع التحدث بسرعة</div>
+        <div class="card">تترجم في دماغك قبل الرد</div>
+        <div class="card">توتر في المواقف الحقيقية</div>
+        <div class="card">صعوبة في المقابلات والحياة اليومية</div>
+      </div>
+    </section>
 
-<p>
-برنامج مكثف يخليك تتحول من “فاهم الألماني” إلى “بتتكلم بثقة في ألمانيا”
-</p>
+    <!-- Solution -->
+    <section>
+      <h2>الحل</h2>
+      <div class="card">
+        <p><b>برنامج مكثف لمدة 7 أيام</b> يركز فقط على المحادثة العملية بدون جرامر زائد.</p>
+        <ul>
+          <li>ساعتين يوميًا أونلاين</li>
+          <li>جروب صغير (8 أشخاص فقط)</li>
+          <li>Native Speaker للتصحيح المباشر</li>
+          <li>محاكاة مقابلات ومواقف حقيقية</li>
+        </ul>
+      </div>
+    </section>
 
-<div class="urgency">
-⚡ العدد محدود: 10 أماكن فقط – الحجز بيقفل قريب
-</div>
+    <!-- Outcome -->
+    <section>
+      <h2>بعد 7 أيام</h2>
+      <div class="grid">
+        <div class="card">تتكلم أسرع بدون ترجمة</div>
+        <div class="card">ثقة أعلى في المحادثة</div>
+        <div class="card">تحسن واضح في الطلاقة</div>
+      </div>
+    </section>
 
-<a class="btn" href="https://wa.me/201159682355">
-احجز مكانك الآن
-</a>
+    <!-- Audience -->
+    <section>
+      <h2>مناسب لمن؟</h2>
+      <div class="card">
+        للأشخاص الذين يعيشون أو يستعدون للعيش في ألمانيا، ومستواهم A2 - B1 ويريدون تحسين التحدث.
+      </div>
+    </section>
 
-<p class="small">💬 الرد خلال وقت قصير</p>
+    <!-- CTA -->
+    <section>
+      <div class="highlight">
+        <h2>الأماكن محدودة جدًا (8 فقط)</h2>
+        <p class="small">سجل الآن قبل اكتمال العدد</p>
+        <a href="#" class="btn">احجز مكانك الآن</a>
+      </div>
+    </section>
 
-</div>
-
-<!-- VIDEO -->
-<div class="card" style="text-align:center;">
-
-<h3>🎥 تفاصيل الكورس + جزء من السيشن</h3>
-
-<div class="video-box">
-▶ ضع الفيديو هنا (يوتيوب / MP4)
-</div>
-
-</div>
-
-<!-- PROBLEM -->
-<div class="card">
-<h3>المشكلة:</h3>
-<ul class="list">
-<li>فاهم الألماني لكن مش قادر تتكلم بثقة</li>
-<li>توتر في المقابلات أو الشغل</li>
-<li>قلة ممارسة حقيقية للمحادثة</li>
-</ul>
-</div>
-
-<!-- SOLUTION -->
-<div class="card">
-<h3>الحل في 7 أيام:</h3>
-<ul class="list">
-<li>ساعتين تدريب محادثة يوميًا</li>
-<li>مواقف حقيقية من الحياة والشغل في ألمانيا</li>
-<li>تدريب مقابلات عمل بالألماني</li>
-<li>تصحيح مباشر + Native speaker</li>
-</ul>
-</div>
-
-<!-- PRICE -->
-<div class="card" style="text-align:center;">
-
-<h3>السعر</h3>
-
-<div>
-<span class="price">150€</span>
-<span class="old">200€</span>
-</div>
-
-<p>🔥 عرض أول دفعة – أماكن محدودة جدًا</p>
-
-<a class="btn" href="https://wa.me/201159682355">
-احجز الآن
-</a>
-
-</div>
-
-<!-- FINAL CTA -->
-<div class="card" style="text-align:center;">
-
-<h2>🚀 ابدأ تتكلم ألماني بثقة حقيقية</h2>
-<p>مش محتاج تحفظ أكتر… محتاج تتكلم</p>
-
-<a class="btn" href="https://wa.me/201159682355">
-ابدأ الآن
-</a>
-
-</div>
-
-</div>
+  </div>
 
 </body>
 </html>
