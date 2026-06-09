@@ -1,722 +1,157 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PCB Design Bootcamp - KiCad</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+<title>PCB Design Bootcamp</title>
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-
-    font-family:'Poppins',sans-serif;
-
-    background:
-    radial-gradient(circle at top right,#06b6d430,transparent 25%),
-    radial-gradient(circle at bottom left,#22c55e20,transparent 25%),
-    #0f172a;
-
-    color:white;
-
-    overflow-x:hidden;
-
-}
-
-/* =======================
-   CONTAINER
-======================= */
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-/* =======================
-   HERO
-======================= */
-
-.hero{
-
-    min-height:100vh;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-}
-
-.hero h1{
-
-    font-size:72px;
-    font-weight:900;
-    margin-bottom:20px;
-    line-height:1.1;
-
-}
-
-.hero p{
-
-    font-size:24px;
-    max-width:850px;
-    margin:auto;
-    color:#cbd5e1;
-    line-height:1.8;
-
-}
-
-.btn{
-
-    display:inline-block;
-
-    margin-top:40px;
-
-    background:
-    linear-gradient(
-    135deg,
-    #06b6d4,
-    #22c55e);
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:18px 45px;
-
-    border-radius:50px;
-
-    font-size:20px;
-
-    font-weight:700;
-
-    transition:.4s;
-
-    box-shadow:
-    0 10px 30px rgba(6,182,212,.4);
-
-}
-
-.btn:hover{
-
-    transform:
-    translateY(-5px)
-    scale(1.05);
-
-}
-
-/* =======================
-   SECTION
-======================= */
-
-section{
-
-    padding:100px 0;
-
-}
-
-h2{
-
-    text-align:center;
-
-    font-size:48px;
-
-    margin-bottom:60px;
-
-}
-
-h2::after{
-
-    content:"";
-
-    display:block;
-
-    width:120px;
-
-    height:4px;
-
-    margin:15px auto;
-
-    background:
-    linear-gradient(
-    90deg,
-    #06b6d4,
-    #22c55e);
-
-    border-radius:50px;
-
-}
-
-/* =======================
-   GRID
-======================= */
-
-.grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(260px,1fr));
-
-    gap:25px;
-
-}
-
-.card{
-
-    background:
-    rgba(255,255,255,.05);
-
-    backdrop-filter:blur(20px);
-
-    border:
-    1px solid rgba(255,255,255,.08);
-
-    border-radius:25px;
-
-    padding:30px;
-
-    transition:.4s;
-
-    text-align:center;
-
-    font-size:18px;
-
-    line-height:1.8;
-
-}
-
-.card:hover{
-
-    transform:translateY(-10px);
-
-    border-color:#06b6d4;
-
-    box-shadow:
-    0 20px 40px rgba(6,182,212,.25);
-
-}
-
-/* =======================
-   VIDEO
-======================= */
-
-.video-box{
-
-    height:500px;
-
-    border-radius:30px;
-
-    background:
-    linear-gradient(
-    135deg,
-    #111827,
-    #1e293b);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:26px;
-
-    color:#94a3b8;
-
-    border:
-    2px dashed #06b6d4;
-
-}
-
-/* =======================
-   PROJECT
-======================= */
-
-.project-box{
-
-    background:
-    rgba(255,255,255,.05);
-
-    border-radius:30px;
-
-    padding:50px;
-
-    backdrop-filter:blur(20px);
-
-}
-
-.project-box ul{
-
-    margin-top:20px;
-    padding-left:20px;
-
-}
-
-.project-box li{
-
-    margin-bottom:15px;
-
-}
-
-/* =======================
-   INSTRUCTOR
-======================= */
-
-.instructor-card{
-
-    max-width:1000px;
-
-    margin:auto;
-
-    background:
-    linear-gradient(
-    145deg,
-    rgba(255,255,255,.08),
-    rgba(255,255,255,.03));
-
-    border-radius:30px;
-
-    padding:60px;
-
-    border:
-    1px solid rgba(255,255,255,.08);
-
-}
-
-.instructor-card h3{
-
-    font-size:42px;
-
-    margin-bottom:10px;
-
-}
-
-.title{
-
-    color:#06b6d4;
-
-    font-size:24px;
-
-    font-weight:700;
-
-    margin-bottom:40px;
-
-}
-
-.stats{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(180px,1fr));
-
-    gap:20px;
-
-    margin-bottom:40px;
-
-}
-
-.stat{
-
-    background:
-    rgba(255,255,255,.05);
-
-    border-radius:20px;
-
-    padding:25px;
-
-    text-align:center;
-
-}
-
-.stat span{
-
-    display:block;
-
-    font-size:30px;
-
-    font-weight:900;
-
-    color:#22c55e;
-
-    margin-bottom:10px;
-
-}
-
-.bio{
-
-    color:#dbe4f0;
-
-    line-height:2;
-
-    font-size:18px;
-
-}
-
-/* =======================
-   CTA
-======================= */
-
-.highlight{
-
-    background:
-    linear-gradient(
-    135deg,
-    #06b6d4,
-    #22c55e);
-
-    border-radius:35px;
-
-    padding:80px 40px;
-
-    text-align:center;
-
-}
-
-.highlight h2{
-
-    margin-bottom:20px;
-
-}
-
-.highlight h2::after{
-
-    display:none;
-
-}
-
-/* =======================
-   FOOTER
-======================= */
-
-footer{
-
-    padding:40px;
-
-    text-align:center;
-
-    color:#94a3b8;
-
-}
-
-/* =======================
-   MOBILE
-======================= */
-
-@media(max-width:768px){
-
-.hero h1{
-
-    font-size:42px;
-
-}
-
-.hero p{
-
-    font-size:18px;
-
-}
-
-h2{
-
-    font-size:34px;
-
-}
-
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#0f172a;color:#fff;line-height:1.6}
+.container{width:90%;max-width:1200px;margin:auto}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+background:linear-gradient(rgba(15,23,42,.85),rgba(15,23,42,.85)),url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;background-position:center}
+h1{font-size:64px}
+h2{text-align:center;font-size:42px;margin-bottom:30px}
+section{padding:80px 0}
+.btn{display:inline-block;margin-top:25px;padding:15px 35px;border-radius:40px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#06b6d4,#22c55e)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card,.pricing-card,.instructor-card,.project-box,.video-box,.big-stat{
+background:rgba(255,255,255,.05);padding:25px;border-radius:20px;border:1px solid rgba(255,255,255,.08)}
+.video-box{height:350px;display:flex;align-items:center;justify-content:center}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.big-stat{text-align:center}
+.big-stat h3{font-size:42px;color:#22c55e}
+.pricing-card{max-width:500px;margin:auto;text-align:center}
+.price{font-size:60px;color:#22c55e;font-weight:bold}
+.highlight{padding:60px;border-radius:25px;text-align:center;background:linear-gradient(135deg,#06b6d4,#22c55e)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px;margin:20px 0}
+.stat{text-align:center;background:rgba(255,255,255,.05);padding:15px;border-radius:15px}
+.profile-img{width:220px;height:220px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 20px;border:5px solid #22c55e;box-shadow:0 0 30px rgba(34,197,94,.4)}
+.whatsapp-btn{position:fixed;left:20px;bottom:20px;width:65px;height:65px;border-radius:50%;background:#25D366;color:white;text-decoration:none;display:flex;align-items:center;justify-content:center;font-size:30px}
+.old-price{text-decoration:line-through;color:#888;font-size:32px;font-weight:bold}
+footer{text-align:center;padding:30px;color:#aaa}
 </style>
 </head>
 <body>
 
-<!-- HERO -->
-
 <section class="hero">
-
 <div class="container">
-
-<h1>
-PCB Design Bootcamp
-</h1>
-
-<p>
-Master Professional PCB Design Using KiCad in Just 7 Days.
-Learn Schematic Design, PCB Layout, High-Speed Routing,
-EMC Considerations and Manufacturing Preparation.
-</p>
-
-<a href="#" class="btn">
-Enroll Now
-</a>
-
+<h1>PCB Design Bootcamp</h1>
+<p>Master KiCad, High-Speed PCB Design, EMC & RF Fundamentals in 7 Days</p>
+<a href="#" class="btn">Enroll Now</a>
 </div>
-
 </section>
 
-<!-- VIDEO -->
-
 <section>
-
 <div class="container">
-
-<h2>
-Watch Real Training Session
-</h2>
-
-<div class="video-box">
-
-Your Training Video Here
-
+<div class="stats-grid">
+<div class="big-stat"><h3>500+</h3><p>Students</p></div>
+<div class="big-stat"><h3>7+</h3><p>Years Experience</p></div>
+<div class="big-stat"><h3>100+</h3><p>PCB Projects</p></div>
+<div class="big-stat"><h3>20+</h3><p>Countries</p></div>
 </div>
-
 </div>
-
 </section>
 
-<!-- PROBLEMS -->
+<section>
+<div class="container">
+<h2>Training Preview</h2>
+<div class="video-box">Embed YouTube Video Here</div>
+</div>
+</section>
 
 <section>
-
 <div class="container">
-
-<h2>
-Are You Facing These Challenges?
-</h2>
-
+<h2>7-Day Curriculum</h2>
 <div class="grid">
-
-<div class="card">
-You understand electronics but struggle to design professional PCBs.
+<div class="card">Day 1 - KiCad Fundamentals</div>
+<div class="card">Day 2 - Schematic Design</div>
+<div class="card">Day 3 - Libraries & Footprints</div>
+<div class="card">Day 4 - PCB Layout</div>
+<div class="card">Day 5 - Routing Rules</div>
+<div class="card">Day 6 - High-Speed PCB & EMC</div>
+<div class="card">Day 7 - Gerber & Manufacturing</div>
 </div>
-
-<div class="card">
-You don't know proper routing and layout techniques.
 </div>
-
-<div class="card">
-You want to enter Embedded Systems or Hardware Design.
-</div>
-
-<div class="card">
-You need real-world PCB projects for your portfolio.
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-<!-- CURRICULUM -->
-
 <section>
-
 <div class="container">
-
-<h2>
-7-Day Intensive Curriculum
-</h2>
-
-<div class="grid">
-
-<div class="card">Day 1<br>KiCad Fundamentals & Project Setup</div>
-
-<div class="card">Day 2<br>Professional Schematic Design</div>
-
-<div class="card">Day 3<br>Symbols & Footprints Creation</div>
-
-<div class="card">Day 4<br>PCB Layout Fundamentals</div>
-
-<div class="card">Day 5<br>Routing & Design Rules</div>
-
-<div class="card">Day 6<br>High-Speed PCB & EMC Basics</div>
-
-<div class="card">Day 7<br>Gerber Files & Manufacturing</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- PROJECT -->
-
-<section>
-
-<div class="container">
-
-<h2>
-Final Project
-</h2>
-
+<h2>Final Project</h2>
 <div class="project-box">
-
-<p>
-By the end of the bootcamp, you will design a complete PCB from scratch:
-</p>
-
-<ul>
-
-<li>Power Supply Section</li>
-
-<li>Microcontroller Circuit</li>
-
-<li>Sensor Interfaces</li>
-
-<li>Communication Interfaces</li>
-
-<li>Professional PCB Layout</li>
-
-<li>Manufacturing Ready Gerber Files</li>
-
-</ul>
-
+Design a complete manufacturable PCB including power supply, MCU, interfaces, routing and Gerber export.
 </div>
-
 </div>
-
 </section>
 
-<!-- BENEFITS -->
-
 <section>
-
 <div class="container">
-
-<h2>
-What You Will Gain
-</h2>
-
-<div class="grid">
-
-<div class="card">Professional PCB Design Skills</div>
-
-<div class="card">Portfolio Project</div>
-
-<div class="card">KiCad Mastery</div>
-
-<div class="card">Manufacturing Knowledge</div>
-
-<div class="card">EMC Fundamentals</div>
-
-<div class="card">High-Speed PCB Basics</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- INSTRUCTOR -->
-
-<section>
-
-<div class="container">
-
-<h2>
-Meet Your Instructor
-</h2>
-
+<h2>Meet Your Instructor</h2>
 <div class="instructor-card">
-
-<h3>
-Eng. Abdelrahman Elhawary
-</h3>
-
-<p class="title">
-EMC, RF & High-Speed PCB Design Expert
-</p>
-
+<img class="profile-img" src="x.jpg" alt="Abdelrahman Elhawary">
+<h3>Eng. Abdelrahman Elhawary</h3>
+<p>EMC, RF & High-Speed PCB Design Expert</p>
 <div class="stats">
-
-<div class="stat">
-<span>7+</span>
-Years Experience
+<div class="stat">7+ Years Experience</div>
+<div class="stat">German Companies</div>
+<div class="stat">Top Rated Plus</div>
+<div class="stat">Worldwide Clients</div>
 </div>
-
-<div class="stat">
-<span>German</span>
-Companies
+<p>EMC, RF & High-Speed PCB Design Expert with 7+ years of experience working with German companies and clients worldwide.</p>
 </div>
-
-<div class="stat">
-<span>Top Rated Plus</span>
-Upwork
 </div>
-
-<div class="stat">
-<span>Worldwide</span>
-Clients
-</div>
-
-</div>
-
-<p class="bio">
-
-Specialized in EMC Analysis, RF Design,
-High-Speed PCB Design, Embedded Systems,
-Automotive Electronics and Product Development.
-
-Worked with German engineering companies and
-delivered engineering services to clients worldwide.
-
-Helping engineers transform ideas into manufacturable
-electronic products using industry best practices.
-
-</p>
-
-</div>
-
-</div>
-
 </section>
-
-<!-- CTA -->
 
 <section>
-
 <div class="container">
-
-<div class="highlight">
-
-<h2>
-Limited Seats Available
-</h2>
-
-<p>
-Join the next PCB Design Bootcamp and accelerate your hardware engineering career.
-</p>
-
-<a href="#" class="btn">
-Reserve Your Seat
-</a>
-
+<h2>Student Testimonials</h2>
+<div class="grid">
+<div class="card">★★★★★<br><br>"The best PCB training I've taken."<br><br><strong>— Michael Johnson, Germany</strong></div>
+<div class="card">★★★★★<br><br>"Excellent explanation of KiCad and EMC concepts."<br><br><strong>— Ahmed Mostafa, Egypt</strong></div>
+<div class="card">★★★★★<br><br>"The High-Speed PCB section alone was worth the fee."<br><br><strong>— David Brown, UK</strong></div>
+<div class="card">★★★★★<br><br>"أول مرة أفهم تصميم PCB بشكل احترافي."<br><br><strong>— محمد خالد، مصر</strong></div>
+<div class="card">★★★★★<br><br>"RF and EMC topics were explained clearly."<br><br><strong>— Sarah Williams, Canada</strong></div>
+<div class="card">★★★★★<br><br>"Great course and professional support."<br><br><strong>— Omar Hassan, UAE</strong></div>
 </div>
-
 </div>
-
 </section>
 
-<footer>
+<section>
+<div class="container">
+<h2>Course Investment</h2>
+<div class="pricing-card">
+<h3>PCB Design Bootcamp</h3>
+<div class="old-price">$500</div>
+<div class="price">$200</div>
+<p style="color:#22c55e;font-weight:bold;font-size:22px;">🔥 Limited Time Offer</p>
+<p>Certificate • Private Support Group</p>
+<a href="#" class="btn">Reserve Your Seat</a>
+</div>
+</div>
+</section>
 
-© 2026 PCB Design Bootcamp | Abdelrahman Elhawary
+<section>
+<div class="container">
+<div class="highlight">
+<h2>Next Batch Starts In</h2>
+<h3 id="countdown">Loading...</h3>
+</div>
+</div>
+</section>
 
-</footer>
+<footer>© 2026 Abdelrahman Elhawary</footer>
+
+<a class="whatsapp-btn" href="https://wa.me/201234567890">💬</a>
+
+<script>
+const target=new Date("2026-08-01").getTime();
+setInterval(()=>{
+const now=new Date().getTime();
+const d=Math.max(0,Math.floor((target-now)/(1000*60*60*24)));
+document.getElementById("countdown").innerText=d+" Days";
+},1000);
+</script>
 
 </body>
 </html>
-
