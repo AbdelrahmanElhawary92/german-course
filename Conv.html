@@ -1,125 +1,1146 @@
-
+```html
 <!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<html dir="rtl" lang="ar"><head><meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>German Conversation Course</title>
-<style>
-body{font-family:Tahoma,Arial;background:#f5f7fb;margin:0;color:#222}
-.container{max-width:1100px;margin:auto;padding:24px}
-.hero{background:linear-gradient(135deg,#111,#333);color:#fff;padding:70px 30px;border-radius:18px;text-align:center}
-.btn{display:inline-block;background:#ff6b4a;color:#fff;padding:15px 28px;border-radius:10px;text-decoration:none;font-weight:bold}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-.card{background:#fff;padding:20px;border-radius:14px;box-shadow:0 8px 18px rgba(0,0,0,.08)}
-section{margin:45px 0}
-.profile{display:flex;gap:25px;align-items:center;flex-wrap:wrap}
-img{width:150px;height:150px;border-radius:50%;object-fit:cover}
-.faq details{background:#fff;padding:14px;border-radius:10px;margin:10px 0}
-.sticky{position:fixed;bottom:18px;left:18px;background:#25D366;color:#fff;padding:14px 20px;border-radius:999px;text-decoration:none;font-weight:bold}
-</style></head>
+  <title>B2 Deutsch für Arbeit & Deutschland | Job • Ausbildung • Remote</title>
+
+  <meta
+    name="description"
+    content="Intensiver B2 Deutschkurs für Arbeit, Deutschland, Ausbildung, Call Center, Customer Service, Technical Support und Remote Jobs."
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f8fa;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: white;
+      padding: 80px 0 70px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #facc15;
+    }
+
+    .hero h2 {
+      font-size: clamp(20px, 3vw, 30px);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: 0 auto 30px;
+      font-size: 19px;
+      color: #d1d5db;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #facc15;
+      color: #111827;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* SECTION */
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .section-title p {
+      max-width: 720px;
+      margin: auto;
+      color: #6b7280;
+      font-size: 18px;
+    }
+
+    /* TARGET */
+    .target-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .target-card {
+      background: white;
+      padding: 28px 22px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+
+    .target-card .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .target-card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .target-card p {
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    /* FEATURES */
+    .features {
+      background: white;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .feature {
+      padding: 28px;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      background: #fafafa;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .feature p {
+      color: #6b7280;
+    }
+
+    /* CURRICULUM */
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .curriculum-card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .curriculum-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .curriculum-card ul {
+      padding-left: 20px;
+      color: #6b7280;
+    }
+
+    .curriculum-card li {
+      margin-bottom: 7px;
+    }
+
+    /* JOB SECTION */
+    .jobs {
+      background: #111827;
+      color: white;
+    }
+
+    .jobs .section-title h2 {
+      color: white;
+    }
+
+    .jobs .section-title p {
+      color: #d1d5db;
+    }
+
+    .job-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .job-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 25px;
+      border-radius: 15px;
+    }
+
+    .job-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .job-card p {
+      color: #d1d5db;
+    }
+
+    /* GERMANY */
+    .germany-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .germany-card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    }
+
+    .germany-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .germany-card p {
+      color: #6b7280;
+    }
+
+    /* FORMAT */
+    .format-box {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.07);
+    }
+
+    .format-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .format-list li {
+      background: #f3f4f6;
+      padding: 16px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    /* RESULTS */
+    .results {
+      background: white;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .result-card {
+      padding: 28px;
+      border-radius: 15px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .result-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .result-card p {
+      color: #6b7280;
+    }
+
+    /* PRICE */
+    .price-box {
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+      background: white;
+      border-radius: 20px;
+      padding: 45px 30px;
+      box-shadow: 0 12px 45px rgba(0,0,0,0.08);
+    }
+
+    .price-label {
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 52px;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .price-note {
+      color: #6b7280;
+      margin-bottom: 25px;
+    }
+
+    .limited {
+      display: inline-block;
+      margin-top: 15px;
+      background: #fef3c7;
+      color: #92400e;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* FAQ */
+    .faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    details {
+      background: white;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      padding: 18px 20px;
+      border: 1px solid #e5e7eb;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    details p {
+      margin-top: 12px;
+      color: #6b7280;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, #111827, #374151);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+      color: #d1d5db;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0b1120;
+      color: #9ca3af;
+      text-align: center;
+      padding: 30px 0;
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .target-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .curriculum-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      section {
+        padding: 55px 0;
+      }
+
+      .hero {
+        padding: 60px 0 50px;
+      }
+
+      .target-grid,
+      .feature-grid,
+      .curriculum-grid,
+      .job-grid,
+      .germany-grid,
+      .results-grid,
+      .format-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+
+      .format-box {
+        padding: 25px 20px;
+      }
+
+      .price {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+
 <body>
-<div class="container">
-<div class="hero">
-<h1>🚀 كورس المحادثة الألماني المكثف</h1>
-<p>تحدث بالألمانية بثقة في العمل والحياة اليومية مع تدريب عملي ومحادثات حقيقية.</p>
-<p><b>⏳ العرض ينتهي قريبًا | 👥 المتبقي: 3 أماكن فقط</b></p>
-<a class="btn" href="https://wa.me/201000000000">احجز عبر واتساب</a>
-</div><section><h2>🎥 شاهد جلسة حقيقية</h2><div class="card" style="text-align:center"><iframe allowfullscreen="" height="450" src="https://www.youtube.com/embed/VIDEO_ID" style="border:none;border-radius:12px;" width="100%"></iframe><p>استبدل VIDEO_ID بمعرّف فيديو YouTube الخاص بك، أو استخدم فيديو Vimeo.</p></div></section>
-<section>
-<h2>لماذا هذا الكورس مختلف؟</h2>
-<div class="grid">
-<div class="card">🗣️ محادثات واقعية بدل الحفظ.</div>
-<div class="card">🇩🇪 جلسات مع Native German Speaker.</div>
-<div class="card">🤖 AI يحلل أداءك ويعطيك ملاحظات شخصية.</div>
-<div class="card">📊 تقرير بعد كل جلسة يوضح نقاط القوة والضعف.</div>
-</div>
-</section>
-<section>
-<h2>ماذا ستحصل؟</h2>
-<div class="grid">
-<div class="card">ساعتان يوميًا لمدة 7 أيام.</div>
-<div class="card">مجموعة صغيرة (8 طلاب).</div>
-<div class="card">تدريب على مقابلات العمل والحياة اليومية.</div>
-<div class="card">خطة تطوير شخصية بعد انتهاء الكورس.</div>
-</div>
-</section>
-<section>
-<div class="profile">
-<img alt="Abdelrahman" src="x.jpg"/>
-<div>
-<h2>Abdelrahman Elhawary</h2>
-<p><b> German Speaker Engineer | German Communication Coach | Real-Life Speaking Training</b></p>
-<p>🇩🇪 مهندس يعمل في بيئة ألمانية يوميًا، متخصص في تدريب المحادثة العملية للحياة والعمل في ألمانيا.</p>
 
-<ul>
-<li>🤖 AI Coaching</li>
-<li>🗣️ Native German Speaker</li>
-<li>📈 متابعة الأداء والتطوير المستمر</li>
-</ul>
-</div>
-</div>
-</section>
-<section>
-<h2>آراء الطلاب</h2>
-<div class="grid">
-<!-- <div class="card">★★★★★ "أول مرة أتكلم بثقة."</div> -->
-<!-- <div class="card">★★★★★ "أول مرة أتكلم بثقة."</div> -->
-<div class="card">★★★★★ "مختلف تمامًا عن أي كورس."</div>
-<div class="card">★★★★★ "المحادثة أصبحت أسهل."</div>
-</div>
-</section>
-<section class="faq">
-<h2>الأسئلة الشائعة</h2>
-<details><summary>هل يناسب مستوى B1؟</summary><p>نعم، ومناسب أيضًا لمن يريد تحسين المحادثة العملية.</p></details>
-<details><summary>هل يوجد واجبات؟</summary><p>نعم، تمارين عملية قصيرة بعد كل جلسة.</p></details>
-<details>
-    <summary>كيف يتم الدفع؟</summary>
-    <p>
-        يمكنك إتمام الدفع مباشرة عبر الموقع باستخدام بطاقات
-        <strong>Visa</strong> و <strong>Mastercard</strong>،
-        أو من خلال المحافظ الإلكترونية،
-        كما نوفر إمكانية التحويل البنكي لراحتك.
-    </p>
-</details>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
 
-<details>
-    <summary>هل أحصل على تأكيد بعد الدفع؟</summary>
-    <p>
-        نعم، بمجرد إتمام عملية الدفع ستصلك رسالة تأكيد تحتوي على
-        تفاصيل التسجيل وخطوات الانضمام إلى الكورس.
-    </p>
-</details>
+      <div class="badge">
+        🇩🇪 Intensiver B2 Deutschkurs
+      </div>
 
-<details>
-    <summary>هل يمكن استرداد الرسوم؟</summary>
-    <p>
-        يمكنك مراجعة سياسة الاسترداد الموضحة أثناء التسجيل.
-        إذا كانت لديك أي استفسارات، يسعدنا مساعدتك قبل إتمام عملية الدفع.
-    </p>
-</details>
+      <h1>
+        B2 Deutsch für <span>Arbeit & Deutschland</span>
+      </h1>
 
-<details>
-    <summary>هل الجلسات مباشرة؟</summary>
-    <p>
-        نعم، جميع جلسات المحادثة تُعقد مباشرة عبر الإنترنت،
-        مع تفاعل عملي وتصحيح فوري.
-    </p>
-</details>
+      <h2>
+        Job • Ausbildung • Call Center • Technical Support • Remote
+      </h2>
 
-<details>
-    <summary>هل سأحصل على تسجيلات؟</summary>
-    <p>
-        إذا كانت التسجيلات متاحة لهذه الدفعة،
-        فسيتم إبلاغك بذلك قبل بدء الكورس.
-    </p>
-</details>
+      <p>
+        Entwickle dein Deutsch auf B2-Niveau und lerne,
+        Deutsch praktisch und selbstbewusst in beruflichen Situationen,
+        in Deutschland und im internationalen Arbeitsumfeld zu verwenden.
+      </p>
 
-</section><section class="card" style="text-align:center">
-<h2>السعر</h2>
-<p><del>150€</del></p>
-<p style="font-size:36px"><b>70€</b></p>
-<a class="btn" href="https://wa.me/201000000000">احجز الآن</a>
-</section>
-</div>
-<a class="sticky" href="https://wa.me/201000000000">💬 واتساب</a>
-</body></html>
+      <div class="hero-buttons">
+        <a href="#anmeldung" class="btn btn-primary">
+          Jetzt anmelden
+        </a>
+
+        <a href="#kurs" class="btn btn-secondary">
+          Kurs ansehen
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- TARGET GROUP -->
+  <section id="kurs">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Für wen ist der Kurs?</h2>
+
+        <p>
+          Dieser Kurs richtet sich an Menschen, die Deutsch nicht nur lernen,
+          sondern es für Arbeit, Karriere und das Leben in Deutschland praktisch
+          einsetzen möchten.
+        </p>
+      </div>
+
+      <div class="target-grid">
+
+        <div class="target-card">
+          <div class="icon">🇩🇪</div>
+          <h3>Deutschland</h3>
+          <p>
+            Für Menschen, die nach Deutschland ziehen,
+            arbeiten oder sich auf das Leben dort vorbereiten möchten.
+          </p>
+        </div>
+
+        <div class="target-card">
+          <div class="icon">🎓</div>
+          <h3>Ausbildung</h3>
+          <p>
+            Vorbereitung auf typische sprachliche Situationen
+            rund um Bewerbung, Vorstellungsgespräch und Ausbildung.
+          </p>
+        </div>
+
+        <div class="target-card">
+          <div class="icon">☎️</div>
+          <h3>Call Center & Support</h3>
+          <p>
+            Für Bewerber auf deutschsprachige Customer-Service,
+            Call-Center und Technical-Support-Stellen.
+          </p>
+        </div>
+
+        <div class="target-card">
+          <div class="icon">🌍</div>
+          <h3>Remote Jobs</h3>
+          <p>
+            Für Menschen, die bei internationalen Unternehmen
+            oder remote mit deutschsprachigen Kunden arbeiten möchten.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WHY THIS COURSE -->
+  <section class="features">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Mehr als ein normaler Deutschkurs</h2>
+
+        <p>
+          Du lernst nicht nur Grammatik und Vokabeln.
+          Du trainierst Situationen, die du im echten Leben und im Beruf brauchst.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+
+        <div class="feature">
+          <h3>🗣️ Mehr Sprechen</h3>
+          <p>
+            Regelmäßige aktive Kommunikation, Rollenspiele,
+            Diskussionen und realistische Gesprächssituationen.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3>💼 Deutsch für den Beruf</h3>
+          <p>
+            Beruflicher Wortschatz, Kundenkommunikation,
+            Telefonate, E-Mails und typische Situationen am Arbeitsplatz.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3>🎯 Bewerbung & Vorstellungsgespräch</h3>
+          <p>
+            Training für Selbstvorstellung, typische Fragen,
+            Antworten und berufliche Kommunikation.
+          </p>
+        </div>
+
+        <div class="feature">
+          <h3>🇩🇪 Deutschland im Alltag</h3>
+          <p>
+            Sprache für Wohnung, Behörden, Termine,
+            Einkaufen, Telefonieren und alltägliche Situationen.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CURRICULUM -->
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Was lernst du?</h2>
+
+        <p>
+          Ein intensives B2-Training mit Fokus auf Sprache,
+          Kommunikation und berufliche Anwendung.
+        </p>
+      </div>
+
+      <div class="curriculum-grid">
+
+        <div class="curriculum-card">
+          <h3>🗣️ Sprechen</h3>
+          <ul>
+            <li>Diskussionen</li>
+            <li>Meinungen ausdrücken</li>
+            <li>Argumentieren</li>
+            <li>Rollenspiele</li>
+            <li>Berufliche Gespräche</li>
+          </ul>
+        </div>
+
+        <div class="curriculum-card">
+          <h3>🎧 Hören</h3>
+          <ul>
+            <li>Alltagssituationen</li>
+            <li>Berufliche Gespräche</li>
+            <li>Telefonate</li>
+            <li>Interviews</li>
+            <li>Authentische Inhalte</li>
+          </ul>
+        </div>
+
+        <div class="curriculum-card">
+          <h3>📖 Lesen</h3>
+          <ul>
+            <li>E-Mails</li>
+            <li>Stellenanzeigen</li>
+            <li>Arbeitsanweisungen</li>
+            <li>Nachrichten</li>
+            <li>Informationstexte</li>
+          </ul>
+        </div>
+
+        <div class="curriculum-card">
+          <h3>✍️ Schreiben</h3>
+          <ul>
+            <li>Professionelle E-Mails</li>
+            <li>Anfragen</li>
+            <li>Beschwerden</li>
+            <li>Formelle Nachrichten</li>
+            <li>Berufliche Kommunikation</li>
+          </ul>
+        </div>
+
+        <div class="curriculum-card">
+          <h3>📚 Grammatik</h3>
+          <ul>
+            <li>B2-Grammatik</li>
+            <li>Satzstrukturen</li>
+            <li>Konjunktionen</li>
+            <li>Passiv</li>
+            <li>Indirekte Rede</li>
+          </ul>
+        </div>
+
+        <div class="curriculum-card">
+          <h3>🧠 Wortschatz</h3>
+          <ul>
+            <li>Beruflicher Wortschatz</li>
+            <li>Alltagssprache</li>
+            <li>Redemittel</li>
+            <li>Telefonkommunikation</li>
+            <li>Deutschland-Vokabular</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- JOB APPLICATION -->
+  <section class="jobs">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Deutsch für echte berufliche Situationen</h2>
+
+        <p>
+          Wir trainieren Situationen, die dir bei Bewerbungen
+          und im späteren Berufsalltag begegnen können.
+        </p>
+      </div>
+
+      <div class="job-grid">
+
+        <div class="job-card">
+          <h3>☎️ Customer Service / Call Center</h3>
+          <p>
+            Kunden begrüßen, Fragen beantworten, Probleme aufnehmen,
+            Informationen erklären und professionell reagieren.
+          </p>
+        </div>
+
+        <div class="job-card">
+          <h3>💻 Technical Support</h3>
+          <p>
+            Technische Probleme beschreiben, Rückfragen stellen,
+            Lösungen erklären und mit Kunden professionell kommunizieren.
+          </p>
+        </div>
+
+        <div class="job-card">
+          <h3>🌍 Remote Work</h3>
+          <p>
+            Kommunikation mit Kunden und Kollegen über Telefon,
+            Chat, E-Mail und Online-Meetings.
+          </p>
+        </div>
+
+        <div class="job-card">
+          <h3>🎓 Ausbildung</h3>
+          <p>
+            Vorstellungsgespräche, Selbstpräsentation,
+            Fragen beantworten und berufliche Situationen verstehen.
+          </p>
+        </div>
+
+        <div class="job-card">
+          <h3>🇩🇪 Arbeiten in Deutschland</h3>
+          <p>
+            Kommunikation am Arbeitsplatz, mit Kollegen,
+            Vorgesetzten, Kunden und verschiedenen Institutionen.
+          </p>
+        </div>
+
+        <div class="job-card">
+          <h3>📧 Professionelle Kommunikation</h3>
+          <p>
+            E-Mails schreiben, Termine vereinbaren,
+            telefonieren und Informationen klar vermitteln.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- GERMANY PRACTICAL -->
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Deutsch für das Leben in Deutschland</h2>
+
+        <p>
+          Neben dem Beruf trainieren wir Situationen,
+          die im Alltag in Deutschland wichtig sind.
+        </p>
+      </div>
+
+      <div class="germany-grid">
+
+        <div class="germany-card">
+          <h3>🏠 Wohnung</h3>
+          <p>
+            Wohnungssuche, Besichtigungen, Vermieter,
+            Nachfragen und wichtige Begriffe.
+          </p>
+        </div>
+
+        <div class="germany-card">
+          <h3>🏛️ Behörden</h3>
+          <p>
+            Termine, Formulare, Fragen stellen
+            und wichtige Kommunikation verstehen.
+          </p>
+        </div>
+
+        <div class="germany-card">
+          <h3>☎️ Telefonieren</h3>
+          <p>
+            Gespräche beginnen, Informationen erfragen,
+            Missverständnisse klären und Termine vereinbaren.
+          </p>
+        </div>
+
+        <div class="germany-card">
+          <h3>🛒 Alltag</h3>
+          <p>
+            Einkaufen, Dienstleistungen,
+            Gespräche mit Menschen und typische Alltagssituationen.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FORMAT -->
+  <section class="features">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Das Kursformat</h2>
+      </div>
+
+      <div class="format-box">
+
+        <ul class="format-list">
+
+          <li>📅 4 Wochen</li>
+
+          <li>⏱️ 2 Stunden pro Tag</li>
+
+          <li>📆 5 Tage pro Woche</li>
+
+          <li>🔥 ca. 40 Live-Stunden</li>
+
+          <li>👥 Kleine Gruppe</li>
+
+          <li>💻 Live Online</li>
+
+          <li>🗣️ Starker Fokus auf Sprechen</li>
+
+          <li>💼 Beruflicher Fokus</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- RESULTS -->
+  <section class="results">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Was kannst du nach dem Kurs?</h2>
+
+        <p>
+          Ziel ist, dass du dein B2-Deutsch sicherer und
+          praktischer in realen Situationen einsetzen kannst.
+        </p>
+      </div>
+
+      <div class="results-grid">
+
+        <div class="result-card">
+          <h3>🗣️ Sicherer sprechen</h3>
+          <p>
+            Du kannst deine Meinung erklären,
+            Fragen beantworten und Gespräche aktiver führen.
+          </p>
+        </div>
+
+        <div class="result-card">
+          <h3>💼 Beruflich kommunizieren</h3>
+          <p>
+            Du kannst typische Situationen am Arbeitsplatz
+            sprachlich besser bewältigen.
+          </p>
+        </div>
+
+        <div class="result-card">
+          <h3>📞 Kunden kontaktieren</h3>
+          <p>
+            Du trainierst Kommunikation über Telefon,
+            Chat und E-Mail.
+          </p>
+        </div>
+
+        <div class="result-card">
+          <h3>🎓 Bewerbung vorbereiten</h3>
+          <p>
+            Du trainierst Selbstvorstellung,
+            Bewerbungsgespräche und typische Fragen.
+          </p>
+        </div>
+
+        <div class="result-card">
+          <h3>🇩🇪 Alltag meistern</h3>
+          <p>
+            Du erweiterst deinen Wortschatz für
+            typische Situationen in Deutschland.
+          </p>
+        </div>
+
+        <div class="result-card">
+          <h3>🌍 International arbeiten</h3>
+          <p>
+            Du verbesserst deine Kommunikation für
+            internationale und deutschsprachige Arbeitsumgebungen.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- IMPORTANT NOTE -->
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Wichtig zu wissen</h2>
+
+        <p>
+          Der Kurs ist eine sprachliche und praktische Vorbereitung.
+          Er garantiert keine Einstellung, kein Gehalt und keinen Ausbildungsplatz.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRICE -->
+  <section class="features" id="anmeldung">
+
+    <div class="container">
+
+      <div class="price-box">
+
+        <div class="price-label">
+          Intensiver B2-Kurs – 4 Wochen
+        </div>
+
+        <div class="price">
+          5.000 EGP
+        </div>
+
+        <div class="price-note">
+          pro Teilnehmer
+        </div>
+
+        <p>
+          Kleine Gruppe • ca. 40 Live-Stunden •
+          Job & Deutschland Fokus
+        </p>
+
+        <div class="limited">
+          👥 Begrenzte Teilnehmerzahl
+        </div>
+
+        <br><br>
+
+        <!-- Replace with your actual WhatsApp number -->
+        <a
+          href="https://wa.me/201000000000"
+          class="btn btn-primary"
+          target="_blank"
+        >
+          Über WhatsApp anmelden
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Häufige Fragen</h2>
+      </div>
+
+      <div class="faq">
+
+        <details>
+          <summary>Ist der Kurs für mich geeignet, wenn ich in Ägypten bleiben möchte?</summary>
+
+          <p>
+            Ja. Der Kurs ist nicht nur für Menschen gedacht,
+            die nach Deutschland ziehen möchten.
+            Er eignet sich auch für Bewerber auf deutschsprachige
+            Call-Center-, Customer-Service-, Technical-Support-
+            und andere internationale oder Remote-Stellen.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>Ist der Kurs nur für Menschen gedacht, die nach Deutschland wollen?</summary>
+
+          <p>
+            Nein. Deutschland ist ein wichtiger Schwerpunkt,
+            aber der berufliche Teil ist auch für Menschen relevant,
+            die Deutsch für internationale Unternehmen,
+            Remote Jobs oder deutschsprachige Kunden benötigen.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>Ist der Kurs für Call Center geeignet?</summary>
+
+          <p>
+            Ja. Wir trainieren unter anderem Telefonkommunikation,
+            Kundenfragen, Erklärungen, Rückfragen,
+            Beschwerden und professionelle Kommunikation.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>Ist der Kurs für Technical Support geeignet?</summary>
+
+          <p>
+            Ja. Neben allgemeiner beruflicher Kommunikation
+            können typische Situationen aus Technical Support
+            und Kundenkommunikation trainiert werden.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>Garantiert der Kurs einen Job?</summary>
+
+          <p>
+            Nein. Der Kurs garantiert weder eine Einstellung
+            noch einen Ausbildungsplatz.
+            Er soll deine sprachliche Vorbereitung und
+            berufliche Kommunikation verbessern.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>Wie viele Teilnehmer gibt es?</summary>
+
+          <p>
+            Die Gruppe bleibt bewusst klein, damit jeder Teilnehmer
+            ausreichend Gelegenheit zum Sprechen und Üben bekommt.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>Wie lange dauert der Kurs?</summary>
+
+          <p>
+            Der Intensivkurs dauert vier Wochen,
+            fünf Tage pro Woche und zwei Stunden pro Tag.
+            Das entspricht ungefähr 40 Live-Stunden.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>Ist das ein offizielles B2-Zertifikat?</summary>
+
+          <p>
+            Nein. Der Kurs selbst stellt kein offizielles
+            Goethe-, telc- oder ÖSD-Zertifikat aus.
+            Er dient der sprachlichen und praktischen Vorbereitung.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>Bereit für dein nächstes Level?</h2>
+
+      <p>
+        Verbessere dein Deutsch, trainiere echte berufliche Situationen
+        und bereite dich gezielt auf Arbeit, Deutschland,
+        Ausbildung oder deutschsprachige Jobs vor.
+      </p>
+
+      <a href="#anmeldung" class="btn btn-primary">
+        Platz sichern
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <p>
+        © 2026 B2 Deutsch für Arbeit & Deutschland
+      </p>
+
+      <p>
+        Job • Ausbildung • Call Center • Technical Support • Remote
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
+```
