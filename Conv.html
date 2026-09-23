@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<html lang="de" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>B2 Deutsch für Arbeit & Deutschland | Job • Ausbildung • Technical Support</title>
-
-  <meta
-    name="description"
-    content="Intensives B1/B2 Deutschtraining für Arbeit, Ausbildung, Call Center, Technical Support und Deutschland."
-  >
+  <title>كورس الألماني العملي — من اللغة إلى الاستخدام الحقيقي</title>
 
   <style>
     * {
@@ -18,260 +13,349 @@
       padding: 0;
     }
 
-    html {
-      direction: ltr;
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8fafc;
-      color: #101828;
-      line-height: 1.6;
-      direction: ltr;
-      text-align: left;
+      font-family: Arial, "Segoe UI", sans-serif;
+      background: #f7f9fc;
+      color: #1f2937;
+      line-height: 1.8;
     }
 
     a {
       text-decoration: none;
-      color: inherit;
     }
 
     .container {
-      width: 92%;
+      width: 90%;
       max-width: 1150px;
       margin: auto;
-      direction: ltr;
     }
 
-    section {
-      padding: 70px 0;
-      direction: ltr;
+    /* =========================
+       LANGUAGE SWITCHER
+    ========================= */
+
+    .language-bar {
+      position: absolute;
+      top: 20px;
+      left: 25px;
+      z-index: 10;
+    }
+
+    html[dir="ltr"] .language-bar {
+      left: auto;
+      right: 25px;
+    }
+
+    .language-switch {
+      display: flex;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 30px;
+      padding: 4px;
+      backdrop-filter: blur(8px);
+    }
+
+    .language-switch button {
+      border: none;
+      background: transparent;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 22px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .language-switch button.active {
+      background: white;
+      color: #1d4ed8;
     }
 
     /* =========================
        HERO
-    ========================== */
+    ========================= */
 
     .hero {
-      background: linear-gradient(135deg, #eff6ff, #ffffff);
+      position: relative;
+      background: linear-gradient(135deg, #1d4ed8, #2563eb);
+      color: white;
       text-align: center;
-      padding: 90px 20px;
-      direction: ltr;
+      padding: 95px 20px 80px;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      top: -120px;
+      right: -100px;
     }
 
     .hero-badge {
       display: inline-block;
-      background: #dbeafe;
-      color: #1d4ed8;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
       padding: 8px 18px;
       border-radius: 30px;
-      font-size: 14px;
-      font-weight: bold;
       margin-bottom: 20px;
+      font-size: 15px;
     }
 
     .hero h1 {
-      font-size: 48px;
-      line-height: 1.15;
+      font-size: 42px;
+      line-height: 1.35;
       margin-bottom: 20px;
-      color: #101828;
     }
 
     .hero h1 span {
-      color: #1d4ed8;
+      display: block;
+      color: #dbeafe;
     }
 
     .hero p {
       max-width: 800px;
       margin: auto;
-      color: #475467;
-      font-size: 19px;
+      font-size: 20px;
+      color: #eff6ff;
     }
 
     .hero-buttons {
       margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 25px;
+      padding: 13px 28px;
       border-radius: 10px;
       font-weight: bold;
-      transition: 0.2s;
+      transition: 0.3s;
+      margin: 5px;
     }
 
     .btn-primary {
-      background: #1d4ed8;
-      color: white;
+      background: white;
+      color: #1d4ed8;
     }
 
     .btn-primary:hover {
-      background: #1e40af;
+      transform: translateY(-2px);
     }
 
-    .btn-secondary {
-      background: white;
-      color: #1d4ed8;
-      border: 1px solid #cbd5e1;
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.6);
+      color: white;
     }
 
-    .btn-secondary:hover {
-      background: #f8fafc;
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
     }
 
     /* =========================
-       SECTION TITLE
-    ========================== */
+       GENERAL SECTIONS
+    ========================= */
+
+    section {
+      padding: 70px 0;
+    }
 
     .section-title {
       text-align: center;
-      margin-bottom: 45px;
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: #111827;
     }
 
-    .section-title h2 {
-      font-size: 34px;
-      margin-bottom: 10px;
-      color: #101828;
-    }
-
-    .section-title p {
-      color: #667085;
-      font-size: 17px;
-    }
-
-    /* =========================
-       VIDEO
-    ========================== */
-
-    .video-section {
-      background: white;
-    }
-
-    .video-wrapper {
-      max-width: 900px;
-      margin: auto;
-      background: #101828;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-    }
-
-    .video-wrapper iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      display: block;
-      border: none;
-    }
-
-    .video-info {
-      max-width: 900px;
-      margin: 25px auto 0;
+    .section-subtitle {
       text-align: center;
-    }
-
-    .video-info h3 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-
-    .video-info p {
-      color: #667085;
-    }
-
-    .video-highlights {
-      max-width: 900px;
-      margin: 25px auto 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .video-highlight {
-      background: #f8fafc;
-      border: 1px solid #e4e7ec;
-      border-radius: 12px;
-      padding: 18px;
-      text-align: center;
-    }
-
-    .video-highlight strong {
-      display: block;
-      color: #1d4ed8;
-      margin-bottom: 5px;
-    }
-
-    .video-highlight span {
-      color: #667085;
-      font-size: 14px;
+      color: #6b7280;
+      max-width: 750px;
+      margin: 0 auto 40px;
     }
 
     /* =========================
        TARGET
-    ========================== */
+    ========================= */
 
     .target {
-      background: #f8fafc;
+      background: white;
     }
 
     .target-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
-      max-width: 900px;
-      margin: auto;
     }
 
     .target-card {
-      background: white;
-      border: 1px solid #e4e7ec;
-      border-radius: 15px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
       padding: 25px;
     }
 
     .target-card h3 {
+      margin-bottom: 8px;
+      color: #1d4ed8;
+    }
+
+    /* =========================
+       FEATURES
+    ========================= */
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature {
+      background: white;
+      padding: 28px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .feature-icon {
+      font-size: 35px;
       margin-bottom: 12px;
-      color: #101828;
     }
 
-    .target-card ul {
-      list-style: none;
+    .feature h3 {
+      margin-bottom: 8px;
+      color: #111827;
     }
 
-    .target-card li {
-      margin-bottom: 9px;
-      color: #475467;
-      padding-left: 22px;
-      position: relative;
+    .feature p {
+      color: #6b7280;
     }
 
-    .target-card li::before {
+    /* =========================
+       COURSE CONTENT
+    ========================= */
+
+    .content {
+      background: white;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .content-item {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 18px 22px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .content-item::before {
       content: "✓";
-      position: absolute;
-      left: 0;
-      color: #16a34a;
+      color: #2563eb;
       font-weight: bold;
+      margin-left: 8px;
+    }
+
+    html[dir="ltr"] .content-item::before {
+      margin-left: 0;
+      margin-right: 8px;
+    }
+
+    /* =========================
+       COURSE DETAILS
+    ========================= */
+
+    .details {
+      background: #eff6ff;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .detail {
+      background: white;
+      text-align: center;
+      padding: 25px 15px;
+      border-radius: 14px;
+    }
+
+    .detail strong {
+      display: block;
+      font-size: 25px;
+      color: #1d4ed8;
+      margin-bottom: 5px;
+    }
+
+    /* =========================
+       VIDEO
+    ========================= */
+
+    .video-wrapper {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 12px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      top: 0;
+      left: 0;
+    }
+
+    .video-title {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .video-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .video-highlight {
+      background: #f8fafc;
+      padding: 18px;
+      border-radius: 12px;
+      text-align: center;
     }
 
     /* =========================
        INSTRUCTOR
-    ========================== */
+    ========================= */
 
     .instructor {
-      background: #ffffff;
-    }
-
-    .instructor-card {
-      max-width: 850px;
-      margin: auto;
-      background: #f8fafc;
-      border: 1px solid #e4e7ec;
-      border-radius: 18px;
-      padding: 35px;
+      background: white;
       text-align: center;
     }
 
@@ -286,446 +370,234 @@
       box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
     }
 
-    .instructor-card h3 {
-      font-size: 27px;
-      color: #101828;
+    .instructor h3 {
+      font-size: 26px;
       margin-bottom: 12px;
     }
 
     .instructor-description {
-      max-width: 720px;
+      max-width: 750px;
       margin: auto;
-      color: #475467;
-      line-height: 1.7;
-      font-size: 16px;
-    }
-
-    /* =========================
-       PROGRAM
-    ========================== */
-
-    .program {
-      background: white;
-    }
-
-    .program-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .program-card {
-      background: #f8fafc;
-      border: 1px solid #e4e7ec;
-      border-radius: 14px;
-      padding: 25px 15px;
-      text-align: center;
-    }
-
-    .program-card strong {
-      display: block;
-      font-size: 27px;
-      color: #1d4ed8;
-      margin-bottom: 5px;
-    }
-
-    .program-card span {
-      color: #667085;
-      font-size: 14px;
-    }
-
-    /* =========================
-       CURRICULUM
-    ========================== */
-
-    .curriculum {
-      background: #f8fafc;
-    }
-
-    .curriculum-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .curriculum-card {
-      background: white;
-      border: 1px solid #e4e7ec;
-      border-radius: 15px;
-      padding: 25px;
-    }
-
-    .curriculum-card h3 {
-      margin-bottom: 15px;
-      color: #101828;
-    }
-
-    .curriculum-card ul {
-      padding-left: 20px;
-      color: #475467;
-    }
-
-    .curriculum-card li {
-      margin-bottom: 8px;
+      color: #4b5563;
+      font-size: 17px;
     }
 
     /* =========================
        PRICING
-    ========================== */
+    ========================= */
 
     .pricing {
-      background: white;
+      background: #f7f9fc;
     }
 
     .pricing-grid {
-      max-width: 1000px;
-      margin: auto;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 25px;
-      align-items: stretch;
+      max-width: 850px;
+      margin: auto;
     }
 
     .price-card {
-      position: relative;
       background: white;
-      border: 1px solid #d0d5dd;
       border-radius: 18px;
       padding: 35px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      border: 1px solid #e5e7eb;
+      position: relative;
     }
 
     .price-card.premium {
-      border: 2px solid #1d4ed8;
-      box-shadow: 0 10px 30px rgba(29, 78, 216, 0.12);
+      border: 2px solid #2563eb;
     }
 
-    .popular {
+    .premium-label {
       position: absolute;
-      top: 18px;
-      right: 25px;
-      background: #1d4ed8;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2563eb;
       color: white;
-      font-size: 12px;
-      font-weight: bold;
-      padding: 6px 12px;
+      padding: 5px 18px;
       border-radius: 20px;
+      font-size: 13px;
     }
 
     .price-card h3 {
       font-size: 24px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .price {
       font-size: 42px;
       font-weight: bold;
       color: #1d4ed8;
-      margin-bottom: 5px;
-    }
-
-    .price-subtitle {
-      color: #667085;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .price-card ul {
       list-style: none;
+      text-align: start;
       margin-bottom: 25px;
     }
 
     .price-card li {
-      margin-bottom: 11px;
-      padding-left: 23px;
-      position: relative;
-      color: #475467;
+      padding: 7px 0;
     }
 
     .price-card li::before {
       content: "✓";
-      position: absolute;
-      left: 0;
-      color: #16a34a;
+      color: #2563eb;
       font-weight: bold;
+      margin-left: 8px;
     }
 
-    /* =========================
-       COMPARISON
-    ========================== */
-
-    .comparison {
-      margin: 40px auto 0;
-      max-width: 1000px;
-      overflow-x: auto;
-    }
-
-    .comparison table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      border: 1px solid #e4e7ec;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .comparison th,
-    .comparison td {
-      padding: 14px 16px;
-      border-bottom: 1px solid #e4e7ec;
-      text-align: center;
-    }
-
-    .comparison th:first-child,
-    .comparison td:first-child {
-      text-align: left;
-    }
-
-    .comparison th {
-      background: #f8fafc;
+    html[dir="ltr"] .price-card li::before {
+      margin-left: 0;
+      margin-right: 8px;
     }
 
     /* =========================
        CONSULTATION
-    ========================== */
+    ========================= */
 
     .consultation {
-      background: #f8fafc;
+      background: #eff6ff;
+      text-align: center;
     }
 
-    .consultation-card {
+    .consultation-box {
+      background: white;
       max-width: 700px;
       margin: auto;
-      background: white;
-      border: 1px solid #d0d5dd;
-      border-radius: 18px;
       padding: 35px;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    }
-
-    .consultation-card h3 {
-      font-size: 25px;
-      margin-bottom: 10px;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     }
 
     .consultation-price {
-      font-size: 40px;
-      font-weight: bold;
+      font-size: 38px;
       color: #1d4ed8;
-    }
-
-    .consultation-duration {
-      color: #667085;
-      margin-bottom: 20px;
-    }
-
-    .consultation-card p {
-      color: #475467;
-      margin-bottom: 20px;
-    }
-
-    .consultation-features {
-      text-align: left;
-      max-width: 500px;
-      margin: 20px auto;
-      list-style: none;
-    }
-
-    .consultation-features li {
-      margin-bottom: 9px;
-      padding-left: 23px;
-      position: relative;
-    }
-
-    .consultation-features li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: #16a34a;
       font-weight: bold;
+      margin: 15px 0;
     }
 
-    .consultation-note {
-      font-size: 13px;
-      color: #667085;
-      margin-top: 15px;
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq {
+      background: white;
+    }
+
+    .faq-list {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 20px 0;
+    }
+
+    .faq-item h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .faq-item p {
+      color: #6b7280;
     }
 
     /* =========================
        CTA
-    ========================== */
+    ========================= */
 
     .cta {
-      background: #1d4ed8;
+      background: linear-gradient(135deg, #1d4ed8, #2563eb);
       color: white;
       text-align: center;
     }
 
     .cta h2 {
-      font-size: 34px;
-      margin-bottom: 12px;
+      font-size: 32px;
+      margin-bottom: 15px;
     }
 
     .cta p {
       max-width: 700px;
-      margin: auto;
-      opacity: 0.9;
-    }
-
-    .cta .btn {
-      margin-top: 25px;
-      background: white;
-      color: #1d4ed8;
-    }
-
-    /* =========================
-       FAQ
-    ========================== */
-
-    .faq {
-      max-width: 850px;
-      margin: auto;
-      direction: ltr;
-    }
-
-    .faq details {
-      background: white;
-      border: 1px solid #e4e7ec;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      padding: 18px 20px;
-      direction: ltr;
-      text-align: left;
-    }
-
-    .faq summary {
-      cursor: pointer;
-      font-weight: bold;
-      direction: ltr;
-      text-align: left;
-    }
-
-    .faq details p {
-      margin-top: 12px;
-      color: #667085;
-      direction: ltr;
-      text-align: left;
-    }
-
-    .faq-question {
-      direction: ltr;
-      unicode-bidi: isolate;
-    }
-
-    .question-mark {
-      direction: ltr;
-      unicode-bidi: isolate;
-      display: inline-block;
-      margin-left: 4px;
+      margin: 0 auto 25px;
+      color: #dbeafe;
     }
 
     /* =========================
        FOOTER
-    ========================== */
+    ========================= */
 
     footer {
-      background: #101828;
-      color: white;
+      background: #111827;
+      color: #9ca3af;
       text-align: center;
-      padding: 30px 20px;
-      direction: ltr;
-    }
-
-    footer p {
-      opacity: 0.75;
+      padding: 25px;
       font-size: 14px;
     }
 
     /* =========================
        RESPONSIVE
-    ========================== */
+    ========================= */
 
     @media (max-width: 900px) {
 
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .program-grid {
+      .features-grid,
+      .details-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-      .video-highlights {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 700px) {
-
-      section {
-        padding: 55px 0;
-      }
-
-      .hero {
-        padding: 70px 20px;
       }
 
       .hero h1 {
         font-size: 34px;
+      }
+    }
+
+    @media (max-width: 650px) {
+
+      .language-bar {
+        top: 15px;
+        left: 15px;
+      }
+
+      html[dir="ltr"] .language-bar {
+        left: auto;
+        right: 15px;
+      }
+
+      .hero {
+        padding-top: 90px;
+      }
+
+      .hero h1 {
+        font-size: 29px;
       }
 
       .hero p {
         font-size: 17px;
       }
 
-      .section-title h2 {
-        font-size: 29px;
-      }
-
       .target-grid,
-      .curriculum-grid,
-      .pricing-grid {
+      .features-grid,
+      .content-grid,
+      .details-grid,
+      .pricing-grid,
+      .video-highlights {
         grid-template-columns: 1fr;
       }
 
-      .program-grid {
-        grid-template-columns: 1fr 1fr;
+      section {
+        padding: 50px 0;
       }
 
-      .instructor-card {
-        padding: 25px 20px;
-      }
-
-      .instructor-photo {
-        width: 115px;
-        height: 115px;
-      }
-
-      .instructor-card h3 {
-        font-size: 24px;
-      }
-
-      .price-card {
-        padding: 28px 22px;
-      }
-    }
-
-    @media (max-width: 480px) {
-
-      .program-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .hero-buttons .btn {
-        width: 100%;
+      .section-title {
+        font-size: 27px;
       }
     }
   </style>
@@ -735,451 +607,504 @@
 
   <!-- =========================
        HERO
-  ========================== -->
+  ========================= -->
 
-  <section class="hero">
+  <header class="hero">
+
+    <div class="language-bar">
+      <div class="language-switch">
+        <button id="arBtn" class="active" onclick="setLanguage('ar')">
+          🇪🇬 العربية
+        </button>
+
+        <button id="deBtn" onclick="setLanguage('de')">
+          🇩🇪 Deutsch
+        </button>
+      </div>
+    </div>
+
     <div class="container">
 
-      <div class="hero-badge">
-        Intensives B1/B2 Deutschtraining
+      <div class="hero-badge" data-ar="كورس ألماني مكثف B1/B2"
+           data-de="Intensiv-Deutschkurs B1/B2">
       </div>
 
       <h1>
-        Deutsch für <span>Arbeit & Deutschland</span>
+        <span data-ar="🇩🇪 كورس الألماني العملي"
+              data-de="🇩🇪 Praktischer Deutschkurs">
+        </span>
+
+        <span data-ar="من اللغة إلى الاستخدام الحقيقي"
+              data-de="Von der Sprache zur echten Anwendung">
+        </span>
       </h1>
 
-      <p>
-        Intensives Deutschtraining für Job, Ausbildung, Call Center,
-        Technical Support und Remote Work.
+      <p
+        data-ar="طوّر مستواك في الألمانية واستخدمها بثقة في العمل، السفر، الدراسة، المقابلات والحياة اليومية — سواء كنت في بلدك أو في ألمانيا."
+        data-de="Verbessere dein Deutsch und nutze die Sprache sicher im Beruf, auf Reisen, im Studium, bei Vorstellungsgesprächen und im Alltag – egal, ob du in deinem Heimatland oder in Deutschland bist.">
       </p>
 
       <div class="hero-buttons">
 
-        <a
-          href="https://wa.me/201000000000"
-          class="btn btn-primary"
-          target="_blank"
-        >
-          Jetzt anmelden
+        <a href="#pricing"
+           class="btn btn-primary"
+           data-ar="شوف تفاصيل الكورس"
+           data-de="Kursdetails ansehen">
         </a>
 
-        <a
-          href="#programm"
-          class="btn btn-secondary"
-        >
-          Kurs ansehen
+        <a href="#video"
+           class="btn btn-outline"
+           data-ar="شاهد الكورس"
+           data-de="Kurs ansehen">
         </a>
 
       </div>
 
+    </div>
+  </header>
+
+
+  <!-- =========================
+       TARGET
+  ========================= -->
+
+  <section class="target">
+
+    <div class="container">
+
+      <h2 class="section-title"
+          data-ar="الكورس مناسب لمين؟"
+          data-de="Für wen ist der Kurs geeignet?">
+      </h2>
+
+      <p class="section-subtitle"
+         data-ar="الكورس مصمم لكل شخص يريد الانتقال من دراسة الألمانية إلى استخدامها بشكل عملي في الحياة الحقيقية."
+         data-de="Der Kurs richtet sich an alle, die Deutsch nicht nur lernen, sondern praktisch im echten Leben anwenden möchten.">
+      </p>
+
+      <div class="target-grid">
+
+        <div class="target-card">
+          <h3 data-ar="💼 للموظفين"
+              data-de="💼 Für Berufstätige">
+          </h3>
+
+          <p data-ar="استخدم الألمانية بشكل أفضل في العمل والتواصل المهني ومع العملاء والزملاء."
+             data-de="Nutze Deutsch sicherer im Beruf und in der Kommunikation mit Kunden und Kollegen.">
+          </p>
+        </div>
+
+        <div class="target-card">
+          <h3 data-ar="🇩🇪 لمن يخطط للسفر"
+              data-de="🇩🇪 Für Deutschland-Interessierte">
+          </h3>
+
+          <p data-ar="استعد لغويًا للعمل، Ausbildung، الدراسة والحياة اليومية في ألمانيا."
+             data-de="Bereite dich sprachlich auf Arbeit, Ausbildung, Studium und Alltag in Deutschland vor.">
+          </p>
+        </div>
+
+        <div class="target-card">
+          <h3 data-ar="🎓 للطلاب والمتعلمين"
+              data-de="🎓 Für Lernende">
+          </h3>
+
+          <p data-ar="طوّر مهاراتك في التحدث والاستماع والقراءة والكتابة باستخدام مواقف عملية."
+             data-de="Verbessere Sprechen, Hören, Lesen und Schreiben anhand praktischer Situationen.">
+          </p>
+        </div>
+
+        <div class="target-card">
+          <h3 data-ar="🌍 لمن يعمل من بلده"
+              data-de="🌍 Für internationale Berufstätige">
+          </h3>
+
+          <p data-ar="استخدم الألمانية مع الشركات والعملاء الألمان حتى لو كنت تعمل من خارج ألمانيا."
+             data-de="Kommuniziere mit deutschen Unternehmen und Kunden – auch wenn du außerhalb Deutschlands arbeitest.">
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================
+       FEATURES
+  ========================= -->
+
+  <section>
+
+    <div class="container">
+
+      <h2 class="section-title"
+          data-ar="مش مجرد كورس ألماني"
+          data-de="Mehr als nur ein Deutschkurs">
+      </h2>
+
+      <p class="section-subtitle"
+         data-ar="التركيز الأساسي هو أن تعرف كيف تستخدم اللغة، وليس فقط أن تعرف قواعدها."
+         data-de="Der Fokus liegt darauf, Deutsch wirklich anzuwenden – nicht nur Grammatik zu lernen.">
+      </p>
+
+      <div class="features-grid">
+
+        <div class="feature">
+          <div class="feature-icon">🗣️</div>
+
+          <h3 data-ar="تحدث بثقة"
+              data-de="Sicher sprechen">
+          </h3>
+
+          <p data-ar="تدريب مستمر على المحادثة والتعبير عن نفسك في مواقف حقيقية."
+             data-de="Kontinuierliches Training für Gespräche und reale Kommunikationssituationen.">
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">💼</div>
+
+          <h3 data-ar="ألماني عملي"
+              data-de="Praktisches Deutsch">
+          </h3>
+
+          <p data-ar="مواقف مرتبطة بالعمل، العملاء، المقابلات والتواصل المهني."
+             data-de="Situationen aus Beruf, Kundenkontakt, Vorstellungsgesprächen und professioneller Kommunikation.">
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🇩🇪</div>
+
+          <h3 data-ar="الحياة اليومية"
+              data-de="Alltag">
+          </h3>
+
+          <p data-ar="تعامل مع المكالمات والمواعيد والسكن والجهات المختلفة والمواقف اليومية."
+             data-de="Übe Telefonate, Termine, Wohnungssuche, Behörden und typische Alltagssituationen.">
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🎯</div>
+
+          <h3 data-ar="تركيز على الهدف"
+              data-de="Zielorientiert">
+          </h3>
+
+          <p data-ar="سواء هدفك العمل أو السفر أو الدراسة أو تطوير مستواك، التدريب عملي ومباشر."
+             data-de="Ob Beruf, Reise, Studium oder persönliche Weiterentwicklung – das Training bleibt praxisnah.">
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">👥</div>
+
+          <h3 data-ar="مجموعة صغيرة"
+              data-de="Kleine Gruppe">
+          </h3>
+
+          <p data-ar="عدد محدود من المشاركين للحصول على وقت أكبر للتحدث والمشاركة."
+             data-de="Begrenzte Teilnehmerzahl für mehr Sprechzeit und aktive Teilnahme.">
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+
+          <h3 data-ar="مكثف"
+              data-de="Intensiv">
+          </h3>
+
+          <p data-ar="5 أيام أسبوعيًا و10 ساعات أسبوعيًا من التدريب المباشر."
+             data-de="5 Tage pro Woche und 10 Live-Stunden pro Woche.">
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================
+       CONTENT
+  ========================= -->
+
+  <section class="content">
+
+    <div class="container">
+
+      <h2 class="section-title"
+          data-ar="ماذا ستتدرب عليه؟"
+          data-de="Was wirst du trainieren?">
+      </h2>
+
+      <p class="section-subtitle"
+         data-ar="تدريب متوازن على أهم مهارات اللغة مع التركيز على الاستخدام الحقيقي."
+         data-de="Ausgewogenes Training der wichtigsten Sprachfertigkeiten mit Fokus auf die praktische Anwendung.">
+      </p>
+
+      <div class="content-grid">
+
+        <div class="content-item"
+             data-ar="المحادثة والتحدث"
+             data-de="Sprechen und Konversation">
+        </div>
+
+        <div class="content-item"
+             data-ar="الاستماع وفهم الكلام"
+             data-de="Hörverstehen">
+        </div>
+
+        <div class="content-item"
+             data-ar="القراءة وفهم النصوص"
+             data-de="Leseverstehen">
+        </div>
+
+        <div class="content-item"
+             data-ar="الكتابة والتعبير"
+             data-de="Schreiben und Ausdruck">
+        </div>
+
+        <div class="content-item"
+             data-ar="القواعد المستخدمة عمليًا"
+             data-de="Praktische Grammatik">
+        </div>
+
+        <div class="content-item"
+             data-ar="المفردات والتعبيرات اليومية"
+             data-de="Alltagswortschatz und Redewendungen">
+        </div>
+
+        <div class="content-item"
+             data-ar="التواصل في بيئة العمل"
+             data-de="Kommunikation im Berufsalltag">
+        </div>
+
+        <div class="content-item"
+             data-ar="المقابلات والتواصل المهني"
+             data-de="Vorstellungsgespräche und berufliche Kommunikation">
+        </div>
+
+        <div class="content-item"
+             data-ar="Customer Service وTechnical Support"
+             data-de="Customer Service und Technical Support">
+        </div>
+
+        <div class="content-item"
+             data-ar="مواقف الحياة اليومية في ألمانيا"
+             data-de="Alltagssituationen in Deutschland">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================
+       DETAILS
+  ========================= -->
+
+  <section class="details">
+
+    <div class="container">
+
+      <h2 class="section-title"
+          data-ar="تفاصيل الكورس"
+          data-de="Kursdetails">
+      </h2>
+
+      <div class="details-grid">
+
+        <div class="detail">
+          <strong>4</strong>
+          <span data-ar="أسابيع"
+                data-de="Wochen">
+          </span>
+        </div>
+
+        <div class="detail">
+          <strong>5</strong>
+          <span data-ar="أيام أسبوعيًا"
+                data-de="Tage pro Woche">
+          </span>
+        </div>
+
+        <div class="detail">
+          <strong>2</strong>
+          <span data-ar="ساعتان يوميًا"
+                data-de="Stunden pro Tag">
+          </span>
+        </div>
+
+        <div class="detail">
+          <strong>40+</strong>
+          <span data-ar="ساعة Live"
+                data-de="Live-Stunden">
+          </span>
+        </div>
+
+      </div>
     </div>
   </section>
 
 
   <!-- =========================
        VIDEO
-  ========================== -->
+  ========================= -->
 
-  <section class="video-section">
+  <section id="video">
 
     <div class="container">
 
-      <div class="section-title">
-        <h2>🎥 Schau dir den Kurs selbst an</h2>
+      <h2 class="section-title"
+          data-ar="🎥 شاهد الكورس بنفسك"
+          data-de="🎥 Schau dir den Kurs selbst an">
+      </h2>
 
-        <p>
-          Erfahre mehr über den Kurs und erhalte einen echten Einblick
-          in den Unterricht.
-        </p>
-      </div>
+      <p class="section-subtitle"
+         data-ar="تعرف على تفاصيل الكورس وشاهد جزءًا حقيقيًا من طريقة التدريب."
+         data-de="Lerne die Kursinhalte kennen und sieh dir einen echten Ausschnitt aus dem Unterricht an.">
+      </p>
 
       <div class="video-wrapper">
 
-        <!--
-          Ersetze YOUR_VIDEO_ID durch deine YouTube Video-ID.
-          Beispiel:
-          https://www.youtube.com/watch?v=ABC123
-          wird:
-          https://www.youtube.com/embed/ABC123
-        -->
+        <div class="video-container">
 
-        <iframe
-          src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-          title="Kursvorstellung und Unterrichtseinblick"
-          allowfullscreen>
-        </iframe>
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="German Course"
+            allowfullscreen>
+          </iframe>
 
-      </div>
-
-      <div class="video-info">
-
-        <h3>
-          Kursvorstellung + echter Einblick in den Unterricht
-        </h3>
-
-        <p>
-          Sieh dir an, wie der Kurs aufgebaut ist und wie das Training
-          tatsächlich abläuft.
-        </p>
-
-      </div>
-
-      <div class="video-highlights">
-
-        <div class="video-highlight">
-          <strong>📚 Kurs erklärt</strong>
-          <span>Inhalte, Ablauf und Lernziele</span>
         </div>
 
-        <div class="video-highlight">
-          <strong>🎓 Echter Unterricht</strong>
-          <span>Einblick in eine reale Unterrichtssituation</span>
+        <div class="video-title"
+             data-ar="شرح الكورس وجانب من المحاضرة"
+             data-de="Kursvorstellung und Unterrichtsausschnitt">
         </div>
 
-        <div class="video-highlight">
-          <strong>💼 Praxisorientiert</strong>
-          <span>Deutsch für Beruf und Deutschland</span>
+        <div class="video-highlights">
+
+          <div class="video-highlight"
+               data-ar="📚 شرح تفاصيل الكورس"
+               data-de="📚 Kursdetails erklärt">
+          </div>
+
+          <div class="video-highlight"
+               data-ar="🎓 جزء من محاضرة حقيقية"
+               data-de="🎓 Ausschnitt aus einer echten Unterrichtsstunde">
+          </div>
+
+          <div class="video-highlight"
+               data-ar="🎯 تركيز على الاستخدام العملي"
+               data-de="🎯 Fokus auf praktische Anwendung">
+          </div>
+
         </div>
 
       </div>
-
     </div>
-
-  </section>
-
-
-  <!-- =========================
-       TARGET
-  ========================== -->
-
-  <section class="target">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>🎯 Für wen ist der Kurs geeignet?</h2>
-
-        <p>
-          Für Lernende auf B1/B2-Niveau, die Deutsch praktisch
-          für Deutschland und den Beruf nutzen möchten.
-        </p>
-
-      </div>
-
-      <div class="target-grid">
-
-        <div class="target-card">
-
-          <h3>🇩🇪 Deutschland</h3>
-
-          <ul>
-            <li>Vorbereitung auf das Leben in Deutschland</li>
-            <li>Alltag und wichtige Situationen</li>
-            <li>Telefonate und Kommunikation</li>
-            <li>Wohnung, Behörden und Organisation</li>
-          </ul>
-
-        </div>
-
-        <div class="target-card">
-
-          <h3>💼 Beruf & Karriere</h3>
-
-          <ul>
-            <li>Job und Bewerbung</li>
-            <li>Ausbildung</li>
-            <li>Call Center & Customer Service</li>
-            <li>Technical Support</li>
-            <li>Remote Work</li>
-          </ul>
-
-        </div>
-
-      </div>
-
-    </div>
-
   </section>
 
 
   <!-- =========================
        INSTRUCTOR
-  ========================== -->
+  ========================= -->
 
   <section class="instructor">
 
     <div class="container">
 
-      <div class="section-title">
+      <h2 class="section-title"
+          data-ar="👨‍🏫 المدرب"
+          data-de="👨‍🏫 Der Trainer">
+      </h2>
 
-        <h2>👨‍🏫 Über den Dozenten</h2>
+      <img
+        src="x.jpg"
+        alt="عبدالرحمن الحواري"
+        class="instructor-photo">
 
-        <p>
-          Der Hauptdozent des Kurses
-        </p>
+      <h3 data-ar="عبدالرحمن الحواري"
+          data-de="Abdelrahman Elhawary">
+      </h3>
 
-      </div>
+      <p class="instructor-description">
 
-      <div class="instructor-card">
+        <strong
+          data-ar="مدرب لغة ألمانية بخبرة أكثر من 4 سنوات في التدريب، وأكثر من 7 سنوات من الخبرة الهندسية والتقنية مع شركات ألمانية."
+          data-de="Deutschtrainer mit mehr als 4 Jahren Erfahrung im Sprachtraining sowie mehr als 7 Jahren technischer und ingenieurwissenschaftlicher Erfahrung mit deutschen Unternehmen.">
+        </strong>
 
-        <img
-          src="x.jpg"
-          alt="Abdelrahman Elhawary"
-          class="instructor-photo"
-        >
-
-        <h3>
-          Abdelrahman Elhawary
-        </h3>
-
-        <p class="instructor-description">
-
-       <strong>
-  Deutschtrainer mit über 4 Jahren Trainingserfahrung und über 7 Jahren technischer und ingenieurwissenschaftlicher Berufserfahrung mit deutschen Unternehmen.
-</strong>
-
-        </p>
-
-      </div>
+      </p>
 
     </div>
-
-  </section>
-
-
-  <!-- =========================
-       PROGRAM
-  ========================== -->
-
-  <section class="program" id="programm">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>🔥 Intensives B1/B2-Training</h2>
-
-        <p>
-          Ein kompakter und intensiver Kurs mit täglichem Live-Unterricht.
-        </p>
-
-      </div>
-
-      <div class="program-grid">
-
-        <div class="program-card">
-          <strong>4</strong>
-          <span>Wochen</span>
-        </div>
-
-        <div class="program-card">
-          <strong>5</strong>
-          <span>Tage pro Woche</span>
-        </div>
-
-        <div class="program-card">
-          <strong>2h</strong>
-          <span>pro Tag</span>
-        </div>
-
-        <div class="program-card">
-          <strong>≈ 40h</strong>
-          <span>Live-Unterricht</span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       CURRICULUM
-  ========================== -->
-
-  <section class="curriculum">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>📚 Was lernst du?</h2>
-
-        <p>
-          Sprache, Kommunikation und praktische Situationen.
-        </p>
-
-      </div>
-
-      <div class="curriculum-grid">
-
-        <div class="curriculum-card">
-
-          <h3>🗣️ Kommunikation</h3>
-
-          <ul>
-            <li>Sprechen und freies Kommunizieren</li>
-            <li>Hörverstehen</li>
-            <li>Gespräche im beruflichen Umfeld</li>
-            <li>Telefonate</li>
-            <li>Professionelle Kommunikation</li>
-          </ul>
-
-        </div>
-
-
-        <div class="curriculum-card">
-
-          <h3>💼 Deutsch im Beruf</h3>
-
-          <ul>
-            <li>Job und Bewerbung</li>
-            <li>Ausbildung</li>
-            <li>Customer Service</li>
-            <li>Technical Support</li>
-            <li>Remote Work</li>
-          </ul>
-
-        </div>
-
-
-        <div class="curriculum-card">
-
-          <h3>📝 Sprache</h3>
-
-          <ul>
-            <li>Wichtige B1/B2-Grammatik</li>
-            <li>Beruflicher Wortschatz</li>
-            <li>Redemittel</li>
-            <li>Schreiben</li>
-            <li>Praktische Formulierungen</li>
-          </ul>
-
-        </div>
-
-
-        <div class="curriculum-card">
-
-          <h3>🇩🇪 Alltag in Deutschland</h3>
-
-          <ul>
-            <li>Wohnung und Wohnen</li>
-            <li>Behörden</li>
-            <li>Telefonische Kommunikation</li>
-            <li>Alltagssituationen</li>
-            <li>Orientierung in Deutschland</li>
-          </ul>
-
-        </div>
-
-
-        <div class="curriculum-card">
-
-          <h3>🤖 KI-Training</h3>
-
-          <ul>
-            <li>Praktische Übungen mit KI</li>
-            <li>Gesprächssimulationen</li>
-            <li>Sprachpraxis mit modernen Tools</li>
-            <li>Individuelle Übungsmöglichkeiten</li>
-          </ul>
-
-        </div>
-
-
-        <div class="curriculum-card">
-
-          <h3>🎤 Bewerbung & Interview</h3>
-
-          <ul>
-            <li>Vorstellungsgespräche</li>
-            <li>Typische Interviewfragen</li>
-            <li>Professionelle Antworten</li>
-            <li>Realistische Rollenspiele</li>
-          </ul>
-
-        </div>
-
-      </div>
-
-    </div>
-
   </section>
 
 
   <!-- =========================
        PRICING
-  ========================== -->
+  ========================= -->
 
-  <section class="pricing" id="preise">
+  <section class="pricing" id="pricing">
 
     <div class="container">
 
-      <div class="section-title">
+      <h2 class="section-title"
+          data-ar="اختر الباقة المناسبة لك"
+          data-de="Wähle dein passendes Paket">
+      </h2>
 
-        <h2>💳 Kursmodelle</h2>
-
-        <p>
-          Wähle das Modell, das zu deinem Lernziel passt.
-        </p>
-
-      </div>
+      <p class="section-subtitle"
+         data-ar="كل الباقات تتضمن التدريب الأساسي المباشر."
+         data-de="Alle Pakete beinhalten den grundlegenden Live-Unterricht.">
+      </p>
 
       <div class="pricing-grid">
-
 
         <!-- STANDARD -->
 
         <div class="price-card">
 
-          <h3>Standard</h3>
+          <h3 data-ar="Standard"
+              data-de="Standard">
+          </h3>
 
-          <div class="price">
-            €100
-          </div>
-
-          <div class="price-subtitle">
-            4 Wochen Intensivtraining
-          </div>
+          <div class="price">€100</div>
 
           <ul>
 
-            <li>4 Wochen</li>
+            <li data-ar="الكورس الكامل لمدة 4 أسابيع"
+                data-de="Kompletter 4-Wochen-Kurs">
+            </li>
 
-            <li>5 Tage pro Woche</li>
+            <li data-ar="40+ ساعة تدريب مباشر"
+                data-de="40+ Live-Unterrichtsstunden">
+            </li>
 
-            <li>2 Stunden pro Tag</li>
+            <li data-ar="5 أيام أسبوعيًا"
+                data-de="5 Tage pro Woche">
+            </li>
 
-            <li>Ca. 40 Live-Stunden</li>
+            <li data-ar="تدريب على المحادثة"
+                data-de="Sprechtraining">
+            </li>
 
-            <li>Kleine Gruppe</li>
+            <li data-ar="تدريب عملي للعمل والحياة اليومية"
+                data-de="Praxisnahes Training für Beruf und Alltag">
+            </li>
 
-            <li>B1/B2 Deutschtraining</li>
-
-            <li>Deutsch für Arbeit & Deutschland</li>
-
-            <li>Speaking & Listening</li>
-
-            <li>Beruflicher Wortschatz</li>
-
-            <li>Job & Bewerbung</li>
-
-            <li>Ausbildung</li>
-
-            <li>Customer Service & Technical Support</li>
-
-            <li>Alltag in Deutschland</li>
+            <li data-ar="مجموعة صغيرة"
+                data-de="Kleine Gruppe">
+            </li>
 
           </ul>
 
-          <a
-            href="https://wa.me/201000000000"
-            class="btn btn-primary"
-            target="_blank"
-          >
-            Standard buchen
+          <a href="#contact"
+             class="btn btn-primary"
+             data-ar="احجز الآن"
+             data-de="Jetzt anmelden">
           </a>
 
         </div>
@@ -1189,489 +1114,357 @@
 
         <div class="price-card premium">
 
-          <div class="popular">
-            PREMIUM
+          <div class="premium-label"
+               data-ar="الأكثر شمولًا"
+               data-de="Umfassender">
           </div>
 
-          <h3>Premium</h3>
+          <h3 data-ar="Premium"
+              data-de="Premium">
+          </h3>
 
-          <div class="price">
-            €180
-          </div>
-
-          <div class="price-subtitle">
-            Intensiv + zusätzliche Praxis
-          </div>
+          <div class="price">€180</div>
 
           <ul>
 
-            <li>Alles aus Standard</li>
+            <li data-ar="كل ما في Standard"
+                data-de="Alles aus Standard">
+            </li>
 
-            <li>Training mit einem deutschen Muttersprachler</li>
+            <li data-ar="تدريب مع متحدث ألماني أصلي"
+                data-de="Training mit einem deutschen Muttersprachler">
+            </li>
 
-            <li>Zusätzliche Speaking Session</li>
+            <li data-ar="جلسة Speaking إضافية"
+                data-de="Zusätzliche Speaking Session">
+            </li>
 
-            <li>Zusätzliches Feedback zur Aussprache</li>
+            <li data-ar="تصحيح النطق والتواصل"
+                data-de="Feedback zu Aussprache und Kommunikation">
+            </li>
 
-            <li>Realistische Gesprächssimulationen</li>
+            <li data-ar="Role Plays واقعية"
+                data-de="Realistische Rollenspiele">
+            </li>
 
-            <li>Mock Interviews</li>
+            <li data-ar="محاكاة مقابلات العمل"
+                data-de="Simulation von Vorstellungsgesprächen">
+            </li>
 
-            <li>Customer-Service-Simulationen</li>
+            <li data-ar="Customer Service وTechnical Support"
+                data-de="Customer Service und Technical Support">
+            </li>
 
-            <li>Technical-Support-Simulationen</li>
+            <li data-ar="تدريب باستخدام أدوات الذكاء الاصطناعي"
+                data-de="Training mit KI-Tools">
+            </li>
 
-            <li>KI-Training mit praktischen Übungen</li>
+            <li data-ar="خطة تعلم فردية"
+                data-de="Individueller Lernplan">
+            </li>
 
-            <li>Individueller Lernplan</li>
-
-            <li>Zusätzliche praktische Übungen</li>
+            <li data-ar="تمارين عملية إضافية"
+                data-de="Zusätzliche praktische Übungen">
+            </li>
 
           </ul>
 
-          <a
-            href="https://wa.me/201000000000"
-            class="btn btn-primary"
-            target="_blank"
-          >
-            Premium buchen
+          <a href="#contact"
+             class="btn btn-primary"
+             data-ar="احجز الآن"
+             data-de="Jetzt anmelden">
           </a>
 
         </div>
 
       </div>
-
-
-      <!-- COMPARISON -->
-
-      <div class="comparison">
-
-        <table>
-
-          <thead>
-
-            <tr>
-              <th>Leistung</th>
-              <th>Standard</th>
-              <th>Premium</th>
-            </tr>
-
-          </thead>
-
-          <tbody>
-
-            <tr>
-              <td>4 Wochen</td>
-              <td>✓</td>
-              <td>✓</td>
-            </tr>
-
-            <tr>
-              <td>5 Tage pro Woche</td>
-              <td>✓</td>
-              <td>✓</td>
-            </tr>
-
-            <tr>
-              <td>Ca. 40 Live-Stunden</td>
-              <td>✓</td>
-              <td>✓</td>
-            </tr>
-
-            <tr>
-              <td>Kleine Gruppe</td>
-              <td>✓</td>
-              <td>✓</td>
-            </tr>
-
-            <tr>
-              <td>Deutscher Muttersprachler</td>
-              <td>–</td>
-              <td>✓</td>
-            </tr>
-
-            <tr>
-              <td>Zusätzliche Speaking Session</td>
-              <td>–</td>
-              <td>✓</td>
-            </tr>
-
-            <tr>
-              <td>Mock Interview</td>
-              <td>–</td>
-              <td>✓</td>
-            </tr>
-
-            <tr>
-              <td>KI-Training</td>
-              <td>–</td>
-              <td>✓</td>
-            </tr>
-
-            <tr>
-              <td>Individueller Lernplan</td>
-              <td>–</td>
-              <td>✓</td>
-            </tr>
-
-          </tbody>
-
-        </table>
-
-      </div>
-
     </div>
-
   </section>
 
 
   <!-- =========================
        CONSULTATION
-  ========================== -->
+  ========================= -->
 
-  <section class="consultation" id="beratung">
+  <section class="consultation">
 
     <div class="container">
 
-      <div class="section-title">
+      <div class="consultation-box">
 
-        <h2>💬 Persönliche Beratung</h2>
+        <h2 data-ar="💬 استشارة فردية"
+            data-de="💬 Individuelle Beratung">
+        </h2>
 
-        <p>
-          Individuelle Beratung – unabhängig von der Kursteilnahme.
+        <div class="consultation-price">€10</div>
+
+        <p
+          data-ar="جلسة فردية لمدة 20 دقيقة عبر WhatsApp لمناقشة سؤال محدد أو الحصول على توجيه عملي حول تعلم اللغة، العمل، Ausbildung أو الخطوات القادمة."
+          data-de="20-minütige Einzelberatung über WhatsApp für eine konkrete Frage oder praktische Orientierung zu Deutschlernen, Beruf, Ausbildung oder den nächsten Schritten.">
         </p>
 
-      </div>
+        <br>
 
-
-      <div class="consultation-card">
-
-        <h3>
-          Persönliche WhatsApp-Beratung
-        </h3>
-
-        <div class="consultation-price">
-          €10
-        </div>
-
-        <div class="consultation-duration">
-          20 Minuten pro Session
-        </div>
-
-        <p>
-          Eine persönliche 1:1-Beratung per WhatsApp für deine
-          individuellen Fragen rund um Deutsch, Lernen, Job und Ausbildung.
-        </p>
-
-        <ul class="consultation-features">
-
-          <li>Individuelle Fragen besprechen</li>
-
-          <li>Persönliche Lern- und Sprachberatung</li>
-
-          <li>Orientierung für Job & Ausbildung</li>
-
-          <li>Konkrete nächste Schritte besprechen</li>
-
-        </ul>
-
-        <a
-          href="https://wa.me/201000000000"
-          class="btn btn-primary"
-          target="_blank"
-        >
-          Beratung buchen – 10 €
+        <a href="#contact"
+           class="btn btn-primary"
+           data-ar="احجز استشارتك"
+           data-de="Beratung buchen">
         </a>
 
-        <p class="consultation-note">
-          Die Beratung ist unabhängig von Standard oder Premium
-          und kann von jedem gebucht werden.
-        </p>
-
       </div>
-
     </div>
-
-  </section>
-
-
-  <!-- =========================
-       CTA
-  ========================== -->
-
-  <section class="cta">
-
-    <div class="container">
-
-      <h2>
-        Bereit für dein Deutschtraining?
-      </h2>
-
-      <p>
-        Starte dein intensives B1/B2-Training und bereite dich
-        gezielt auf Arbeit, Ausbildung und Deutschland vor.
-      </p>
-
-      <a
-        href="https://wa.me/201000000000"
-        class="btn"
-        target="_blank"
-      >
-        Jetzt über WhatsApp anmelden
-      </a>
-
-    </div>
-
   </section>
 
 
   <!-- =========================
        FAQ
-  ========================== -->
+  ========================= -->
 
-  <section>
+  <section class="faq">
 
     <div class="container">
 
-      <div class="section-title">
+      <h2 class="section-title"
+          data-ar="الأسئلة الشائعة"
+          data-de="Häufige Fragen">
+      </h2>
 
-        <h2>❓ Häufige Fragen</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+
+          <h3
+            data-ar="هل الكورس مناسب لمستوى B1؟"
+            data-de="Ist der Kurs für B1 geeignet?">
+          </h3>
+
+          <p
+            data-ar="نعم. الكورس مصمم لمتعلمين في مستوى B1/B2 ويركز على تطوير القدرة على استخدام اللغة عمليًا."
+            data-de="Ja. Der Kurs richtet sich an Lernende auf B1/B2-Niveau und konzentriert sich auf die praktische Anwendung der Sprache.">
+          </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <h3
+            data-ar="هل الكورس أونلاين؟"
+            data-de="Findet der Kurs online statt?">
+          </h3>
+
+          <p
+            data-ar="نعم، التدريب Live Online."
+            data-de="Ja, der Unterricht findet live online statt.">
+          </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <h3
+            data-ar="هل أحصل على شهادة Goethe أو telc؟"
+            data-de="Bekomme ich ein Goethe- oder telc-Zertifikat?">
+          </h3>
+
+          <p
+            data-ar="لا. الكورس تدريبي وليس امتحانًا رسميًا ولا يمنح شهادة Goethe أو telc."
+            data-de="Nein. Der Kurs ist ein Training und keine offizielle Prüfung. Es wird kein Goethe- oder telc-Zertifikat ausgestellt.">
+          </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <h3
+            data-ar="هل الكورس يضمن الحصول على وظيفة أو Ausbildung؟"
+            data-de="Garantiert der Kurs einen Job oder eine Ausbildung?">
+          </h3>
+
+          <p
+            data-ar="لا توجد ضمانات للحصول على وظيفة أو Ausbildung. الهدف هو تطوير اللغة والتواصل العملي."
+            data-de="Nein. Der Kurs garantiert weder einen Job noch eine Ausbildung. Ziel ist die Verbesserung der Sprach- und Kommunikationsfähigkeiten.">
+          </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <h3
+            data-ar="هل يجب أن أكون في ألمانيا؟"
+            data-de="Muss ich in Deutschland sein?">
+          </h3>
+
+          <p
+            data-ar="لا. يمكنك الاشتراك من أي بلد، سواء كنت تستعد للسفر أو تعمل بالفعل مع شركة ألمانية من بلدك."
+            data-de="Nein. Du kannst aus jedem Land teilnehmen – egal, ob du dich auf Deutschland vorbereitest oder bereits von deinem Heimatland aus mit einem deutschen Unternehmen arbeitest.">
+          </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <h3
+            data-ar="هل توجد استشارات فردية؟"
+            data-de="Gibt es individuelle Beratung?">
+          </h3>
+
+          <p
+            data-ar="نعم، توجد جلسة استشارة فردية لمدة 20 دقيقة مقابل €10."
+            data-de="Ja. Eine individuelle 20-minütige Beratung kostet €10.">
+          </p>
+
+        </div>
 
       </div>
+    </div>
+  </section>
 
 
-      <div class="faq">
+  <!-- =========================
+       CTA
+  ========================= -->
 
+  <section class="cta" id="contact">
 
-        <details>
+    <div class="container">
 
-          <summary>
-            <span class="faq-question">
-              Für welches Sprachniveau ist der Kurs geeignet
-              <span class="question-mark">?</span>
-            </span>
-          </summary>
+      <h2
+        data-ar="جاهز تستخدم الألماني بشكل عملي؟"
+        data-de="Bereit, Deutsch praktisch anzuwenden?">
+      </h2>
 
-          <p>
-            Der Kurs richtet sich an Lernende auf B1/B2-Niveau,
-            die ihre Deutschkenntnisse intensiv und praxisorientiert
-            weiterentwickeln möchten.
-          </p>
+      <p
+        data-ar="ابدأ التدريب وخلّي الألمانية جزءًا فعليًا من شغلك، دراستك وحياتك اليومية."
+        data-de="Starte dein Training und mache Deutsch zu einem echten Teil deines Berufs, Studiums und Alltags.">
+      </p>
 
-        </details>
-
-
-        <details>
-
-          <summary>
-            <span class="faq-question">
-              Ist der Kurs für Lernende in Ägypten geeignet
-              <span class="question-mark">?</span>
-            </span>
-          </summary>
-
-          <p>
-            Ja. Der Kurs findet vollständig online statt und ist
-            besonders für Lernende geeignet, die sich auf Deutschland,
-            Arbeit oder Ausbildung vorbereiten möchten.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            <span class="faq-question">
-              Ist der Kurs auf Deutschland ausgerichtet
-              <span class="question-mark">?</span>
-            </span>
-          </summary>
-
-          <p>
-            Ja. Neben der Sprache trainieren wir typische Situationen
-            aus dem beruflichen und alltäglichen Leben in Deutschland.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            <span class="faq-question">
-              Ist Technical Support Teil des Kurses
-              <span class="question-mark">?</span>
-            </span>
-          </summary>
-
-          <p>
-            Ja. Technical Support und professionelle Kommunikation
-            gehören zu den praktischen Anwendungsbereichen des Kurses.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            <span class="faq-question">
-              Was ist der Unterschied zwischen Standard und Premium
-              <span class="question-mark">?</span>
-            </span>
-          </summary>
-
-          <p>
-            Premium enthält zusätzliche Speaking-Praxis, Training mit
-            einem deutschen Muttersprachler, Simulationen, Mock Interviews,
-            KI-Training und weitere individuelle Übungen.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            <span class="faq-question">
-              Gibt es einen deutschen Muttersprachler im Premium-Kurs
-              <span class="question-mark">?</span>
-            </span>
-          </summary>
-
-          <p>
-            Ja. Im Premium-Modell gibt es zusätzliche Trainingseinheiten
-            mit einem deutschen Muttersprachler.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            <span class="faq-question">
-              Kann ich die persönliche Beratung buchen, ohne den Kurs zu machen
-              <span class="question-mark">?</span>
-            </span>
-          </summary>
-
-          <p>
-            Ja. Die persönliche WhatsApp-Beratung ist ein eigenständiges
-            Angebot und kann unabhängig vom Kurs gebucht werden.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            <span class="faq-question">
-              Wie lange dauert die persönliche Beratung
-              <span class="question-mark">?</span>
-            </span>
-          </summary>
-
-          <p>
-            Eine Beratung dauert 20 Minuten und kostet 10 €.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            <span class="faq-question">
-              Bekomme ich nach dem Kurs ein offizielles Zertifikat
-              <span class="question-mark">?</span>
-            </span>
-          </summary>
-
-          <p>
-            Nein. Der Kurs selbst stellt kein offizielles Goethe-,
-            telc- oder ÖSD-Zertifikat aus.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            <span class="faq-question">
-              Garantiert der Kurs einen Job oder eine Ausbildung
-              <span class="question-mark">?</span>
-            </span>
-          </summary>
-
-          <p>
-            Nein. Der Kurs bietet praktische Vorbereitung und Training,
-            garantiert jedoch keinen Job- oder Ausbildungsplatz.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            <span class="faq-question">
-              Wie viele Teilnehmer gibt es
-              <span class="question-mark">?</span>
-            </span>
-          </summary>
-
-          <p>
-            Der Kurs ist als kleine Gruppe konzipiert, damit ausreichend
-            Zeit für aktive Sprachpraxis und Feedback bleibt.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            <span class="faq-question">
-              Wie wird bezahlt
-              <span class="question-mark">?</span>
-            </span>
-          </summary>
-
-          <p>
-            Die Zahlungsdetails werden nach der Kontaktaufnahme
-            über WhatsApp mitgeteilt.
-          </p>
-
-        </details>
-
-
-      </div>
+      <a href="https://wa.me/YOUR_NUMBER"
+         class="btn btn-primary"
+         target="_blank"
+         data-ar="تواصل معنا عبر WhatsApp"
+         data-de="Über WhatsApp kontaktieren">
+      </a>
 
     </div>
-
   </section>
 
 
   <!-- =========================
        FOOTER
-  ========================== -->
+  ========================= -->
 
   <footer>
 
-    <p>
-      © 2026 Deutsch für Arbeit & Deutschland
-    </p>
-
-    <p>
-      Intensives B1/B2 Deutschtraining für Beruf und Deutschland
+    <p
+      data-ar="© 2026 كورس الألماني العملي — من اللغة إلى الاستخدام الحقيقي"
+      data-de="© 2026 Praktischer Deutschkurs – Von der Sprache zur echten Anwendung">
     </p>
 
   </footer>
 
+
+  <!-- =========================
+       LANGUAGE SCRIPT
+  ========================= -->
+
+  <script>
+
+    function setLanguage(lang) {
+
+      const html = document.documentElement;
+
+      /*
+        Change page direction
+      */
+
+      if (lang === "ar") {
+
+        html.lang = "ar";
+        html.dir = "rtl";
+
+      } else {
+
+        html.lang = "de";
+        html.dir = "ltr";
+
+      }
+
+
+      /*
+        Change all texts
+      */
+
+      document.querySelectorAll("[data-ar]").forEach(function(element) {
+
+        if (lang === "ar") {
+
+          element.textContent = element.getAttribute("data-ar");
+
+        } else {
+
+          element.textContent = element.getAttribute("data-de");
+
+        }
+
+      });
+
+
+      /*
+        Update buttons
+      */
+
+      document.getElementById("arBtn").classList.toggle(
+        "active",
+        lang === "ar"
+      );
+
+      document.getElementById("deBtn").classList.toggle(
+        "active",
+        lang === "de"
+      );
+
+
+      /*
+        Update page title
+      */
+
+      if (lang === "ar") {
+
+        document.title =
+          "كورس الألماني العملي — من اللغة إلى الاستخدام الحقيقي";
+
+      } else {
+
+        document.title =
+          "Praktischer Deutschkurs – Von der Sprache zur echten Anwendung";
+
+      }
+
+
+      /*
+        Save selected language
+      */
+
+      localStorage.setItem("preferredLanguage", lang);
+
+    }
+
+
+    /*
+      Load saved language
+    */
+
+    const savedLanguage =
+      localStorage.getItem("preferredLanguage") || "ar";
+
+    setLanguage(savedLanguage);
+
+  </script>
 
 </body>
 </html>
