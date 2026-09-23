@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="de" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>B2 Deutsch für Arbeit & Deutschland | Intensivkurs</title>
+  <title>B2 Deutsch für Arbeit & Deutschland | Job • Ausbildung • Technical Support</title>
 
-  <meta
-    name="description"
-    content="Intensiver B1/B2 Deutschkurs für Arbeit, Ausbildung, Call Center, Technical Support und Deutschland. 4 Wochen, 5 Tage pro Woche, ca. 40 Live-Stunden."
-  />
+  <meta name="description"
+        content="Intensives B1/B2 Deutschtraining für Arbeit, Ausbildung, Call Center, Technical Support und Deutschland. 4 Wochen, 5 Tage pro Woche, ca. 40 Live-Stunden. Standard & Premium.">
 
   <style>
     * {
@@ -18,11 +16,18 @@
       padding: 0;
     }
 
+    html {
+      direction: ltr;
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #f7f9fc;
-      color: #172033;
+      color: #1d2939;
       line-height: 1.7;
+      direction: ltr;
+      text-align: left;
     }
 
     a {
@@ -31,396 +36,402 @@
     }
 
     .container {
-      width: min(1150px, 92%);
+      width: 92%;
+      max-width: 1150px;
       margin: auto;
     }
 
-    /* =========================
-       HERO
-    ========================== */
+    /* HERO */
 
     .hero {
-      background:
-        linear-gradient(135deg, #0b1f3a, #123e69);
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
       color: white;
-      padding: 80px 0 70px;
+      padding: 90px 20px 80px;
       text-align: center;
+      direction: ltr;
     }
 
     .badge {
       display: inline-block;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.25);
       padding: 8px 18px;
       border-radius: 30px;
       font-size: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .hero h1 {
-      font-size: clamp(34px, 5vw, 58px);
+      font-size: 48px;
       line-height: 1.15;
       margin-bottom: 20px;
+      font-weight: 800;
     }
 
-    .hero h1 span {
-      color: #ffd166;
+    .hero h2 {
+      font-size: 23px;
+      font-weight: 400;
+      opacity: 0.95;
+      max-width: 850px;
+      margin: auto;
     }
 
     .hero p {
       max-width: 800px;
-      margin: auto;
-      font-size: 20px;
-      opacity: 0.94;
+      margin: 25px auto 0;
+      font-size: 18px;
+      opacity: 0.9;
     }
 
     .hero-buttons {
-      margin-top: 32px;
+      margin-top: 35px;
       display: flex;
       justify-content: center;
-      gap: 14px;
+      gap: 15px;
       flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 28px;
+      padding: 14px 26px;
       border-radius: 10px;
       font-weight: bold;
       transition: 0.2s;
     }
 
     .btn-primary {
-      background: #ffd166;
-      color: #172033;
+      background: white;
+      color: #1d4ed8;
     }
 
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.35);
-      color: white;
-    }
-
-    .btn:hover {
+    .btn-primary:hover {
       transform: translateY(-2px);
     }
 
-    /* =========================
-       GENERAL SECTIONS
-    ========================== */
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.5);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* GENERAL */
 
     section {
-      padding: 75px 0;
+      padding: 75px 20px;
+      direction: ltr;
+      text-align: left;
     }
 
     .section-title {
       text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
       font-size: 34px;
-      margin-bottom: 15px;
-      color: #0b1f3a;
+      margin-bottom: 10px;
+      color: #101828;
     }
 
-    .section-subtitle {
-      text-align: center;
-      max-width: 750px;
-      margin: 0 auto 45px;
+    .section-title p {
       color: #667085;
-      font-size: 17px;
-    }
-
-    /* =========================
-       VIDEO SECTION
-    ========================== */
-
-    .video-section {
-      background: white;
-    }
-
-    .video-wrapper {
-      max-width: 950px;
+      max-width: 750px;
       margin: auto;
     }
 
-    .video-card {
-      background: #0b1f3a;
-      border-radius: 20px;
-      padding: 12px;
-      box-shadow: 0 20px 50px rgba(11, 31, 58, 0.16);
-    }
+    /* TARGET */
 
-    .video-frame {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      border-radius: 14px;
-      background: #101828;
-    }
-
-    .video-frame iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .video-info {
-      color: white;
-      padding: 22px 18px 12px;
-      text-align: center;
-    }
-
-    .video-info h3 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-
-    .video-info p {
-      color: #d0d5dd;
-      font-size: 15px;
-    }
-
-    .video-highlights {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin-top: 30px;
-    }
-
-    .video-highlight {
-      background: #f7f9fc;
-      border: 1px solid #e4e7ec;
-      border-radius: 14px;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .video-highlight strong {
-      display: block;
-      color: #0b1f3a;
-      margin-bottom: 5px;
-    }
-
-    .video-highlight span {
-      font-size: 14px;
-      color: #667085;
-    }
-
-    /* =========================
-       COURSE OVERVIEW
-    ========================== */
-
-    .overview-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .overview-card {
+    .target {
       background: white;
-      padding: 28px 20px;
-      border-radius: 15px;
-      text-align: center;
-      border: 1px solid #e4e7ec;
-    }
-
-    .overview-card .number {
-      font-size: 32px;
-      font-weight: bold;
-      color: #0b63ce;
-      margin-bottom: 5px;
-    }
-
-    .overview-card h3 {
-      margin-bottom: 5px;
-    }
-
-    .overview-card p {
-      color: #667085;
-      font-size: 14px;
-    }
-
-    /* =========================
-       TARGET
-    ========================== */
-
-    .target-section {
-      background: #eef4fb;
     }
 
     .target-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 25px;
+      max-width: 950px;
+      margin: auto;
     }
 
     .target-card {
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
+      background: #f8fafc;
+      padding: 28px;
+      border-radius: 15px;
       border: 1px solid #e4e7ec;
     }
 
     .target-card h3 {
       margin-bottom: 12px;
-      color: #0b1f3a;
+      color: #1d4ed8;
     }
 
     .target-card ul {
-      padding-right: 20px;
+      padding-left: 20px;
+      color: #475467;
     }
 
     .target-card li {
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
-    /* =========================
-       CURRICULUM
-    ========================== */
+    /* VIDEO */
+
+    .video-section {
+      background: #eef4ff;
+    }
+
+    .video-wrapper {
+      max-width: 950px;
+      margin: auto;
+      background: white;
+      padding: 18px;
+      border-radius: 18px;
+      box-shadow: 0 10px 35px rgba(16, 24, 40, 0.08);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #101828;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      border: 0;
+    }
+
+    .video-info {
+      padding: 22px 10px 5px;
+      text-align: center;
+    }
+
+    .video-info h3 {
+      margin-bottom: 8px;
+      color: #101828;
+    }
+
+    .video-info p {
+      color: #667085;
+    }
+
+    .video-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .video-highlight {
+      background: white;
+      border: 1px solid #e4e7ec;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .video-highlight h4 {
+      margin-bottom: 7px;
+    }
+
+    .video-highlight p {
+      font-size: 14px;
+      color: #667085;
+    }
+
+    /* PROGRAM */
+
+    .program {
+      background: white;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .program-card {
+      text-align: center;
+      padding: 28px 18px;
+      background: #f8fafc;
+      border-radius: 15px;
+      border: 1px solid #e4e7ec;
+    }
+
+    .program-card .number {
+      font-size: 32px;
+      font-weight: 800;
+      color: #1d4ed8;
+      margin-bottom: 5px;
+    }
+
+    .program-card h3 {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .program-card p {
+      font-size: 14px;
+      color: #667085;
+    }
+
+    /* CURRICULUM */
+
+    .curriculum {
+      background: #f8fafc;
+    }
 
     .curriculum-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 25px;
     }
 
     .curriculum-card {
       background: white;
-      padding: 28px;
-      border-radius: 16px;
+      padding: 30px;
+      border-radius: 15px;
       border: 1px solid #e4e7ec;
     }
 
     .curriculum-card h3 {
       margin-bottom: 15px;
-      color: #0b1f3a;
+      color: #1d4ed8;
     }
 
     .curriculum-card ul {
-      padding-right: 20px;
+      padding-left: 20px;
+      color: #475467;
     }
 
     .curriculum-card li {
       margin-bottom: 8px;
     }
 
-    /* =========================
-       WHY US
-    ========================== */
+    /* PRICING */
 
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .why-card {
+    .pricing {
       background: white;
-      border-radius: 16px;
-      padding: 30px;
-      border: 1px solid #e4e7ec;
-    }
-
-    .why-card .icon {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .why-card h3 {
-      margin-bottom: 10px;
-    }
-
-    .why-card p {
-      color: #667085;
-      font-size: 15px;
-    }
-
-    /* =========================
-       PRICING
-    ========================== */
-
-    .pricing-section {
-      background: #eef4fb;
     }
 
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+      gap: 30px;
       max-width: 900px;
       margin: auto;
     }
 
     .price-card {
-      background: white;
-      border-radius: 20px;
-      padding: 35px;
-      border: 2px solid #e4e7ec;
       position: relative;
+      background: #ffffff;
+      border: 1px solid #e4e7ec;
+      border-radius: 18px;
+      padding: 35px;
+      box-shadow: 0 8px 30px rgba(16,24,40,0.05);
     }
 
     .price-card.premium {
-      border-color: #0b63ce;
-      box-shadow: 0 20px 45px rgba(11, 99, 206, 0.14);
+      border: 2px solid #1d4ed8;
+      box-shadow: 0 12px 40px rgba(29,78,216,0.12);
     }
 
     .popular {
       position: absolute;
-      top: -14px;
+      top: 20px;
       right: 25px;
-      background: #0b63ce;
+      background: #1d4ed8;
       color: white;
-      padding: 6px 15px;
+      padding: 5px 12px;
       border-radius: 20px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: bold;
     }
 
     .price-card h3 {
-      font-size: 26px;
+      font-size: 24px;
       margin-bottom: 8px;
     }
 
     .price {
-      font-size: 44px;
-      font-weight: bold;
-      color: #0b63ce;
-      margin: 15px 0;
+      font-size: 42px;
+      font-weight: 800;
+      color: #1d4ed8;
+      margin: 15px 0 5px;
     }
 
-    .price span {
-      font-size: 15px;
+    .price-note {
       color: #667085;
-      font-weight: normal;
+      font-size: 14px;
+      margin-bottom: 25px;
     }
 
     .price-card ul {
       list-style: none;
-      margin: 25px 0;
+      margin-bottom: 25px;
     }
 
     .price-card li {
-      padding: 8px 0;
-      border-bottom: 1px solid #f0f2f5;
+      margin-bottom: 12px;
+      padding-left: 25px;
+      position: relative;
     }
 
     .price-card li::before {
       content: "✓";
-      color: #12b76a;
+      position: absolute;
+      left: 0;
+      color: #16a34a;
       font-weight: bold;
-      margin-left: 8px;
     }
 
-    .price-card .btn {
-      width: 100%;
-      text-align: center;
+    .premium-extra {
+      margin-top: 25px;
+      padding: 18px;
+      border-radius: 12px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
     }
 
-    /* =========================
-       COMPARISON
-    ========================== */
+    .premium-extra h4 {
+      color: #1d4ed8;
+      margin-bottom: 7px;
+    }
+
+    .premium-extra p {
+      font-size: 14px;
+      color: #475467;
+    }
+
+    .addon {
+      margin-top: 18px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #f9fafb;
+      border: 1px dashed #98a2b3;
+      font-size: 14px;
+      color: #475467;
+    }
+
+    .addon strong {
+      color: #101828;
+    }
+
+    /* COMPARISON */
 
     .comparison {
-      max-width: 900px;
-      margin: 45px auto 0;
+      margin-top: 45px;
       overflow-x: auto;
     }
 
@@ -428,253 +439,284 @@
       width: 100%;
       border-collapse: collapse;
       background: white;
-      border-radius: 15px;
+      border-radius: 12px;
       overflow: hidden;
+      min-width: 650px;
     }
 
     th,
     td {
-      padding: 16px;
-      border-bottom: 1px solid #e4e7ec;
+      padding: 15px;
+      border-bottom: 1px solid #eaecf0;
       text-align: center;
     }
 
     th {
-      background: #0b1f3a;
-      color: white;
+      background: #f2f4f7;
+      color: #101828;
     }
 
+    th:first-child,
     td:first-child {
-      text-align: right;
+      text-align: left;
+    }
+
+    .yes {
+      color: #16a34a;
       font-weight: bold;
     }
 
-    /* =========================
-       FAQ
-    ========================== */
-
-    .faq {
-      max-width: 850px;
-      margin: auto;
+    .no {
+      color: #98a2b3;
     }
 
-    details {
-      background: white;
-      border: 1px solid #e4e7ec;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      padding: 18px 20px;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    details p {
-      margin-top: 12px;
-      color: #667085;
-    }
-
-    /* =========================
-       CTA
-    ========================== */
+    /* CTA */
 
     .cta {
-      background: #0b1f3a;
+      background: linear-gradient(135deg, #1d4ed8, #0f172a);
       color: white;
       text-align: center;
-      padding: 75px 0;
     }
 
     .cta h2 {
-      font-size: 36px;
+      font-size: 34px;
       margin-bottom: 15px;
     }
 
     .cta p {
-      max-width: 700px;
-      margin: 0 auto 25px;
-      color: #d0d5dd;
+      max-width: 750px;
+      margin: auto;
+      opacity: 0.9;
     }
 
-    /* =========================
-       FOOTER
-    ========================== */
+    .cta .btn {
+      margin-top: 25px;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .faq details {
+      background: white;
+      border: 1px solid #e4e7ec;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      padding: 0 20px;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: bold;
+      padding: 20px 0;
+      direction: ltr;
+      text-align: left;
+      list-style-position: outside;
+    }
+
+    .faq-question {
+      direction: ltr;
+      unicode-bidi: isolate;
+    }
+
+    .question-mark {
+      direction: ltr;
+      unicode-bidi: isolate;
+      display: inline-block;
+      margin-left: 4px;
+    }
+
+    .faq details p {
+      margin-top: 0;
+      padding: 0 0 20px;
+      color: #667085;
+      direction: ltr;
+      text-align: left;
+    }
+
+    /* FOOTER */
 
     footer {
-      background: #071426;
-      color: #98a2b3;
+      background: #0f172a;
+      color: white;
+      padding: 35px 20px;
       text-align: center;
-      padding: 25px;
+      direction: ltr;
+    }
+
+    footer p {
+      opacity: 0.75;
       font-size: 14px;
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================== */
+    /* RESPONSIVE */
 
     @media (max-width: 900px) {
-
-      .overview-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .pricing-grid {
-        grid-template-columns: 1fr;
-        max-width: 550px;
-      }
-
-    }
-
-    @media (max-width: 700px) {
-
-      section {
-        padding: 55px 0;
-      }
-
-      .hero {
-        padding: 60px 0;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      .overview-grid,
-      .target-grid,
-      .curriculum-grid,
-      .video-highlights {
-        grid-template-columns: 1fr;
-      }
-
-      .section-title {
-        font-size: 28px;
-      }
-
-      .price {
+      .hero h1 {
         font-size: 38px;
       }
 
-      .video-card {
-        padding: 7px;
+      .program-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
+      .video-highlights {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 65px 18px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero h2 {
+        font-size: 19px;
+      }
+
+      section {
+        padding: 55px 18px;
+      }
+
+      .target-grid,
+      .curriculum-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .program-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-title h2 {
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .program-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card {
+        padding: 27px 22px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- =========================
-       HERO
-  ========================== -->
+  <!-- ================= HERO ================= -->
 
   <header class="hero">
 
-    <div class="container">
+    <div class="badge">
+      Intensives B1/B2 Deutschtraining
+    </div>
 
-      <div class="badge">
-        Intensives B1/B2 Deutschtraining
-      </div>
+    <h1>
+      Deutsch für Arbeit & Deutschland
+    </h1>
 
-      <h1>
-        Deutsch für
-        <span>Arbeit & Deutschland</span>
-      </h1>
+    <h2>
+      Job • Ausbildung • Call Center • Technical Support • Remote
+    </h2>
 
-      <p>
-        Intensiver Deutschkurs für Lernende auf B1/B2-Niveau,
-        die Deutsch nicht nur lernen möchten, sondern es für
-        Arbeit, Ausbildung, Call Center, Technical Support
-        und das Leben in Deutschland praktisch einsetzen wollen.
-      </p>
+    <p>
+      Intensives Deutschtraining für Lernende auf B1/B2-Niveau,
+      die Deutsch nicht nur lernen, sondern im Beruf und im Alltag
+      wirklich benutzen möchten.
+    </p>
 
-      <div class="hero-buttons">
+    <div class="hero-buttons">
 
-        <a
-          href="https://wa.me/201000000000"
-          class="btn btn-primary"
-          target="_blank"
-        >
-          Jetzt Platz sichern
-        </a>
+      <a
+        href="https://wa.me/201000000000"
+        class="btn btn-primary"
+        target="_blank"
+      >
+        Jetzt anmelden
+      </a>
 
-        <a
-          href="#video"
-          class="btn btn-secondary"
-        >
-          Kursvideo ansehen
-        </a>
-
-      </div>
+      <a
+        href="#programm"
+        class="btn btn-secondary"
+      >
+        Kurs ansehen
+      </a>
 
     </div>
 
   </header>
 
 
-  <!-- =========================
-       VIDEO
-  ========================== -->
+  <!-- ================= VIDEO ================= -->
 
-  <section class="video-section" id="video">
+  <section class="video-section">
 
     <div class="container">
 
-      <h2 class="section-title">
-        🎥 Schau dir den Kurs selbst an
-      </h2>
+      <div class="section-title">
 
-      <p class="section-subtitle">
-        Du möchtest wissen, wie der Kurs wirklich abläuft?
-        Schau dir unser Video an und erlebe einen Einblick
-        in den Unterricht, die Lernmethode und die Inhalte.
-      </p>
+        <h2>
+          🎥 Schau dir den Kurs selbst an
+        </h2>
+
+        <p>
+          Erfahre mehr über den Kurs und sieh dir einen echten Einblick
+          in unseren Unterricht an.
+        </p>
+
+      </div>
 
 
       <div class="video-wrapper">
 
-        <div class="video-card">
+        <div class="video-container">
 
-          <div class="video-frame">
+          <!--
+            Ersetze YOUR_VIDEO_ID durch deine echte YouTube Video-ID.
 
-            <!--
-              Ersetze YOUR_VIDEO_ID durch deine YouTube Video-ID.
+            Beispiel:
+            https://www.youtube.com/watch?v=ABC123XYZ
 
-              Beispiel:
-              https://www.youtube.com/watch?v=ABC123XYZ
+            Dann:
+            https://www.youtube.com/embed/ABC123XYZ
+          -->
 
-              Dann:
-              https://www.youtube.com/embed/ABC123XYZ
-            -->
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="Kursvorstellung und echter Unterrichtseinblick"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
 
-            <iframe
-              src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-              title="B1/B2 Deutschkurs – Kursvorstellung und Unterrichtsbeispiel"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
+        </div>
 
-          </div>
 
-          <div class="video-info">
+        <div class="video-info">
 
-            <h3>
-              Kursvorstellung + echter Einblick in den Unterricht
-            </h3>
+          <h3>
+            Kursvorstellung + echter Einblick in den Unterricht
+          </h3>
 
-            <p>
-              Sieh dir an, wie der Unterricht aufgebaut ist und
-              wie wir Deutsch in realistischen beruflichen Situationen
-              trainieren.
-            </p>
-
-          </div>
+          <p>
+            Sieh dir an, wie der Kurs aufgebaut ist,
+            welche Themen behandelt werden und wie der Unterricht
+            tatsächlich abläuft.
+          </p>
 
         </div>
 
@@ -682,24 +724,41 @@
         <div class="video-highlights">
 
           <div class="video-highlight">
-            <strong>🎓 Kurs erklärt</strong>
-            <span>
-              Aufbau, Ablauf und Lernziele des Intensivkurses
-            </span>
+
+            <h4>
+              📚 Kurs erklärt
+            </h4>
+
+            <p>
+              Erfahre genau, was dich in den 4 Wochen erwartet.
+            </p>
+
           </div>
 
-          <div class="video-highlight">
-            <strong>🎤 Echter Unterricht</strong>
-            <span>
-              Ein Ausschnitt aus einer tatsächlichen Unterrichtssituation
-            </span>
-          </div>
 
           <div class="video-highlight">
-            <strong>💼 Praxisnah</strong>
-            <span>
-              Arbeit, Bewerbung, Kundenkontakt und Deutschland
-            </span>
+
+            <h4>
+              🎥 Echter Unterricht
+            </h4>
+
+            <p>
+              Ein echter Ausschnitt aus einer Unterrichtsstunde.
+            </p>
+
+          </div>
+
+
+          <div class="video-highlight">
+
+            <h4>
+              💼 Praxisorientiert
+            </h4>
+
+            <p>
+              Deutsch für Arbeit, Ausbildung und Alltag in Deutschland.
+            </p>
+
           </div>
 
         </div>
@@ -711,85 +770,40 @@
   </section>
 
 
-  <!-- =========================
-       COURSE OVERVIEW
-  ========================== -->
+  <!-- ================= TARGET ================= -->
 
-  <section>
+  <section class="target">
 
     <div class="container">
 
-      <h2 class="section-title">
-        Der Kurs auf einen Blick
-      </h2>
+      <div class="section-title">
 
-      <p class="section-subtitle">
-        Ein intensives 4-Wochen-Programm mit viel Live-Praxis
-        und einem klaren Fokus auf berufliche Kommunikation.
-      </p>
+        <h2>
+          Für wen ist der Kurs geeignet?
+        </h2>
 
-      <div class="overview-grid">
-
-        <div class="overview-card">
-          <div class="number">4</div>
-          <h3>Wochen</h3>
-          <p>Intensives Training</p>
-        </div>
-
-        <div class="overview-card">
-          <div class="number">5</div>
-          <h3>Tage / Woche</h3>
-          <p>Montag bis Freitag</p>
-        </div>
-
-        <div class="overview-card">
-          <div class="number">2h</div>
-          <h3>pro Tag</h3>
-          <p>Live-Unterricht</p>
-        </div>
-
-        <div class="overview-card">
-          <div class="number">40+</div>
-          <h3>Live-Stunden</h3>
-          <p>Intensive Praxis</p>
-        </div>
+        <p>
+          Dieser Kurs richtet sich an Lernende auf B1/B2-Niveau,
+          die Deutsch praktisch für ihr Berufsleben und Deutschland
+          einsetzen möchten.
+        </p>
 
       </div>
 
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       TARGET
-  ========================== -->
-
-  <section class="target-section">
-
-    <div class="container">
-
-      <h2 class="section-title">
-        Für wen ist der Kurs?
-      </h2>
-
-      <p class="section-subtitle">
-        Der Kurs richtet sich an Lernende auf B1/B2-Niveau,
-        die ihr Deutsch praktisch und beruflich einsetzen möchten.
-      </p>
 
       <div class="target-grid">
 
         <div class="target-card">
 
-          <h3>🇩🇪 Wenn du nach Deutschland möchtest</h3>
+          <h3>
+            🇩🇪 Deutschland
+          </h3>
 
           <ul>
-            <li>Arbeiten in Deutschland</li>
-            <li>Ausbildung</li>
-            <li>Alltag und Kommunikation</li>
-            <li>Telefonate und Behördensituationen</li>
-            <li>Wohnung, Arbeit und soziale Situationen</li>
+            <li>Vorbereitung auf das Leben in Deutschland</li>
+            <li>Alltagssituationen</li>
+            <li>Telefonate und wichtige Gespräche</li>
+            <li>Kommunikation mit Behörden und Institutionen</li>
           </ul>
 
         </div>
@@ -797,14 +811,47 @@
 
         <div class="target-card">
 
-          <h3>💼 Wenn du Deutsch für deinen Job brauchst</h3>
+          <h3>
+            💼 Arbeit
+          </h3>
 
           <ul>
-            <li>Call Center</li>
-            <li>Customer Service</li>
-            <li>Technical Support</li>
-            <li>Remote Work</li>
+            <li>Berufliche Kommunikation</li>
+            <li>Gespräche mit Kollegen</li>
+            <li>Arbeitsanweisungen verstehen</li>
             <li>Professionelle Kommunikation</li>
+          </ul>
+
+        </div>
+
+
+        <div class="target-card">
+
+          <h3>
+            🛠️ Ausbildung
+          </h3>
+
+          <ul>
+            <li>Kommunikation im Ausbildungsbetrieb</li>
+            <li>Arbeitsanweisungen</li>
+            <li>Berufliche Fachbegriffe</li>
+            <li>Kommunikation mit Ausbildern und Kollegen</li>
+          </ul>
+
+        </div>
+
+
+        <div class="target-card">
+
+          <h3>
+            💻 Technical Support / Call Center
+          </h3>
+
+          <ul>
+            <li>Kundenkommunikation</li>
+            <li>Probleme erklären und lösen</li>
+            <li>Technische Situationen beschreiben</li>
+            <li>Professionelle Telefongespräche</li>
           </ul>
 
         </div>
@@ -816,49 +863,135 @@
   </section>
 
 
-  <!-- =========================
-       CURRICULUM
-  ========================== -->
+  <!-- ================= PROGRAM ================= -->
 
-  <section>
+  <section class="program" id="programm">
 
     <div class="container">
 
-      <h2 class="section-title">
-        Was lernst du?
-      </h2>
+      <div class="section-title">
 
-      <p class="section-subtitle">
-        Intensives B1/B2-Training mit Fokus auf echter Kommunikation
-        und beruflichen Situationen.
-      </p>
+        <h2>
+          Intensivprogramm
+        </h2>
+
+        <p>
+          Ein kompakter und intensiver Kurs für schnelle praktische Fortschritte.
+        </p>
+
+      </div>
+
+
+      <div class="program-grid">
+
+        <div class="program-card">
+
+          <div class="number">
+            4
+          </div>
+
+          <h3>
+            Wochen
+          </h3>
+
+          <p>
+            Intensives Training
+          </p>
+
+        </div>
+
+
+        <div class="program-card">
+
+          <div class="number">
+            5
+          </div>
+
+          <h3>
+            Tage / Woche
+          </h3>
+
+          <p>
+            Montag bis Freitag
+          </p>
+
+        </div>
+
+
+        <div class="program-card">
+
+          <div class="number">
+            2
+          </div>
+
+          <h3>
+            Stunden / Tag
+          </h3>
+
+          <p>
+            Live-Unterricht
+          </p>
+
+        </div>
+
+
+        <div class="program-card">
+
+          <div class="number">
+            ~40
+          </div>
+
+          <h3>
+            Live-Stunden
+          </h3>
+
+          <p>
+            pro Kurs
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CURRICULUM ================= -->
+
+  <section class="curriculum">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Was lernst du?
+        </h2>
+
+        <p>
+          Der Unterricht kombiniert allgemeines Deutsch mit
+          realistischen beruflichen und alltäglichen Situationen.
+        </p>
+
+      </div>
+
 
       <div class="curriculum-grid">
 
         <div class="curriculum-card">
 
-          <h3>🗣️ Sprechen</h3>
+          <h3>
+            🗣️ Sprechen
+          </h3>
 
           <ul>
             <li>Freies Sprechen</li>
-            <li>Diskussionen</li>
-            <li>Meinungen ausdrücken</li>
-            <li>Situationen im Berufsalltag</li>
-            <li>Telefonische Kommunikation</li>
-          </ul>
-
-        </div>
-
-
-        <div class="curriculum-card">
-
-          <h3>🎧 Hören</h3>
-
-          <ul>
-            <li>Gespräche verstehen</li>
+            <li>Berufliche Gespräche</li>
             <li>Telefonate</li>
-            <li>Arbeitsplatz-Kommunikation</li>
-            <li>Verschiedene Sprechgeschwindigkeiten</li>
+            <li>Meinungen erklären</li>
+            <li>Situationen beschreiben</li>
           </ul>
 
         </div>
@@ -866,58 +999,81 @@
 
         <div class="curriculum-card">
 
-          <h3>💼 Deutsch im Beruf</h3>
+          <h3>
+            👂 Hören
+          </h3>
 
           <ul>
+            <li>Gesprochene Alltagssprache</li>
+            <li>Berufliche Gespräche</li>
+            <li>Telefonische Kommunikation</li>
+            <li>Arbeitsanweisungen</li>
+          </ul>
+
+        </div>
+
+
+        <div class="curriculum-card">
+
+          <h3>
+            📖 Lesen
+          </h3>
+
+          <ul>
+            <li>E-Mails</li>
+            <li>Arbeitsanweisungen</li>
+            <li>Stellenanzeigen</li>
+            <li>Informationen von Unternehmen</li>
+            <li>Alltagsdokumente</li>
+          </ul>
+
+        </div>
+
+
+        <div class="curriculum-card">
+
+          <h3>
+            ✍️ Schreiben
+          </h3>
+
+          <ul>
+            <li>Professionelle E-Mails</li>
+            <li>Anfragen</li>
+            <li>Antworten an Kunden</li>
+            <li>Kurze berufliche Texte</li>
+          </ul>
+
+        </div>
+
+
+        <div class="curriculum-card">
+
+          <h3>
+            🧠 Grammatik
+          </h3>
+
+          <ul>
+            <li>B1/B2 Grammatik</li>
+            <li>Satzstruktur</li>
+            <li>Typische Fehler korrigieren</li>
+            <li>Grammatik im praktischen Kontext</li>
+          </ul>
+
+        </div>
+
+
+        <div class="curriculum-card">
+
+          <h3>
+            💼 Beruflicher Wortschatz
+          </h3>
+
+          <ul>
+            <li>Arbeitsplatz</li>
             <li>Kundenservice</li>
             <li>Technical Support</li>
-            <li>Arbeitsplatz-Kommunikation</li>
-            <li>Professionelle E-Mails</li>
-            <li>Teamkommunikation</li>
-          </ul>
-
-        </div>
-
-
-        <div class="curriculum-card">
-
-          <h3>🇩🇪 Deutschland</h3>
-
-          <ul>
-            <li>Alltagssituationen</li>
-            <li>Behördengespräche</li>
-            <li>Wohnungssuche</li>
-            <li>Telefonate</li>
-            <li>Praktische Kommunikation</li>
-          </ul>
-
-        </div>
-
-
-        <div class="curriculum-card">
-
-          <h3>📄 Bewerbung & Interview</h3>
-
-          <ul>
-            <li>Vorstellungsgespräch</li>
-            <li>Selbstvorstellung</li>
-            <li>Beruflicher Wortschatz</li>
-            <li>Antworten auf typische Fragen</li>
-            <li>Professionelle Kommunikation</li>
-          </ul>
-
-        </div>
-
-
-        <div class="curriculum-card">
-
-          <h3>✍️ Grammatik & Wortschatz</h3>
-
-          <ul>
-            <li>Relevante B1/B2-Grammatik</li>
-            <li>Beruflicher Wortschatz</li>
-            <li>Redemittel</li>
-            <li>Typische deutsche Ausdrücke</li>
+            <li>Ausbildung</li>
+            <li>Berufliche Kommunikation</li>
           </ul>
 
         </div>
@@ -929,88 +1085,24 @@
   </section>
 
 
-  <!-- =========================
-       WHY THIS COURSE
-  ========================== -->
+  <!-- ================= PRICING ================= -->
 
-  <section class="target-section">
+  <section class="pricing" id="preise">
 
     <div class="container">
 
-      <h2 class="section-title">
-        Warum dieser Kurs?
-      </h2>
+      <div class="section-title">
 
-      <p class="section-subtitle">
-        Nicht nur Grammatik lernen – sondern Deutsch aktiv benutzen.
-      </p>
+        <h2>
+          Wähle dein Paket
+        </h2>
 
-      <div class="why-grid">
-
-        <div class="why-card">
-
-          <div class="icon">⚡</div>
-
-          <h3>Intensiv</h3>
-
-          <p>
-            5 Tage pro Woche und ca. 40 Live-Stunden
-            in nur 4 Wochen.
-          </p>
-
-        </div>
-
-
-        <div class="why-card">
-
-          <div class="icon">🎯</div>
-
-          <h3>Praxisorientiert</h3>
-
-          <p>
-            Der Fokus liegt auf realen Situationen,
-            Kommunikation und beruflichem Deutsch.
-          </p>
-
-        </div>
-
-
-        <div class="why-card">
-
-          <div class="icon">💼</div>
-
-          <h3>Beruflicher Fokus</h3>
-
-          <p>
-            Vorbereitung auf Situationen im Job,
-            Customer Service, Technical Support und Bewerbung.
-          </p>
-
-        </div>
+        <p>
+          Beide Pakete beinhalten den kompletten 4-Wochen-Intensivkurs.
+          Premium bietet zusätzliche individuelle Betreuung und praxisnahe Extras.
+        </p>
 
       </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       PRICING
-  ========================== -->
-
-  <section class="pricing-section" id="preise">
-
-    <div class="container">
-
-      <h2 class="section-title">
-        Wähle dein Paket
-      </h2>
-
-      <p class="section-subtitle">
-        Zwei Optionen – je nachdem, wie viel zusätzliche
-        Sprechpraxis und individuelles Feedback du möchtest.
-      </p>
 
 
       <div class="pricing-grid">
@@ -1020,47 +1112,77 @@
 
         <div class="price-card">
 
-          <h3>Standard</h3>
-
-          <p>
-            Intensives B1/B2-Training für den beruflichen Alltag.
-          </p>
+          <h3>
+            Standard
+          </h3>
 
           <div class="price">
             €100
-            <span>/ Kurs</span>
           </div>
+
+          <div class="price-note">
+            kompletter 4-Wochen-Kurs
+          </div>
+
 
           <ul>
 
-            <li>4 Wochen</li>
+            <li>
+              4 Wochen Intensivtraining
+            </li>
 
-            <li>5 Tage pro Woche</li>
+            <li>
+              5 Tage pro Woche
+            </li>
 
-            <li>2 Stunden täglich</li>
+            <li>
+              2 Stunden pro Tag
+            </li>
 
-            <li>Ca. 40 Live-Stunden</li>
+            <li>
+              ca. 40 Live-Stunden
+            </li>
 
-            <li>Kleine Gruppe</li>
+            <li>
+              Kleine Gruppe
+            </li>
 
-            <li>Sprechen & Hörverstehen</li>
+            <li>
+              Sprechen & Kommunikation
+            </li>
 
-            <li>Berufliches Deutsch</li>
+            <li>
+              B1/B2 Grammatik
+            </li>
 
-            <li>Deutschland & Alltag</li>
+            <li>
+              Beruflicher Wortschatz
+            </li>
 
-            <li>Bewerbung & Vorstellungsgespräch</li>
+            <li>
+              Arbeit & Ausbildung
+            </li>
 
-            <li>Call Center & Customer Service</li>
+            <li>
+              Call Center & Technical Support
+            </li>
 
-            <li>Technical Support</li>
+            <li>
+              Alltag in Deutschland
+            </li>
+
+            <li>
+              Bewerbungs- und Jobkommunikation
+            </li>
 
           </ul>
+
 
           <a
             href="https://wa.me/201000000000"
             class="btn btn-primary"
             target="_blank"
+            style="background:#1d4ed8;color:white;width:100%;text-align:center;"
           >
             Standard buchen
           </a>
@@ -1076,46 +1198,153 @@
             PREMIUM
           </div>
 
-          <h3>Premium</h3>
 
-          <p>
-            Alles aus Standard plus zusätzliche Live-Praxis
-            mit einem deutschen Muttersprachler.
-          </p>
+          <h3>
+            Premium
+          </h3>
+
 
           <div class="price">
             €180
-            <span>/ Kurs</span>
           </div>
+
+
+          <div class="price-note">
+            kompletter Kurs + Premium-Leistungen
+          </div>
+
 
           <ul>
 
-            <li>Alles aus Standard</li>
+            <li>
+              Alles aus dem Standard-Paket
+            </li>
 
-            <li>Training mit deutschem Muttersprachler</li>
+            <li>
+              Training mit deutschem Muttersprachler
+            </li>
 
-            <li>Zusätzliche Speaking-Praxis</li>
+            <li>
+              Zusätzliche Speaking Session
+            </li>
 
-            <li>Pronunciation Feedback</li>
+            <li>
+              Realistische Gesprächssimulationen
+            </li>
 
-            <li>Individuelles Sprachfeedback</li>
+            <li>
+              Mock Interview Training
+            </li>
 
-            <li>Realistische Role Plays</li>
+            <li>
+              Erweitertes persönliches Feedback
+            </li>
 
-            <li>Job-Interview-Simulationen</li>
+            <li>
+              KI-Training mit realistischen Übungen
+            </li>
 
-            <li>Customer-Service-Simulationen</li>
+            <li>
+              Persönlicher Lernplan
+            </li>
 
-            <li>Technical-Support-Situationen</li>
+            <li>
+              Persönliche Planungssession
+            </li>
 
-            <li>Mehr direkte Kommunikation</li>
+            <li>
+              Bewerbungs- & Dokumenten-Check
+            </li>
 
           </ul>
+
+
+          <div class="premium-extra">
+
+            <h4>
+              🎯 Persönliche Planungssession
+            </h4>
+
+            <p>
+              Eine zusätzliche Session, um deine nächsten Schritte
+              zu strukturieren – zum Beispiel Richtung Job,
+              Ausbildung oder Deutschland.
+            </p>
+
+          </div>
+
+
+          <div class="premium-extra">
+
+            <h4>
+              🤖 KI-Training
+            </h4>
+
+            <p>
+              Praktische Übungen mit KI, z. B. Gesprächssimulationen,
+              berufliche Situationen, Fragen & Antworten und
+              realistische Kommunikationsszenarien.
+            </p>
+
+          </div>
+
+
+          <div class="premium-extra">
+
+            <h4>
+              📄 Bewerbungs- & Dokumenten-Check
+            </h4>
+
+            <p>
+              Unterstützung beim Strukturieren und Prüfen von
+              Lebenslauf und Bewerbungsunterlagen.
+            </p>
+
+          </div>
+
+
+          <div class="premium-extra">
+
+            <h4>
+              🧠 Persönlicher Lernplan
+            </h4>
+
+            <p>
+              Ein individueller Plan mit konkreten Schritten,
+              damit du auch nach dem Kurs gezielt weiterlernen kannst.
+            </p>
+
+          </div>
+
+
+          <div class="addon">
+
+            <strong>
+              💬 Persönliche WhatsApp-Beratung
+            </strong>
+
+            <br>
+
+            Persönliche Beratung mit dem Kursleiter über WhatsApp:
+
+            <strong>
+              10 € pro Session
+            </strong>
+
+            <br>
+
+            <span>
+              Optional und separat buchbar.
+            </span>
+
+          </div>
+
 
           <a
             href="https://wa.me/201000000000"
             class="btn btn-primary"
             target="_blank"
+            style="background:#1d4ed8;color:white;width:100%;text-align:center;margin-top:20px;"
           >
             Premium buchen
           </a>
@@ -1125,7 +1354,7 @@
       </div>
 
 
-      <!-- COMPARISON -->
+      <!-- COMPARISON TABLE -->
 
       <div class="comparison">
 
@@ -1134,73 +1363,130 @@
           <thead>
 
             <tr>
-              <th>Leistung</th>
-              <th>Standard</th>
-              <th>Premium</th>
+
+              <th>
+                Leistung
+              </th>
+
+              <th>
+                Standard
+              </th>
+
+              <th>
+                Premium
+              </th>
+
             </tr>
 
           </thead>
 
+
           <tbody>
 
             <tr>
-              <td>4 Wochen</td>
-              <td>✓</td>
-              <td>✓</td>
+              <td>
+                40 Live-Stunden
+              </td>
+              <td class="yes">✓</td>
+              <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>5 Tage / Woche</td>
-              <td>✓</td>
-              <td>✓</td>
+              <td>
+                Kleine Gruppe
+              </td>
+              <td class="yes">✓</td>
+              <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>Ca. 40 Live-Stunden</td>
-              <td>✓</td>
-              <td>✓</td>
+              <td>
+                Berufliches Deutsch
+              </td>
+              <td class="yes">✓</td>
+              <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>Berufliches Deutsch</td>
-              <td>✓</td>
-              <td>✓</td>
+              <td>
+                Arbeit & Ausbildung
+              </td>
+              <td class="yes">✓</td>
+              <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>Bewerbung & Interview</td>
-              <td>✓</td>
-              <td>✓</td>
+              <td>
+                Technical Support / Call Center
+              </td>
+              <td class="yes">✓</td>
+              <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>Technical Support</td>
-              <td>✓</td>
-              <td>✓</td>
+              <td>
+                Deutscher Muttersprachler
+              </td>
+              <td class="no">—</td>
+              <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>Deutscher Muttersprachler</td>
-              <td>—</td>
-              <td>✓</td>
+              <td>
+                Zusätzliche Speaking Session
+              </td>
+              <td class="no">—</td>
+              <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>Zusätzliche Speaking-Praxis</td>
-              <td>—</td>
-              <td>✓</td>
+              <td>
+                Mock Interview
+              </td>
+              <td class="no">—</td>
+              <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>Role Plays & Simulationen</td>
-              <td>—</td>
-              <td>✓</td>
+              <td>
+                KI-Training
+              </td>
+              <td class="no">—</td>
+              <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>Individuelles Feedback</td>
-              <td>Basis</td>
-              <td>Erweitert</td>
+              <td>
+                Persönlicher Lernplan
+              </td>
+              <td class="no">—</td>
+              <td class="yes">✓</td>
+            </tr>
+
+            <tr>
+              <td>
+                Planungssession
+              </td>
+              <td class="no">—</td>
+              <td class="yes">✓</td>
+            </tr>
+
+            <tr>
+              <td>
+                Bewerbungs- & Dokumenten-Check
+              </td>
+              <td class="no">—</td>
+              <td class="yes">✓</td>
+            </tr>
+
+            <tr>
+              <td>
+                WhatsApp-Einzelberatung
+              </td>
+              <td class="no">—</td>
+              <td>
+                Optional +10 €
+              </td>
             </tr>
 
           </tbody>
@@ -1214,213 +1500,22 @@
   </section>
 
 
-  <!-- =========================
-       FAQ
-  ========================== -->
-
-  <section>
-
-    <div class="container">
-
-      <h2 class="section-title">
-        Häufige Fragen
-      </h2>
-
-      <p class="section-subtitle">
-        Alles, was du vor der Anmeldung wissen solltest.
-      </p>
-
-
-      <div class="faq">
-
-
-        <details>
-
-          <summary>
-            Für welches Sprachniveau ist der Kurs geeignet?
-          </summary>
-
-          <p>
-            Der Kurs richtet sich an Lernende auf B1/B2-Niveau.
-            Wir arbeiten intensiv an Sprechen, Hörverstehen,
-            Wortschatz, Grammatik und beruflicher Kommunikation.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Ist der Kurs auch für Teilnehmer in Ägypten geeignet?
-          </summary>
-
-          <p>
-            Ja. Der Kurs findet vollständig online statt und
-            kann von Teilnehmern in Ägypten und anderen Ländern
-            besucht werden.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Ist der Kurs nur für Deutschland gedacht?
-          </summary>
-
-          <p>
-            Der Kurs hat einen starken Deutschland- und Berufsbezug.
-            Besonders geeignet ist er für Personen, die in Deutschland
-            arbeiten, eine Ausbildung machen oder mit deutschen Kunden
-            und Unternehmen kommunizieren möchten.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Gibt es Inhalte für Call Center und Technical Support?
-          </summary>
-
-          <p>
-            Ja. Wir trainieren unter anderem Kundengespräche,
-            Problembeschreibung, Telefonkommunikation,
-            professionelle Formulierungen und typische Situationen
-            im Customer Service und Technical Support.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Was ist der Unterschied zwischen Standard und Premium?
-          </summary>
-
-          <p>
-            Beide Pakete enthalten das komplette Intensivprogramm.
-            Premium bietet zusätzlich Training mit einem deutschen
-            Muttersprachler, zusätzliche Speaking-Praxis,
-            Role Plays, Interview-Simulationen und erweitertes Feedback.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Gibt es einen deutschen Muttersprachler im Premium-Paket?
-          </summary>
-
-          <p>
-            Ja. Im Premium-Paket gibt es zusätzliche Live-Trainingseinheiten
-            mit einem deutschen Muttersprachler.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Garantiert der Kurs einen Job oder eine Ausbildung?
-          </summary>
-
-          <p>
-            Nein. Der Kurs bietet Sprachtraining und praktische Vorbereitung,
-            aber keine Garantie für einen Arbeitsplatz oder einen
-            Ausbildungsplatz.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Wie viele Teilnehmer gibt es?
-          </summary>
-
-          <p>
-            Der Kurs ist als kleine Gruppe konzipiert, damit jeder
-            Teilnehmer ausreichend Gelegenheit zum Sprechen bekommt.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Wie lange dauert der Kurs?
-          </summary>
-
-          <p>
-            4 Wochen, 5 Tage pro Woche und 2 Stunden pro Tag.
-            Das entspricht ungefähr 40 Live-Stunden.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Bekomme ich ein offizielles Goethe- oder telc-Zertifikat?
-          </summary>
-
-          <p>
-            Nein. Der Kurs ist ein praktisches Sprachtraining und
-            kein offizieller Goethe-, telc- oder ÖSD-Zertifikatskurs.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Kann ich in ägyptischen Pfund bezahlen?
-          </summary>
-
-          <p>
-            Die Kursgebühren sind in Euro angegeben.
-            Die genaue Zahlungsmethode und der entsprechende Betrag
-            in ägyptischen Pfund werden bei der Anmeldung mitgeteilt.
-          </p>
-
-        </details>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FINAL CTA
-  ========================== -->
+  <!-- ================= CTA ================= -->
 
   <section class="cta">
 
     <div class="container">
 
       <h2>
-        Bereit, dein Deutsch praktisch zu nutzen?
+        Bereit für dein nächstes Level?
       </h2>
 
       <p>
-        Starte dein intensives B1/B2-Training und bereite dich
-        gezielt auf Arbeit, Ausbildung und Kommunikation
+        Starte dein intensives B1/B2 Deutschtraining und
+        bereite dich gezielt auf Arbeit, Ausbildung und das Leben
         in Deutschland vor.
       </p>
+
 
       <a
         href="https://wa.me/201000000000"
@@ -1435,18 +1530,306 @@
   </section>
 
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+  <!-- ================= FAQ ================= -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Häufige Fragen
+        </h2>
+
+      </div>
+
+
+      <div class="faq">
+
+
+        <details>
+
+          <summary>
+            <span class="faq-question">
+              Für welches Sprachniveau ist der Kurs geeignet
+              <span class="question-mark">?</span>
+            </span>
+          </summary>
+
+          <p>
+            Der Kurs richtet sich hauptsächlich an Lernende
+            auf B1/B2-Niveau, die ihre praktische Kommunikation
+            verbessern und sicherer im beruflichen Alltag werden möchten.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            <span class="faq-question">
+              Ist der Kurs für Menschen geeignet, die nach Deutschland möchten
+              <span class="question-mark">?</span>
+            </span>
+          </summary>
+
+          <p>
+            Ja. Der Kurs ist speziell auf praktische Situationen
+            rund um Arbeit, Ausbildung, Bewerbungen und Alltag
+            in Deutschland ausgerichtet.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            <span class="faq-question">
+              Ist der Kurs für Call Center und Customer Service geeignet
+              <span class="question-mark">?</span>
+            </span>
+          </summary>
+
+          <p>
+            Ja. Kundenkommunikation, Telefonate, Problembeschreibung,
+            professionelle Antworten und typische Gesprächssituationen
+            sind Bestandteil des Trainings.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            <span class="faq-question">
+              Ist der Kurs für Technical Support geeignet
+              <span class="question-mark">?</span>
+            </span>
+          </summary>
+
+          <p>
+            Ja. Der Kurs enthält Situationen aus dem Technical Support,
+            zum Beispiel Probleme erklären, Rückfragen stellen,
+            Kunden führen und technische Situationen verständlich beschreiben.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            <span class="faq-question">
+              Was ist der Unterschied zwischen Standard und Premium
+              <span class="question-mark">?</span>
+            </span>
+          </summary>
+
+          <p>
+            Standard enthält den kompletten 4-Wochen-Kurs.
+            Premium bietet zusätzlich unter anderem Training mit
+            einem deutschen Muttersprachler, KI-Training,
+            zusätzliche Speaking-Einheiten, Mock Interviews,
+            persönlichen Lernplan, Planungssession und
+            Bewerbungs- & Dokumenten-Check.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            <span class="faq-question">
+              Was ist das KI-Training im Premium-Paket
+              <span class="question-mark">?</span>
+            </span>
+          </summary>
+
+          <p>
+            Das KI-Training nutzt KI für zusätzliche praktische Übungen,
+            zum Beispiel Gesprächssimulationen, berufliche Situationen,
+            Fragen und Antworten sowie realistische Kommunikationsszenarien.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            <span class="faq-question">
+              Was beinhaltet die persönliche Planungssession
+              <span class="question-mark">?</span>
+            </span>
+          </summary>
+
+          <p>
+            Die Planungssession hilft dir dabei, deine nächsten Schritte
+            zu strukturieren, zum Beispiel in Richtung Job, Ausbildung
+            oder Vorbereitung auf Deutschland.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            <span class="faq-question">
+              Kann ich den Kursleiter persönlich über WhatsApp kontaktieren
+              <span class="question-mark">?</span>
+            </span>
+          </summary>
+
+          <p>
+            Ja. Eine persönliche WhatsApp-Beratung kann separat gebucht
+            werden. Der Preis beträgt 10 € pro persönlicher Session.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            <span class="faq-question">
+              Ist die WhatsApp-Beratung im Premium-Preis enthalten
+              <span class="question-mark">?</span>
+            </span>
+          </summary>
+
+          <p>
+            Nein. Die persönliche WhatsApp-Beratung ist eine optionale
+            Zusatzleistung und wird separat mit 10 € pro Session berechnet.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            <span class="faq-question">
+              Bekomme ich ein offizielles Goethe-, telc- oder ÖSD-Zertifikat
+              <span class="question-mark">?</span>
+            </span>
+          </summary>
+
+          <p>
+            Nein. Der Kurs ist ein praktisches Sprachtraining und
+            ersetzt keine offizielle Sprachprüfung.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            <span class="faq-question">
+              Gibt es eine Job- oder Ausbildungsplatz-Garantie
+              <span class="question-mark">?</span>
+            </span>
+          </summary>
+
+          <p>
+            Nein. Der Kurs bietet sprachliche und praktische Vorbereitung,
+            garantiert aber weder einen Arbeitsplatz noch einen Ausbildungsplatz.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            <span class="faq-question">
+              Wie viele Teilnehmer gibt es
+              <span class="question-mark">?</span>
+            </span>
+          </summary>
+
+          <p>
+            Der Kurs wird bewusst in kleinen Gruppen durchgeführt,
+            damit ausreichend Zeit für Sprechen, Fragen und Feedback bleibt.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            <span class="faq-question">
+              Wie lange dauert der Kurs
+              <span class="question-mark">?</span>
+            </span>
+          </summary>
+
+          <p>
+            Der Intensivkurs dauert 4 Wochen mit 5 Tagen pro Woche
+            und 2 Stunden Live-Unterricht pro Tag.
+            Das entspricht ungefähr 40 Live-Stunden.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            <span class="faq-question">
+              Kann ich aus Ägypten teilnehmen
+              <span class="question-mark">?</span>
+            </span>
+          </summary>
+
+          <p>
+            Ja. Der Kurs findet online statt und kann daher auch
+            aus Ägypten oder anderen Ländern besucht werden.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            <span class="faq-question">
+              Wie kann ich bezahlen
+              <span class="question-mark">?</span>
+            </span>
+          </summary>
+
+          <p>
+            Die verfügbaren Zahlungsmöglichkeiten werden bei der Anmeldung
+            individuell mitgeteilt.
+          </p>
+
+        </details>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
 
   <footer>
 
     <p>
-      © 2026 B2 Deutsch für Arbeit & Deutschland
+      © 2026 Deutsch für Arbeit & Deutschland
     </p>
 
-    <p>
-      Intensives B1/B2 Deutschtraining · Arbeit · Ausbildung · Deutschland
+    <p style="margin-top:6px;">
+      Intensives B1/B2 Deutschtraining für Arbeit, Ausbildung und Deutschland
     </p>
 
   </footer>
