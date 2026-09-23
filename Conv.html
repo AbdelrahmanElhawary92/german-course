@@ -7,7 +7,7 @@
   <title>B2 Deutsch für Arbeit & Deutschland | Job • Ausbildung • Technical Support</title>
 
   <meta name="description"
-        content="Intensives B1/B2 Deutschtraining für Arbeit, Ausbildung, Call Center, Technical Support und Deutschland. 4 Wochen, 5 Tage pro Woche, ca. 40 Live-Stunden. Standard & Premium.">
+        content="Intensives B1/B2 Deutschtraining für Arbeit, Ausbildung, Call Center, Technical Support und Deutschland. 4 Wochen, 5 Tage pro Woche, ca. 40 Live-Stunden. Standard, Premium und persönliche Beratung.">
 
   <style>
     * {
@@ -41,7 +41,7 @@
       margin: auto;
     }
 
-    /* HERO */
+    /* ================= HERO ================= */
 
     .hero {
       background: linear-gradient(135deg, #0f172a, #1d4ed8);
@@ -97,6 +97,7 @@
       border-radius: 10px;
       font-weight: bold;
       transition: 0.2s;
+      cursor: pointer;
     }
 
     .btn-primary {
@@ -108,6 +109,15 @@
       transform: translateY(-2px);
     }
 
+    .btn-blue {
+      background: #1d4ed8;
+      color: white;
+    }
+
+    .btn-blue:hover {
+      background: #1640b5;
+    }
+
     .btn-secondary {
       border: 1px solid rgba(255,255,255,0.5);
       color: white;
@@ -117,7 +127,7 @@
       background: rgba(255,255,255,0.1);
     }
 
-    /* GENERAL */
+    /* ================= GENERAL ================= */
 
     section {
       padding: 75px 20px;
@@ -142,7 +152,7 @@
       margin: auto;
     }
 
-    /* TARGET */
+    /* ================= TARGET ================= */
 
     .target {
       background: white;
@@ -177,7 +187,7 @@
       margin-bottom: 7px;
     }
 
-    /* VIDEO */
+    /* ================= VIDEO ================= */
 
     .video-section {
       background: #eef4ff;
@@ -249,7 +259,7 @@
       color: #667085;
     }
 
-    /* PROGRAM */
+    /* ================= PROGRAM ================= */
 
     .program {
       background: white;
@@ -286,7 +296,7 @@
       color: #667085;
     }
 
-    /* CURRICULUM */
+    /* ================= CURRICULUM ================= */
 
     .curriculum {
       background: #f8fafc;
@@ -319,7 +329,7 @@
       margin-bottom: 8px;
     }
 
-    /* PRICING */
+    /* ================= PRICING ================= */
 
     .pricing {
       background: white;
@@ -397,7 +407,7 @@
     }
 
     .premium-extra {
-      margin-top: 25px;
+      margin-top: 18px;
       padding: 18px;
       border-radius: 12px;
       background: #eff6ff;
@@ -414,21 +424,75 @@
       color: #475467;
     }
 
-    .addon {
-      margin-top: 18px;
-      padding: 15px;
+    /* ================= CONSULTATION ================= */
+
+    .consultation-section {
+      background: #f8fafc;
+    }
+
+    .consultation-card {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      border: 2px solid #e4e7ec;
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 10px 35px rgba(16,24,40,0.06);
+    }
+
+    .consultation-icon {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .consultation-card h3 {
+      font-size: 28px;
+      color: #101828;
+      margin-bottom: 8px;
+    }
+
+    .consultation-price {
+      font-size: 38px;
+      font-weight: 800;
+      color: #1d4ed8;
+      margin: 15px 0 5px;
+    }
+
+    .consultation-duration {
+      color: #667085;
+      margin-bottom: 20px;
+    }
+
+    .consultation-card p {
+      max-width: 650px;
+      margin: 0 auto 22px;
+      color: #475467;
+    }
+
+    .consultation-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .consultation-feature {
+      background: #f8fafc;
+      border: 1px solid #e4e7ec;
+      padding: 16px;
       border-radius: 10px;
-      background: #f9fafb;
-      border: 1px dashed #98a2b3;
       font-size: 14px;
       color: #475467;
     }
 
-    .addon strong {
-      color: #101828;
+    .consultation-note {
+      font-size: 13px;
+      color: #667085;
+      margin-top: 15px;
     }
 
-    /* COMPARISON */
+    /* ================= COMPARISON ================= */
 
     .comparison {
       margin-top: 45px;
@@ -470,7 +534,7 @@
       color: #98a2b3;
     }
 
-    /* CTA */
+    /* ================= CTA ================= */
 
     .cta {
       background: linear-gradient(135deg, #1d4ed8, #0f172a);
@@ -493,7 +557,7 @@
       margin-top: 25px;
     }
 
-    /* FAQ */
+    /* ================= FAQ ================= */
 
     .faq {
       max-width: 850px;
@@ -541,7 +605,7 @@
       text-align: left;
     }
 
-    /* FOOTER */
+    /* ================= FOOTER ================= */
 
     footer {
       background: #0f172a;
@@ -556,9 +620,10 @@
       font-size: 14px;
     }
 
-    /* RESPONSIVE */
+    /* ================= RESPONSIVE ================= */
 
     @media (max-width: 900px) {
+
       .hero h1 {
         font-size: 38px;
       }
@@ -570,9 +635,15 @@
       .video-highlights {
         grid-template-columns: 1fr;
       }
+
+      .consultation-features {
+        grid-template-columns: 1fr;
+      }
+
     }
 
     @media (max-width: 700px) {
+
       .hero {
         padding: 65px 18px;
       }
@@ -602,9 +673,15 @@
       .section-title h2 {
         font-size: 28px;
       }
+
+      .consultation-card {
+        padding: 30px 20px;
+      }
+
     }
 
     @media (max-width: 450px) {
+
       .program-grid {
         grid-template-columns: 1fr;
       }
@@ -612,11 +689,19 @@
       .price-card {
         padding: 27px 22px;
       }
+
+      .consultation-card h3 {
+        font-size: 24px;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
+
 
   <!-- ================= HERO ================= -->
 
@@ -688,12 +773,6 @@
 
           <!--
             Ersetze YOUR_VIDEO_ID durch deine echte YouTube Video-ID.
-
-            Beispiel:
-            https://www.youtube.com/watch?v=ABC123XYZ
-
-            Dann:
-            https://www.youtube.com/embed/ABC123XYZ
           -->
 
           <iframe
@@ -1094,12 +1173,11 @@
       <div class="section-title">
 
         <h2>
-          Wähle dein Paket
+          Wähle dein Kurspaket
         </h2>
 
         <p>
-          Beide Pakete beinhalten den kompletten 4-Wochen-Intensivkurs.
-          Premium bietet zusätzliche individuelle Betreuung und praxisnahe Extras.
+          Entscheide dich für das Paket, das am besten zu deinen Zielen passt.
         </p>
 
       </div>
@@ -1108,7 +1186,7 @@
       <div class="pricing-grid">
 
 
-        <!-- STANDARD -->
+        <!-- ================= STANDARD ================= -->
 
         <div class="price-card">
 
@@ -1180,9 +1258,9 @@
 
           <a
             href="https://wa.me/201000000000"
-            class="btn btn-primary"
+            class="btn btn-blue"
             target="_blank"
-            style="background:#1d4ed8;color:white;width:100%;text-align:center;"
+            style="width:100%;text-align:center;"
           >
             Standard buchen
           </a>
@@ -1190,7 +1268,7 @@
         </div>
 
 
-        <!-- PREMIUM -->
+        <!-- ================= PREMIUM ================= -->
 
         <div class="price-card premium">
 
@@ -1262,13 +1340,13 @@
           <div class="premium-extra">
 
             <h4>
-              🎯 Persönliche Planungssession
+              🤖 KI-Training
             </h4>
 
             <p>
-              Eine zusätzliche Session, um deine nächsten Schritte
-              zu strukturieren – zum Beispiel Richtung Job,
-              Ausbildung oder Deutschland.
+              Praktische Übungen mit KI, zum Beispiel
+              Gesprächssimulationen, berufliche Situationen,
+              Fragen & Antworten und realistische Kommunikationsszenarien.
             </p>
 
           </div>
@@ -1277,13 +1355,13 @@
           <div class="premium-extra">
 
             <h4>
-              🤖 KI-Training
+              🎯 Persönliche Planungssession
             </h4>
 
             <p>
-              Praktische Übungen mit KI, z. B. Gesprächssimulationen,
-              berufliche Situationen, Fragen & Antworten und
-              realistische Kommunikationsszenarien.
+              Eine zusätzliche Session, um deine nächsten Schritte
+              zu strukturieren – zum Beispiel Richtung Job,
+              Ausbildung oder Deutschland.
             </p>
 
           </div>
@@ -1317,34 +1395,11 @@
           </div>
 
 
-          <div class="addon">
-
-            <strong>
-              💬 Persönliche WhatsApp-Beratung
-            </strong>
-
-            <br>
-
-            Persönliche Beratung mit dem Kursleiter über WhatsApp:
-
-            <strong>
-              10 € pro Session
-            </strong>
-
-            <br>
-
-            <span>
-              Optional und separat buchbar.
-            </span>
-
-          </div>
-
-
           <a
             href="https://wa.me/201000000000"
-            class="btn btn-primary"
+            class="btn btn-blue"
             target="_blank"
-            style="background:#1d4ed8;color:white;width:100%;text-align:center;margin-top:20px;"
+            style="width:100%;text-align:center;margin-top:20px;"
           >
             Premium buchen
           </a>
@@ -1354,7 +1409,7 @@
       </div>
 
 
-      <!-- COMPARISON TABLE -->
+      <!-- ================= COMPARISON ================= -->
 
       <div class="comparison">
 
@@ -1384,114 +1439,165 @@
           <tbody>
 
             <tr>
-              <td>
-                40 Live-Stunden
-              </td>
+              <td>40 Live-Stunden</td>
               <td class="yes">✓</td>
               <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>
-                Kleine Gruppe
-              </td>
+              <td>Kleine Gruppe</td>
               <td class="yes">✓</td>
               <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>
-                Berufliches Deutsch
-              </td>
+              <td>Berufliches Deutsch</td>
               <td class="yes">✓</td>
               <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>
-                Arbeit & Ausbildung
-              </td>
+              <td>Arbeit & Ausbildung</td>
               <td class="yes">✓</td>
               <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>
-                Technical Support / Call Center
-              </td>
+              <td>Technical Support / Call Center</td>
               <td class="yes">✓</td>
               <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>
-                Deutscher Muttersprachler
-              </td>
+              <td>Deutscher Muttersprachler</td>
               <td class="no">—</td>
               <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>
-                Zusätzliche Speaking Session
-              </td>
+              <td>Zusätzliche Speaking Session</td>
               <td class="no">—</td>
               <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>
-                Mock Interview
-              </td>
+              <td>Mock Interview</td>
               <td class="no">—</td>
               <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>
-                KI-Training
-              </td>
+              <td>KI-Training</td>
               <td class="no">—</td>
               <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>
-                Persönlicher Lernplan
-              </td>
+              <td>Persönlicher Lernplan</td>
               <td class="no">—</td>
               <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>
-                Planungssession
-              </td>
+              <td>Planungssession</td>
               <td class="no">—</td>
               <td class="yes">✓</td>
             </tr>
 
             <tr>
-              <td>
-                Bewerbungs- & Dokumenten-Check
-              </td>
+              <td>Bewerbungs- & Dokumenten-Check</td>
               <td class="no">—</td>
               <td class="yes">✓</td>
-            </tr>
-
-            <tr>
-              <td>
-                WhatsApp-Einzelberatung
-              </td>
-              <td class="no">—</td>
-              <td>
-                Optional +10 €
-              </td>
             </tr>
 
           </tbody>
 
         </table>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CONSULTATION ================= -->
+
+  <section class="consultation-section" id="beratung">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          💬 Persönliche Beratung
+        </h2>
+
+        <p>
+          Du brauchst individuelle Hilfe? Die Beratung kann unabhängig
+          von einer Kursteilnahme gebucht werden.
+        </p>
+
+      </div>
+
+
+      <div class="consultation-card">
+
+        <div class="consultation-icon">
+          💬
+        </div>
+
+        <h3>
+          Persönliche WhatsApp-Beratung
+        </h3>
+
+        <div class="consultation-price">
+          €10
+        </div>
+
+        <div class="consultation-duration">
+          20 Minuten pro Session
+        </div>
+
+
+        <p>
+          Eine persönliche 1:1-Beratung mit dem Kursleiter über WhatsApp.
+          Du kannst deine konkrete Situation schildern und gezielte
+          Fragen stellen.
+        </p>
+
+
+        <div class="consultation-features">
+
+          <div class="consultation-feature">
+            🎯 Individuelle Fragen
+          </div>
+
+          <div class="consultation-feature">
+            📚 Lern- und Sprachberatung
+          </div>
+
+          <div class="consultation-feature">
+            💼 Orientierung für Job & Ausbildung
+          </div>
+
+        </div>
+
+
+        <a
+          href="https://wa.me/201000000000"
+          class="btn btn-blue"
+          target="_blank"
+        >
+          Beratung buchen – 10 €
+        </a>
+
+
+        <div class="consultation-note">
+          Die Beratung ist unabhängig vom Standard- oder Premium-Kurs
+          buchbar und kann auch von Personen gebucht werden,
+          die nicht am Kurs teilnehmen.
+        </div>
 
       </div>
 
@@ -1681,14 +1787,15 @@
 
           <summary>
             <span class="faq-question">
-              Kann ich den Kursleiter persönlich über WhatsApp kontaktieren
+              Kann jeder die persönliche WhatsApp-Beratung buchen
               <span class="question-mark">?</span>
             </span>
           </summary>
 
           <p>
-            Ja. Eine persönliche WhatsApp-Beratung kann separat gebucht
-            werden. Der Preis beträgt 10 € pro persönlicher Session.
+            Ja. Die persönliche Beratung kann unabhängig von einer
+            Kursteilnahme gebucht werden. Du musst weder Standard
+            noch Premium gebucht haben.
           </p>
 
         </details>
@@ -1698,14 +1805,14 @@
 
           <summary>
             <span class="faq-question">
-              Ist die WhatsApp-Beratung im Premium-Preis enthalten
+              Wie lange dauert eine persönliche Beratung
               <span class="question-mark">?</span>
             </span>
           </summary>
 
           <p>
-            Nein. Die persönliche WhatsApp-Beratung ist eine optionale
-            Zusatzleistung und wird separat mit 10 € pro Session berechnet.
+            Eine persönliche Beratung dauert 20 Minuten
+            und kostet 10 € pro Session.
           </p>
 
         </details>
@@ -1812,6 +1919,7 @@
           </p>
 
         </details>
+
 
       </div>
 
