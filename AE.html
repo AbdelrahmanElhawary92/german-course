@@ -1,0 +1,2623 @@
+```html
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Abdelrahman Elhawary | Deutschsprachiger Ingenieur & Entwickler
+    </title>
+
+    <meta name="description"
+          content="Abdelrahman Elhawary – deutschsprachiger Ingenieur und technischer Fachmann mit Hintergrund in Software Engineering, IT, Embedded Systems, Elektronik, Netzwerken und technischem Support.">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: #0f172a;
+            background: #f8fafc;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255,255,255,0.95);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom:
+                1px solid #e2e8f0;
+        }
+
+        .navbar {
+
+            min-height: 72px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .logo {
+
+            font-size: 20px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.5px;
+        }
+
+        .nav-right {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+        }
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 24px;
+
+            color: #475569;
+
+            font-size: 14px;
+
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+
+        /* LANGUAGE */
+
+        .language-switch {
+
+            display: flex;
+
+            gap: 5px;
+
+            background: #f1f5f9;
+
+            padding: 4px;
+
+            border-radius: 10px;
+        }
+
+        .lang-btn {
+
+            border: none;
+
+            background: transparent;
+
+            padding: 7px 10px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-weight: 700;
+
+            color: #64748b;
+        }
+
+        .lang-btn.active {
+
+            background: #2563eb;
+
+            color: white;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            padding: 90px 0 80px;
+
+            background:
+
+                radial-gradient(
+                    circle at top right,
+                    #dbeafe 0,
+                    transparent 35%
+                ),
+
+                #ffffff;
+        }
+
+        .hero-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.45fr 0.75fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .eyebrow {
+
+            display: inline-block;
+
+            color: #2563eb;
+
+            background: #eff6ff;
+
+            padding: 7px 13px;
+
+            border-radius: 999px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+
+            font-size:
+                clamp(42px, 6vw, 68px);
+
+            line-height: 1.05;
+
+            letter-spacing: -2.5px;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h2 {
+
+            font-size:
+                clamp(20px, 2.5vw, 28px);
+
+            color: #2563eb;
+
+            margin-bottom: 22px;
+
+            line-height: 1.35;
+        }
+
+        .hero-text {
+
+            max-width: 720px;
+
+            font-size: 18px;
+
+            color: #475569;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* BUTTONS */
+
+        .hero-buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 13px 20px;
+
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            font-size: 14px;
+
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+
+            background: #2563eb;
+
+            color: white;
+        }
+
+        .btn-primary:hover {
+
+            background: #1d4ed8;
+
+            transform:
+                translateY(-2px);
+        }
+
+        .btn-secondary {
+
+            background: white;
+
+            color: #0f172a;
+
+            border:
+                1px solid #cbd5e1;
+        }
+
+        .btn-secondary:hover {
+
+            border-color:
+                #2563eb;
+
+            color:
+                #2563eb;
+        }
+
+
+        /* =========================
+           PROFILE
+        ========================= */
+
+        .profile-card {
+
+            background: white;
+
+            border:
+                1px solid #e2e8f0;
+
+            border-radius: 24px;
+
+            padding: 28px;
+
+            box-shadow:
+                0 20px 50px
+                rgba(15,23,42,0.08);
+        }
+
+        .profile-image {
+
+            width: 190px;
+
+            height: 190px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            margin:
+                0 auto 25px;
+
+            border:
+                6px solid #eff6ff;
+
+            box-shadow:
+                0 10px 30px
+                rgba(37,99,235,0.15);
+        }
+
+        .profile-name {
+
+            text-align: center;
+
+            font-size: 23px;
+
+            font-weight: 800;
+
+            margin-bottom: 4px;
+        }
+
+        .profile-title {
+
+            text-align: center;
+
+            color: #2563eb;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+        }
+
+        .profile-list {
+
+            display: grid;
+
+            gap: 12px;
+        }
+
+        .profile-item {
+
+            display: flex;
+
+            gap: 10px;
+
+            align-items: flex-start;
+
+            color: #475569;
+
+            font-size: 14px;
+        }
+
+        .profile-item strong {
+
+            color: #0f172a;
+        }
+
+        .check {
+
+            color: #2563eb;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================
+           GITHUB
+        ========================= */
+
+        .github-link {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 18px;
+
+            padding: 9px 14px;
+
+            border-radius: 9px;
+
+            background: #0f172a;
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: 0.2s;
+        }
+
+        .github-link:hover {
+
+            background: #1e293b;
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+
+            padding: 85px 0;
+        }
+
+        .section-header {
+
+            text-align: center;
+
+            max-width: 780px;
+
+            margin:
+                0 auto 45px;
+        }
+
+        .section-header h2 {
+
+            font-size: 38px;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+
+            color: #64748b;
+        }
+
+
+        /* =========================
+           VIDEO
+        ========================= */
+
+        .video-section {
+
+            background: #0f172a;
+
+            color: white;
+        }
+
+        .video-section
+        .section-header p {
+
+            color: #94a3b8;
+        }
+
+        .video-wrapper {
+
+            max-width: 950px;
+
+            margin: auto;
+
+            aspect-ratio: 16 / 9;
+
+            background: #020617;
+
+            border-radius: 18px;
+
+            border:
+                1px solid #334155;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .video-placeholder {
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+        .video-icon {
+
+            font-size: 55px;
+
+            margin-bottom: 15px;
+        }
+
+        .video-placeholder h3 {
+
+            margin-bottom: 8px;
+        }
+
+        .video-placeholder p {
+
+            color: #94a3b8;
+        }
+
+
+        /* =========================
+           ROLES
+        ========================= */
+
+        .roles-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .role-card {
+
+            background: white;
+
+            border:
+                1px solid #e2e8f0;
+
+            padding: 24px;
+
+            border-radius: 15px;
+
+            transition: 0.2s;
+        }
+
+        .role-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                #bfdbfe;
+
+            box-shadow:
+                0 15px 35px
+                rgba(15,23,42,0.07);
+        }
+
+        .role-number {
+
+            color: #2563eb;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            margin-bottom: 8px;
+        }
+
+        .role-card h3 {
+
+            font-size: 17px;
+
+            margin-bottom: 8px;
+        }
+
+        .role-card p {
+
+            color: #64748b;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-section {
+
+            background: #f1f5f9;
+        }
+
+        .skills-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 22px;
+        }
+
+        .skill-card {
+
+            background: white;
+
+            padding: 28px;
+
+            border-radius: 16px;
+
+            border:
+                1px solid #e2e8f0;
+        }
+
+        .skill-card h3 {
+
+            margin-bottom: 17px;
+
+            font-size: 19px;
+        }
+
+        .tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+        .tag {
+
+            background: #eff6ff;
+
+            color: #1e40af;
+
+            border-radius: 7px;
+
+            padding: 6px 9px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 45px;
+
+            align-items: center;
+        }
+
+        .about-text h2 {
+
+            font-size: 38px;
+
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+
+            color: #475569;
+
+            margin-bottom: 18px;
+        }
+
+        .about-points {
+
+            display: grid;
+
+            gap: 14px;
+
+            margin-top: 25px;
+        }
+
+        .about-point {
+
+            display: flex;
+
+            gap: 12px;
+
+            align-items: flex-start;
+        }
+
+        .about-point span:first-child {
+
+            width: 28px;
+
+            height: 28px;
+
+            border-radius: 50%;
+
+            background: #dbeafe;
+
+            color: #2563eb;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: 800;
+
+            flex-shrink: 0;
+        }
+
+        .about-point p {
+
+            margin: 0;
+        }
+
+        .about-card {
+
+            background: #0f172a;
+
+            color: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+        }
+
+        .about-card h3 {
+
+            font-size: 23px;
+
+            margin-bottom: 18px;
+        }
+
+        .about-card p {
+
+            color: #cbd5e1;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+
+            background: #2563eb;
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .cta h2 {
+
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+
+            max-width: 750px;
+
+            margin:
+                0 auto 28px;
+
+            color: #dbeafe;
+        }
+
+        .cta .btn {
+
+            background: white;
+
+            color: #1d4ed8;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #020617;
+
+            color: #94a3b8;
+
+            padding: 30px 0;
+
+            text-align: center;
+
+            font-size: 13px;
+        }
+
+        footer strong {
+
+            color: white;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .hero-grid,
+            .about-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+
+                padding-top: 60px;
+            }
+
+            .profile-card {
+
+                max-width: 430px;
+
+                margin: auto;
+            }
+
+            .roles-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .skills-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+
+                display: none;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+
+                font-size: 42px;
+            }
+
+            .hero h2 {
+
+                font-size: 20px;
+            }
+
+            .hero-text {
+
+                font-size: 16px;
+            }
+
+            section {
+
+                padding: 65px 0;
+            }
+
+            .section-header h2,
+            .about-text h2 {
+
+                font-size: 30px;
+            }
+
+            .roles-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image {
+
+                width: 160px;
+
+                height: 160px;
+            }
+
+            .cta h2 {
+
+                font-size: 32px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header>
+
+    <div class="container navbar">
+
+
+        <a href="#home"
+           class="logo">
+
+            Abdelrahman Elhawary
+
+        </a>
+
+
+        <div class="nav-right">
+
+
+            <nav class="nav-links">
+
+                <a href="#home"
+                   data-en="Home"
+                   data-de="Startseite">
+                    Startseite
+                </a>
+
+                <a href="#roles"
+                   data-en="Roles"
+                   data-de="Positionen">
+                    Positionen
+                </a>
+
+                <a href="#skills"
+                   data-en="Skills"
+                   data-de="Kompetenzen">
+                    Kompetenzen
+                </a>
+
+                <a href="#about"
+                   data-en="About"
+                   data-de="Über mich">
+                    Über mich
+                </a>
+
+                <a href="#contact"
+                   data-en="Contact"
+                   data-de="Kontakt">
+                    Kontakt
+                </a>
+
+            </nav>
+
+
+            <div class="language-switch">
+
+                <button class="lang-btn"
+                        data-lang="en">
+
+                    EN
+
+                </button>
+
+
+                <button class="lang-btn active"
+                        data-lang="de">
+
+                    DE
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero"
+         id="home">
+
+
+    <div class="container hero-grid">
+
+
+        <div>
+
+
+            <span class="eyebrow"
+
+                  data-en="Available for Remote Opportunities"
+
+                  data-de="Offen für deutschsprachige Remote-Stellen">
+
+                Offen für deutschsprachige Remote-Stellen
+
+            </span>
+
+
+            <h1>
+
+
+                <span
+
+                    data-en="German-Speaking Engineer"
+
+                    data-de="Deutschsprachiger Ingenieur">
+
+                    Deutschsprachiger Ingenieur
+
+                </span>
+
+
+                <br>
+
+
+                <span
+
+                    data-en="& Technical Professional"
+
+                    data-de="& Entwickler">
+
+                    & Entwickler
+
+                </span>
+
+
+            </h1>
+
+
+            <h2
+
+                data-en="Technical Support · IT · Software Development · Embedded Systems · Electronics"
+
+                data-de="Technischer Support · IT · Softwareentwicklung · Embedded Systems · Elektronik">
+
+                Technischer Support · IT · Softwareentwicklung · Embedded Systems · Elektronik
+
+            </h2>
+
+
+            <p class="hero-text"
+
+               data-en="I combine German communication skills with a strong technical background in Software Engineering, IT, programming, networking, Windows, Microsoft 365, embedded systems and electronics."
+
+               data-de="Ich verbinde Deutschkenntnisse mit einem starken technischen Hintergrund in Software Engineering, IT, Programmierung, Netzwerken, Windows, Microsoft 365, Embedded Systems und Elektronik.">
+
+                Ich verbinde Deutschkenntnisse mit einem starken technischen
+                Hintergrund in Software Engineering, IT, Programmierung,
+                Netzwerken, Windows, Microsoft 365, Embedded Systems und
+                Elektronik.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+
+                <a href="#contact"
+                   class="btn btn-primary"
+
+                   data-en="Let's Work Together"
+
+                   data-de="Zusammenarbeiten">
+
+                    Zusammenarbeiten
+
+                </a>
+
+
+                <a href="#video"
+                   class="btn btn-secondary"
+
+                   data-en="Watch Introduction"
+
+                   data-de="Vorstellung ansehen">
+
+                    Vorstellung ansehen
+
+                </a>
+
+
+                <!-- GITHUB -->
+
+                <a href="https://github.com/YOUR_USERNAME"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-secondary">
+
+                    GitHub
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- PROFILE CARD -->
+
+        <div class="profile-card">
+
+
+            <img src="x.jpg"
+
+                 alt="Abdelrahman Elhawary"
+
+                 class="profile-image">
+
+
+            <div class="profile-name">
+
+                Abdelrahman Elhawary
+
+            </div>
+
+
+            <div class="profile-title"
+
+                 data-en="German-Speaking Engineer & Technical Professional"
+
+                 data-de="Deutschsprachiger Ingenieur & Entwickler">
+
+                Deutschsprachiger Ingenieur & Entwickler
+
+            </div>
+
+
+            <div class="profile-list">
+
+
+                <div class="profile-item">
+
+                    <span class="check">
+                        ✓
+                    </span>
+
+                    <span>
+
+                        <strong
+
+                            data-en="German:"
+                            data-de="Deutsch:">
+
+                            Deutsch:
+
+                        </strong>
+
+                        <span
+
+                            data-en="C1 · currently progressing toward C2"
+
+                            data-de="C1 · aktuell auf dem Weg zu C2">
+
+                            C1 · aktuell auf dem Weg zu C2
+
+                        </span>
+
+                    </span>
+
+                </div>
+
+
+                <div class="profile-item">
+
+                    <span class="check">
+                        ✓
+                    </span>
+
+                    <span
+
+                        data-en="Software Engineering"
+
+                        data-de="Software Engineering">
+
+                        Software Engineering
+
+                    </span>
+
+                </div>
+
+
+                <div class="profile-item">
+
+                    <span class="check">
+                        ✓
+                    </span>
+
+                    <span
+
+                        data-en="IT & Networking"
+
+                        data-de="IT & Netzwerke">
+
+                        IT & Netzwerke
+
+                    </span>
+
+                </div>
+
+
+                <div class="profile-item">
+
+                    <span class="check">
+                        ✓
+                    </span>
+
+                    <span
+
+                        data-en="Windows & Microsoft 365"
+
+                        data-de="Windows & Microsoft 365">
+
+                        Windows & Microsoft 365
+
+                    </span>
+
+                </div>
+
+
+                <div class="profile-item">
+
+                    <span class="check">
+                        ✓
+                    </span>
+
+                    <span
+
+                        data-en="Embedded Systems & Electronics"
+
+                        data-de="Embedded Systems & Elektronik">
+
+                        Embedded Systems & Elektronik
+
+                    </span>
+
+                </div>
+
+
+                <div class="profile-item">
+
+                    <span class="check">
+                        ✓
+                    </span>
+
+                    <span
+
+                        data-en="Remote from Egypt"
+
+                        data-de="Remote aus Ägypten">
+
+                        Remote aus Ägypten
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <a href="https://github.com/YOUR_USERNAME"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="github-link">
+
+                <span>↗</span>
+
+                <span>
+                    GitHub
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VIDEO
+========================= -->
+
+<section class="video-section"
+         id="video">
+
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+
+            <h2
+
+                data-en="My Introduction Video"
+
+                data-de="Mein Vorstellungsvideo">
+
+                Mein Vorstellungsvideo
+
+            </h2>
+
+
+            <p
+
+                data-en="A short personal introduction in German."
+
+                data-de="Eine kurze persönliche Vorstellung auf Deutsch.">
+
+                Eine kurze persönliche Vorstellung auf Deutsch.
+
+            </p>
+
+        </div>
+
+
+        <div class="video-wrapper">
+
+
+            <div class="video-placeholder">
+
+
+                <div class="video-icon">
+                    ▶
+                </div>
+
+
+                <h3
+
+                    data-en="Professional Introduction"
+
+                    data-de="Professionelle Vorstellung">
+
+                    Professionelle Vorstellung
+
+                </h3>
+
+
+                <p
+
+                    data-en="Your introduction video will be placed here."
+
+                    data-de="Hier wird dein Vorstellungsvideo eingefügt.">
+
+                    Hier wird dein Vorstellungsvideo eingefügt.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TARGET ROLES
+========================= -->
+
+<section id="roles">
+
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+
+            <h2
+
+                data-en="Target Roles"
+
+                data-de="Zielpositionen">
+
+                Zielpositionen
+
+            </h2>
+
+
+            <p
+
+                data-en="I am open to a broad range of German-speaking technical, IT, customer-facing and commercial roles."
+
+                data-de="Ich bin offen für verschiedene deutschsprachige technische, IT-, kundenorientierte und kaufmännische Positionen.">
+
+                Ich bin offen für verschiedene deutschsprachige technische,
+                IT-, kundenorientierte und kaufmännische Positionen.
+
+            </p>
+
+        </div>
+
+
+        <div class="roles-grid">
+
+
+            <div class="role-card">
+
+                <div class="role-number">
+                    01
+                </div>
+
+                <h3
+
+                    data-en="German-Speaking Technical Support"
+
+                    data-de="Deutschsprachiger Technischer Support">
+
+                    Deutschsprachiger Technischer Support
+
+                </h3>
+
+                <p
+
+                    data-en="Technical troubleshooting and customer assistance."
+
+                    data-de="Technische Fehleranalyse und Unterstützung von Kunden.">
+
+                    Technische Fehleranalyse und Unterstützung von Kunden.
+
+                </p>
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">
+                    02
+                </div>
+
+                <h3
+
+                    data-en="German-Speaking IT Support"
+
+                    data-de="Deutschsprachiger IT-Support">
+
+                    Deutschsprachiger IT-Support
+
+                </h3>
+
+                <p
+
+                    data-en="IT support, troubleshooting and user assistance."
+
+                    data-de="IT-Support, Fehleranalyse und Benutzerbetreuung.">
+
+                    IT-Support, Fehleranalyse und Benutzerbetreuung.
+
+                </p>
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">
+                    03
+                </div>
+
+                <h3
+
+                    data-en="Service Desk / Help Desk"
+
+                    data-de="Service Desk / Help Desk">
+
+                    Service Desk / Help Desk
+
+                </h3>
+
+                <p
+
+                    data-en="Incident handling, ticket management and technical support."
+
+                    data-de="Incident-Bearbeitung, Ticketmanagement und technischer Support.">
+
+                    Incident-Bearbeitung, Ticketmanagement und technischer Support.
+
+                </p>
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">
+                    04
+                </div>
+
+                <h3
+
+                    data-en="German Customer Support"
+
+                    data-de="Deutschsprachiger Kundensupport">
+
+                    Deutschsprachiger Kundensupport
+
+                </h3>
+
+                <p
+
+                    data-en="Professional customer communication through phone, email and chat."
+
+                    data-de="Professionelle Kundenkommunikation per Telefon, E-Mail und Chat.">
+
+                    Professionelle Kundenkommunikation per Telefon, E-Mail und Chat.
+
+                </p>
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">
+                    05
+                </div>
+
+                <h3
+
+                    data-en="Customer Service"
+
+                    data-de="Kundenservice">
+
+                    Kundenservice
+
+                </h3>
+
+                <p
+
+                    data-en="Customer assistance, issue resolution and service communication."
+
+                    data-de="Kundenbetreuung, Problemlösung und Servicekommunikation.">
+
+                    Kundenbetreuung, Problemlösung und Servicekommunikation.
+
+                </p>
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">
+                    06
+                </div>
+
+                <h3
+
+                    data-en="Application & Product Support"
+
+                    data-de="Application & Product Support">
+
+                    Application & Product Support
+
+                </h3>
+
+                <p
+
+                    data-en="Technical assistance for software products and applications."
+
+                    data-de="Technische Unterstützung für Softwareprodukte und Anwendungen.">
+
+                    Technische Unterstützung für Softwareprodukte und Anwendungen.
+
+                </p>
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">
+                    07
+                </div>
+
+                <h3
+
+                    data-en="German-Speaking Sales"
+
+                    data-de="Deutschsprachiger Vertrieb">
+
+                    Deutschsprachiger Vertrieb
+
+                </h3>
+
+                <p
+
+                    data-en="Customer communication, product presentation and sales support."
+
+                    data-de="Kundenkommunikation, Produktpräsentation und Vertriebsunterstützung.">
+
+                    Kundenkommunikation, Produktpräsentation und Vertriebsunterstützung.
+
+                </p>
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">
+                    08
+                </div>
+
+                <h3
+
+                    data-en="Inside Sales / Sales Support"
+
+                    data-de="Inside Sales / Vertriebsunterstützung">
+
+                    Inside Sales / Vertriebsunterstützung
+
+                </h3>
+
+                <p
+
+                    data-en="Lead communication, qualification and customer follow-up."
+
+                    data-de="Lead-Kommunikation, Qualifizierung und Kundenbetreuung.">
+
+                    Lead-Kommunikation, Qualifizierung und Kundenbetreuung.
+
+                </p>
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">
+                    09
+                </div>
+
+                <h3
+
+                    data-en="Customer Success"
+
+                    data-de="Customer Success">
+
+                    Customer Success
+
+                </h3>
+
+                <p
+
+                    data-en="Customer relationship management and product adoption support."
+
+                    data-de="Kundenbeziehungsmanagement und Unterstützung bei der Produktnutzung.">
+
+                    Kundenbeziehungsmanagement und Unterstützung bei der Produktnutzung.
+
+                </p>
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">
+                    10
+                </div>
+
+                <h3
+
+                    data-en="Technical Sales"
+
+                    data-de="Technischer Vertrieb">
+
+                    Technischer Vertrieb
+
+                </h3>
+
+                <p
+
+                    data-en="Combining technical understanding with customer communication."
+
+                    data-de="Verbindung von technischem Verständnis und Kundenkommunikation.">
+
+                    Verbindung von technischem Verständnis und Kundenkommunikation.
+
+                </p>
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">
+                    11
+                </div>
+
+                <h3
+
+                    data-en="Incident / Service Management"
+
+                    data-de="Incident / Service Management">
+
+                    Incident / Service Management
+
+                </h3>
+
+                <p
+
+                    data-en="Incident coordination, troubleshooting and service processes."
+
+                    data-de="Incident-Koordination, Fehleranalyse und Serviceprozesse.">
+
+                    Incident-Koordination, Fehleranalyse und Serviceprozesse.
+
+                </p>
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">
+                    12
+                </div>
+
+                <h3
+
+                    data-en="Email & Chat Support"
+
+                    data-de="E-Mail- & Chat-Support">
+
+                    E-Mail- & Chat-Support
+
+                </h3>
+
+                <p
+
+                    data-en="Professional written communication in German and English."
+
+                    data-de="Professionelle schriftliche Kommunikation auf Deutsch und Englisch.">
+
+                    Professionelle schriftliche Kommunikation auf Deutsch und Englisch.
+
+                </p>
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">
+                    13
+                </div>
+
+                <h3
+
+                    data-en="Back Office & Operations"
+
+                    data-de="Back Office & Operations">
+
+                    Back Office & Operations
+
+                </h3>
+
+                <p
+
+                    data-en="Administrative, technical and operational support."
+
+                    data-de="Administrative, technische und operative Unterstützung.">
+
+                    Administrative, technische und operative Unterstützung.
+
+                </p>
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">
+                    14
+                </div>
+
+                <h3
+
+                    data-en="Virtual Assistant"
+
+                    data-de="Virtueller Assistent">
+
+                    Virtueller Assistent
+
+                </h3>
+
+                <p
+
+                    data-en="Technical, administrative and customer-facing remote assistance."
+
+                    data-de="Technische, administrative und kundenorientierte Remote-Unterstützung.">
+
+                    Technische, administrative und kundenorientierte Remote-Unterstützung.
+
+                </p>
+
+            </div>
+
+
+            <div class="role-card">
+
+                <div class="role-number">
+                    15
+                </div>
+
+                <h3
+
+                    data-en="Technical Operations"
+
+                    data-de="Technische Operations">
+
+                    Technische Operations
+
+                </h3>
+
+                <p
+
+                    data-en="Technical coordination, documentation and operational support."
+
+                    data-de="Technische Koordination, Dokumentation und operative Unterstützung.">
+
+                    Technische Koordination, Dokumentation und operative Unterstützung.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section class="skills-section"
+         id="skills">
+
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+
+            <h2
+
+                data-en="Technical Skills"
+
+                data-de="Technische Kompetenzen">
+
+                Technische Kompetenzen
+
+            </h2>
+
+
+            <p
+
+                data-en="A broad technical foundation covering software, IT, networking, Microsoft technologies, embedded systems and electronics."
+
+                data-de="Eine breite technische Grundlage in Software, IT, Netzwerken, Microsoft-Technologien, Embedded Systems und Elektronik.">
+
+                Eine breite technische Grundlage in Software, IT, Netzwerken,
+                Microsoft-Technologien, Embedded Systems und Elektronik.
+
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <h3
+
+                    data-en="Programming & Software"
+
+                    data-de="Programmierung & Software">
+
+                    Programmierung & Software
+
+                </h3>
+
+
+                <div class="tags">
+
+                    <span class="tag">C</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">C#</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">GitHub</span>
+                    <span class="tag">REST APIs</span>
+                    <span class="tag">OOP</span>
+                    <span class="tag">Debugging</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3
+
+                    data-en="IT & Technical Support"
+
+                    data-de="IT & Technischer Support">
+
+                    IT & Technischer Support
+
+                </h3>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Technical Troubleshooting
+                    </span>
+
+                    <span class="tag">
+                        IT Support
+                    </span>
+
+                    <span class="tag">
+                        Help Desk
+                    </span>
+
+                    <span class="tag">
+                        Service Desk
+                    </span>
+
+                    <span class="tag">
+                        Incident Management
+                    </span>
+
+                    <span class="tag">
+                        Ticket Systems
+                    </span>
+
+                    <span class="tag">
+                        Remote Support
+                    </span>
+
+                    <span class="tag">
+                        Hardware Troubleshooting
+                    </span>
+
+                    <span class="tag">
+                        Software Troubleshooting
+                    </span>
+
+                    <span class="tag">
+                        User Support
+                    </span>
+
+                    <span class="tag">
+                        CRM
+                    </span>
+
+                    <span class="tag">
+                        Documentation
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3
+
+                    data-en="Networking"
+
+                    data-de="Netzwerke">
+
+                    Netzwerke
+
+                </h3>
+
+
+                <div class="tags">
+
+                    <span class="tag">TCP/IP</span>
+                    <span class="tag">IPv4</span>
+                    <span class="tag">IPv6</span>
+                    <span class="tag">DNS</span>
+                    <span class="tag">DHCP</span>
+                    <span class="tag">HTTP/HTTPS</span>
+                    <span class="tag">VPN</span>
+                    <span class="tag">LAN/WAN</span>
+                    <span class="tag">Wi-Fi</span>
+                    <span class="tag">Ethernet</span>
+                    <span class="tag">Routing</span>
+                    <span class="tag">Switching</span>
+                    <span class="tag">Firewalls</span>
+                    <span class="tag">Network Troubleshooting</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3
+
+                    data-en="Windows & Microsoft"
+
+                    data-de="Windows & Microsoft">
+
+                    Windows & Microsoft
+
+                </h3>
+
+
+                <div class="tags">
+
+                    <span class="tag">Windows 10</span>
+                    <span class="tag">Windows 11</span>
+                    <span class="tag">Windows Administration</span>
+                    <span class="tag">Windows Troubleshooting</span>
+                    <span class="tag">Microsoft 365</span>
+                    <span class="tag">Microsoft Teams</span>
+                    <span class="tag">Outlook</span>
+                    <span class="tag">Word</span>
+                    <span class="tag">Excel</span>
+                    <span class="tag">PowerPoint</span>
+                    <span class="tag">OneDrive</span>
+                    <span class="tag">SharePoint</span>
+                    <span class="tag">Microsoft Entra ID</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3
+
+                    data-en="Embedded Systems & Electronics"
+
+                    data-de="Embedded Systems & Elektronik">
+
+                    Embedded Systems & Elektronik
+
+                </h3>
+
+
+                <div class="tags">
+
+                    <span class="tag">Embedded C/C++</span>
+                    <span class="tag">STM32</span>
+                    <span class="tag">ESP32</span>
+                    <span class="tag">ARM</span>
+                    <span class="tag">RTOS</span>
+                    <span class="tag">Embedded Linux</span>
+                    <span class="tag">UART</span>
+                    <span class="tag">SPI</span>
+                    <span class="tag">I2C</span>
+                    <span class="tag">CAN</span>
+                    <span class="tag">LIN</span>
+                    <span class="tag">Sensors</span>
+                    <span class="tag">Microcontrollers</span>
+                    <span class="tag">PCB Design</span>
+                    <span class="tag">Hardware Debugging</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3
+
+                    data-en="Engineering & Robotics"
+
+                    data-de="Engineering & Robotik">
+
+                    Engineering & Robotik
+
+                </h3>
+
+
+                <div class="tags">
+
+                    <span class="tag">Electronics</span>
+                    <span class="tag">Robotics</span>
+                    <span class="tag">ROS</span>
+                    <span class="tag">ROS2</span>
+                    <span class="tag">Control Systems</span>
+                    <span class="tag">IoT</span>
+                    <span class="tag">Automation</span>
+                    <span class="tag">Power Electronics</span>
+                    <span class="tag">PCB Design</span>
+                    <span class="tag">Altium</span>
+                    <span class="tag">KiCad</span>
+                    <span class="tag">Hardware Testing</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+
+    <div class="container about-grid">
+
+
+        <div class="about-text">
+
+
+            <h2
+
+                data-en="Engineer. Developer. Technical Professional."
+
+                data-de="Ingenieur. Entwickler. Technischer Fachmann.">
+
+                Ingenieur. Entwickler. Technischer Fachmann.
+
+            </h2>
+
+
+            <p
+
+                data-en="My background combines Software Engineering with a strong technical focus on IT, electronics, embedded systems and practical problem solving."
+
+                data-de="Mein Hintergrund verbindet Software Engineering mit einem starken technischen Fokus auf IT, Elektronik, Embedded Systems und praktischer Problemlösung.">
+
+                Mein Hintergrund verbindet Software Engineering mit einem starken
+                technischen Fokus auf IT, Elektronik, Embedded Systems und
+                praktischer Problemlösung.
+
+            </p>
+
+
+            <p
+
+                data-en="I can combine technical understanding with German-speaking communication, making me suitable for roles that connect technology, customers and business operations."
+
+                data-de="Ich verbinde technisches Verständnis mit deutschsprachiger Kommunikation und kann dadurch Technologie, Kunden und Geschäftsprozesse miteinander verbinden.">
+
+                Ich verbinde technisches Verständnis mit deutschsprachiger
+                Kommunikation und kann dadurch Technologie, Kunden und
+                Geschäftsprozesse miteinander verbinden.
+
+            </p>
+
+
+            <div class="about-points">
+
+
+                <div class="about-point">
+
+                    <span>✓</span>
+
+                    <p
+
+                        data-en="German-speaking customer and technical communication"
+
+                        data-de="Deutschsprachige Kunden- und technische Kommunikation">
+
+                        Deutschsprachige Kunden- und technische Kommunikation
+
+                    </p>
+
+                </div>
+
+
+                <div class="about-point">
+
+                    <span>✓</span>
+
+                    <p
+
+                        data-en="Software Engineering background"
+
+                        data-de="Hintergrund in Software Engineering">
+
+                        Hintergrund in Software Engineering
+
+                    </p>
+
+                </div>
+
+
+                <div class="about-point">
+
+                    <span>✓</span>
+
+                    <p
+
+                        data-en="Programming, networking and troubleshooting"
+
+                        data-de="Programmierung, Netzwerke und Fehleranalyse">
+
+                        Programmierung, Netzwerke und Fehleranalyse
+
+                    </p>
+
+                </div>
+
+
+                <div class="about-point">
+
+                    <span>✓</span>
+
+                    <p
+
+                        data-en="Embedded systems and electronics"
+
+                        data-de="Embedded Systems und Elektronik">
+
+                        Embedded Systems und Elektronik
+
+                    </p>
+
+                </div>
+
+
+                <div class="about-point">
+
+                    <span>✓</span>
+
+                    <p
+
+                        data-en="Currently improving German toward C2"
+
+                        data-de="Aktuell verbessere ich mein Deutsch auf dem Weg zu C2">
+
+                        Aktuell verbessere ich mein Deutsch auf dem Weg zu C2
+
+                    </p>
+
+                </div>
+
+
+                <div class="about-point">
+
+                    <span>✓</span>
+
+                    <p
+
+                        data-en="Available for remote work from Egypt"
+
+                        data-de="Für Remote-Arbeit aus Ägypten verfügbar">
+
+                        Für Remote-Arbeit aus Ägypten verfügbar
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="about-card">
+
+
+            <h3
+
+                data-en="What I Bring"
+
+                data-de="Was ich mitbringe">
+
+                Was ich mitbringe
+
+            </h3>
+
+
+            <p
+
+                data-en="Technical knowledge, engineering thinking, programming skills and the ability to communicate clearly with customers and teams."
+
+                data-de="Technisches Wissen, ingenieurwissenschaftliches Denken, Programmierkenntnisse und die Fähigkeit, klar mit Kunden und Teams zu kommunizieren.">
+
+                Technisches Wissen, ingenieurwissenschaftliches Denken,
+                Programmierkenntnisse und die Fähigkeit, klar mit Kunden
+                und Teams zu kommunizieren.
+
+            </p>
+
+
+            <p
+
+                data-en="I am especially interested in roles where German communication and technical understanding are both valuable."
+
+                data-de="Besonders interessant sind für mich Positionen, in denen Deutschkenntnisse und technisches Verständnis gleichermaßen gefragt sind.">
+
+                Besonders interessant sind für mich Positionen, in denen
+                Deutschkenntnisse und technisches Verständnis gleichermaßen
+                gefragt sind.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="cta"
+         id="contact">
+
+
+    <div class="container">
+
+
+        <h2
+
+            data-en="Let's Work Together"
+
+            data-de="Lassen Sie uns zusammenarbeiten">
+
+            Lassen Sie uns zusammenarbeiten
+
+        </h2>
+
+
+        <p
+
+            data-en="I am open to German-speaking remote opportunities in technical support, IT support, customer operations, sales, customer success and related technical roles."
+
+            data-de="Ich bin offen für deutschsprachige Remote-Positionen in den Bereichen technischer Support, IT-Support, Kundenbetreuung, Vertrieb, Customer Success und verwandten technischen Bereichen.">
+
+            Ich bin offen für deutschsprachige Remote-Positionen in den
+            Bereichen technischer Support, IT-Support, Kundenbetreuung,
+            Vertrieb, Customer Success und verwandten technischen Bereichen.
+
+        </p>
+
+
+        <a href="mailto:YOUR_EMAIL@example.com"
+
+           class="btn"
+
+           data-en="Contact Me"
+
+           data-de="Kontakt aufnehmen">
+
+            Kontakt aufnehmen
+
+        </a>
+
+
+        <br>
+
+
+        <a href="https://github.com/YOUR_USERNAME"
+
+           target="_blank"
+
+           rel="noopener noreferrer"
+
+           class="btn"
+
+           style="margin-top:12px;">
+
+            GitHub
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+
+    <div class="container">
+
+
+        <p>
+
+            © 2026
+
+            <strong>
+                Abdelrahman Elhawary
+            </strong>.
+
+            <span
+
+                data-en="German-Speaking Engineer & Technical Professional"
+
+                data-de="Deutschsprachiger Ingenieur & Entwickler">
+
+                Deutschsprachiger Ingenieur & Entwickler
+
+            </span>
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     LANGUAGE SCRIPT
+========================= -->
+
+<script>
+
+
+    const langButtons =
+        document.querySelectorAll(".lang-btn");
+
+
+    const translatableElements =
+        document.querySelectorAll(
+            "[data-en][data-de]"
+        );
+
+
+    function setLanguage(language) {
+
+
+        document.documentElement.lang =
+            language;
+
+
+        document.documentElement.dir =
+            "ltr";
+
+
+        translatableElements.forEach(
+            element => {
+
+                const translation =
+                    element.getAttribute(
+                        `data-${language}`
+                    );
+
+
+                if (translation !== null) {
+
+                    element.textContent =
+                        translation;
+
+                }
+
+            }
+        );
+
+
+        langButtons.forEach(button => {
+
+            button.classList.toggle(
+
+                "active",
+
+                button.dataset.lang ===
+                language
+
+            );
+
+        });
+
+
+        if (language === "de") {
+
+            document.title =
+                "Abdelrahman Elhawary | Deutschsprachiger Ingenieur & Entwickler";
+
+        } else {
+
+            document.title =
+                "Abdelrahman Elhawary | German-Speaking Engineer & Technical Professional";
+
+        }
+
+
+        localStorage.setItem(
+            "preferredLanguage",
+            language
+        );
+
+    }
+
+
+    langButtons.forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                setLanguage(
+                    button.dataset.lang
+                );
+
+            }
+        );
+
+    });
+
+
+    /*
+       German is the default language.
+       The website opens in German
+       unless the visitor has already
+       selected another language.
+    */
+
+    const savedLanguage =
+        localStorage.getItem(
+            "preferredLanguage"
+        );
+
+
+    setLanguage(
+        savedLanguage || "de"
+    );
+
+
+</script>
+
+
+</body>
+</html>
+```
