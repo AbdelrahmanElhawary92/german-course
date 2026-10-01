@@ -1,2069 +1,2454 @@
 ```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>كورس الألماني العملي — اللغة، الحياة والعمل</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, "Segoe UI", sans-serif;
-      background: #f7f9fc;
-      color: #1f2937;
-      line-height: 1.8;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    /* =========================
-       LANGUAGE SWITCHER
-    ========================= */
-
-    .language-bar {
-      position: absolute;
-      top: 20px;
-      left: 25px;
-      z-index: 10;
-    }
-
-    html[dir="ltr"] .language-bar {
-      left: auto;
-      right: 25px;
-    }
-
-    .language-switch {
-      display: flex;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.35);
-      border-radius: 30px;
-      padding: 4px;
-      backdrop-filter: blur(8px);
-    }
-
-    .language-switch button {
-      border: none;
-      background: transparent;
-      color: white;
-      padding: 8px 14px;
-      border-radius: 22px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .language-switch button.active {
-      background: white;
-      color: #1d4ed8;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      position: relative;
-      background: linear-gradient(135deg, #1d4ed8, #2563eb);
-      color: white;
-      text-align: center;
-      padding: 95px 20px 80px;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.06);
-      top: -120px;
-      right: -100px;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.3);
-      padding: 8px 18px;
-      border-radius: 30px;
-      margin-bottom: 20px;
-      font-size: 15px;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      line-height: 1.35;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      display: block;
-      color: #dbeafe;
-    }
-
-    .hero p {
-      max-width: 800px;
-      margin: auto;
-      font-size: 20px;
-      color: #eff6ff;
-    }
-
-    .hero-buttons {
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 28px;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: 0.3s;
-      margin: 5px;
-    }
-
-    .btn-primary {
-      background: white;
-      color: #1d4ed8;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,0.6);
-      color: white;
-    }
-
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.1);
-    }
-
-    /* =========================
-       GENERAL SECTIONS
-    ========================= */
-
-    section {
-      padding: 70px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 15px;
-      color: #111827;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: #6b7280;
-      max-width: 750px;
-      margin: 0 auto 40px;
-    }
-
-    /* =========================
-       TARGET
-    ========================= */
-
-    .target {
-      background: white;
-    }
-
-    .target-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .target-card {
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 25px;
-    }
-
-    .target-card h3 {
-      margin-bottom: 8px;
-      color: #1d4ed8;
-    }
-
-    /* =========================
-       FEATURES
-    ========================= */
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .feature {
-      background: white;
-      padding: 28px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    }
-
-    .feature-icon {
-      font-size: 35px;
-      margin-bottom: 12px;
-    }
-
-    .feature h3 {
-      margin-bottom: 8px;
-      color: #111827;
-    }
-
-    .feature p {
-      color: #6b7280;
-    }
-
-    /* =========================
-       COURSE CONTENT
-    ========================= */
-
-    .content {
-      background: white;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .content-item {
-      background: #f8fafc;
-      border-radius: 12px;
-      padding: 18px 22px;
-      border: 1px solid #e5e7eb;
-    }
-
-    .content-item::before {
-      content: "✓";
-      color: #2563eb;
-      font-weight: bold;
-      margin-left: 8px;
-    }
-
-    html[dir="ltr"] .content-item::before {
-      margin-left: 0;
-      margin-right: 8px;
-    }
-
-    /* =========================
-       COURSE DETAILS
-    ========================= */
-
-    .details {
-      background: #eff6ff;
-    }
-
-    .details-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .detail {
-      background: white;
-      text-align: center;
-      padding: 25px 15px;
-      border-radius: 14px;
-    }
-
-    .detail strong {
-      display: block;
-      font-size: 25px;
-      color: #1d4ed8;
-      margin-bottom: 5px;
-    }
-
-    /* =========================
-       VIDEO
-    ========================= */
-
-    .video-wrapper {
-      max-width: 900px;
-      margin: auto;
-      background: white;
-      padding: 12px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    }
-
-    .video-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 10px;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      top: 0;
-      left: 0;
-    }
-
-    .video-title {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .video-highlights {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin-top: 25px;
-    }
-
-    .video-highlight {
-      background: #f8fafc;
-      padding: 18px;
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    /* =========================
-       INSTRUCTOR
-    ========================= */
-
-    .instructor {
-      background: white;
-      text-align: center;
-    }
-
-    .instructor-photo {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 50%;
-      display: block;
-      margin: 0 auto 20px;
-      border: 4px solid #ffffff;
-      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
-    }
-
-    .instructor h3 {
-      font-size: 26px;
-      margin-bottom: 12px;
-    }
-
-    .instructor-description {
-      max-width: 750px;
-      margin: auto;
-      color: #4b5563;
-      font-size: 17px;
-    }
-
-    /* =========================
-       PRICING
-    ========================= */
-
-    .pricing {
-      background: #f7f9fc;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .price-card {
-      background: white;
-      border-radius: 18px;
-      padding: 35px;
-      text-align: center;
-      border: 1px solid #e5e7eb;
-      position: relative;
-    }
-
-    .price-card.premium {
-      border: 2px solid #2563eb;
-    }
-
-    .premium-label {
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #2563eb;
-      color: white;
-      padding: 5px 18px;
-      border-radius: 20px;
-      font-size: 13px;
-    }
-
-    .price-card h3 {
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
-
-    .price {
-      font-size: 42px;
-      font-weight: bold;
-      color: #1d4ed8;
-      margin-bottom: 20px;
-    }
-
-    .price-card ul {
-      list-style: none;
-      text-align: start;
-      margin-bottom: 25px;
-    }
-
-    .price-card li {
-      padding: 7px 0;
-    }
-
-    .price-card li::before {
-      content: "✓";
-      color: #2563eb;
-      font-weight: bold;
-      margin-left: 8px;
-    }
-
-    html[dir="ltr"] .price-card li::before {
-      margin-left: 0;
-      margin-right: 8px;
-    }
-
-    /* =========================
-       CONSULTATION
-    ========================= */
-
-    .consultation {
-      background: #eff6ff;
-      text-align: center;
-    }
-
-    .consultation-box {
-      background: white;
-      max-width: 700px;
-      margin: auto;
-      padding: 35px;
-      border-radius: 18px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    }
-
-    .consultation-price {
-      font-size: 38px;
-      color: #1d4ed8;
-      font-weight: bold;
-      margin: 15px 0;
-    }
-
-    /* =========================
-       FAQ
-    ========================= */
-
-    .faq {
-      background: white;
-    }
-
-    .faq-list {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid #e5e7eb;
-      padding: 20px 0;
-    }
-
-    .faq-item h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-      color: #111827;
-    }
-
-    .faq-item p {
-      color: #6b7280;
-    }
-
-    /* =========================
-       CTA
-    ========================= */
-
-    .cta {
-      background: linear-gradient(135deg, #1d4ed8, #2563eb);
-      color: white;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-      max-width: 700px;
-      margin: 0 auto 25px;
-      color: #dbeafe;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #111827;
-      color: #9ca3af;
-      text-align: center;
-      padding: 25px;
-      font-size: 14px;
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
-    @media (max-width: 900px) {
-
-      .features-grid,
-      .details-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-    }
-
-    @media (max-width: 650px) {
-
-      .language-bar {
-        top: 15px;
-        left: 15px;
-      }
-
-      html[dir="ltr"] .language-bar {
-        left: auto;
-        right: 15px;
-      }
-
-      .hero {
-        padding-top: 90px;
-      }
-
-      .hero h1 {
-        font-size: 29px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      .target-grid,
-      .features-grid,
-      .content-grid,
-      .details-grid,
-      .pricing-grid,
-      .video-highlights {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 50px 0;
-      }
-
-      .section-title {
-        font-size: 27px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇩🇪 كورس الألماني العملي — Praktisches Deutsch</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --primary: #111827;
+            --secondary: #2563eb;
+            --accent: #f59e0b;
+            --success: #16a34a;
+            --danger: #dc2626;
+            --purple: #7c3aed;
+            --cyan: #0891b2;
+            --light: #f8fafc;
+            --border: #e5e7eb;
+            --text: #1f2937;
+            --muted: #64748b;
+        }
+        body {
+            font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+            background: #f1f5f9;
+            color: var(--text);
+            line-height: 1.8;
+        }
+        .container { width: min(1200px, 94%); margin: auto; }
+        .language-switch {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 9999;
+            display: flex;
+            gap: 5px;
+            background: rgba(15, 23, 42, 0.92);
+            padding: 5px;
+            border-radius: 999px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        .language-switch button {
+            border: none;
+            background: transparent;
+            color: white;
+            padding: 7px 13px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .language-switch button.active { background: var(--secondary); }
+        .hero {
+            background: linear-gradient(135deg, #111827 0%, #1e3a8a 55%, #2563eb 100%);
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+        }
+        .hero h1 { font-size: clamp(32px, 5vw, 58px); margin-bottom: 15px; font-weight: 800; }
+        .hero h2 { font-size: clamp(20px, 3vw, 30px); font-weight: 500; opacity: 0.95; margin-bottom: 25px; }
+        .hero p { max-width: 850px; margin: auto; font-size: 18px; opacity: 0.9; }
+        .badge-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+        .badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 999px; font-size: 14px; }
+        section { padding: 60px 0; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 34px; color: var(--primary); margin-bottom: 10px; }
+        .section-title p { color: var(--muted); max-width: 800px; margin: auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .card { background: white; border: 1px solid var(--border); border-radius: 18px; padding: 25px; box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06); }
+        .card h3 { margin-bottom: 12px; color: var(--primary); }
+        .card p { color: #475569; }
+        .icon { font-size: 38px; margin-bottom: 12px; }
+        .info-box { background: white; border-right: 5px solid var(--secondary); padding: 25px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .info-box.success { border-right-color: var(--success); }
+        .info-box.warning { border-right-color: var(--accent); }
+        .info-box.premium { border-right-color: var(--purple); }
+        .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .week-card { background: white; border-radius: 18px; padding: 25px; border-top: 5px solid var(--secondary); box-shadow: 0 8px 25px rgba(0,0,0,0.06); }
+        .week-card h3 { color: var(--secondary); margin-bottom: 15px; }
+        .week-card ul { padding-right: 20px; }
+        .week-card li { margin-bottom: 8px; }
+        .session { background: white; border-radius: 18px; padding: 30px; margin-bottom: 25px; border: 1px solid var(--border); box-shadow: 0 7px 22px rgba(15,23,42,0.05); }
+        .session-header { display: flex; justify-content: space-between; gap: 20px; align-items: center; flex-wrap: wrap; margin-bottom: 20px; }
+        .session-number { background: var(--primary); color: white; padding: 8px 15px; border-radius: 999px; font-size: 14px; }
+        .session h3 { font-size: 25px; color: var(--primary); }
+        .session-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .session-block { background: #f8fafc; border-radius: 12px; padding: 18px; }
+        .session-block h4 { margin-bottom: 10px; color: var(--secondary); }
+        .session-block ul { padding-right: 18px; }
+        .session-block li { margin-bottom: 5px; }
+        .ai-box { background: linear-gradient(135deg, #faf5ff, #f5f3ff); border: 1px solid #ddd6fe; border-right: 5px solid var(--purple); }
+        .premium-box { background: linear-gradient(135deg, #fff7ed, #fffbeb); border: 1px solid #fed7aa; border-right: 5px solid var(--accent); border-radius: 12px; padding: 18px; margin-top: 20px; }
+        .standard-box { border-right: 5px solid var(--secondary); }
+        .premium-label, .premium-plus-label, .standard-label { display: inline-block; padding: 5px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; margin-bottom: 12px; }
+        .standard-label { background: #dbeafe; color: #1d4ed8; }
+        .premium-label { background: #ede9fe; color: #6d28d9; }
+        .premium-plus-label { background: #ffedd5; color: #c2410c; }
+        .specialization-box { background: linear-gradient(135deg, #fff7ed, #fffbeb); border: 2px solid var(--accent); border-right: 6px solid var(--accent); border-radius: 18px; padding: 25px; }
+        .specialization-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 15px; margin-top: 20px; }
+        .specialization { background: white; border: 1px solid #fed7aa; border-radius: 14px; padding: 18px; }
+        .specialization h4 { color: #c2410c; margin-bottom: 7px; }
+        .ai-hero { background: linear-gradient(135deg, #312e81, #7c3aed); color: white; border-radius: 25px; padding: 45px; margin-bottom: 35px; box-shadow: 0 15px 40px rgba(76,29,149,0.25); }
+        .ai-hero h2 { font-size: 35px; margin-bottom: 15px; }
+        .ai-hero p { opacity: 0.92; max-width: 900px; }
+        .ai-flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 30px; }
+        .flow-step { background: rgba(255,255,255,0.12); padding: 18px; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.15); }
+        .flow-step strong { display: block; margin-bottom: 5px; }
+        .dashboard { background: #0f172a; border-radius: 25px; padding: 25px; color: white; box-shadow: 0 15px 35px rgba(15,23,42,0.2); }
+        .dashboard-top { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; margin-bottom: 25px; }
+        .dashboard-title { font-size: 25px; font-weight: 700; }
+        .dashboard-user { background: #1e293b; padding: 10px 18px; border-radius: 999px; }
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .dashboard-card { background: #1e293b; padding: 20px; border-radius: 15px; }
+        .dashboard-card span { color: #94a3b8; font-size: 13px; }
+        .dashboard-card strong { display: block; font-size: 23px; margin-top: 5px; }
+        .trainer-card { background: white; border-radius: 22px; padding: 30px; display: grid; grid-template-columns: 230px 1fr; gap: 30px; align-items: center; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(15,23,42,0.07); }
+        .trainer-image { width: 100%; height: 230px; object-fit: cover; border-radius: 18px; background: #e2e8f0; }
+        .trainer-content h3 { font-size: 30px; color: var(--primary); margin-bottom: 5px; }
+        .trainer-role { color: var(--secondary); font-weight: 700; margin-bottom: 15px; }
+        .trainer-content p { color: #475569; margin-bottom: 15px; }
+        .trainer-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .trainer-tag { background: #eff6ff; color: #1d4ed8; border-radius: 999px; padding: 5px 12px; font-size: 13px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1000px; margin: auto; }
+        .pricing { background: white; border: 2px solid var(--border); border-radius: 22px; padding: 35px; position: relative; }
+        .pricing.premium { border-color: var(--purple); box-shadow: 0 15px 40px rgba(124,58,237,0.15); }
+        .pricing.premium-plus { border-color: var(--accent); box-shadow: 0 15px 40px rgba(245,158,11,0.15); }
+        .pricing h3 { font-size: 28px; margin-bottom: 8px; }
+        .price { font-size: 42px; font-weight: 800; margin: 15px 0; }
+        .pricing ul { list-style: none; margin-top: 20px; }
+        .pricing li { margin: 10px 0; }
+        .pricing li::before { content: "✓"; color: var(--success); font-weight: bold; margin-left: 8px; }
+        .pricing.premium li::before { color: var(--purple); }
+        .pricing.premium-plus li::before { color: var(--accent); }
+        .recommended { position: absolute; top: -14px; left: 25px; background: var(--purple); color: white; padding: 5px 15px; border-radius: 999px; font-size: 13px; }
+        .premium-plus-badge { position: absolute; top: -14px; left: 25px; background: var(--accent); color: white; padding: 5px 15px; border-radius: 999px; font-size: 13px; }
+        .table-wrapper { overflow-x: auto; background: white; border-radius: 18px; border: 1px solid var(--border); }
+        table { width: 100%; border-collapse: collapse; min-width: 750px; }
+        th, td { padding: 15px; text-align: right; border-bottom: 1px solid var(--border); }
+        th { background: #f8fafc; color: var(--primary); }
+        .cta { background: linear-gradient(135deg, #111827, #1e3a8a); color: white; border-radius: 25px; padding: 50px; text-align: center; }
+        .cta h2 { font-size: 35px; margin-bottom: 15px; }
+        .cta p { max-width: 850px; margin: auto; opacity: 0.9; }
+        footer { background: #0f172a; color: white; text-align: center; padding: 45px 20px; }
+        footer p { opacity: 0.75; margin-top: 10px; }
+        @media (max-width: 700px) {
+            .hero { padding: 50px 15px; }
+            section { padding: 45px 0; }
+            .ai-hero { padding: 30px 20px; }
+            .dashboard-top { grid-template-columns: 1fr; }
+            .session { padding: 20px; }
+            .trainer-card { grid-template-columns: 1fr; text-align: center; }
+            .trainer-image { max-width: 230px; margin: auto; }
+            .trainer-tags { justify-content: center; }
+            .cta { padding: 35px 20px; }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- =========================
-       HERO
-  ========================= -->
+<!-- LANGUAGE SWITCH -->
+<div class="language-switch">
+    <button id="arBtn" class="active" onclick="setLanguage('ar')">🇪🇬 العربية</button>
+    <button id="deBtn" onclick="setLanguage('de')">🇩🇪 Deutsch</button>
+</div>
 
-  <header class="hero">
-
-    <div class="language-bar">
-      <div class="language-switch">
-
-        <button id="arBtn" class="active" onclick="setLanguage('ar')">
-          🇪🇬 العربية
-        </button>
-
-        <button id="deBtn" onclick="setLanguage('de')">
-          🇩🇪 Deutsch
-        </button>
-
-      </div>
-    </div>
-
+<!-- HERO -->
+<header class="hero">
     <div class="container">
-
-      <div
-        class="hero-badge"
-        data-ar="🇩🇪 Praktisches Deutsch für Alltag, Arbeit & berufliche Ziele"
-        data-de="🇩🇪 Praktisches Deutsch für Alltag, Arbeit & berufliche Ziele">
-      </div>
-
-      <h1>
-
-        <span
-          data-ar="🇩🇪 كورس الألماني العملي"
-          data-de="🇩🇪 Praktischer Deutschkurs">
-        </span>
-
-        <span
-          data-ar="من اللغة إلى الاستخدام الحقيقي"
-          data-de="Von der Sprache zur echten Anwendung">
-        </span>
-
-      </h1>
-
-      <p
-        data-ar="طوّر الألمانية من مستوى B1 إلى استخدام عملي أقوى في الحياة اليومية، العمل، ألمانيا، المقابلات والتواصل المهني — مع تدريب إضافي اختياري حسب المجال المهني الذي تستهدفه."
-        data-de="Entwickle dein Deutsch von B1 zu einer sicheren praktischen Anwendung im Alltag, Beruf, in Deutschland, bei Vorstellungsgesprächen und in der professionellen Kommunikation – mit zusätzlicher Spezialisierung für deinen gewünschten Berufsbereich.">
-      </p>
-
-      <div class="hero-buttons">
-
-        <a
-          href="#pricing"
-          class="btn btn-primary"
-          data-ar="شوف الباقات"
-          data-de="Pakete ansehen">
-        </a>
-
-        <a
-          href="#program"
-          class="btn btn-outline"
-          data-ar="شوف البرنامج"
-          data-de="Programm ansehen">
-        </a>
-
-      </div>
-
-    </div>
-  </header>
-
-
-  <!-- =========================
-       TARGET
-  ========================= -->
-
-  <section class="target">
-
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-ar="الكورس مناسب لمين؟"
-        data-de="Für wen ist der Kurs geeignet?">
-      </h2>
-
-      <p
-        class="section-subtitle"
-        data-ar="الكورس مناسب لمتعلمي B1/B2 الذين يريدون تحويل الألمانية من مادة دراسية إلى مهارة عملية يمكن استخدامها في الحياة والعمل."
-        data-de="Der Kurs richtet sich an B1/B2-Lernende, die Deutsch von einem Lernfach zu einer praktischen Fähigkeit für Alltag und Beruf entwickeln möchten.">
-      </p>
-
-      <div class="target-grid">
-
-        <div class="target-card">
-
-          <h3
-            data-ar="💼 للباحثين عن عمل"
-            data-de="💼 Für Jobsuchende">
-          </h3>
-
-          <p
-            data-ar="تدريب على التواصل المهني، السيرة الذاتية، المقابلات والتعامل مع مواقف العمل."
-            data-de="Training für berufliche Kommunikation, Bewerbung, Lebenslauf, Vorstellungsgespräche und typische Arbeitssituationen.">
-          </p>
-
-        </div>
-
-
-        <div class="target-card">
-
-          <h3
-            data-ar="🇩🇪 لمن يخطط لألمانيا"
-            data-de="🇩🇪 Für Deutschland">
-          </h3>
-
-          <p
-            data-ar="استعد لغويًا للحياة والعمل والدراسة وAusbildung والتعامل مع المواقف اليومية في ألمانيا."
-            data-de="Bereite dich sprachlich auf Alltag, Arbeit, Studium, Ausbildung und typische Situationen in Deutschland vor.">
-          </p>
-
-        </div>
-
-
-        <div class="target-card">
-
-          <h3
-            data-ar="💻 للعاملين في المجال الرقمي"
-            data-de="💻 Für die digitale Arbeitswelt">
-          </h3>
-
-          <p
-            data-ar="تعلم مفردات وتواصل عملي مرتبط بالـIT، الدعم الفني، البرمجيات، الاختبارات والبيئة الرقمية."
-            data-de="Lerne praktische Sprache für IT, Technical Support, Software, Testing und die digitale Arbeitswelt.">
-          </p>
-
-        </div>
-
-
-        <div class="target-card">
-
-          <h3
-            data-ar="🌍 لمن يعمل من خارج ألمانيا"
-            data-de="🌍 Für internationale Berufstätige">
-          </h3>
-
-          <p
-            data-ar="استخدم الألمانية مع الشركات والعملاء الألمان حتى لو كنت تعمل من بلدك."
-            data-de="Kommuniziere professionell mit deutschen Unternehmen und Kunden, auch wenn du außerhalb Deutschlands arbeitest.">
-          </p>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       FEATURES
-  ========================= -->
-
-  <section>
-
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-ar="مش مجرد كورس ألماني"
-        data-de="Mehr als nur ein Deutschkurs">
-      </h2>
-
-      <p
-        class="section-subtitle"
-        data-ar="الهدف هو أن تعرف كيف تستخدم اللغة في مواقف حقيقية، وليس فقط حفظ القواعد والكلمات."
-        data-de="Das Ziel ist nicht nur Grammatik und Vokabeln zu lernen, sondern Deutsch in realen Situationen sicher anzuwenden.">
-      </p>
-
-      <div class="features-grid">
-
-        <div class="feature">
-
-          <div class="feature-icon">🗣️</div>
-
-          <h3
-            data-ar="تحدث بثقة"
-            data-de="Sicher sprechen">
-          </h3>
-
-          <p
-            data-ar="محادثات وتمارين Speaking ومواقف عملية تساعدك على التحدث بشكل طبيعي."
-            data-de="Gespräche, Speaking-Übungen und praktische Situationen für mehr Sicherheit beim Sprechen.">
-          </p>
-
-        </div>
-
-
-        <div class="feature">
-
-          <div class="feature-icon">💼</div>
-
-          <h3
-            data-ar="ألماني للعمل"
-            data-de="Deutsch für den Beruf">
-          </h3>
-
-          <p
-            data-ar="تواصل مع الزملاء والعملاء والمديرين واستخدم اللغة في بيئة العمل."
-            data-de="Kommuniziere mit Kollegen, Kunden und Vorgesetzten im beruflichen Alltag.">
-          </p>
-
-        </div>
-
-
-        <div class="feature">
-
-          <div class="feature-icon">🇩🇪</div>
-
-          <h3
-            data-ar="الحياة في ألمانيا"
-            data-de="Leben in Deutschland">
-          </h3>
-
-          <p
-            data-ar="السكن، المواعيد، الجهات الرسمية، المواصلات والمواقف اليومية."
-            data-de="Wohnung, Termine, Behörden, Mobilität und typische Alltagssituationen.">
-          </p>
-
-        </div>
-
-
-        <div class="feature">
-
-          <div class="feature-icon">🤖</div>
-
-          <h3
-            data-ar="AI Practice"
-            data-de="AI Practice">
-          </h3>
-
-          <p
-            data-ar="تدريب إضافي باستخدام الذكاء الاصطناعي للمحادثة، المقابلات والمحاكاة."
-            data-de="Zusätzliches KI-Training für Gespräche, Interviews und realistische Simulationen.">
-          </p>
-
-        </div>
-
-
-        <div class="feature">
-
-          <div class="feature-icon">🎯</div>
-
-          <h3
-            data-ar="تجهيز مهني"
-            data-de="Berufliche Vorbereitung">
-          </h3>
-
-          <p
-            data-ar="تدريب على البريد المهني، المقابلات، خدمة العملاء والتواصل في بيئة العمل."
-            data-de="Training für professionelle E-Mails, Interviews, Kundenservice und berufliche Kommunikation.">
-          </p>
-
-        </div>
-
-
-        <div class="feature">
-
-          <div class="feature-icon">🧩</div>
-
-          <h3
-            data-ar="تخصص حسب هدفك"
-            data-de="Spezialisierung nach deinem Ziel">
-          </h3>
-
-          <p
-            data-ar="في Premium Plus يمكنك اختيار مجال مهني واحد للجلسات الإضافية."
-            data-de="Bei Premium Plus kannst du einen beruflichen Schwerpunkt für zusätzliche Sessions wählen.">
-          </p>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       COURSE CONTENT
-  ========================= -->
-
-  <section class="content" id="program">
-
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-ar="برنامج الكورس — 20 جلسة"
-        data-de="Kursprogramm – 20 Sessions">
-      </h2>
-
-      <p
-        class="section-subtitle"
-        data-ar="أربع أسابيع من التدريب العملي: Alltag → Arbeit → digitale Arbeitswelt → Simulation."
-        data-de="Vier Wochen praxisnahes Training: Alltag → Arbeit → digitale Arbeitswelt → Simulation.">
-      </p>
-
-
-      <div class="content-grid">
-
-        <div class="content-item">
-          <strong
-            data-ar="1. تقديم نفسك والتعريف بنفسك"
-            data-de="1. Selbstpräsentation">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="2. الحياة اليومية والروتين"
-            data-de="2. Alltag und Routinen">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="3. Small Talk والمحادثات الاجتماعية"
-            data-de="3. Small Talk und soziale Gespräche">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="4. الهاتف والمواعيد والخدمات"
-            data-de="4. Telefon, Termine und Dienstleistungen">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="5. السكن والجهات الرسمية والمواصلات"
-            data-de="5. Wohnen, Behörden und Mobilität">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="6. مكان العمل والزملاء"
-            data-de="6. Arbeitsplatz und Kollegen">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="7. Bewerbung وLebenslauf"
-            data-de="7. Bewerbung und Lebenslauf">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="8. Vorstellungsgespräch I"
-            data-de="8. Vorstellungsgespräch I">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="9. Vorstellungsgespräch II"
-            data-de="9. Vorstellungsgespräch II">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="10. البريد الإلكتروني والشات المهني"
-            data-de="10. E-Mail, Chat und professionelle Kommunikation">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="11. Customer Service وفهم احتياج العميل"
-            data-de="11. Kundenservice und Bedarf verstehen">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="12. الشكاوى وDeeskalation"
-            data-de="12. Beschwerden und Deeskalation">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="13. Digital Workplace وIT-Grundlagen"
-            data-de="13. Digitale Arbeitswelt und IT-Grundlagen">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="14. شرح المشاكل وTroubleshooting"
-            data-de="14. Probleme erklären und Troubleshooting">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="15. Support والتواصل التقني"
-            data-de="15. Support und technische Kommunikation">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="16. الاجتماعات والمهام وحل المشكلات"
-            data-de="16. Meetings, Aufgaben und Problemlösung">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="17. Präsentationen وStatus Updates"
-            data-de="17. Präsentationen und Status Updates">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="18. محاكاة الحياة والعمل في ألمانيا"
-            data-de="18. Real-Life-Deutschland- und Arbeitssimulation">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="19. محاكاة Job + Customer Service + IT/Software"
-            data-de="19. Job + Customer Service + IT/Software Simulation">
-          </strong>
-        </div>
-
-        <div class="content-item">
-          <strong
-            data-ar="20. Abschlussprüfung وخطة العمل الشخصية"
-            data-de="20. Abschlussprüfung und persönlicher Aktionsplan">
-          </strong>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       DETAILS
-  ========================= -->
-
-  <section class="details">
-
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-ar="تفاصيل الكورس"
-        data-de="Kursdetails">
-      </h2>
-
-      <div class="details-grid">
-
-        <div class="detail">
-
-          <strong>4</strong>
-
-          <span
-            data-ar="أسابيع"
-            data-de="Wochen">
-          </span>
-
-        </div>
-
-
-        <div class="detail">
-
-          <strong>20</strong>
-
-          <span
-            data-ar="جلسة"
-            data-de="Sessions">
-          </span>
-
-        </div>
-
-
-        <div class="detail">
-
-          <strong>5</strong>
-
-          <span
-            data-ar="أيام أسبوعيًا"
-            data-de="Tage pro Woche">
-          </span>
-
-        </div>
-
-
-        <div class="detail">
-
-          <strong>40+</strong>
-
-          <span
-            data-ar="ساعة Live"
-            data-de="Live-Stunden">
-          </span>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       PROFESSIONAL SPECIALIZATION
-  ========================= -->
-
-  <section>
-
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-ar="🎯 التخصصات المهنية"
-        data-de="🎯 Berufliche Spezialisierungen">
-      </h2>
-
-      <p
-        class="section-subtitle"
-        data-ar="الجزء الأساسي من الكورس عام وعملي. وفي Premium Plus يمكنك اختيار تخصص مهني واحد للحصول على جلسات إضافية متخصصة."
-        data-de="Der Hauptkurs ist allgemein und praxisorientiert. Bei Premium Plus kannst du einen beruflichen Schwerpunkt für zusätzliche spezialisierte Sessions wählen.">
-      </p>
-
-      <div class="content-grid">
-
-        <div class="content-item"
-             data-ar="👨‍💻 Deutsch für Softwareentwicklung"
-             data-de="👨‍💻 Deutsch für Softwareentwicklung">
-        </div>
-
-        <div class="content-item"
-             data-ar="🧪 Deutsch für Software Testing / QA"
-             data-de="🧪 Deutsch für Software Testing / QA">
-        </div>
-
-        <div class="content-item"
-             data-ar="💻 Deutsch für IT & Technical Support"
-             data-de="💻 Deutsch für IT & Technical Support">
-        </div>
-
-        <div class="content-item"
-             data-ar="📞 Deutsch für Kundenservice / Call Center"
-             data-de="📞 Deutsch für Kundenservice / Call Center">
-        </div>
-
-        <div class="content-item"
-             data-ar="👨‍🔧 Deutsch für Technik & Mechatronik"
-             data-de="👨‍🔧 Deutsch für Technik & Mechatronik">
-        </div>
-
-        <div class="content-item"
-             data-ar="👨‍💼 Deutsch für Ingenieure"
-             data-de="👨‍💼 Deutsch für Ingenieure">
-        </div>
-
-        <div class="content-item"
-             data-ar="🩺 Deutsch für Medizin / Ärzte"
-             data-de="🩺 Deutsch für Medizin / Ärzte">
-        </div>
-
-        <div class="content-item"
-             data-ar="👩‍⚕️ Deutsch für Pflegekräfte"
-             data-de="👩‍⚕️ Deutsch für Pflegekräfte">
-        </div>
-
-        <div class="content-item"
-             data-ar="🏢 Deutsch für Business & Büro"
-             data-de="🏢 Deutsch für Business & Büro">
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       AI PRACTICE
-  ========================= -->
-
-  <section class="content">
-
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-ar="🤖 AI Practice — تدريب إضافي بالذكاء الاصطناعي"
-        data-de="🤖 AI Practice – Zusätzliches Training mit KI">
-      </h2>
-
-      <p
-        class="section-subtitle"
-        data-ar="الذكاء الاصطناعي يستخدم كأداة تدريب إضافية بجانب المدرب، وليس بديلًا عنه."
-        data-de="KI dient als zusätzliches Trainingswerkzeug neben dem Trainer und ersetzt nicht den menschlichen Unterricht.">
-      </p>
-
-      <div class="content-grid">
-
-        <div class="content-item"
-             data-ar="🗣️ AI Conversation Partner — محادثة صوتية وكتابية"
-             data-de="🗣️ AI Conversation Partner – Sprach- und Textgespräche">
-        </div>
-
-        <div class="content-item"
-             data-ar="🎤 AI Interview Simulator — محاكاة مقابلات العمل"
-             data-de="🎤 AI Interview Simulator – Vorstellungsgespräche">
-        </div>
-
-        <div class="content-item"
-             data-ar="📞 AI Customer Service Simulation"
-             data-de="📞 AI Customer Service Simulation">
-        </div>
-
-        <div class="content-item"
-             data-ar="💻 AI Technical Support Simulation"
-             data-de="💻 AI Technical Support Simulation">
-        </div>
-
-        <div class="content-item"
-             data-ar="🧪 AI Software Testing Simulation"
-             data-de="🧪 AI Software Testing Simulation">
-        </div>
-
-        <div class="content-item"
-             data-ar="👨‍💻 AI Software Development Communication"
-             data-de="👨‍💻 AI Software Development Communication">
-        </div>
-
-        <div class="content-item"
-             data-ar="📝 Personal Error Log — سجل الأخطاء الشخصية"
-             data-de="📝 Personal Error Log – persönliches Fehlerprotokoll">
-        </div>
-
-        <div class="content-item"
-             data-ar="📚 AI Homework — تمارين إضافية"
-             data-de="📚 AI Homework – zusätzliche Übungen">
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       VIDEO
-  ========================= -->
-
-  <section id="video">
-
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-ar="🎥 شاهد الكورس بنفسك"
-        data-de="🎥 Schau dir den Kurs selbst an">
-      </h2>
-
-      <p
-        class="section-subtitle"
-        data-ar="تعرف على تفاصيل الكورس وشاهد جزءًا من طريقة التدريب."
-        data-de="Lerne den Kurs kennen und sieh dir einen Ausschnitt aus dem Unterricht an.">
-      </p>
-
-      <div class="video-wrapper">
-
-        <div class="video-container">
-
-          <iframe
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-            title="German Course"
-            allowfullscreen>
-          </iframe>
-
-        </div>
-
-        <div
-          class="video-title"
-          data-ar="شرح الكورس وجانب من المحاضرة"
-          data-de="Kursvorstellung und Unterrichtsausschnitt">
-        </div>
-
-        <div class="video-highlights">
-
-          <div
-            class="video-highlight"
-            data-ar="📚 شرح تفاصيل الكورس"
-            data-de="📚 Kursdetails erklärt">
-          </div>
-
-          <div
-            class="video-highlight"
-            data-ar="🎓 جزء من محاضرة حقيقية"
-            data-de="🎓 Ausschnitt aus einer echten Unterrichtsstunde">
-          </div>
-
-          <div
-            class="video-highlight"
-            data-ar="🎯 تركيز على الاستخدام العملي"
-            data-de="🎯 Fokus auf praktische Anwendung">
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       INSTRUCTOR
-  ========================= -->
-
-  <section class="instructor">
-
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-ar="👨‍🏫 المدرب الرئيسي"
-        data-de="👨‍🏫 Der Haupttrainer">
-      </h2>
-
-      <img
-        src="x.jpg"
-        alt="عبدالرحمن الهواري"
-        class="instructor-photo">
-
-      <h3
-        data-ar="عبدالرحمن الهواري"
-        data-de="Abdelrahman Elhawary">
-      </h3>
-
-      <p class="instructor-description">
-
-        <strong
-          data-ar="مدرب لغة ألمانية بخبرة أكثر من 4 سنوات في التدريب، مع خلفية هندسية وتقنية تساعد على تقديم الألمانية في سياقات الحياة والعمل والمجالات المهنية."
-          data-de="Deutschtrainer mit mehr als 4 Jahren Erfahrung im Sprachtraining und technischem sowie ingenieurwissenschaftlichem Hintergrund, mit Fokus auf Deutsch für Alltag, Beruf und professionelle Kommunikation.">
-        </strong>
-
-      </p>
-
-    </div>
-  </section>
-
-
-  <!-- =========================
-       PRICING
-  ========================= -->
-
-  <section class="pricing" id="pricing">
-
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-ar="💳 اختر الباقة المناسبة لك"
-        data-de="💳 Wähle dein passendes Paket">
-      </h2>
-
-      <p
-        class="section-subtitle"
-        data-ar="ثلاثة مستويات مختلفة حسب مقدار التدريب الفردي والتخصص المهني الذي تحتاجه."
-        data-de="Drei Pakete je nach gewünschter Betreuung, zusätzlichem Training und beruflicher Spezialisierung.">
-      </p>
-
-      <div class="pricing-grid">
-
-        <!-- STANDARD -->
-
-        <div class="price-card">
-
-          <h3
-            data-ar="Standard"
-            data-de="Standard">
-          </h3>
-
-          <div class="price">€100</div>
-
-          <ul>
-
-            <li
-              data-ar="الكورس الكامل لمدة 4 أسابيع"
-              data-de="Kompletter 4-Wochen-Kurs">
-            </li>
-
-            <li
-              data-ar="20 جلسة / 40+ ساعة Live"
-              data-de="20 Sessions / 40+ Live-Stunden">
-            </li>
-
-            <li
-              data-ar="5 أيام أسبوعيًا"
-              data-de="5 Tage pro Woche">
-            </li>
-
-            <li
-              data-ar="التحدث والمحادثة"
-              data-de="Sprechen und Konversation">
-            </li>
-
-            <li
-              data-ar="الحياة اليومية في ألمانيا"
-              data-de="Alltag in Deutschland">
-            </li>
-
-            <li
-              data-ar="العمل والتواصل المهني"
-              data-de="Beruf und professionelle Kommunikation">
-            </li>
-
-            <li
-              data-ar="Bewerbung وVorstellungsgespräch"
-              data-de="Bewerbung und Vorstellungsgespräch">
-            </li>
-
-            <li
-              data-ar="البريد الإلكتروني والتواصل المهني"
-              data-de="Professionelle E-Mails und Kommunikation">
-            </li>
-
-            <li
-              data-ar="تمارين وواجبات عملية"
-              data-de="Praktische Übungen und Hausaufgaben">
-            </li>
-
-            <li
-              data-ar="Basic AI Practice"
-              data-de="Basic AI Practice">
-            </li>
-
-          </ul>
-
-          <a
-            href="#contact"
-            class="btn btn-primary"
-            data-ar="احجز الآن"
-            data-de="Jetzt anmelden">
-          </a>
-
-        </div>
-
-
-        <!-- PREMIUM -->
-
-        <div class="price-card premium">
-
-          <div
-            class="premium-label"
-            data-ar="الأكثر شمولًا"
-            data-de="Umfassender">
-          </div>
-
-          <h3
-            data-ar="Premium"
-            data-de="Premium">
-          </h3>
-
-          <div class="price">€180</div>
-
-          <ul>
-
-            <li
-              data-ar="كل ما في Standard"
-              data-de="Alles aus Standard">
-            </li>
-
-            <li
-              data-ar="جلسة مع متحدث ألماني أصلي"
-              data-de="Session mit einem deutschen Muttersprachler">
-            </li>
-
-            <li
-              data-ar="جلسة Speaking إضافية"
-              data-de="Zusätzliche Speaking Session">
-            </li>
-
-            <li
-              data-ar="تصحيح فردي للأخطاء"
-              data-de="Individuelles Fehlerfeedback">
-            </li>
-
-            <li
-              data-ar="AI Conversation Partner"
-              data-de="AI Conversation Partner">
-            </li>
-
-            <li
-              data-ar="AI Job Interview Simulator"
-              data-de="AI Job Interview Simulator">
-            </li>
-
-            <li
-              data-ar="AI Customer Service Simulation"
-              data-de="AI Customer Service Simulation">
-            </li>
-
-            <li
-              data-ar="AI Technical Support Simulation"
-              data-de="AI Technical Support Simulation">
-            </li>
-
-            <li
-              data-ar="تدريب Role Plays واقعي"
-              data-de="Realistische Rollenspiele">
-            </li>
-
-            <li
-              data-ar="Personal Error Log"
-              data-de="Personal Error Log">
-            </li>
-
-            <li
-              data-ar="خطة ممارسة شخصية باستخدام AI"
-              data-de="Persönlicher KI-Übungsplan">
-            </li>
-
-            <li
-              data-ar="خطة تعلم فردية"
-              data-de="Individueller Lernplan">
-            </li>
-
-          </ul>
-
-          <a
-            href="#contact"
-            class="btn btn-primary"
-            data-ar="احجز الآن"
-            data-de="Jetzt anmelden">
-          </a>
-
-        </div>
-
-
-        <!-- PREMIUM PLUS -->
-
-        <div
-          class="price-card premium"
-          style="grid-column: 1 / -1; max-width: 850px; margin: auto; width: 100%;">
-
-          <div
-            class="premium-label"
-            data-ar="🎯 التخصص المهني"
-            data-de="🎯 Berufliche Spezialisierung">
-          </div>
-
-          <h3
-            data-ar="Premium Plus"
-            data-de="Premium Plus">
-          </h3>
-
-          <div class="price">€230</div>
-
-          <ul>
-
-            <li
-              data-ar="كل ما في Premium"
-              data-de="Alles aus Premium">
-            </li>
-
-            <li
-              data-ar="جلسات إضافية في تخصص مهني واحد تختاره"
-              data-de="Zusätzliche Sessions in einem von dir gewählten beruflichen Schwerpunkt">
-            </li>
-
-            <li
-              data-ar="Deutsch für Ingenieure"
-              data-de="Deutsch für Ingenieure">
-            </li>
-
-            <li
-              data-ar="Deutsch für Medizin / Ärzte"
-              data-de="Deutsch für Medizin / Ärzte">
-            </li>
-
-            <li
-              data-ar="Deutsch für Pflegekräfte"
-              data-de="Deutsch für Pflegekräfte">
-            </li>
-
-            <li
-              data-ar="Deutsch für IT / Technical Support"
-              data-de="Deutsch für IT / Technical Support">
-            </li>
-
-            <li
-              data-ar="Deutsch für Software Testing / QA"
-              data-de="Deutsch für Software Testing / QA">
-            </li>
-
-            <li
-              data-ar="Deutsch für Softwareentwicklung"
-              data-de="Deutsch für Softwareentwicklung">
-            </li>
-
-            <li
-              data-ar="Deutsch für Kundenservice / Call Center"
-              data-de="Deutsch für Kundenservice / Call Center">
-            </li>
-
-            <li
-              data-ar="Deutsch für Business & Büro"
-              data-de="Deutsch für Business & Büro">
-            </li>
-
-            <li
-              data-ar="Deutsch für Technik & Mechatronik"
-              data-de="Deutsch für Technik & Mechatronik">
-            </li>
-
-            <li
-              data-ar="اختيار تخصص واحد فقط للجلسات الإضافية"
-              data-de="Ein beruflicher Schwerpunkt für die zusätzlichen Sessions">
-            </li>
-
-          </ul>
-
-          <a
-            href="#contact"
-            class="btn btn-primary"
-            data-ar="اختر تخصصك واحجز"
-            data-de="Schwerpunkt wählen und anmelden">
-          </a>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================
-       CAREER OUTCOME
-  ========================= -->
-
-  <section>
-
-    <div class="container">
-
-      <h2
-        class="section-title"
-        data-ar="🎯 ماذا يمكنك أن تفعل بالألمانية بعد الكورس؟"
-        data-de="🎯 Wie kannst du dein Deutsch nach dem Kurs einsetzen?">
-      </h2>
-
-      <p
-        class="section-subtitle"
-        data-ar="بعد إكمال التدريب يمكنك استخدام مهاراتك اللغوية والتواصلية بشكل أكثر استهدافًا عند التقديم على وظائف ومقابلات في مجالات مختلفة."
-        data-de="Nach dem Kurs kannst du deine Deutschkenntnisse und Kommunikationsfähigkeiten gezielter für Bewerbungen und Vorstellungsgespräche in verschiedenen Bereichen einsetzen.">
-      </p>
-
-      <div class="content-grid">
-
-        <div
-          class="content-item"
-          data-ar="💻 Software Testing / QA"
-          data-de="💻 Software Testing / QA">
-        </div>
-
-        <div
-          class="content-item"
-          data-ar="🖥️ IT / Technical Support"
-          data-de="🖥️ IT / Technical Support">
-        </div>
-
-        <div
-          class="content-item"
-          data-ar="📞 Customer Service / Call Center"
-          data-de="📞 Customer Service / Call Center">
-        </div>
-
-        <div
-          class="content-item"
-          data-ar="👨‍💻 Softwareentwicklung"
-          data-de="👨‍💻 Softwareentwicklung">
-        </div>
-
-        <div
-          class="content-item"
-          data-ar="👨‍🔧 Technik & Mechatronik"
-          data-de="👨‍🔧 Technik & Mechatronik">
-        </div>
-
-        <div
-          class="content-item"
-          data-ar="👨‍💼 Ingenieurberufe"
-          data-de="👨‍💼 Ingenieurberufe">
-        </div>
-
-        <div
-          class="content-item"
-          data-ar="🩺 Medizinische Berufe"
-          data-de="🩺 Medizinische Berufe">
-        </div>
-
-        <div
-          class="content-item"
-          data-ar="👩‍⚕️ Pflege"
-          data-de="👩‍⚕️ Pflege">
-        </div>
-
-        <div
-          class="content-item"
-          data-ar="🏢 Business & Büro"
-          data-de="🏢 Business & Büro">
-        </div>
-
-      </div>
-
-      <br>
-
-      <p
-        style="text-align:center; color:#6b7280; max-width:800px; margin:auto;"
-        data-ar="مهم: الكورس يطوّر اللغة والتواصل المهني والاستعداد للمواقف الوظيفية. لا يُعد الكورس مؤهلًا مهنيًا أو طبيًا أو تقنيًا بحد ذاته، ولا يضمن الحصول على وظيفة."
-        data-de="Wichtig: Der Kurs vermittelt Deutsch, professionelle Kommunikation und Vorbereitung auf berufliche Situationen. Er ersetzt keine berufliche, medizinische oder technische Qualifikation und garantiert keine Anstellung.">
-      </p>
-
-    </div>
-  </section>
-
-
-  <!-- =========================
-       CONSULTATION
-  ========================= -->
-
-  <section class="consultation">
-
-    <div class="container">
-
-      <div class="consultation-box">
-
-        <h2
-          data-ar="💬 استشارة فردية"
-          data-de="💬 Individuelle Beratung">
+        <h1>
+            <span data-ar="🇩🇪 كورس الألماني العملي"
+                  data-de="🇩🇪 Praktisches Deutsch">
+                🇩🇪 كورس الألماني العملي
+            </span>
+        </h1>
+
+        <h2>
+            <span data-ar="من اللغة إلى الاستخدام الحقيقي"
+                  data-de="Von der Sprache zur echten Anwendung">
+                من اللغة إلى الاستخدام الحقيقي
+            </span>
         </h2>
 
-        <div class="consultation-price">€10</div>
-
-        <p
-          data-ar="جلسة فردية لمدة 20 دقيقة عبر WhatsApp لمناقشة سؤال محدد أو الحصول على توجيه عملي حول تعلم اللغة، العمل، Ausbildung أو الخطوات القادمة."
-          data-de="20-minütige Einzelberatung über WhatsApp für eine konkrete Frage oder praktische Orientierung zu Deutschlernen, Beruf, Ausbildung oder den nächsten Schritten.">
+        <p data-ar="
+            برنامج عملي مكثف لتطوير الألمانية من خلال المحادثة،
+            الاستماع، القراءة، الكتابة، مواقف الحياة اليومية،
+            بيئة العمل، المقابلات، خدمة العملاء، الدعم الفني،
+            والتدريب العملي باستخدام أدوات الذكاء الاصطناعي.
+        "
+        data-de="
+            Ein intensives, praxisorientiertes Programm für Deutsch,
+            mit Fokus auf Sprechen, Hören, Lesen, Schreiben,
+            Alltag, Arbeitswelt, Vorstellungsgespräche,
+            Kundenservice, technischen Support und
+            praktische Übungen mit KI.
+        ">
+            برنامج عملي مكثف لتطوير الألمانية من خلال المحادثة،
+            الاستماع، القراءة، الكتابة، مواقف الحياة اليومية،
+            بيئة العمل، المقابلات، خدمة العملاء، الدعم الفني،
+            والتدريب العملي باستخدام أدوات الذكاء الاصطناعي.
         </p>
+
+        <div class="badge-row">
+            <span class="badge"><span data-ar="B1 → B2 / تطوير عملي" data-de="B1 → B2 / Praktische Entwicklung">B1 → B2 / تطوير عملي</span></span>
+            <span class="badge"><span data-ar="4 أسابيع" data-de="4 Wochen">4 أسابيع</span></span>
+            <span class="badge"><span data-ar="5 أيام أسبوعيًا" data-de="5 Tage pro Woche">5 أيام أسبوعيًا</span></span>
+            <span class="badge"><span data-ar="2 ساعة يوميًا" data-de="2 Stunden täglich">2 ساعة يوميًا</span></span>
+            <span class="badge"><span data-ar="40+ ساعة Live" data-de="40+ Live-Stunden">40+ ساعة Live</span></span>
+            <span class="badge">🤖 AI Practice</span>
+        </div>
+    </div>
+</header>
+
+<!-- COURSE PHILOSOPHY -->
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2><span data-ar="🎯 فلسفة الكورس" data-de="🎯 Die Kursphilosophie">🎯 فلسفة الكورس</span></h2>
+            <p data-ar="الهدف ليس أن يعرف الطالب قواعد ألمانية أكثر فقط، بل أن يستطيع استخدام الألمانية فعليًا في الحياة والعمل."
+               data-de="Das Ziel ist nicht nur mehr Grammatik zu lernen, sondern Deutsch sicher und praktisch im Alltag und im Berufsleben anzuwenden.">
+                الهدف ليس أن يعرف الطالب قواعد ألمانية أكثر فقط،
+                بل أن يستطيع استخدام الألمانية فعليًا في الحياة والعمل.
+            </p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="icon">🗣️</div>
+                <h3><span data-ar="Speaking First" data-de="Speaking First">Speaking First</span></h3>
+                <p data-ar="الطالب يتكلم في كل جلسة ويستخدم اللغة في مواقف حقيقية بدل الاعتماد على الحفظ."
+                   data-de="In jeder Session spricht der Teilnehmer und verwendet Deutsch in realistischen Situationen statt nur Texte auswendig zu lernen.">
+                    الطالب يتكلم في كل جلسة ويستخدم اللغة في مواقف حقيقية بدل الاعتماد على الحفظ.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎧</div>
+                <h3><span data-ar="Real Listening" data-de="Real Listening">Real Listening</span></h3>
+                <p data-ar="تدريب على فهم الألمانية الطبيعية، السرعة المختلفة، الأسئلة والمتابعة."
+                   data-de="Training zum Verstehen von natürlichem Deutsch, unterschiedlichen Sprechgeschwindigkeiten, Rückfragen und spontanen Antworten.">
+                    تدريب على فهم الألمانية الطبيعية، السرعة المختلفة، الأسئلة والمتابعة.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">💼</div>
+                <h3><span data-ar="German for Work" data-de="Deutsch für den Beruf">German for Work</span></h3>
+                <p data-ar="التواصل مع الزملاء والعملاء، الإيميلات، الاجتماعات، المقابلات وخدمة العملاء والدعم الفني."
+                   data-de="Kommunikation mit Kollegen und Kunden, E-Mails, Meetings, Vorstellungsgespräche, Kundenservice und technischer Support.">
+                    التواصل مع الزملاء والعملاء، الإيميلات، الاجتماعات، المقابلات وخدمة العملاء والدعم الفني.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🤖</div>
+                <h3><span data-ar="AI Practice" data-de="KI-Praxis">AI Practice</span></h3>
+                <p data-ar="ممارسة الألمانية مع الذكاء الاصطناعي في سيناريوهات واقعية مع Feedback بعد التدريب."
+                   data-de="Praktisches Deutschtraining mit KI in realistischen Szenarien mit Feedback nach der Übung.">
+                    ممارسة الألمانية مع الذكاء الاصطناعي في سيناريوهات واقعية مع Feedback بعد التدريب.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COURSE INFORMATION -->
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2><span data-ar="📚 معلومات البرنامج" data-de="📚 Programminformationen">📚 معلومات البرنامج</span></h2>
+        </div>
+
+        <div class="grid">
+            <div class="info-box"><strong><span data-ar="مدة البرنامج:" data-de="Programmdauer:">مدة البرنامج:</span></strong> <span data-ar="4 أسابيع" data-de="4 Wochen">4 أسابيع</span></div>
+            <div class="info-box"><strong><span data-ar="نظام الدراسة:" data-de="Unterrichtssystem:">نظام الدراسة:</span></strong> <span data-ar="5 أيام أسبوعيًا" data-de="5 Tage pro Woche">5 أيام أسبوعيًا</span></div>
+            <div class="info-box"><strong><span data-ar="مدة المحاضرة:" data-de="Dauer pro Session:">مدة المحاضرة:</span></strong> <span data-ar="ساعتان" data-de="2 Stunden">ساعتان</span></div>
+            <div class="info-box"><strong><span data-ar="إجمالي التدريب:" data-de="Gesamttraining:">إجمالي التدريب:</span></strong> <span data-ar="40+ ساعة Live" data-de="40+ Live-Stunden">40+ ساعة Live</span></div>
+            <div class="info-box"><strong><span data-ar="التركيز:" data-de="Fokus:">التركيز:</span></strong> <span data-ar="الاستخدام العملي للألمانية" data-de="Praktische Anwendung der deutschen Sprache">الاستخدام العملي للألمانية</span></div>
+            <div class="info-box"><strong><span data-ar="المستوى المستهدف:" data-de="Zielniveau:">المستوى المستهدف:</span></strong> <span data-ar="B1 / B2" data-de="B1 / B2">B1 / B2</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- TRAINER -->
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2><span data-ar="👨‍🏫 المدرب الرئيسي" data-de="👨‍🏫 Der Haupttrainer">👨‍🏫 المدرب الرئيسي</span></h2>
+            <p data-ar="تعلم الألمانية مع مدرب يجمع بين خبرة التدريب والخلفية الهندسية والتقنية."
+               data-de="Lerne Deutsch mit einem Trainer, der Unterrichtserfahrung mit einem technischen und ingenieurwissenschaftlichen Hintergrund verbindet.">
+                تعلم الألمانية مع مدرب يجمع بين خبرة التدريب والخلفية الهندسية والتقنية.
+            </p>
+        </div>
+
+        <div class="trainer-card">
+            <img src="x.jpg" alt="Abdelrahman Elhawary" class="trainer-image">
+
+            <div class="trainer-content">
+                <h3>عبدالرحمن الهواري</h3>
+
+                <div class="trainer-role">
+                    <span data-ar="مدرب لغة ألمانية بخبرة أكثر من 4 سنوات"
+                          data-de="Deutschtrainer mit mehr als 4 Jahren Trainingserfahrung">
+                        مدرب لغة ألمانية بخبرة أكثر من 4 سنوات
+                    </span>
+                </div>
+
+                <p data-ar="
+                    مدرب لغة ألمانية بخبرة أكثر من 4 سنوات في التدريب،
+                    مع خلفية هندسية وتقنية تساعد على تقديم الألمانية
+                    في سياقات الحياة والعمل والمجالات المهنية.
+                "
+                data-de="
+                    Deutschtrainer mit mehr als 4 Jahren Erfahrung im Training
+                    und einem technischen sowie ingenieurwissenschaftlichen
+                    Hintergrund. Dadurch kann Deutsch praxisnah in Alltag,
+                    Beruf und verschiedenen beruflichen Bereichen vermittelt werden.
+                ">
+                    مدرب لغة ألمانية بخبرة أكثر من 4 سنوات في التدريب،
+                    مع خلفية هندسية وتقنية تساعد على تقديم الألمانية
+                    في سياقات الحياة والعمل والمجالات المهنية.
+                </p>
+
+                <div class="trainer-tags">
+                    <span class="trainer-tag">🇩🇪 Praktisches Deutsch</span>
+                    <span class="trainer-tag">🗣️ Speaking</span>
+                    <span class="trainer-tag">💼 Deutsch für Arbeit</span>
+                    <span class="trainer-tag">🎯 Interviews</span>
+                    <span class="trainer-tag">🤖 AI Practice</span>
+                    <span class="trainer-tag">🛠️ Technical Communication</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PLATFORM -->
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2><span data-ar="💻 منصة الطالب" data-de="💻 Die Lernplattform">💻 منصة الطالب</span></h2>
+            <p data-ar="المحاضرات والمحتوى والتدريب والمتابعة يتم تنظيمها في مساحة تعليمية واحدة."
+               data-de="Unterricht, Materialien, Übungen und Fortschritt werden in einer zentralen Lernumgebung organisiert.">
+                المحاضرات والمحتوى والتدريب والمتابعة يتم تنظيمها في مساحة تعليمية واحدة.
+            </p>
+        </div>
+
+        <div class="dashboard">
+            <div class="dashboard-top">
+                <div class="dashboard-title">🇩🇪 German Practical Course — Student Dashboard</div>
+                <div class="dashboard-user">👤 Student</div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card"><span>Live Class</span><strong>▶ Join</strong></div>
+                <div class="dashboard-card"><span>Course Progress</span><strong>65%</strong></div>
+                <div class="dashboard-card"><span>AI Practice</span><strong>12 Sessions</strong></div>
+                <div class="dashboard-card"><span>Vocabulary</span><strong>428 Words</strong></div>
+                <div class="dashboard-card"><span>Homework</span><strong>3 Pending</strong></div>
+                <div class="dashboard-card"><span>Teacher Feedback</span><strong>4 Reports</strong></div>
+            </div>
+        </div>
 
         <br>
 
-        <a
-          href="#contact"
-          class="btn btn-primary"
-          data-ar="احجز استشارتك"
-          data-de="Beratung buchen">
-        </a>
+        <div class="grid">
+            <div class="card">
+                <div class="icon">🎥</div>
+                <h3><span data-ar="Live Classes" data-de="Live-Unterricht">Live Classes</span></h3>
+                <p data-ar="محاضرات مباشرة وتفاعل حقيقي مع المدرس والمتدربين."
+                   data-de="Live-Unterricht mit direkter Interaktion mit dem Trainer und anderen Teilnehmern.">
+                    محاضرات مباشرة وتفاعل حقيقي مع المدرس والمتدربين.
+                </p>
+            </div>
 
-      </div>
+            <div class="card">
+                <div class="icon">📂</div>
+                <h3><span data-ar="Course Materials" data-de="Kursmaterialien">Course Materials</span></h3>
+                <p data-ar="PDF، Vocabulary Sheets، Exercises، Audio Materials وHomework."
+                   data-de="PDFs, Vokabellisten, Übungen, Audiomaterialien und Hausaufgaben.">
+                    PDF، Vocabulary Sheets، Exercises، Audio Materials وHomework.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🤖</div>
+                <h3><span data-ar="AI Practice" data-de="KI-Praxis">AI Practice</span></h3>
+                <p data-ar="مساحة تدريب إضافية للمحادثة والمقابلات وخدمة العملاء والدعم الفني."
+                   data-de="Zusätzlicher Trainingsbereich für Gespräche, Interviews, Kundenservice und technischen Support.">
+                    مساحة تدريب إضافية للمحادثة والمقابلات وخدمة العملاء والدعم الفني.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📊</div>
+                <h3><span data-ar="Progress Tracking" data-de="Fortschrittskontrolle">Progress Tracking</span></h3>
+                <p data-ar="متابعة الجلسات والواجبات والمفردات والتطور في استخدام اللغة."
+                   data-de="Überblick über Sessions, Aufgaben, Wortschatz und sprachliche Entwicklung.">
+                    متابعة الجلسات والواجبات والمفردات والتطور في استخدام اللغة.
+                </p>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
-
-  <!-- =========================
-       FAQ
-  ========================= -->
-
-  <section class="faq">
-
+<!-- AI SYSTEM -->
+<section>
     <div class="container">
 
-      <h2
-        class="section-title"
-        data-ar="الأسئلة الشائعة"
-        data-de="Häufige Fragen">
-      </h2>
+        <div class="ai-hero">
+            <h2>🤖 AI Learning & Practice System</h2>
 
-      <div class="faq-list">
+            <p data-ar="الذكاء الاصطناعي هو أداة تدريب إضافية داخل منظومة الكورس. المدرس يشرح ويوجه ويصحح، بينما يستخدم الطالب AI للحصول على فرص تدريب إضافية بين الجلسات."
+               data-de="KI ist ein zusätzlicher Bestandteil des Trainingssystems. Der Trainer erklärt, korrigiert und begleitet den Lernprozess, während der Teilnehmer KI für zusätzliche Übungen zwischen den Sessions nutzt.">
+                الذكاء الاصطناعي هو أداة تدريب إضافية داخل منظومة الكورس. المدرس يشرح ويوجه ويصحح،
+                بينما يستخدم الطالب AI للحصول على فرص تدريب إضافية بين الجلسات.
+            </p>
 
+            <div class="ai-flow">
+                <div class="flow-step"><strong>1️⃣ Live Class</strong><span data-ar="تعلم مع المدرس" data-de="Lernen mit dem Trainer">تعلم مع المدرس</span></div>
+                <div class="flow-step"><strong>2️⃣ Practice</strong><span data-ar="تطبيق اللغة" data-de="Sprache anwenden">تطبيق اللغة</span></div>
+                <div class="flow-step"><strong>3️⃣ AI Practice</strong><span data-ar="تدريب إضافي" data-de="Zusätzliches Training">تدريب إضافي</span></div>
+                <div class="flow-step"><strong>4️⃣ Feedback</strong><span data-ar="تحليل الأداء" data-de="Leistungsfeedback">تحليل الأداء</span></div>
+                <div class="flow-step"><strong>5️⃣ Correction</strong><span data-ar="تصحيح وتحسين" data-de="Korrigieren & verbessern">تصحيح وتحسين</span></div>
+                <div class="flow-step"><strong>6️⃣ Repetition</strong><span data-ar="إعادة التدريب" data-de="Wiederholen">إعادة التدريب</span></div>
+            </div>
+        </div>
 
-        <div class="faq-item">
+        <div class="section-title">
+            <h2><span data-ar="🧠 أدوات الذكاء الاصطناعي" data-de="🧠 KI-Trainingssystem">🧠 أدوات الذكاء الاصطناعي</span></h2>
+        </div>
 
-          <h3
-            data-ar="هل الكورس مناسب لمستوى B1؟"
-            data-de="Ist der Kurs für B1 geeignet?">
-          </h3>
+        <div class="grid">
 
-          <p
-            data-ar="نعم. الكورس مصمم أساسًا لمتعلمي B1/B2، مع التركيز على الانتقال من المعرفة النظرية إلى الاستخدام العملي."
-            data-de="Ja. Der Kurs richtet sich hauptsächlich an B1/B2-Lernende und konzentriert sich auf den Übergang von theoretischem Wissen zur praktischen Anwendung.">
-          </p>
+            <div class="card">
+                <div class="icon">🗣️</div>
+                <h3>AI Conversation Partner</h3>
+                <p data-ar="محادثة نصية أو صوتية مع AI في مواقف من الحياة والعمل."
+                   data-de="Text- oder Sprachgespräche mit KI in realistischen Alltag- und Berufssituationen.">
+                    محادثة نصية أو صوتية مع AI في مواقف من الحياة والعمل.
+                </p>
+                <br>
+                <ul>
+                    <li>Supermarkt</li><li>Arzt</li><li>Wohnung</li><li>Behörde</li><li>Arbeitsplatz</li><li>Telefonat</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎭</div>
+                <h3>AI Role Play</h3>
+                <p data-ar="AI يقوم بدور الشخص الآخر حتى يتدرب الطالب على الحوار الطبيعي."
+                   data-de="Die KI übernimmt die Rolle des Gesprächspartners, damit der Teilnehmer realistisch kommunizieren kann.">
+                    AI يقوم بدور الشخص الآخر حتى يتدرب الطالب على الحوار الطبيعي.
+                </p>
+                <br>
+                <ul>
+                    <li>Kollege</li><li>Manager</li><li>Kunde</li><li>Behörde</li><li>Vermieter</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="icon">📚</div>
+                <h3>AI Vocabulary Trainer</h3>
+                <p data-ar="تدريب المفردات من خلال أسئلة ومحادثات وسيناريوهات واقعية."
+                   data-de="Wortschatztraining durch Fragen, Gespräche und realistische Szenarien.">
+                    تدريب المفردات من خلال أسئلة ومحادثات وسيناريوهات واقعية.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📝</div>
+                <h3>AI Homework</h3>
+                <p data-ar="تمارين إضافية مرتبطة بموضوع كل Session."
+                   data-de="Zusätzliche Übungen passend zum Thema jeder Session.">
+                    تمارين إضافية مرتبطة بموضوع كل Session.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📊</div>
+                <h3>AI Feedback</h3>
+                <p data-ar="بعد انتهاء المحادثة يمكن تحليل الوضوح، المفردات، القواعد، النطق وإدارة الحوار."
+                   data-de="Nach dem Gespräch können Verständlichkeit, Wortschatz, Grammatik, Aussprache und Gesprächsführung analysiert werden.">
+                    بعد انتهاء المحادثة يمكن تحليل الوضوح، المفردات، القواعد، النطق وإدارة الحوار.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🧠</div>
+                <h3>Personal Error Log</h3>
+                <p data-ar="تسجيل الأخطاء المتكررة واستخدامها لبناء تدريبات أكثر تخصيصًا."
+                   data-de="Wiederkehrende Fehler werden dokumentiert und für gezieltes Training verwendet.">
+                    تسجيل الأخطاء المتكررة واستخدامها لبناء تدريبات أكثر تخصيصًا.
+                </p>
+            </div>
 
         </div>
 
+        <br>
 
-        <div class="faq-item">
-
-          <h3
-            data-ar="هل الكورس أونلاين؟"
-            data-de="Findet der Kurs online statt?">
-          </h3>
-
-          <p
-            data-ar="نعم، التدريب Live Online."
-            data-de="Ja, der Unterricht findet live online statt.">
-          </p>
-
+        <div class="info-box premium">
+            <h3><span>⭐</span> <span data-ar="Conversation Mode → Feedback Mode" data-de="Conversation Mode → Feedback Mode">Conversation Mode → Feedback Mode</span></h3>
+            <p data-ar="لا تتم مقاطعة الطالب مع كل خطأ أثناء الكلام. الأولوية للمحادثة الطبيعية، ثم يأتي التصحيح والتحليل بعد انتهاء المهمة."
+               data-de="Der Teilnehmer wird nicht bei jedem Fehler unterbrochen. Die natürliche Kommunikation steht zuerst im Mittelpunkt, danach folgen Korrektur und Feedback.">
+                لا تتم مقاطعة الطالب مع كل خطأ أثناء الكلام. الأولوية للمحادثة الطبيعية، ثم يأتي التصحيح والتحليل بعد انتهاء المهمة.
+            </p>
         </div>
 
-
-        <div class="faq-item">
-
-          <h3
-            data-ar="ما الفرق بين Premium وPremium Plus؟"
-            data-de="Was ist der Unterschied zwischen Premium und Premium Plus?">
-          </h3>
-
-          <p
-            data-ar="Premium يضيف التدريب الفردي وAI والمحاكاة والتصحيح. Premium Plus يضيف فوق ذلك جلسات متخصصة في مجال مهني واحد تختاره."
-            data-de="Premium bietet zusätzliche Betreuung, KI-Training, Simulationen und individuelles Feedback. Premium Plus ergänzt dies durch zusätzliche Sessions in einem von dir gewählten beruflichen Schwerpunkt.">
-          </p>
-
-        </div>
-
-
-        <div class="faq-item">
-
-          <h3
-            data-ar="ما التخصصات المتاحة في Premium Plus؟"
-            data-de="Welche Schwerpunkte gibt es bei Premium Plus?">
-          </h3>
-
-          <p
-            data-ar="يمكنك اختيار مجال واحد مثل Software Testing / QA، IT / Technical Support، Softwareentwicklung، Ingenieure، Medizin، Pflege، Kundenservice، Business & Büro أو Technik & Mechatronik."
-            data-de="Du kannst einen Schwerpunkt wählen, z. B. Software Testing / QA, IT / Technical Support, Softwareentwicklung, Ingenieure, Medizin, Pflege, Kundenservice, Business & Büro oder Technik & Mechatronik.">
-          </p>
-
-        </div>
-
-
-        <div class="faq-item">
-
-          <h3
-            data-ar="هل أحصل على شهادة Goethe أو telc؟"
-            data-de="Bekomme ich ein Goethe- oder telc-Zertifikat?">
-          </h3>
-
-          <p
-            data-ar="لا. الكورس تدريبي وليس امتحانًا رسميًا ولا يمنح شهادة Goethe أو telc."
-            data-de="Nein. Der Kurs ist ein Training und keine offizielle Prüfung. Es wird kein Goethe- oder telc-Zertifikat ausgestellt.">
-          </p>
-
-        </div>
-
-
-        <div class="faq-item">
-
-          <h3
-            data-ar="هل الكورس يضمن الحصول على وظيفة أو Ausbildung؟"
-            data-de="Garantiert der Kurs einen Job oder eine Ausbildung?">
-          </h3>
-
-          <p
-            data-ar="لا توجد ضمانات للحصول على وظيفة أو Ausbildung. الهدف هو تطوير اللغة والتواصل والاستعداد بشكل أفضل للتقديم والمقابلات."
-            data-de="Nein. Der Kurs garantiert weder einen Job noch eine Ausbildung. Ziel ist die Verbesserung der Sprach- und Kommunikationsfähigkeiten sowie eine bessere Vorbereitung auf Bewerbungen und Vorstellungsgespräche.">
-          </p>
-
-        </div>
-
-
-        <div class="faq-item">
-
-          <h3
-            data-ar="هل يجب أن أكون في ألمانيا؟"
-            data-de="Muss ich in Deutschland sein?">
-          </h3>
-
-          <p
-            data-ar="لا. يمكنك الاشتراك من أي بلد."
-            data-de="Nein. Du kannst aus jedem Land teilnehmen.">
-          </p>
-
-        </div>
-
-
-        <div class="faq-item">
-
-          <h3
-            data-ar="هل توجد استشارات فردية؟"
-            data-de="Gibt es individuelle Beratung?">
-          </h3>
-
-          <p
-            data-ar="نعم، توجد جلسة استشارة فردية لمدة 20 دقيقة مقابل €10."
-            data-de="Ja. Eine individuelle 20-minütige Beratung kostet €10.">
-          </p>
-
-        </div>
-
-      </div>
     </div>
-  </section>
+</section>
 
-
-  <!-- =========================
-       CTA
-  ========================= -->
-
-  <section class="cta" id="contact">
-
+<!-- PRICING -->
+<section>
     <div class="container">
 
-      <h2
-        data-ar="جاهز تستخدم الألماني بشكل عملي؟"
-        data-de="Bereit, Deutsch praktisch anzuwenden?">
-      </h2>
+        <div class="section-title">
+            <h2><span data-ar="💎 الباقات" data-de="💎 Die Pakete">💎 الباقات</span></h2>
+            <p data-ar="جميع الباقات تبدأ من نفس الـCore Curriculum، ثم تختلف في مستوى التدريب الشخصي والمحاكاة والتخصص."
+               data-de="Alle Pakete basieren auf demselben Core Curriculum und unterscheiden sich durch zusätzliches Training, Personalisierung und Spezialisierung.">
+                جميع الباقات تبدأ من نفس الـCore Curriculum، ثم تختلف في مستوى التدريب الشخصي والمحاكاة والتخصص.
+            </p>
+        </div>
 
-      <p
-        data-ar="ابدأ التدريب وطوّر الألمانية التي تحتاجها للحياة والعمل والتقديم على الوظائف والمقابلات."
-        data-de="Starte dein Training und entwickle das Deutsch, das du für Alltag, Beruf, Bewerbungen und Vorstellungsgespräche brauchst.">
-      </p>
+        <div class="pricing-grid">
 
-      <a
-        href="https://wa.me/YOUR_NUMBER"
-        class="btn btn-primary"
-        target="_blank"
-        data-ar="تواصل معنا عبر WhatsApp"
-        data-de="Über WhatsApp kontaktieren">
-      </a>
+            <!-- STANDARD -->
+            <div class="pricing">
+                <h3>Standard</h3>
+                <p data-ar="البرنامج الأساسي" data-de="Das Basisprogramm">البرنامج الأساسي</p>
+                <div class="price">€100</div>
+
+                <ul>
+                    <li data-ar="40+ ساعة Live" data-de="40+ Live-Stunden">40+ ساعة Live</li>
+                    <li data-ar="20 جلسة عملية" data-de="20 praktische Sessions">20 جلسة عملية</li>
+                    <li data-ar="Speaking & Listening" data-de="Speaking & Listening">Speaking & Listening</li>
+                    <li data-ar="Reading & Writing" data-de="Reading & Writing">Reading & Writing</li>
+                    <li data-ar="Practical Grammar" data-de="Praktische Grammatik">Practical Grammar</li>
+                    <li data-ar="Everyday German" data-de="Deutsch im Alltag">Everyday German</li>
+                    <li data-ar="German for Work" data-de="Deutsch für den Beruf">German for Work</li>
+                    <li data-ar="Bewerbung & Interview Basics" data-de="Bewerbung & Interview Basics">Bewerbung & Interview Basics</li>
+                    <li data-ar="Basic AI Practice" data-de="Grundlegende KI-Praxis">Basic AI Practice</li>
+                    <li data-ar="Homework & Course Materials" data-de="Hausaufgaben & Kursmaterialien">Homework & Course Materials</li>
+                </ul>
+            </div>
+
+            <!-- PREMIUM -->
+            <div class="pricing premium">
+                <span class="recommended">⭐ Premium</span>
+
+                <h3>Premium</h3>
+                <p data-ar="تدريب شخصي متقدم + AI" data-de="Erweitertes Training + KI">تدريب شخصي متقدم + AI</p>
+                <div class="price">€180</div>
+
+                <ul>
+                    <li data-ar="كل محتوى Standard" data-de="Alles aus Standard">كل محتوى Standard</li>
+                    <li data-ar="جلسة مع Native German Speaker" data-de="Session mit Native German Speaker">جلسة مع Native German Speaker</li>
+                    <li data-ar="Extra Speaking Practice" data-de="Extra Speaking Practice">Extra Speaking Practice</li>
+                    <li data-ar="Pronunciation Correction" data-de="Aussprachekorrektur">Pronunciation Correction</li>
+                    <li data-ar="Advanced AI Conversation" data-de="Fortgeschrittene KI-Konversation">Advanced AI Conversation</li>
+                    <li data-ar="AI Role Play" data-de="KI-Rollenspiele">AI Role Play</li>
+                    <li data-ar="AI Job Interview Simulator" data-de="KI-Vorstellungsgespräch">AI Job Interview Simulator</li>
+                    <li data-ar="AI Customer Service Simulation" data-de="KI-Kundenservice-Simulation">AI Customer Service Simulation</li>
+                    <li data-ar="AI Technical Support Simulation" data-de="KI-Technical-Support-Simulation">AI Technical Support Simulation</li>
+                    <li data-ar="Personal Error Log" data-de="Persönliches Fehlerprotokoll">Personal Error Log</li>
+                    <li data-ar="Personalized AI Practice" data-de="Personalisierte KI-Übungen">Personalized AI Practice</li>
+                    <li data-ar="Individual Learning Plan" data-de="Individueller Lernplan">Individual Learning Plan</li>
+                </ul>
+            </div>
+
+            <!-- PREMIUM PLUS -->
+            <div class="pricing premium-plus" style="grid-column: 1 / -1; max-width: 850px; width: 100%; margin: auto;">
+                <span class="premium-plus-badge">⭐ Premium Plus</span>
+
+                <h3>Premium Plus</h3>
+
+                <p data-ar="كل مزايا Premium + تخصص مهني تختاره أنت"
+                   data-de="Alle Premium-Leistungen + eine berufliche Spezialisierung Ihrer Wahl">
+                    كل مزايا Premium + تخصص مهني تختاره أنت
+                </p>
+
+                <div class="price">€230</div>
+
+                <ul>
+                    <li data-ar="كل محتوى Premium" data-de="Alles aus Premium">كل محتوى Premium</li>
+
+                    <li data-ar="15–30 دقيقة إضافية داخل المحاضرة في الجلسات المرتبطة بالتخصص"
+                        data-de="15–30 zusätzliche Minuten innerhalb der regulären Session bei spezialisierten Inhalten">
+                        15–30 دقيقة إضافية داخل المحاضرة في الجلسات المرتبطة بالتخصص
+                    </li>
+
+                    <li data-ar="لا يوجد يوم دراسي إضافي"
+                        data-de="Kein zusätzlicher Wochentag">
+                        لا يوجد يوم دراسي إضافي
+                    </li>
+
+                    <li data-ar="مصطلحات وتعبيرات متخصصة"
+                        data-de="Fachspezifischer Wortschatz und Redemittel">
+                        مصطلحات وتعبيرات متخصصة
+                    </li>
+
+                    <li data-ar="Role Plays مرتبطة بالمجال"
+                        data-de="Fachspezifische Rollenspiele">
+                        Role Plays مرتبطة بالمجال
+                    </li>
+
+                    <li data-ar="مواقف عمل واقعية"
+                        data-de="Realistische Berufssituationen">
+                        مواقف عمل واقعية
+                    </li>
+
+                    <li data-ar="AI Simulation متخصصة"
+                        data-de="Fachspezifische KI-Simulation">
+                        AI Simulation متخصصة
+                    </li>
+
+                    <li data-ar="تدريب على التواصل المهني في المجال"
+                        data-de="Training für professionelle Kommunikation im gewählten Bereich">
+                        تدريب على التواصل المهني في المجال
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PREMIUM PLUS SPECIALIZATIONS -->
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2><span data-ar="⭐ تخصصات Premium Plus" data-de="⭐ Premium-Plus-Spezialisierungen">⭐ تخصصات Premium Plus</span></h2>
+
+            <p data-ar="يختار الطالب تخصصًا واحدًا، ويتم دمج المصطلحات والمواقف والتدريب المرتبط بهذا المجال داخل الجزء الإضافي من المحاضرات."
+               data-de="Der Teilnehmer wählt einen Bereich. Fachwortschatz, Situationen und Übungen werden innerhalb der zusätzlichen 15–30 Minuten der relevanten Sessions integriert.">
+                يختار الطالب تخصصًا واحدًا، ويتم دمج المصطلحات والمواقف والتدريب المرتبط بهذا المجال داخل الجزء الإضافي من المحاضرات.
+            </p>
+        </div>
+
+        <div class="specialization-box">
+
+            <div class="specialization-grid">
+
+                <div class="specialization">
+                    <h4>💻 IT / Technical Support</h4>
+                    <p data-ar="Support-Gespräche، Troubleshooting، Tickets، Eskalation وCustomer Communication."
+                       data-de="Support-Gespräche, Troubleshooting, Tickets, Eskalation und Kundenkommunikation.">
+                        Support-Gespräche، Troubleshooting، Tickets، Eskalation وCustomer Communication.
+                    </p>
+                </div>
+
+                <div class="specialization">
+                    <h4>🧪 Software Testing / QA</h4>
+                    <p data-ar="Bugs، Test Cases، Fehlerbeschreibung، Expected/Actual Result، Tickets والتواصل مع Developers."
+                       data-de="Bugs, Test Cases, Fehlerbeschreibungen, Expected/Actual Result, Tickets und Kommunikation mit Entwicklern.">
+                        Bugs، Test Cases، Fehlerbeschreibung، Expected/Actual Result، Tickets والتواصل مع Developers.
+                    </p>
+                </div>
+
+                <div class="specialization">
+                    <h4>👨‍💻 Softwareentwicklung</h4>
+                    <p data-ar="مصطلحات البرمجة، Code Review، Features، Bugs، Releases، APIs وDeveloper Communication."
+                       data-de="Programmierbegriffe, Code Review, Features, Bugs, Releases, APIs und Developer Communication.">
+                        مصطلحات البرمجة، Code Review، Features، Bugs، Releases، APIs وDeveloper Communication.
+                    </p>
+                </div>
+
+                <div class="specialization">
+                    <h4>⚙️ Engineering</h4>
+                    <p data-ar="Kommunikation im Engineering، technische Erklärungen، Meetings، Projekte وDokumentation."
+                       data-de="Kommunikation im Engineering, technische Erklärungen, Meetings, Projekte und Dokumentation.">
+                        Kommunikation im Engineering، technische Erklärungen، Meetings، Projekte وDokumentation.
+                    </p>
+                </div>
+
+                <div class="specialization">
+                    <h4>🩺 Medizin</h4>
+                    <p data-ar="التواصل المهني، شرح الحالات، المواعيد، التواصل مع المرضى والزملاء."
+                       data-de="Professionelle Kommunikation, Patientengespräche, Termine und Kommunikation mit Kollegen.">
+                        التواصل المهني، شرح الحالات، المواعيد، التواصل مع المرضى والزملاء.
+                    </p>
+                </div>
+
+                <div class="specialization">
+                    <h4>🏥 Pflege</h4>
+                    <p data-ar="Kommunikation mit Patienten، Übergaben، Alltagssituationen und Pflegekommunikation."
+                       data-de="Kommunikation mit Patienten, Übergaben, Alltagssituationen und Kommunikation in der Pflege.">
+                        Kommunikation mit Patienten، Übergaben، Alltagssituationen und Pflegekommunikation.
+                    </p>
+                </div>
+
+                <div class="specialization">
+                    <h4>🏢 Business & Büro</h4>
+                    <p data-ar="Meetings، E-Mails، Präsentationen، Aufgaben، Termine وprofessionelle Kommunikation."
+                       data-de="Meetings, E-Mails, Präsentationen, Aufgaben, Termine und professionelle Kommunikation.">
+                        Meetings، E-Mails، Präsentationen، Aufgaben، Termine وprofessionelle Kommunikation.
+                    </p>
+                </div>
+
+                <div class="specialization">
+                    <h4>☎️ Kundenservice / Call Center</h4>
+                    <p data-ar="Customer Calls، Beschwerden، Deeskalation، Verkaufsgespräche und Kundenkommunikation."
+                       data-de="Kundengespräche, Beschwerden, Deeskalation, Verkaufsgespräche und professionelle Kundenkommunikation.">
+                        Customer Calls، Beschwerden، Deeskalation، Verkaufsgespräche und Kundenkommunikation.
+                    </p>
+                </div>
+
+                <div class="specialization">
+                    <h4>🔧 Technik & Mechatronik</h4>
+                    <p data-ar="Technische Begriffe، Fehlerbeschreibung، Arbeitsanweisungen، Sicherheit und Kommunikation im Betrieb."
+                       data-de="Technische Begriffe, Fehlerbeschreibung, Arbeitsanweisungen, Sicherheit und Kommunikation im Betrieb.">
+                        Technische Begriffe، Fehlerbeschreibung، Arbeitsanweisungen، Sicherheit وKommunikation im Betrieb.
+                    </p>
+                </div>
+
+            </div>
+
+            <br>
+
+            <strong>
+                <span>⭐</span>
+                <span data-ar="Premium Plus = Premium + تخصص مهني واحد + 15–30 دقيقة إضافية داخل المحاضرة عند الحاجة"
+                      data-de="Premium Plus = Premium + eine berufliche Spezialisierung + 15–30 zusätzliche Minuten innerhalb der relevanten Session">
+                    Premium Plus = Premium + تخصص مهني واحد + 15–30 دقيقة إضافية داخل المحاضرة عند الحاجة
+                </span>
+            </strong>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOUR WEEK PROGRAM -->
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2><span data-ar="🗓️ الخطة الشهرية — 20 جلسة" data-de="🗓️ Monatsplan — 20 Sessions">🗓️ الخطة الشهرية — 20 جلسة</span></h2>
+        </div>
+
+        <div class="program-grid">
+
+            <div class="week-card">
+                <h3><span data-ar="الأسبوع الأول — Alltag & Kommunikation" data-de="Woche 1 — Alltag & Kommunikation">الأسبوع الأول — Alltag & Kommunikation</span></h3>
+                <ul>
+                    <li>1. Selbstpräsentation</li>
+                    <li>2. Alltag & Routinen</li>
+                    <li>3. Small Talk & Meinungen</li>
+                    <li>4. Telefon & Termine</li>
+                    <li>5. Wohnen & Behörden</li>
+                </ul>
+            </div>
+
+            <div class="week-card">
+                <h3><span data-ar="الأسبوع الثاني — Arbeit & Karriere" data-de="Woche 2 — Arbeit & Karriere">الأسبوع الثاني — Arbeit & Karriere</span></h3>
+                <ul>
+                    <li>6. Bewerbung & Lebenslauf</li>
+                    <li>7. Vorstellungsgespräch I</li>
+                    <li>8. Vorstellungsgespräch II</li>
+                    <li>9. Arbeitsplatz & Kollegen</li>
+                    <li>10. E-Mail & Chat</li>
+                </ul>
+            </div>
+
+            <div class="week-card">
+                <h3><span data-ar="الأسبوع الثالث — Kunden & Support" data-de="Woche 3 — Kunden & Support">الأسبوع الثالث — Kunden & Support</span></h3>
+                <ul>
+                    <li>11. Customer Service</li>
+                    <li>12. Beschwerden & Deeskalation</li>
+                    <li>13. Technical Support I</li>
+                    <li>14. Technical Support II</li>
+                    <li>15. Tickets & Eskalation</li>
+                </ul>
+            </div>
+
+            <div class="week-card">
+                <h3><span data-ar="الأسبوع الرابع — Professional Communication" data-de="Woche 4 — Professionelle Kommunikation">الأسبوع الرابع — Professional Communication</span></h3>
+                <ul>
+                    <li>16. Technische Erklärungen</li>
+                    <li>17. Meetings & Präsentationen</li>
+                    <li>18. Real-Life Simulation</li>
+                    <li>19. Final Job Simulation</li>
+                    <li>20. Abschluss & Action Plan</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 20 CORE SESSIONS -->
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2><span data-ar="📖 المنهج التفصيلي — 20 جلسة أساسية" data-de="📖 Detaillierter Lehrplan — 20 Core Sessions">📖 المنهج التفصيلي — 20 جلسة أساسية</span></h2>
+
+            <p data-ar="هذه هي الجلسات الأساسية التي يحصل عليها جميع الطلاب. Premium يضيف تدريبًا ومحاكاة متقدمة، بينما Premium Plus يضيف تخصصًا مهنيًا واحدًا داخل الجزء الإضافي من المحاضرات."
+               data-de="Diese 20 Sessions bilden den gemeinsamen Core für alle Teilnehmer. Premium ergänzt fortgeschrittenes Training und Simulationen, Premium Plus integriert eine berufliche Spezialisierung in zusätzlichen 15–30 Minuten innerhalb der relevanten Sessions.">
+                هذه هي الجلسات الأساسية التي يحصل عليها جميع الطلاب. Premium يضيف تدريبًا ومحاكاة متقدمة،
+                بينما Premium Plus يضيف تخصصًا مهنيًا واحدًا داخل الجزء الإضافي من المحاضرات.
+            </p>
+
+            <br>
+
+            <div>
+                <span class="standard-label">🟦 Standard / Basis</span>
+                <span class="premium-label">🟪 Premium</span>
+                <span class="premium-plus-label">🟧 Premium Plus</span>
+            </div>
+        </div>
+
+        <!-- SESSION 1 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>1. Vorstellung & Selbstpräsentation</h3>
+                <span class="session-number">Session 01</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Ziel / الهدف</h4>
+                    <ul>
+                        <li data-ar="التعريف بالنفس والخبرة" data-de="Sich selbst und die eigene Erfahrung vorstellen">التعريف بالنفس والخبرة</li>
+                        <li data-ar="الاهتمامات والخطط" data-de="Interessen und Pläne">الاهتمامات والخطط</li>
+                        <li data-ar="التحدث بدون حفظ نص كامل" data-de="Freies Sprechen statt Auswendiglernen">التحدث بدون حفظ نص كامل</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🧠 Sprache</h4>
+                    <ul><li>Präsens</li><li>Perfekt</li><li>weil / dass</li><li>Redemittel für Vorstellung</li></ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🗣️ Practice</h4>
+                    <ul><li>Speed Talk</li><li>Partner Introduction</li><li>Follow-up Questions</li><li>30 / 60 Sekunden Vorstellung</li></ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 Advanced AI Practice</h4>
+                    <ul><li>AI Interview Mini-Simulation</li><li>Dynamic Follow-up Questions</li><li>Personal Feedback</li></ul>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 2 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>2. Alltag, Routinen & Small Talk</h3>
+                <span class="session-number">Session 02</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Themen</h4>
+                    <ul><li>Daily Routine</li><li>Gewohnheiten</li><li>Small Talk</li><li>Fragen stellen</li></ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🧠 Sprache</h4>
+                    <ul><li>Trennbare Verben</li><li>Adverbien</li><li>Zeitangaben</li><li>Häufigkeitsangaben</li></ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🗣️ Practice</h4>
+                    <ul><li>Daily Routine</li><li>Small Talk</li><li>Follow-up Chain</li><li>Question Challenge</li></ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Practice</h4>
+                    <ul><li>AI Small Talk</li><li>Dynamic Scenario</li><li>Vocabulary Feedback</li></ul>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 3 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>3. Meinungen, Zustimmen & Widersprechen</h3>
+                <span class="session-number">Session 03</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Ziel</h4>
+                    <ul>
+                        <li data-ar="إبداء الرأي" data-de="Meinungen äußern">إبداء الرأي</li>
+                        <li data-ar="الموافقة والاختلاف بأدب" data-de="Zustimmen und höflich widersprechen">الموافقة والاختلاف بأدب</li>
+                        <li data-ar="شرح السبب" data-de="Gründe erklären">شرح السبب</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🧠 Redemittel</h4>
+                    <ul><li>Meiner Meinung nach...</li><li>Ich denke, dass...</li><li>Ich stimme dir zu...</li><li>Ich sehe das anders...</li></ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🗣️ Practice</h4>
+                    <ul><li>Opinion Cards</li><li>Debate</li><li>Agree / Disagree</li><li>Follow-up Questions</li></ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Debate</h4>
+                    <ul><li>AI Debate Partner</li><li>Follow-up Questions</li><li>Fluency Feedback</li></ul>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 4 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>4. Termine, Telefon & Dienstleistungen</h3>
+                <span class="session-number">Session 04</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Themen</h4>
+                    <ul><li>Termin buchen</li><li>Termin ändern</li><li>Telefonat</li><li>Informationen anfragen</li></ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🧠 Sprache</h4>
+                    <ul><li>Könnten Sie...?</li><li>Ich hätte gerne...</li><li>Wäre es möglich...?</li><li>Höfliche Fragen</li></ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🗣️ Practice</h4>
+                    <ul><li>Telefon Role Play</li><li>Appointment Booking</li><li>Service Request</li></ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Telephone</h4>
+                    <ul><li>AI Telephone Simulation</li><li>Listening + Response</li><li>Feedback</li></ul>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 5 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>5. Alltag in Deutschland: Wohnen, Behörden & Mobilität</h3>
+                <span class="session-number">Session 05</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Themen</h4>
+                    <ul><li>Wohnung</li><li>Behörde</li><li>ÖPNV</li><li>Bahnhof</li><li>Formulare</li></ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🧠 Sprache</h4>
+                    <ul><li>Modalverben</li><li>Imperativ</li><li>Fragen</li><li>Wegbeschreibung</li></ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🗣️ Practice</h4>
+                    <ul><li>Wohnungssuche</li><li>Behördenbesuch</li><li>Ticket kaufen</li><li>Nach dem Weg fragen</li></ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Real-Life Practice</h4>
+                    <ul><li>Behörden-Simulation</li><li>Wohnungssuche</li><li>ÖPNV Scenario</li></ul>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 6 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>6. Bewerbung & Lebenslauf</h3>
+                <span class="session-number">Session 06</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Themen</h4>
+                    <ul><li>Berufserfahrung</li><li>Ausbildung</li><li>Fähigkeiten</li><li>Motivation</li></ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🧠 Sprache</h4>
+                    <ul><li>Berufliche Redemittel</li><li>Perfekt</li><li>Präteritum Basics</li><li>Formelle Sprache</li></ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🗣️ Practice</h4>
+                    <ul><li>CV Presentation</li><li>Professional Introduction</li><li>Career Timeline</li></ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Recruiter</h4>
+                    <ul><li>CV Questions</li><li>Motivation Questions</li><li>Personal Feedback</li></ul>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 7 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>7. Vorstellungsgespräch I</h3>
+                <span class="session-number">Session 07</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Themen</h4>
+                    <ul>
+                        <li>Vorstellung</li>
+                        <li>Motivation</li>
+                        <li>Erfahrung</li>
+                        <li>Warum diese Stelle?</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🗣️ Practice</h4>
+                    <ul>
+                        <li>Interview Pairs</li>
+                        <li>Follow-up Questions</li>
+                        <li>Time-limited Answers</li>
+                    </ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Interview</h4>
+                    <ul>
+                        <li>Full AI Interview</li>
+                        <li>Dynamic Questions</li>
+                        <li>Answer Analysis</li>
+                        <li>Alternative Formulations</li>
+                    </ul>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 8 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>8. Vorstellungsgespräch II</h3>
+                <span class="session-number">Session 08</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Themen</h4>
+                    <ul>
+                        <li>Stärken</li>
+                        <li>Schwächen</li>
+                        <li>Konflikte</li>
+                        <li>Schwierige Fragen</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🗣️ Practice</h4>
+                    <ul>
+                        <li>STAR Method</li>
+                        <li>Situational Questions</li>
+                        <li>Role Switch</li>
+                    </ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 Advanced AI Interview</h4>
+                    <ul>
+                        <li>Difficult Interview</li>
+                        <li>Unexpected Questions</li>
+                        <li>Follow-up Questions</li>
+                        <li>Final AI Report</li>
+                    </ul>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 9 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>9. Arbeitsplatz & Kommunikation mit Kollegen</h3>
+                <span class="session-number">Session 09</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Themen</h4>
+                    <ul>
+                        <li>Arbeitsaufgaben</li>
+                        <li>Prioritäten</li>
+                        <li>Nachfragen</li>
+                        <li>Feedback</li>
+                        <li>Kollegen</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🗣️ Practice</h4>
+                    <ul>
+                        <li>Workplace Dialogue</li>
+                        <li>Clarification</li>
+                        <li>Giving Updates</li>
+                    </ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Workplace</h4>
+                    <ul>
+                        <li>AI Colleague</li>
+                        <li>Manager Conversation</li>
+                        <li>Workplace Scenarios</li>
+                    </ul>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 10 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>10. E-Mail, Chat & Professionelle Nachrichten</h3>
+                <span class="session-number">Session 10</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Themen</h4>
+                    <ul>
+                        <li>Formelle E-Mail</li>
+                        <li>Informelle Chat-Nachricht</li>
+                        <li>Anfrage</li>
+                        <li>Terminänderung</li>
+                        <li>Follow-up</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🧠 Sprache</h4>
+                    <ul>
+                        <li>Betreff</li>
+                        <li>Anrede</li>
+                        <li>Höflichkeit</li>
+                        <li>Grußformeln</li>
+                    </ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Writing Assistant</h4>
+                    <ul>
+                        <li>Professional Rewrite</li>
+                        <li>Grammar Correction</li>
+                        <li>Professional Tone</li>
+                    </ul>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 11 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>11. Customer Service: Bedarf verstehen</h3>
+                <span class="session-number">Session 11</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Themen</h4>
+                    <ul>
+                        <li>Begrüßung</li>
+                        <li>Bedarf verstehen</li>
+                        <li>Rückfragen</li>
+                        <li>Zusammenfassen</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🗣️ Practice</h4>
+                    <ul>
+                        <li>Customer Role Play</li>
+                        <li>Question Chain</li>
+                        <li>Active Listening</li>
+                    </ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Customer</h4>
+                    <ul>
+                        <li>AI as Customer</li>
+                        <li>Customer Request</li>
+                        <li>Clarification Questions</li>
+                        <li>Feedback</li>
+                    </ul>
+                </div>
+
+                <div class="session-block premium-box">
+                    <span class="premium-plus-label">🟧 Premium Plus</span>
+                    <h4>🎯 Fachspezifische Kommunikation</h4>
+                    <p data-ar="يمكن تطبيق نفس مهارات خدمة العملاء داخل التخصص المهني الذي يختاره الطالب خلال الجزء الإضافي من المحاضرة."
+                       data-de="Die Kommunikationsfähigkeiten werden innerhalb der zusätzlichen 15–30 Minuten auf die gewählte berufliche Spezialisierung übertragen.">
+                        يمكن تطبيق نفس مهارات خدمة العملاء داخل التخصص المهني الذي يختاره الطالب خلال الجزء الإضافي من المحاضرة.
+                    </p>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 12 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>12. Beschwerden, schwierige Kunden & Deeskalation</h3>
+                <span class="session-number">Session 12</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Themen</h4>
+                    <ul>
+                        <li>Beschwerde</li>
+                        <li>Entschuldigung</li>
+                        <li>Lösung anbieten</li>
+                        <li>Grenzen setzen</li>
+                        <li>Deeskalation</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🗣️ Practice</h4>
+                    <ul>
+                        <li>Angry Customer</li>
+                        <li>Role Switch</li>
+                        <li>Solution Challenge</li>
+                    </ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Simulation</h4>
+                    <ul>
+                        <li>Angry Customer</li>
+                        <li>Escalation</li>
+                        <li>De-escalation</li>
+                        <li>Performance Feedback</li>
+                    </ul>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 13 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>13. Technical Support I: Problemaufnahme & Diagnose</h3>
+                <span class="session-number">Session 13</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Sprache</h4>
+                    <ul>
+                        <li>Problem verstehen</li>
+                        <li>Gezielte Fragen</li>
+                        <li>Fehlerbeschreibung</li>
+                        <li>Reproduzieren</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🧠 Wortschatz</h4>
+                    <ul>
+                        <li>Fehler</li>
+                        <li>Störung</li>
+                        <li>Problem</li>
+                        <li>Gerät</li>
+                        <li>Verbindung</li>
+                        <li>Anmeldung</li>
+                    </ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Technical Support</h4>
+                    <ul>
+                        <li>AI = Kunde</li>
+                        <li>Student = Support Agent</li>
+                        <li>Problemaufnahme</li>
+                        <li>Diagnostic Questions</li>
+                    </ul>
+                </div>
+
+                <div class="session-block premium-box">
+                    <span class="premium-plus-label">🟧 Premium Plus</span>
+                    <h4>🎯 Fachspezifische Simulation</h4>
+                    <p data-ar="إذا اختار الطالب IT / Technical Support، يحصل داخل الجزء الإضافي على سيناريوهات أعمق مرتبطة بالمجال."
+                       data-de="Bei Wahl von IT / Technical Support erhält der Teilnehmer innerhalb der zusätzlichen Zeit vertiefte fachbezogene Support-Szenarien.">
+                        إذا اختار الطالب IT / Technical Support، يحصل داخل الجزء الإضافي على سيناريوهات أعمق مرتبطة بالمجال.
+                    </p>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 14 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>14. Technical Support II: Troubleshooting</h3>
+                <span class="session-number">Session 14</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Szenarien</h4>
+                    <ul>
+                        <li>Kein Internet</li>
+                        <li>Outlook Problem</li>
+                        <li>Passwort Problem</li>
+                        <li>Drucker Problem</li>
+                        <li>Software Error</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🧠 Technische Sprache</h4>
+                    <ul>
+                        <li>Router</li>
+                        <li>IP-Adresse</li>
+                        <li>DNS</li>
+                        <li>DHCP</li>
+                        <li>Firewall</li>
+                        <li>Treiber</li>
+                        <li>Update</li>
+                    </ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Technical Lab</h4>
+                    <ul>
+                        <li>Dynamic Troubleshooting</li>
+                        <li>AI Customer</li>
+                        <li>Diagnostic Questions</li>
+                        <li>Performance Feedback</li>
+                    </ul>
+                </div>
+
+                <div class="session-block premium-box">
+                    <span class="premium-plus-label">🟧 Premium Plus</span>
+                    <h4>🎯 تخصص مهني</h4>
+                    <p data-ar="يمكن نقل التدريب خلال الجزء الإضافي إلى Software Testing، Software Development، Engineering أو Technik & Mechatronik حسب التخصص المختار."
+                       data-de="Das Training kann innerhalb der zusätzlichen Zeit je nach Wahl auf Software Testing, Softwareentwicklung, Engineering oder Technik & Mechatronik übertragen werden.">
+                        يمكن نقل التدريب خلال الجزء الإضافي إلى Software Testing، Software Development، Engineering أو Technik & Mechatronik حسب التخصص المختار.
+                    </p>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 15 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>15. Tickets, Dokumentation & Eskalation</h3>
+                <span class="session-number">Session 15</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Themen</h4>
+                    <ul>
+                        <li>Ticket erstellen</li>
+                        <li>Problem dokumentieren</li>
+                        <li>Priorität</li>
+                        <li>Eskalation</li>
+                        <li>Status Update</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🧠 Wortschatz</h4>
+                    <ul>
+                        <li>Ticket</li>
+                        <li>Priorität</li>
+                        <li>Workaround</li>
+                        <li>Eskalation</li>
+                        <li>Lösung</li>
+                    </ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Ticket Practice</h4>
+                    <ul>
+                        <li>AI Ticket Generator</li>
+                        <li>Language Check</li>
+                        <li>Problem Summary</li>
+                        <li>Escalation Simulation</li>
+                    </ul>
+                </div>
+
+                <div class="session-block premium-box">
+                    <span class="premium-plus-label">🟧 Premium Plus</span>
+                    <h4>🎯 Fachsprache</h4>
+                    <p data-ar="إنشاء Tickets وتقارير ومراسلات باستخدام مفردات المجال المختار خلال الجزء الإضافي من المحاضرة."
+                       data-de="Tickets, Berichte und Kommunikation mit dem Fachwortschatz des gewählten Bereichs innerhalb der zusätzlichen Zeit.">
+                        إنشاء Tickets وتقارير ومراسلات باستخدام مفردات المجال المختار خلال الجزء الإضافي من المحاضرة.
+                    </p>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 16 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>16. Technische Erklärungen für Nicht-Techniker</h3>
+                <span class="session-number">Session 16</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Ziel</h4>
+                    <ul>
+                        <li>Technisches Problem einfach erklären</li>
+                        <li>Komplexe Begriffe vermeiden</li>
+                        <li>Lösung Schritt für Schritt erklären</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🗣️ Practice</h4>
+                    <ul>
+                        <li>Technical → Simple German</li>
+                        <li>Customer Explanation</li>
+                        <li>Step-by-step Explanation</li>
+                    </ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Communication Simulator</h4>
+                    <ul>
+                        <li>AI = Non-technical Customer</li>
+                        <li>Clarification Questions</li>
+                        <li>Clarity Feedback</li>
+                    </ul>
+                </div>
+
+                <div class="session-block premium-box">
+                    <span class="premium-plus-label">🟧 Premium Plus</span>
+                    <h4>🎯 Fachspezifische Erklärung</h4>
+                    <p data-ar="شرح المفاهيم والمشكلات باستخدام لغة المجال الذي اختاره الطالب خلال الجزء الإضافي."
+                       data-de="Erklärungen mit dem Fachwortschatz der gewählten beruflichen Spezialisierung innerhalb der zusätzlichen Zeit.">
+                        شرح المفاهيم والمشكلات باستخدام لغة المجال الذي اختاره الطالب خلال الجزء الإضافي.
+                    </p>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 17 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>17. Meetings, Präsentationen & Status Updates</h3>
+                <span class="session-number">Session 17</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Themen</h4>
+                    <ul>
+                        <li>Meeting eröffnen</li>
+                        <li>Status Update</li>
+                        <li>Fortschritt</li>
+                        <li>Probleme</li>
+                        <li>Nächste Schritte</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🗣️ Practice</h4>
+                    <ul>
+                        <li>Stand-up Meeting</li>
+                        <li>Mini Presentation</li>
+                        <li>Question & Answer</li>
+                    </ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Meeting Simulation</h4>
+                    <ul>
+                        <li>AI Manager</li>
+                        <li>Unexpected Questions</li>
+                        <li>Status Update Feedback</li>
+                    </ul>
+                </div>
+
+                <div class="session-block premium-box">
+                    <span class="premium-plus-label">🟧 Premium Plus</span>
+                    <h4>🎯 Professional Meetings</h4>
+                    <p data-ar="اجتماعات ومناقشات باستخدام مصطلحات المجال المهني المختار خلال الجزء الإضافي من المحاضرة."
+                       data-de="Meetings und Diskussionen mit dem Fachwortschatz des gewählten Berufsfeldes innerhalb der zusätzlichen Zeit.">
+                        اجتماعات ومناقشات باستخدام مصطلحات المجال المهني المختار خلال الجزء الإضافي من المحاضرة.
+                    </p>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 18 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>18. Real-Life Simulation Day</h3>
+                <span class="session-number">Session 18</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Simulation</h4>
+                    <ul>
+                        <li>Wohnung</li>
+                        <li>Behörde</li>
+                        <li>Telefonat</li>
+                        <li>Arbeitsplatz</li>
+                        <li>Kunde</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🗣️ Live Role Play</h4>
+                    <ul>
+                        <li>Random Scenario</li>
+                        <li>Role Switch</li>
+                        <li>Time Pressure</li>
+                    </ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Challenge</h4>
+                    <ul>
+                        <li>Random AI Scenario</li>
+                        <li>No Prepared Script</li>
+                        <li>Dynamic Follow-up</li>
+                        <li>Final Feedback</li>
+                    </ul>
+                </div>
+
+                <div class="session-block premium-box">
+                    <span class="premium-plus-label">🟧 Premium Plus</span>
+                    <h4>🎯 Professional Scenario</h4>
+                    <p data-ar="سيناريو واقعي من المجال المهني المختار، مثل IT، Testing، Engineering، Medicine أو غيره، خلال الجزء الإضافي."
+                       data-de="Ein realistisches Szenario aus dem gewählten Berufsfeld, z. B. IT, Testing, Engineering, Medizin oder einem anderen Bereich, innerhalb der zusätzlichen Zeit.">
+                        سيناريو واقعي من المجال المهني المختار، مثل IT، Testing، Engineering، Medicine أو غيره، خلال الجزء الإضافي.
+                    </p>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 19 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>19. Job Interview + Customer Service + Technical Support</h3>
+                <span class="session-number">Session 19</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Final Simulation</h4>
+                    <ul>
+                        <li>Job Interview</li>
+                        <li>Customer Service</li>
+                        <li>Technical Support</li>
+                        <li>Workplace Communication</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>🧠 Assessment</h4>
+                    <ul>
+                        <li>Verständlichkeit</li>
+                        <li>Wortschatz</li>
+                        <li>Grammatik</li>
+                        <li>Reaktionsfähigkeit</li>
+                        <li>Professionalität</li>
+                    </ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Final Simulation</h4>
+                    <ul>
+                        <li>AI Interviewer</li>
+                        <li>AI Customer</li>
+                        <li>AI Technical User</li>
+                        <li>Dynamic Scenarios</li>
+                        <li>Performance Report</li>
+                    </ul>
+                </div>
+
+                <div class="session-block premium-box">
+                    <span class="premium-plus-label">🟧 Premium Plus</span>
+                    <h4>🎯 Specialized Job Simulation</h4>
+                    <p data-ar="محاكاة مقابلة أو موقف مهني مرتبط بالتخصص الذي اختاره الطالب خلال الجزء الإضافي من المحاضرة."
+                       data-de="Eine zusätzliche Job- oder Berufssimulation passend zur gewählten Spezialisierung innerhalb der zusätzlichen Zeit.">
+                        محاكاة مقابلة أو موقف مهني مرتبط بالتخصص الذي اختاره الطالب خلال الجزء الإضافي من المحاضرة.
+                    </p>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- SESSION 20 -->
+        <article class="session">
+            <div class="session-header">
+                <h3>20. Abschlussprüfung & Personal Action Plan</h3>
+                <span class="session-number">Session 20</span>
+            </div>
+
+            <div class="session-grid">
+
+                <div class="session-block standard-box">
+                    <span class="standard-label">🟦 Standard</span>
+                    <h4>🎯 Abschluss</h4>
+                    <ul>
+                        <li>Speaking Test</li>
+                        <li>Listening</li>
+                        <li>Writing</li>
+                        <li>Role Play</li>
+                        <li>Interview</li>
+                    </ul>
+                </div>
+
+                <div class="session-block">
+                    <h4>📊 Evaluation</h4>
+                    <ul>
+                        <li>Verständlichkeit</li>
+                        <li>Wortschatz</li>
+                        <li>Grammatik</li>
+                        <li>Aussprache</li>
+                        <li>Gesprächsführung</li>
+                        <li>Selbstständigkeit</li>
+                    </ul>
+                </div>
+
+                <div class="session-block ai-box">
+                    <span class="premium-label">🟪 Premium</span>
+                    <h4>🤖 AI Final Report</h4>
+                    <ul>
+                        <li>Strengths</li>
+                        <li>Recurring Errors</li>
+                        <li>Vocabulary Gaps</li>
+                        <li>Recommended Practice</li>
+                        <li>Next Learning Steps</li>
+                    </ul>
+                </div>
+
+                <div class="session-block premium-box">
+                    <span class="premium-plus-label">🟧 Premium Plus</span>
+                    <h4>🎯 Specialized Next Steps</h4>
+                    <p data-ar="تحويل نتائج الكورس إلى خطوات تدريبية مرتبطة بالتخصص المهني الذي اختاره الطالب خلال الجزء الإضافي."
+                       data-de="Die Ergebnisse werden innerhalb der zusätzlichen Zeit in konkrete nächste Schritte für die gewählte berufliche Spezialisierung übersetzt.">
+                        تحويل نتائج الكورس إلى خطوات تدريبية مرتبطة بالتخصص المهني الذي اختاره الطالب خلال الجزء الإضافي.
+                    </p>
+                </div>
+
+            </div>
+        </article>
 
     </div>
-  </section>
+</section>
 
+<!-- LESSON STRUCTURE -->
+<section>
+    <div class="container">
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
+        <div class="section-title">
+            <h2>
+                <span data-ar="⏱️ شكل المحاضرة اليومية"
+                      data-de="⏱️ Aufbau einer Session">
+                    ⏱️ شكل المحاضرة اليومية
+                </span>
+            </h2>
 
-  <footer>
+            <p data-ar="المحاضرة الأساسية مدتها ساعتان. في الجلسات التي تتضمن جزء Premium Plus، تتم إضافة 15–30 دقيقة داخل نفس المحاضرة حسب محتوى التخصص."
+               data-de="Die reguläre Session dauert 2 Stunden. Bei Sessions mit Premium-Plus-Inhalten kommen 15–30 Minuten innerhalb derselben Session hinzu – abhängig vom spezialisierten Inhalt.">
+                المحاضرة الأساسية مدتها ساعتان. في الجلسات التي تتضمن جزء Premium Plus،
+                تتم إضافة 15–30 دقيقة داخل نفس المحاضرة حسب محتوى التخصص.
+            </p>
+        </div>
 
-    <p
-      data-ar="© 2026 كورس الألماني العملي — اللغة، الحياة والعمل"
-      data-de="© 2026 Praktischer Deutschkurs – Sprache, Alltag und Beruf">
+        <div class="table-wrapper">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>
+                            <span data-ar="المرحلة" data-de="Phase">المرحلة</span>
+                        </th>
+
+                        <th>
+                            <span data-ar="المدة" data-de="Dauer">المدة</span>
+                        </th>
+
+                        <th>
+                            <span data-ar="الهدف" data-de="Ziel">الهدف</span>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Warm-up / Review</td>
+                        <td>15–20 Min.</td>
+                        <td data-ar="مراجعة وتحريك اللغة" data-de="Wiederholung und Aktivierung">
+                            مراجعة وتحريك اللغة
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Vocabulary & Redemittel</td>
+                        <td>20 Min.</td>
+                        <td data-ar="كلمات وتعبيرات عملية" data-de="Praktischer Wortschatz und Redemittel">
+                            كلمات وتعبيرات عملية
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Grammar in Context</td>
+                        <td>15–20 Min.</td>
+                        <td data-ar="القاعدة داخل موقف عملي" data-de="Grammatik im Kontext">
+                            القاعدة داخل موقف عملي
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Listening / Input</td>
+                        <td>20 Min.</td>
+                        <td data-ar="فهم الألمانية الطبيعية" data-de="Natürliches Deutsch verstehen">
+                            فهم الألمانية الطبيعية
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Speaking Practice</td>
+                        <td>30 Min.</td>
+                        <td data-ar="استخدام اللغة" data-de="Sprache aktiv verwenden">
+                            استخدام اللغة
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Role Play / Simulation</td>
+                        <td>15–20 Min.</td>
+                        <td data-ar="محاكاة موقف حقيقي" data-de="Realistische Simulation">
+                            محاكاة موقف حقيقي
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Feedback</td>
+                        <td>5–10 Min.</td>
+                        <td data-ar="تصحيح وتحسين" data-de="Korrektur und Verbesserung">
+                            تصحيح وتحسين
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <span class="premium-plus-label">🟧 Premium Plus</span>
+                            <br>
+                            Specialization Extension
+                        </td>
+
+                        <td>+15–30 Min.</td>
+
+                        <td data-ar="تطبيق التخصص المهني المختار داخل نفس المحاضرة: مصطلحات، Role Play، محاكاة ومواقف مهنية."
+                            data-de="Integration der gewählten beruflichen Spezialisierung in derselben Session: Fachwortschatz, Rollenspiele, Simulationen und berufliche Situationen.">
+                            تطبيق التخصص المهني المختار داخل نفس المحاضرة: مصطلحات، Role Play، محاكاة ومواقف مهنية.
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+        <br>
+
+        <div class="info-box premium">
+            <h3>⭐ <span data-ar="Premium Plus — بدون يوم إضافي"
+                           data-de="Premium Plus — Kein zusätzlicher Wochentag">
+                Premium Plus — بدون يوم إضافي
+            </span></h3>
+
+            <p data-ar="الطالب لا يحتاج إلى يوم دراسي إضافي. يتم تخصيص 15–30 دقيقة إضافية داخل المحاضرة نفسها عندما يكون محتوى الجلسة مناسبًا للتخصص المختار."
+               data-de="Es ist kein zusätzlicher Wochentag erforderlich. Die 15–30 zusätzlichen Minuten werden innerhalb derselben Session eingesetzt, wenn der Inhalt zur gewählten Spezialisierung passt.">
+                الطالب لا يحتاج إلى يوم دراسي إضافي. يتم تخصيص 15–30 دقيقة إضافية داخل المحاضرة نفسها عندما يكون محتوى الجلسة مناسبًا للتخصص المختار.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ERROR LOG -->
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2>
+                <span data-ar="📋 Student Error Log"
+                      data-de="📋 Persönliches Fehlerprotokoll">
+                    📋 Student Error Log
+                </span>
+            </h2>
+
+            <p data-ar="في الباقات التي تتضمن التخصيص المتقدم، يتم استخدام الأخطاء المتكررة لبناء تدريب أكثر دقة."
+               data-de="In den Paketen mit erweiterten Personalisierungsfunktionen werden wiederkehrende Fehler für gezieltes Training genutzt.">
+                في الباقات التي تتضمن التخصيص المتقدم، يتم استخدام الأخطاء المتكررة لبناء تدريب أكثر دقة.
+            </p>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Bereich / المجال</th>
+                        <th>Beispiel / مثال</th>
+                        <th>Korrektur / التصحيح</th>
+                        <th>Training</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Grammar</td>
+                        <td>Ich habe gegangen</td>
+                        <td>Ich bin gegangen</td>
+                        <td>Grammar Practice</td>
+                    </tr>
+
+                    <tr>
+                        <td>Vocabulary</td>
+                        <td>falsches Verb</td>
+                        <td>passendes Verb</td>
+                        <td>Vocabulary Trainer</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pronunciation</td>
+                        <td>unklare Aussprache</td>
+                        <td>correct pronunciation</td>
+                        <td>Speaking Practice</td>
+                    </tr>
+
+                    <tr>
+                        <td>Communication</td>
+                        <td>too short answer</td>
+                        <td>full response</td>
+                        <td>Follow-up Practice</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
+
+<!-- HOMEWORK -->
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2>
+                <span data-ar="📝 Homework System"
+                      data-de="📝 Hausaufgabensystem">
+                    📝 Homework System
+                </span>
+            </h2>
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>🎙️ Voice Recording</h3>
+                <p data-ar="تسجيل إجابة قصيرة باللغة الألمانية للتدرب على الطلاقة والنطق."
+                   data-de="Kurze Sprachaufnahmen zur Verbesserung von Sprechen und Aussprache.">
+                    تسجيل إجابة قصيرة باللغة الألمانية للتدرب على الطلاقة والنطق.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>📝 Writing</h3>
+                <p data-ar="E-Mail، Chat، Bewerbung، Ticket أو Summary."
+                   data-de="E-Mail, Chat, Bewerbung, Ticket oder Summary.">
+                    E-Mail، Chat، Bewerbung، Ticket أو Summary.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🎧 Listening</h3>
+                <p data-ar="الاستماع إلى مادة ألمانية ثم تلخيصها أو استخراج التعبيرات."
+                   data-de="Deutsches Audiomaterial verstehen, zusammenfassen und Redemittel herausarbeiten.">
+                    الاستماع إلى مادة ألمانية ثم تلخيصها أو استخراج التعبيرات.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🤖 AI Challenge</h3>
+                <p data-ar="تدريب إضافي مع AI حسب موضوع المحاضرة والباقات التي يختارها الطالب."
+                   data-de="Zusätzliche KI-Übungen passend zur Session und zum gewählten Paket.">
+                    تدريب إضافي مع AI حسب موضوع المحاضرة والباقات التي يختارها الطالب.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SPECIALIZED CAREER OUTCOME -->
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2>
+                <span data-ar="🚀 من اللغة إلى المجال المهني"
+                      data-de="🚀 Von Deutsch zur beruflichen Anwendung">
+                    🚀 من اللغة إلى المجال المهني
+                </span>
+            </h2>
+
+            <p data-ar="بعد بناء الأساس اللغوي والتواصل العملي، يستطيع الطالب توجيه الألمانية نحو المجال الذي يريد العمل فيه."
+               data-de="Nach dem Aufbau der sprachlichen Grundlage kann der Teilnehmer sein Deutsch gezielt auf den gewünschten beruflichen Bereich ausrichten.">
+                بعد بناء الأساس اللغوي والتواصل العملي، يستطيع الطالب توجيه الألمانية نحو المجال الذي يريد العمل فيه.
+            </p>
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="icon">🧪</div>
+                <h3>Software Testing / QA</h3>
+                <p data-ar="الاستعداد اللغوي للتواصل حول Bugs، Test Cases، Tickets، النتائج والتواصل مع Developers."
+                   data-de="Sprachliche Vorbereitung für Kommunikation über Bugs, Test Cases, Tickets, Ergebnisse und die Zusammenarbeit mit Entwicklern.">
+                    الاستعداد اللغوي للتواصل حول Bugs، Test Cases، Tickets، النتائج والتواصل مع Developers.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🛠️</div>
+                <h3>IT / Technical Support</h3>
+                <p data-ar="Problemaufnahme، Troubleshooting، Kundenkommunikation، Tickets وEskalation."
+                   data-de="Problemaufnahme, Troubleshooting, Kundenkommunikation, Tickets und Eskalation.">
+                    Problemaufnahme، Troubleshooting، Kundenkommunikation، Tickets وEskalation.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">💻</div>
+                <h3>Softwareentwicklung</h3>
+                <p data-ar="التواصل حول المشاريع، Features، Bugs، Releases، APIs وDeveloper Meetings."
+                   data-de="Kommunikation über Projekte, Features, Bugs, Releases, APIs und Developer-Meetings.">
+                    التواصل حول المشاريع، Features، Bugs، Releases، APIs وDeveloper Meetings.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⚙️</div>
+                <h3>Engineering & Technik</h3>
+                <p data-ar="Technical Communication، Meetings، Dokumentation، Problembeschreibung und Erklärungen."
+                   data-de="Technische Kommunikation, Meetings, Dokumentation, Problembeschreibung und Erklärungen.">
+                    Technical Communication، Meetings، Dokumentation، Problembeschreibung und Erklärungen.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🩺</div>
+                <h3>Medizin & Pflege</h3>
+                <p data-ar="التواصل المهني مع المرضى والزملاء والمواقف اليومية داخل بيئة العمل."
+                   data-de="Professionelle Kommunikation mit Patienten, Kollegen und in typischen Arbeitssituationen.">
+                    التواصل المهني مع المرضى والزملاء والمواقف اليومية داخل بيئة العمل.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">☎️</div>
+                <h3>Customer Service / Call Center</h3>
+                <p data-ar="التعامل مع العملاء، الاستفسارات، الشكاوى، Deeskalation والمحادثات الهاتفية."
+                   data-de="Kundenanfragen, Beschwerden, Deeskalation und professionelle Telefongespräche.">
+                    التعامل مع العملاء، الاستفسارات، الشكاوى، Deeskalation والمحادثات الهاتفية.
+                </p>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="info-box success">
+            <h3>
+                🎯
+                <span data-ar="الهدف النهائي" data-de="Das Ziel">
+                    الهدف النهائي
+                </span>
+            </h3>
+
+            <p data-ar="بنهاية الكورس يكون الطالب قد بنى أساسًا عمليًا في الألمانية يمكنه استخدامه في الحياة اليومية، التواصل المهني، المقابلات، والعمل، ثم تطويره في مجال تخصصه."
+               data-de="Am Ende des Kurses verfügt der Teilnehmer über eine praktische sprachliche Grundlage für Alltag, Berufskommunikation, Vorstellungsgespräche und die weitere Spezialisierung im gewünschten Berufsfeld.">
+                بنهاية الكورس يكون الطالب قد بنى أساسًا عمليًا في الألمانية يمكنه استخدامه في الحياة اليومية،
+                التواصل المهني، المقابلات، والعمل، ثم تطويره في مجال تخصصه.
+            </p>
+        </div>
+
+        <div class="info-box warning">
+            <h3>
+                ℹ️
+                <span data-ar="مهم" data-de="Wichtig">
+                    مهم
+                </span>
+            </h3>
+
+            <p data-ar="الكورس يركز على اللغة والتواصل المهني والاستعداد للمواقف الوظيفية. لا يُعد الكورس بديلًا عن المؤهل المهني أو الأكاديمي المطلوب لكل وظيفة، ولا يمثل ضمانًا للحصول على وظيفة."
+               data-de="Der Kurs konzentriert sich auf Sprache, professionelle Kommunikation und die Vorbereitung auf berufliche Situationen. Er ersetzt keine erforderliche fachliche oder akademische Qualifikation und stellt keine Jobgarantie dar.">
+                الكورس يركز على اللغة والتواصل المهني والاستعداد للمواقف الوظيفية.
+                لا يُعد الكورس بديلًا عن المؤهل المهني أو الأكاديمي المطلوب لكل وظيفة،
+                ولا يمثل ضمانًا للحصول على وظيفة.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONSULTATION -->
+<section id="contact">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>
+                <span data-ar="💬 استشارة فردية"
+                      data-de="💬 Einzelberatung">
+                    💬 استشارة فردية
+                </span>
+            </h2>
+
+            <p data-ar="جلسة مستقلة ومركزة لمن لديه سؤال محدد أو يحتاج إلى توجيه عملي."
+               data-de="Eine unabhängige, fokussierte Beratung für konkrete Fragen und praktische Orientierung.">
+                جلسة مستقلة ومركزة لمن لديه سؤال محدد أو يحتاج إلى توجيه عملي.
+            </p>
+        </div>
+
+        <div class="pricing-grid">
+
+            <div class="pricing premium" style="grid-column: 1 / -1; max-width: 700px; width: 100%; margin: auto; text-align: center;">
+
+                <div class="icon">💬</div>
+
+                <h3>
+                    <span data-ar="استشارة فردية"
+                          data-de="Einzelberatung">
+                        استشارة فردية
+                    </span>
+                </h3>
+
+                <div class="price">€10</div>
+
+                <p data-ar="
+                    جلسة فردية لمدة 20 دقيقة عبر WhatsApp
+                    لمناقشة سؤال محدد أو الحصول على توجيه عملي
+                    حول تعلم اللغة، العمل، Ausbildung أو الخطوات القادمة.
+                "
+                data-de="
+                    Eine 20-minütige Einzelberatung über WhatsApp
+                    für konkrete Fragen oder praktische Orientierung
+                    zu Deutschlernen, Arbeit, Ausbildung oder den nächsten Schritten.
+                ">
+                    جلسة فردية لمدة 20 دقيقة عبر WhatsApp
+                    لمناقشة سؤال محدد أو الحصول على توجيه عملي
+                    حول تعلم اللغة، العمل، Ausbildung أو الخطوات القادمة.
+                </p>
+
+                <br>
+
+                <a href="#contact"
+                   style="display:inline-block; background:var(--secondary); color:white; padding:12px 24px; border-radius:999px; text-decoration:none; font-weight:700;">
+                    <span data-ar="احجز استشارتك"
+                          data-de="Beratung buchen">
+                        احجز استشارتك
+                    </span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FAQ -->
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2>
+                <span data-ar="❓ الأسئلة الشائعة"
+                      data-de="❓ Häufig gestellte Fragen">
+                    ❓ الأسئلة الشائعة
+                </span>
+            </h2>
+
+            <p data-ar="أهم الأسئلة حول نظام الكورس، الباقات، Premium Plus والاستشارة الفردية."
+               data-de="Die wichtigsten Fragen zu Kurs, Paketen, Premium Plus und Einzelberatung.">
+                أهم الأسئلة حول نظام الكورس، الباقات، Premium Plus والاستشارة الفردية.
+            </p>
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>
+                    <span data-ar="هل الكورس مناسب لمستوى B1؟"
+                          data-de="Ist der Kurs für B1 geeignet?">
+                        هل الكورس مناسب لمستوى B1؟
+                    </span>
+                </h3>
+
+                <p data-ar="نعم، الكورس يستهدف بشكل أساسي المتعلمين في نطاق B1/B2، مع التركيز على تحويل المعرفة اللغوية إلى استخدام عملي."
+                   data-de="Ja. Der Kurs richtet sich hauptsächlich an Lernende im Bereich B1/B2 und konzentriert sich darauf, vorhandene Sprachkenntnisse praktisch anzuwenden.">
+                    نعم، الكورس يستهدف بشكل أساسي المتعلمين في نطاق B1/B2،
+                    مع التركيز على تحويل المعرفة اللغوية إلى استخدام عملي.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>
+                    <span data-ar="ما الفرق بين Standard وPremium؟"
+                          data-de="Was ist der Unterschied zwischen Standard und Premium?">
+                        ما الفرق بين Standard وPremium؟
+                    </span>
+                </h3>
+
+                <p data-ar="Standard يركز على الـCore Curriculum والتدريب العملي الأساسي. Premium يضيف تدريبًا شخصيًا متقدمًا، Native Speaker، AI Simulations، Feedback وتخصيصًا أكبر."
+                   data-de="Standard konzentriert sich auf das Core Curriculum und grundlegendes praktisches Training. Premium ergänzt persönliches Training, Native-Speaker-Übungen, KI-Simulationen und erweitertes Feedback.">
+                    Standard يركز على الـCore Curriculum والتدريب العملي الأساسي.
+                    Premium يضيف تدريبًا شخصيًا متقدمًا، Native Speaker، AI Simulations، Feedback وتخصيصًا أكبر.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>
+                    <span data-ar="كيف يعمل Premium Plus؟"
+                          data-de="Wie funktioniert Premium Plus?">
+                        كيف يعمل Premium Plus؟
+                    </span>
+                </h3>
+
+                <p data-ar="تختار تخصصًا مهنيًا واحدًا. وفي الجلسات المناسبة لهذا التخصص تتم إضافة 15–30 دقيقة داخل المحاضرة نفسها. لا يوجد يوم دراسي إضافي."
+                   data-de="Du wählst eine berufliche Spezialisierung. In passenden Sessions werden 15–30 Minuten innerhalb derselben Unterrichtsstunde ergänzt. Es gibt keinen zusätzlichen Wochentag.">
+                    تختار تخصصًا مهنيًا واحدًا. وفي الجلسات المناسبة لهذا التخصص تتم إضافة
+                    15–30 دقيقة داخل المحاضرة نفسها. لا يوجد يوم دراسي إضافي.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>
+                    <span data-ar="هل يمكنني اختيار أكثر من تخصص؟"
+                          data-de="Kann ich mehr als eine Spezialisierung wählen?">
+                        هل يمكنني اختيار أكثر من تخصص؟
+                    </span>
+                </h3>
+
+                <p data-ar="Premium Plus مصمم لاختيار تخصص مهني واحد حتى يكون التدريب أكثر تركيزًا وارتباطًا بالهدف المهني."
+                   data-de="Premium Plus ist auf eine berufliche Spezialisierung ausgelegt, damit das Training möglichst fokussiert und zielgerichtet bleibt.">
+                    Premium Plus مصمم لاختيار تخصص مهني واحد حتى يكون التدريب أكثر تركيزًا وارتباطًا بالهدف المهني.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>
+                    <span data-ar="هل الـAI بديل عن المدرس؟"
+                          data-de="Ersetzt KI den Trainer?">
+                        هل الـAI بديل عن المدرس؟
+                    </span>
+                </h3>
+
+                <p data-ar="لا. AI هنا أداة تدريب إضافية. المدرس يشرح ويوجه ويصحح، بينما يوفر AI فرصًا إضافية للمحادثة والمحاكاة والتدريب."
+                   data-de="Nein. KI ist ein zusätzliches Trainingswerkzeug. Der Trainer erklärt, begleitet und korrigiert, während KI zusätzliche Gesprächs-, Simulations- und Übungsmöglichkeiten bietet.">
+                    لا. AI هنا أداة تدريب إضافية. المدرس يشرح ويوجه ويصحح،
+                    بينما يوفر AI فرصًا إضافية للمحادثة والمحاكاة والتدريب.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>
+                    <span data-ar="هل الكورس يضمن الحصول على وظيفة؟"
+                          data-de="Garantiert der Kurs einen Job?">
+                        هل الكورس يضمن الحصول على وظيفة؟
+                    </span>
+                </h3>
+
+                <p data-ar="لا. الكورس يركز على اللغة والتواصل والاستعداد للمواقف المهنية، لكنه لا يحل محل المؤهلات المطلوبة ولا يمثل ضمانًا للحصول على وظيفة."
+                   data-de="Nein. Der Kurs konzentriert sich auf Sprache, Kommunikation und berufliche Vorbereitung. Er ersetzt keine erforderlichen Qualifikationen und stellt keine Jobgarantie dar.">
+                    لا. الكورس يركز على اللغة والتواصل والاستعداد للمواقف المهنية،
+                    لكنه لا يحل محل المؤهلات المطلوبة ولا يمثل ضمانًا للحصول على وظيفة.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>
+                    <span data-ar="ما هي الاستشارة الفردية؟"
+                          data-de="Was ist die Einzelberatung?">
+                        ما هي الاستشارة الفردية؟
+                    </span>
+                </h3>
+
+                <p data-ar="جلسة مستقلة لمدة 20 دقيقة عبر WhatsApp بسعر €10 لمناقشة سؤال محدد أو الحصول على توجيه عملي حول تعلم الألمانية، العمل، Ausbildung أو الخطوات القادمة."
+                   data-de="Eine unabhängige 20-minütige Beratung über WhatsApp für €10. Sie dient der Besprechung konkreter Fragen zu Deutschlernen, Arbeit, Ausbildung oder den nächsten Schritten.">
+                    جلسة مستقلة لمدة 20 دقيقة عبر WhatsApp بسعر €10 لمناقشة سؤال محدد
+                    أو الحصول على توجيه عملي حول تعلم الألمانية، العمل، Ausbildung أو الخطوات القادمة.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>
+                    <span data-ar="هل الاستشارة متاحة لغير المشتركين في الكورس؟"
+                          data-de="Ist die Beratung auch ohne Kursbuchung möglich?">
+                        هل الاستشارة متاحة لغير المشتركين في الكورس؟
+                    </span>
+                </h3>
+
+                <p data-ar="نعم. الاستشارة خدمة مستقلة ولا تتطلب الاشتراك في Standard أو Premium أو Premium Plus."
+                   data-de="Ja. Die Einzelberatung ist unabhängig von den Kurspaketen und kann auch ohne Buchung eines Kurses genutzt werden.">
+                    نعم. الاستشارة خدمة مستقلة ولا تتطلب الاشتراك في Standard أو Premium أو Premium Plus.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FINAL COURSE MODEL -->
+<section>
+    <div class="container">
+
+        <div class="ai-hero">
+
+            <h2>
+                🇩🇪 Learn → Practice → Simulate → Improve
+            </h2>
+
+            <p data-ar="النموذج النهائي للكورس لا يعتمد على حضور المحاضرة فقط. الطالب يتعلم مع المدرس، يستخدم اللغة، يتدرب، يحصل على Feedback ثم يعيد التدريب حتى يستطيع استخدام الألمانية في موقف حقيقي."
+               data-de="Der Kurs besteht nicht nur aus Unterricht. Der Teilnehmer lernt mit dem Trainer, wendet Deutsch an, übt mit KI, erhält Feedback und wiederholt die Inhalte, bis die Sprache in realistischen Situationen eingesetzt werden kann.">
+                النموذج النهائي للكورس لا يعتمد على حضور المحاضرة فقط.
+                الطالب يتعلم مع المدرس، يستخدم اللغة، يتدرب،
+                يحصل على Feedback ثم يعيد التدريب حتى يستطيع استخدام الألمانية في موقف حقيقي.
+            </p>
+
+            <div class="ai-flow">
+
+                <div class="flow-step">
+                    <strong>👨‍🏫 Teacher</strong>
+                    <span data-ar="Learn" data-de="Lernen">Learn</span>
+                </div>
+
+                <div class="flow-step">
+                    <strong>🗣️ Student</strong>
+                    <span data-ar="Speak" data-de="Sprechen">Speak</span>
+                </div>
+
+                <div class="flow-step">
+                    <strong>🤖 AI</strong>
+                    <span data-ar="Practice" data-de="Üben">Practice</span>
+                </div>
+
+                <div class="flow-step">
+                    <strong>📊 Feedback</strong>
+                    <span data-ar="Improve" data-de="Verbessern">Improve</span>
+                </div>
+
+                <div class="flow-step">
+                    <strong>🔁 Repeat</strong>
+                    <span data-ar="Automate" data-de="Festigen">Automate</span>
+                </div>
+
+                <div class="flow-step">
+                    <strong>🇩🇪 Real Life</strong>
+                    <span data-ar="Use German" data-de="Deutsch anwenden">Use German</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section>
+    <div class="container">
+
+        <div class="cta">
+
+            <h2>
+                <span data-ar="🇩🇪 جاهز تستخدم الألمانية فعليًا؟"
+                      data-de="🇩🇪 Bereit, Deutsch wirklich anzuwenden?">
+                    🇩🇪 جاهز تستخدم الألمانية فعليًا؟
+                </span>
+            </h2>
+
+            <p data-ar="ابدأ من اللغة الأساسية، تدرب على مواقف الحياة والعمل، ثم اختر Premium أو Premium Plus إذا كنت تريد تدريبًا أكثر تخصيصًا أو تخصصًا مهنيًا محددًا."
+               data-de="Starte mit der sprachlichen Grundlage, übe Alltag und Beruf und wähle Premium oder Premium Plus, wenn du mehr Personalisierung oder eine berufliche Spezialisierung möchtest.">
+                ابدأ من اللغة الأساسية، تدرب على مواقف الحياة والعمل،
+                ثم اختر Premium أو Premium Plus إذا كنت تريد
+                تدريبًا أكثر تخصيصًا أو تخصصًا مهنيًا محددًا.
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <h2>
+        🇩🇪
+        <span data-ar="كورس الألماني العملي"
+              data-de="Praktisches Deutsch">
+            كورس الألماني العملي
+        </span>
+    </h2>
+
+    <p>
+        <span data-ar="من اللغة إلى الاستخدام الحقيقي"
+              data-de="Von der Sprache zur echten Anwendung">
+            من اللغة إلى الاستخدام الحقيقي
+        </span>
     </p>
 
-  </footer>
+    <p>
+        German • Arbeit • Alltag • Customer Service • Technical Support • AI Practice
+    </p>
 
+</footer>
 
-  <!-- =========================
-       LANGUAGE SCRIPT
-  ========================= -->
-
-  <script>
+<!-- LANGUAGE SCRIPT -->
+<script>
 
     function setLanguage(lang) {
 
-      const html = document.documentElement;
-
-      /*
-        Change page direction
-      */
-
-      if (lang === "ar") {
-
-        html.lang = "ar";
-        html.dir = "rtl";
-
-      } else {
-
-        html.lang = "de";
-        html.dir = "ltr";
-
-      }
-
-
-      /*
-        Change all texts
-      */
-
-      document.querySelectorAll("[data-ar]").forEach(function(element) {
+        document.documentElement.lang = lang;
 
         if (lang === "ar") {
 
-          element.textContent =
-            element.getAttribute("data-ar");
+            document.documentElement.dir = "rtl";
+
+            document.getElementById("arBtn").classList.add("active");
+            document.getElementById("deBtn").classList.remove("active");
 
         } else {
 
-          element.textContent =
-            element.getAttribute("data-de");
+            document.documentElement.dir = "ltr";
+
+            document.getElementById("deBtn").classList.add("active");
+            document.getElementById("arBtn").classList.remove("active");
 
         }
 
-      });
+        document.querySelectorAll("[data-ar]").forEach(function(element) {
 
+            const value = element.getAttribute("data-" + lang);
 
-      /*
-        Update language buttons
-      */
+            if (value !== null) {
 
-      document.getElementById("arBtn").classList.toggle(
-        "active",
-        lang === "ar"
-      );
+                if (
+                    element.tagName === "INPUT" ||
+                    element.tagName === "TEXTAREA"
+                ) {
 
-      document.getElementById("deBtn").classList.toggle(
-        "active",
-        lang === "de"
-      );
+                    element.value = value;
 
+                } else {
 
-      /*
-        Update page title
-      */
+                    element.innerHTML = value;
 
-      if (lang === "ar") {
+                }
 
-        document.title =
-          "كورس الألماني العملي — اللغة، الحياة والعمل";
+            }
 
-      } else {
-
-        document.title =
-          "Praktischer Deutschkurs – Sprache, Alltag und Beruf";
-
-      }
-
-
-      /*
-        Save selected language
-      */
-
-      localStorage.setItem(
-        "preferredLanguage",
-        lang
-      );
+        });
 
     }
 
-
-    /*
-      Load saved language
-    */
-
-    const savedLanguage =
-      localStorage.getItem("preferredLanguage") || "ar";
-
-    setLanguage(savedLanguage);
-
-  </script>
+</script>
 
 </body>
 </html>
