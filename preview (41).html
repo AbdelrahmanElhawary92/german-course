@@ -377,7 +377,7 @@
 
             gap: 8px;
 
-            margin-bottom: 20px;
+            margin-bottom: 5px;
         }
 
         .price-number {
@@ -395,6 +395,16 @@
             font-weight: 900;
 
             color: #64748b;
+        }
+
+        .local-price {
+            color: #64748b;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            margin-bottom: 20px;
         }
 
         .price-desc {
@@ -1209,6 +1219,7 @@
 
                 font-size: 23px;
             }
+
         }
 
     </style>
@@ -1368,13 +1379,18 @@
                     30
                 </div>
 
-                <div
-                    class="price-currency"
-                    data-i18n="currency"
-                >
+                <div class="price-currency">
                     €
                 </div>
 
+            </div>
+
+
+            <div
+                class="local-price"
+                data-i18n="localPrice"
+            >
+                أو ما يعادلها بالعملة المحلية
             </div>
 
 
@@ -2187,7 +2203,7 @@
         </p>
 
 
-        <!-- غيّر الرابط هنا إلى رابط التسجيل / واتساب / الدفع -->
+        <!-- ضع هنا رابط التسجيل / واتساب / الدفع -->
 
         <a
             href="#"
@@ -2277,8 +2293,8 @@
             priceLabel:
                 "سعر الكورس بالكامل",
 
-            currency:
-                "€",
+            localPrice:
+                "أو ما يعادلها بالعملة المحلية",
 
             priceDesc:
                 "أسبوع كامل من التدريب المباشر والممارسة الفعلية باللغة الألمانية.",
@@ -2518,8 +2534,8 @@
             priceLabel:
                 "Gesamtpreis",
 
-            currency:
-                "€",
+            localPrice:
+                "oder der entsprechende Betrag in der jeweiligen Landeswährung",
 
             priceDesc:
                 "Eine komplette Woche mit Live-Unterricht und intensiver Sprechpraxis auf Deutsch.",
@@ -2744,8 +2760,6 @@
             translations[language];
 
 
-        /* Direction */
-
         html.lang = language;
 
         html.dir =
@@ -2753,8 +2767,6 @@
                 ? "rtl"
                 : "ltr";
 
-
-        /* Translate all elements */
 
         document
             .querySelectorAll("[data-i18n]")
@@ -2772,8 +2784,6 @@
 
             });
 
-
-        /* Language button */
 
         const languageButton =
             document.getElementById(
@@ -2800,8 +2810,6 @@
         }
 
 
-        /* Save preference */
-
         localStorage.setItem(
             "preferredLanguage",
             language
@@ -2811,7 +2819,7 @@
 
 
     /* =========================================
-       BUTTON
+       LANGUAGE BUTTON
     ========================================= */
 
     document
