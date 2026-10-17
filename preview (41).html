@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Praktisches Deutsch – Deutsch-Konversationskurs ab A2+.">
+<meta name="description" content="Praktisches Deutsch – Deutsch-Konversationskurs ab A2+ mit Filmszenen, Rollenspielen und praktischer Sprechpraxis.">
 <title>Praktisches Deutsch | كورس محادثة ألماني</title>
 
 <style>
@@ -133,7 +133,7 @@ header {
   margin-bottom:20px;
   color:#111827;
 }
-.hero h1 span { color:var(--blue); }
+.hero h1 span { display:block; color:var(--blue); }
 .hero-text { font-size:18px; margin-bottom:24px; }
 .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:25px; }
 .hero-mini { display:flex; flex-wrap:wrap; gap:18px; font-size:14px; font-weight:750; }
@@ -206,6 +206,7 @@ header {
 .video-frame p { color:#cbd5e1; }
 .video-caption { text-align:center; font-size:12px; margin-top:12px; }
 
+/* Features */
 .features { background:white; }
 .features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 .feature {
@@ -230,6 +231,31 @@ header {
 .feature p { font-size:15px; }
 .ai-feature { background:#faf5ff; border-color:#ddd6fe; }
 
+/* New: German films and series feature */
+.film-feature {
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(145deg,#111827,#26334d);
+  border-color:#334155;
+  color:white;
+}
+.film-feature .feature-icon {
+  background:rgba(255,255,255,.12);
+}
+.film-feature h3 { color:white; }
+.film-feature p { color:#cbd5e1; }
+.film-label {
+  display:inline-block;
+  margin-top:13px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:rgba(147,197,253,.14);
+  color:#bfdbfe;
+  font-size:12px;
+  font-weight:850;
+}
+
+/* AI practice */
 .ai-section { background:linear-gradient(180deg,#f5f3ff,#f8fafc); }
 .ai-banner {
   max-width:1000px;
@@ -258,52 +284,137 @@ header {
 .ai-bottom p { margin-bottom:18px; }
 .ai-trial-note { font-size:12px; margin-top:12px; }
 
+/* Curriculum */
 .curriculum { background:var(--bg); }
-.days { max-width:880px; margin:auto; display:grid; gap:13px; }
+.days { max-width:920px; margin:auto; display:grid; gap:16px; }
 .day {
   display:grid;
   grid-template-columns:65px 1fr;
   gap:18px;
-  align-items:center;
+  align-items:start;
   background:white;
   border:1px solid var(--line);
-  border-radius:16px;
-  padding:17px 20px;
+  border-radius:18px;
+  padding:21px;
+  transition:transform .2s,box-shadow .2s;
+}
+.day:hover {
+  transform:translateY(-2px);
+  box-shadow:0 12px 30px rgba(15,23,42,.06);
 }
 .day-number {
   display:grid;
   place-items:center;
   width:55px;
   height:55px;
-  border-radius:14px;
+  border-radius:15px;
   background:#eff6ff;
   color:var(--blue);
   font-size:18px;
   font-weight:950;
 }
-.day h3 { font-size:17px; margin-bottom:4px; }
+.day h3 { font-size:18px; margin-bottom:6px; }
 .day p { font-size:14px; }
 .day-note {
   display:inline-block;
-  margin-top:7px;
-  padding:3px 9px;
+  margin-top:10px;
+  margin-inline-end:5px;
+  padding:5px 10px;
   background:#f5f3ff;
   color:#6d28d9;
   border-radius:8px;
   font-size:12px;
   font-weight:800;
 }
+.day-note.film-note {
+  background:#e0f2fe;
+  color:#075985;
+}
+.day-note.role-note {
+  background:#dcfce7;
+  color:#166534;
+}
+.film-day {
+  border-color:#c4b5fd;
+  background:linear-gradient(120deg,#fff,#faf5ff);
+}
+.film-day .day-number {
+  background:#ede9fe;
+  color:#6d28d9;
+}
+.day-subtitle {
+  display:block;
+  margin-bottom:8px;
+  color:#64748b;
+  font-size:12px;
+  font-weight:800;
+}
 .native-callout {
-  max-width:880px;
-  margin:20px auto 0;
-  padding:18px;
+  max-width:920px;
+  margin:22px auto 0;
+  padding:20px;
   border:1px solid #c7d2fe;
   border-radius:16px;
   background:#eef2ff;
   color:#3730a3;
 }
 .native-callout strong { display:block; margin-bottom:4px; }
+.film-callout {
+  max-width:920px;
+  margin:20px auto 0;
+  padding:clamp(22px,4vw,32px);
+  border:1px solid #c4b5fd;
+  border-radius:22px;
+  background:linear-gradient(135deg,#111827,#312e81);
+  color:white;
+  overflow:hidden;
+}
+.film-callout h3 {
+  color:white;
+  font-size:clamp(23px,3vw,30px);
+  margin-bottom:10px;
+}
+.film-callout p { color:#e0e7ff; }
+.film-callout-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:13px;
+  margin:22px 0;
+}
+.film-step {
+  padding:16px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.07);
+  border-radius:14px;
+}
+.film-step strong {
+  display:block;
+  color:white;
+  margin-bottom:5px;
+}
+.film-step span {
+  color:#cbd5e1;
+  font-size:13px;
+}
+.film-disclaimer {
+  font-size:12px;
+  color:#cbd5e1 !important;
+  margin-top:13px;
+}
+.film-cta {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:20px;
+  padding:12px 18px;
+  border-radius:11px;
+  background:white;
+  color:#312e81;
+  font-weight:900;
+}
+.film-cta:hover { background:#ede9fe; }
 
+/* Instructor */
 .instructor { background:white; }
 .instructor-box {
   max-width:900px;
@@ -343,6 +454,7 @@ header {
 .detail-label { color:var(--muted); }
 .detail-value { color:#111827; font-weight:900; text-align:end; }
 
+/* Free trial */
 .trial-section { background:linear-gradient(180deg,#eff6ff,#f8fafc); }
 .trial-card {
   max-width:900px;
@@ -372,6 +484,7 @@ header {
 .trial-option p { font-size:14px; }
 .trial-note { margin-top:12px; font-size:12px; }
 
+/* Consultation */
 .consultation { background:white; }
 .consult-card {
   max-width:940px;
@@ -433,10 +546,11 @@ html[dir="ltr"] .trial-options { text-align:left; }
   .instructor-photo { max-width:220px; margin:auto; }
   .instructor-tags { justify-content:center; }
   .consult-card { grid-template-columns:1fr; padding:20px; }
-  .day { grid-template-columns:48px 1fr; gap:12px; padding:14px; }
+  .day { grid-template-columns:48px 1fr; gap:12px; padding:15px; }
   .day-number { width:45px; height:45px; }
   .detail { padding:15px; }
   .footer-content { flex-direction:column; text-align:center; }
+  .film-callout-grid { grid-template-columns:1fr; }
 }
 @media(max-width:420px) {
   .container { width:calc(100% - 24px); }
@@ -473,9 +587,9 @@ html[dir="ltr"] .trial-options { text-align:left; }
         <span data-ar="بشكل طبيعي." data-de="ganz natürlich.">بشكل طبيعي.</span>
       </h1>
       <p class="hero-text"
-         data-ar="كورس محادثة عملي لمدة 7 أيام، تتكلم فيه وتسمع وتشارك في مواقف واقعية، وتمثّل مشاهد حوارية وتستخدم التعبيرات بنفسك."
-         data-de="Ein praktischer Konversationskurs über 7 Tage: Du sprichst, hörst zu, übst realistische Situationen und spielst Dialogszenen selbst nach.">
-        كورس محادثة عملي لمدة 7 أيام، تتكلم فيه وتسمع وتشارك في مواقف واقعية، وتمثّل مشاهد حوارية وتستخدم التعبيرات بنفسك.
+         data-ar="كورس محادثة عملي لمدة 7 أيام، تتكلم فيه وتسمع وتشارك في مواقف واقعية، وتتعلم تعبيرات من مشاهد أفلام ومسلسلات ألمانية مختارة، ثم تتدرب على استخدامها بنفسك."
+         data-de="Ein praktischer Konversationskurs über 7 Tage: Du sprichst, hörst zu, übst Alltagssituationen und lernst Redewendungen aus ausgewählten deutschen Film- und Serienszenen, die du anschließend selbst anwendest.">
+        كورس محادثة عملي لمدة 7 أيام، تتكلم فيه وتسمع وتشارك في مواقف واقعية، وتتعلم تعبيرات من مشاهد أفلام ومسلسلات ألمانية مختارة، ثم تتدرب على استخدامها بنفسك.
       </p>
       <div class="hero-actions">
         <a href="#register" class="btn btn-blue" data-ar="احجز مكانك الآن" data-de="Jetzt Platz sichern">احجز مكانك الآن</a>
@@ -499,7 +613,7 @@ html[dir="ltr"] .trial-options { text-align:left; }
         <li><span class="check">✓</span><span data-ar="ساعتان يوميًا" data-de="2 Stunden täglich">ساعتان يوميًا</span></li>
         <li><span class="check">✓</span><span data-ar="14 ساعة مباشرة" data-de="14 Live-Stunden">14 ساعة مباشرة</span></li>
         <li><span class="check">✓</span><span data-ar="من مستوى A2+ فما فوق" data-de="Ab Niveau A2+">من مستوى A2+ فما فوق</span></li>
-        <li><span class="check">✓</span><span data-ar="محادثة وتمثيل أدوار ومشاهد حوارية" data-de="Gespräche, Rollenspiele und Dialogszenen">محادثة وتمثيل أدوار ومشاهد حوارية</span></li>
+        <li><span class="check">✓</span><span data-ar="محادثة وتمثيل أدوار ومشاهد من أفلام ومسلسلات ألمانية مختارة" data-de="Konversation, Rollenspiele und ausgewählte deutsche Film- und Serienszenen">محادثة وتمثيل أدوار ومشاهد من أفلام ومسلسلات ألمانية مختارة</span></li>
         <li><span class="check">✓</span><span data-ar="لقاء مع متحدث أصلي في اليومين السادس والسابع" data-de="Austausch mit einem Muttersprachler an Tag 6 und 7">لقاء مع متحدث أصلي في اليومين السادس والسابع</span></li>
         <li><span class="check">✓</span><span data-ar="تدريب على المحادثة والكتابة باستخدام الذكاء الاصطناعي" data-de="Sprech- und Schreibübungen mit KI">تدريب على المحادثة والكتابة باستخدام الذكاء الاصطناعي</span></li>
       </ul>
@@ -523,7 +637,7 @@ html[dir="ltr"] .trial-options { text-align:left; }
     <div class="section-head">
       <div class="section-kicker" style="color:#93c5fd" data-ar="شاهد قبل أن تبدأ" data-de="Vor dem Start">شاهد قبل أن تبدأ</div>
       <h2 data-ar="شوف طريقة التدريب بنفسك" data-de="Lerne die Trainingsmethode kennen">شوف طريقة التدريب بنفسك</h2>
-      <p data-ar="هنا تقدر تضيف فيديو تعريفي قصير يوضح أسلوب الكورس والتمارين التفاعلية." data-de="Hier kannst du ein kurzes Vorstellungsvideo über den Kurs und die interaktiven Übungen einbinden.">هنا تقدر تضيف فيديو تعريفي قصير يوضح أسلوب الكورس والتمارين التفاعلية.</p>
+      <p data-ar="هنا تقدر تضيف فيديو تعريفي قصير يوضح أسلوب الكورس والتمارين التفاعلية، بما فيها التدريب على المشاهد والحوار." data-de="Hier kannst du ein kurzes Vorstellungsvideo über den Kurs, die interaktiven Übungen und das Lernen mit Dialogszenen einbinden.">هنا تقدر تضيف فيديو تعريفي قصير يوضح أسلوب الكورس والتمارين التفاعلية، بما فيها التدريب على المشاهد والحوار.</p>
     </div>
     <div class="video-frame">
       <div>
@@ -541,16 +655,57 @@ html[dir="ltr"] .trial-options { text-align:left; }
     <div class="section-head">
       <div class="section-kicker" data-ar="لماذا هذا الكورس؟" data-de="Warum dieser Kurs?">لماذا هذا الكورس؟</div>
       <h2 data-ar="اتعلم الكلام من خلال الكلام." data-de="Sprechen lernst du durch Sprechen.">اتعلم الكلام من خلال الكلام.</h2>
-      <p data-ar="شاهد، افهم التعبيرات، مثّل الأدوار، وبعدها استخدم اللغة في حوار جديد من عندك." data-de="Sieh dir Szenen an, lerne Redewendungen, spiele Rollen und wende die Sprache in eigenen Dialogen an.">شاهد، افهم التعبيرات، مثّل الأدوار، وبعدها استخدم اللغة في حوار جديد من عندك.</p>
+      <p data-ar="شاهد، افهم التعبيرات، قلّد النطق، مثّل الأدوار، وبعدها استخدم اللغة في حوار جديد من عندك." data-de="Sieh dir Szenen an, verstehe Redewendungen, ahme die Aussprache nach, spiele Rollen und wende die Sprache in eigenen Dialogen an.">شاهد، افهم التعبيرات، قلّد النطق، مثّل الأدوار، وبعدها استخدم اللغة في حوار جديد من عندك.</p>
     </div>
     <div class="features-grid">
-      <div class="feature"><div class="feature-icon">💬</div><h3 data-ar="محادثات واقعية" data-de="Realistische Gespräche">محادثات واقعية</h3><p data-ar="تتدرب على طرح الأسئلة والرد والتعبير عن رأيك في مواقف قريبة من الحياة اليومية." data-de="Übe Fragen, Antworten und Meinungsäußerungen in Alltagssituationen.">تتدرب على طرح الأسئلة والرد والتعبير عن رأيك في مواقف قريبة من الحياة اليومية.</p></div>
-      <div class="feature"><div class="feature-icon">🎭</div><h3 data-ar="مشاهد وتمثيل أدوار" data-de="Szenen und Rollenspiele">مشاهد وتمثيل أدوار</h3><p data-ar="تتعلم تعبيرات من مشاهد حوارية ثم تمثّل الأدوار وتعيد صياغة الحوار بطريقتك." data-de="Lerne Redewendungen aus Dialogen, spiele Rollen und formuliere Gespräche neu.">تتعلم تعبيرات من مشاهد حوارية ثم تمثّل الأدوار وتعيد صياغة الحوار بطريقتك.</p></div>
-      <div class="feature"><div class="feature-icon">🇩🇪</div><h3 data-ar="متحدث أصلي" data-de="Deutscher Muttersprachler">متحدث أصلي</h3><p data-ar="ساعة تفاعل مباشر مع متحدث أصلي في اليوم السادس، وساعة أخرى في اليوم السابع." data-de="Je eine Stunde direkter Austausch mit einem Muttersprachler an Tag 6 und 7.">ساعة تفاعل مباشر مع متحدث أصلي في اليوم السادس، وساعة أخرى في اليوم السابع.</p></div>
-      <div class="feature"><div class="feature-icon">⚡</div><h3 data-ar="تدريب عملي" data-de="Praktisches Training">تدريب عملي</h3><p data-ar="استخدم اللغة فعليًا بدل الاكتفاء بالحفظ أو الترجمة كلمة بكلمة." data-de="Wende die Sprache aktiv an, statt nur auswendig zu lernen oder Wort für Wort zu übersetzen.">استخدم اللغة فعليًا بدل الاكتفاء بالحفظ أو الترجمة كلمة بكلمة.</p></div>
-      <div class="feature"><div class="feature-icon">🗣️</div><h3 data-ar="فرص أكثر للكلام" data-de="Mehr Sprechpraxis">فرص أكثر للكلام</h3><p data-ar="تمارين فردية وثنائية وجماعية تساعدك على المشاركة والتفاعل." data-de="Einzel-, Partner- und Gruppenübungen fördern deine aktive Teilnahme.">تمارين فردية وثنائية وجماعية تساعدك على المشاركة والتفاعل.</p></div>
-      <div class="feature"><div class="feature-icon">🎯</div><h3 data-ar="خطوة نحو الطلاقة" data-de="Ein Schritt zur Sprachsicherheit">خطوة نحو الطلاقة</h3><p data-ar="تطبّق التعبيرات في سياقات مختلفة وتتدرب على التحدث بوضوح وثقة أكبر." data-de="Verwende Redewendungen in verschiedenen Situationen und sprich klarer und sicherer.">تطبّق التعبيرات في سياقات مختلفة وتتدرب على التحدث بوضوح وثقة أكبر.</p></div>
-      <div class="feature ai-feature"><div class="feature-icon">🤖</div><h3 data-ar="تدرّب مع الذكاء الاصطناعي" data-de="Mit KI Deutsch üben">تدرّب مع الذكاء الاصطناعي</h3><p data-ar="مارس المحادثة والكتابة بالألمانية مع تدريبات تفاعلية تساعدك على التعبير في مواقف متنوعة." data-de="Trainiere Gespräche und Schreiben mit interaktiven KI-Übungen für unterschiedliche Situationen.">مارس المحادثة والكتابة بالألمانية مع تدريبات تفاعلية تساعدك على التعبير في مواقف متنوعة.</p></div>
+      <div class="feature">
+        <div class="feature-icon">💬</div>
+        <h3 data-ar="محادثات واقعية" data-de="Realistische Gespräche">محادثات واقعية</h3>
+        <p data-ar="تتدرب على طرح الأسئلة والرد والتعبير عن رأيك في مواقف قريبة من الحياة اليومية." data-de="Übe Fragen, Antworten und Meinungsäußerungen in Alltagssituationen.">تتدرب على طرح الأسئلة والرد والتعبير عن رأيك في مواقف قريبة من الحياة اليومية.</p>
+      </div>
+
+      <div class="feature film-feature">
+        <div class="feature-icon">🎬</div>
+        <h3 data-ar="اتعلم الألماني من الأفلام والمسلسلات" data-de="Deutsch mit Filmen und Serien lernen">اتعلم الألماني من الأفلام والمسلسلات</h3>
+        <p data-ar="اكتشف تعبيرات حقيقية من مشاهد ألمانية مختارة، وافهم معناها وسياقها وطريقة نطقها، بدل ما تكتفي بحفظ الكلمات منفصلة." data-de="Entdecke echte Redewendungen aus ausgewählten deutschen Filmszenen. Verstehe ihre Bedeutung, den Kontext und die Aussprache, statt einzelne Wörter isoliert auswendig zu lernen.">اكتشف تعبيرات حقيقية من مشاهد ألمانية مختارة، وافهم معناها وسياقها وطريقة نطقها، بدل ما تكتفي بحفظ الكلمات منفصلة.</p>
+        <span class="film-label" data-ar="🎧 استمع • افهم • قلّد • تكلّم" data-de="🎧 Hören • Verstehen • Nachsprechen • Sprechen">🎧 استمع • افهم • قلّد • تكلّم</span>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🎭</div>
+        <h3 data-ar="تمثيل أدوار ومشاهد حوارية" data-de="Rollenspiele und Dialogszenen">تمثيل أدوار ومشاهد حوارية</h3>
+        <p data-ar="تتدرب على حوار مستوحى من الموقف، ثم تؤدي الدور بنفسك وتغيّر الجمل لتناسب أسلوبك." data-de="Übe Dialoge zu einer Situation, spiele eine Rolle selbst und passe die Sätze an deinen eigenen Sprachstil an.">تتدرب على حوار مستوحى من الموقف، ثم تؤدي الدور بنفسك وتغيّر الجمل لتناسب أسلوبك.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🇩🇪</div>
+        <h3 data-ar="متحدث أصلي" data-de="Deutscher Muttersprachler">متحدث أصلي</h3>
+        <p data-ar="ساعة تفاعل مباشر مع متحدث أصلي في اليوم السادس، وساعة أخرى في اليوم السابع." data-de="Je eine Stunde direkter Austausch mit einem Muttersprachler an Tag 6 und 7.">ساعة تفاعل مباشر مع متحدث أصلي في اليوم السادس، وساعة أخرى في اليوم السابع.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <h3 data-ar="تدريب عملي" data-de="Praktisches Training">تدريب عملي</h3>
+        <p data-ar="استخدم اللغة فعليًا بدل الاكتفاء بالحفظ أو الترجمة كلمة بكلمة." data-de="Wende die Sprache aktiv an, statt nur auswendig zu lernen oder Wort für Wort zu übersetzen.">استخدم اللغة فعليًا بدل الاكتفاء بالحفظ أو الترجمة كلمة بكلمة.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🗣️</div>
+        <h3 data-ar="فرص أكثر للكلام" data-de="Mehr Sprechpraxis">فرص أكثر للكلام</h3>
+        <p data-ar="تمارين فردية وثنائية وجماعية تساعدك على المشاركة والتفاعل." data-de="Einzel-, Partner- und Gruppenübungen fördern deine aktive Teilnahme.">تمارين فردية وثنائية وجماعية تساعدك على المشاركة والتفاعل.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🎯</div>
+        <h3 data-ar="خطوة نحو الطلاقة" data-de="Ein Schritt zur Sprachsicherheit">خطوة نحو الطلاقة</h3>
+        <p data-ar="تطبّق التعبيرات في سياقات مختلفة وتتدرب على التحدث بوضوح وثقة أكبر." data-de="Verwende Redewendungen in verschiedenen Situationen und sprich klarer und sicherer.">تطبّق التعبيرات في سياقات مختلفة وتتدرب على التحدث بوضوح وثقة أكبر.</p>
+      </div>
+
+      <div class="feature ai-feature">
+        <div class="feature-icon">🤖</div>
+        <h3 data-ar="تدرّب مع الذكاء الاصطناعي" data-de="Mit KI Deutsch üben">تدرّب مع الذكاء الاصطناعي</h3>
+        <p data-ar="مارس المحادثة والكتابة بالألمانية مع تدريبات تفاعلية تساعدك على التعبير في مواقف متنوعة." data-de="Trainiere Gespräche und Schreiben mit interaktiven KI-Übungen für unterschiedliche Situationen.">مارس المحادثة والكتابة بالألمانية مع تدريبات تفاعلية تساعدك على التعبير في مواقف متنوعة.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -564,8 +719,16 @@ html[dir="ltr"] .trial-options { text-align:left; }
         <p data-ar="مش لازم تستنى موعد الدرس عشان تتدرّب. جرّب المحادثة والكتابة بالألمانية من خلال تجربة تفاعلية مجانية." data-de="Du musst nicht bis zur nächsten Unterrichtsstunde warten. Probiere die interaktive KI-Praxis für Gespräche und Schreiben kostenlos aus.">مش لازم تستنى موعد الدرس عشان تتدرّب. جرّب المحادثة والكتابة بالألمانية من خلال تجربة تفاعلية مجانية.</p>
       </div>
       <div class="ai-cards">
-        <div class="ai-card"><div class="feature-icon">🗣️</div><h3 data-ar="تدرّب على المحادثة" data-de="Gespräche trainieren">تدرّب على المحادثة</h3><p data-ar="ابدأ حوارًا بالألمانية في مواقف يومية أو مهنية، وتدرّب على تكوين الجمل وطرح الأسئلة." data-de="Führe Dialoge zu alltäglichen oder beruflichen Situationen und übe Sätze und Fragen.">ابدأ حوارًا بالألمانية في مواقف يومية أو مهنية، وتدرّب على تكوين الجمل وطرح الأسئلة.</p></div>
-        <div class="ai-card"><div class="feature-icon">✍️</div><h3 data-ar="طوّر كتابتك بالألمانية" data-de="Dein schriftliches Deutsch verbessern">طوّر كتابتك بالألمانية</h3><p data-ar="تدرّب على كتابة الرسائل والنصوص القصيرة وصياغة أفكارك بالألمانية." data-de="Übe Nachrichten und kurze Texte und formuliere deine Gedanken auf Deutsch.">تدرّب على كتابة الرسائل والنصوص القصيرة وصياغة أفكارك بالألمانية.</p></div>
+        <div class="ai-card">
+          <div class="feature-icon">🗣️</div>
+          <h3 data-ar="تدرّب على المحادثة" data-de="Gespräche trainieren">تدرّب على المحادثة</h3>
+          <p data-ar="ابدأ حوارًا بالألمانية في مواقف يومية أو مهنية، وتدرّب على تكوين الجمل وطرح الأسئلة." data-de="Führe Dialoge zu alltäglichen oder beruflichen Situationen und übe Sätze und Fragen.">ابدأ حوارًا بالألمانية في مواقف يومية أو مهنية، وتدرّب على تكوين الجمل وطرح الأسئلة.</p>
+        </div>
+        <div class="ai-card">
+          <div class="feature-icon">✍️</div>
+          <h3 data-ar="طوّر كتابتك بالألمانية" data-de="Dein schriftliches Deutsch verbessern">طوّر كتابتك بالألمانية</h3>
+          <p data-ar="تدرّب على كتابة الرسائل والنصوص القصيرة وصياغة أفكارك بالألمانية." data-de="Übe Nachrichten und kurze Texte und formuliere deine Gedanken auf Deutsch.">تدرّب على كتابة الرسائل والنصوص القصيرة وصياغة أفكارك بالألمانية.</p>
+        </div>
       </div>
       <div class="ai-bottom">
         <p data-ar="ابدأ بتجربة المحادثة والكتابة مجانًا." data-de="Probiere die Gesprächs- und Schreibpraxis kostenlos aus.">ابدأ بتجربة المحادثة والكتابة مجانًا.</p>
@@ -580,18 +743,106 @@ html[dir="ltr"] .trial-options { text-align:left; }
   <div class="container">
     <div class="section-head">
       <div class="section-kicker" data-ar="البرنامج" data-de="Kursprogramm">البرنامج</div>
-      <h2 data-ar="7 أيام من المحادثة العملية" data-de="7 Tage praktische Konversation">7 أيام من المحادثة العملية</h2>
-      <p data-ar="كل يوم له موضوع واضح مع تمارين كلام وتطبيق ومواقف عملية." data-de="Jeder Tag hat ein klares Thema mit Sprechübungen und praktischen Situationen.">كل يوم له موضوع واضح مع تمارين كلام وتطبيق ومواقف عملية.</p>
+      <h2 data-ar="7 أيام من المحادثة والألماني الحقيقي" data-de="7 Tage Konversation und echtes Deutsch">7 أيام من المحادثة والألماني الحقيقي</h2>
+      <p data-ar="محادثات عملية، ومشاهد مختارة من الأفلام والمسلسلات الألمانية، وتمثيل أدوار يساعدك على تحويل ما تسمعه إلى لغة تستخدمها بنفسك." data-de="Praktische Gespräche, ausgewählte Szenen aus deutschen Filmen und Serien sowie Rollenspiele helfen dir, Gehörtes selbst anzuwenden.">محادثات عملية، ومشاهد مختارة من الأفلام والمسلسلات الألمانية، وتمثيل أدوار يساعدك على تحويل ما تسمعه إلى لغة تستخدمها بنفسك.</p>
     </div>
+
     <div class="days">
-      <div class="day"><div class="day-number">01</div><div><h3 data-ar="التعريف بالنفس وبدء المحادثة" data-de="Sich vorstellen und Gespräche beginnen">التعريف بالنفس وبدء المحادثة</h3><p data-ar="تقديم نفسك، طرح الأسئلة، بدء المحادثات والتعارف مع الآخرين." data-de="Dich vorstellen, Fragen stellen und andere kennenlernen.">تقديم نفسك، طرح الأسئلة، بدء المحادثات والتعارف مع الآخرين.</p></div></div>
-      <div class="day"><div class="day-number">02</div><div><h3 data-ar="الحياة اليومية والمواضيع الشخصية" data-de="Alltag und persönliche Themen">الحياة اليومية والمواضيع الشخصية</h3><p data-ar="الروتين والأسرة والاهتمامات والعادات مع تدريب على حوار قصير." data-de="Tagesablauf, Familie, Interessen und Gewohnheiten mit einem kurzen Dialog.">الروتين والأسرة والاهتمامات والعادات مع تدريب على حوار قصير.</p><span class="day-note" data-ar="تمثيل أدوار" data-de="Rollenspiel">تمثيل أدوار</span></div></div>
-      <div class="day"><div class="day-number">03</div><div><h3 data-ar="التعبير عن الرأي والنقاش" data-de="Meinung ausdrücken und diskutieren">التعبير عن الرأي والنقاش</h3><p data-ar="التعبير عن رأيك والموافقة والاختلاف وشرح وجهة نظرك." data-de="Deine Meinung ausdrücken, zustimmen, widersprechen und deinen Standpunkt erklären.">التعبير عن رأيك والموافقة والاختلاف وشرح وجهة نظرك.</p></div></div>
-      <div class="day"><div class="day-number">04</div><div><h3 data-ar="السفر والوقت الحر والتجارب" data-de="Reisen, Freizeit und Erfahrungen">السفر والوقت الحر والتجارب</h3><p data-ar="التحدث عن السفر والأماكن والتجارب والخطط وتمثيل مشهد حواري." data-de="Über Reisen, Orte, Erfahrungen und Pläne sprechen und einen Dialog nachspielen.">التحدث عن السفر والأماكن والتجارب والخطط وتمثيل مشهد حواري.</p></div></div>
-      <div class="day"><div class="day-number">05</div><div><h3 data-ar="العمل والتواصل" data-de="Arbeit und Kommunikation">العمل والتواصل</h3><p data-ar="محادثات العمل والتواصل مع الزملاء والمواقف المهنية اليومية." data-de="Gespräche im Arbeitsalltag und typische berufliche Situationen.">محادثات العمل والتواصل مع الزملاء والمواقف المهنية اليومية.</p></div></div>
-      <div class="day"><div class="day-number">06</div><div><h3 data-ar="حل المشكلات والتفاعل مع متحدث أصلي" data-de="Probleme lösen und mit einem Muttersprachler sprechen">حل المشكلات والتفاعل مع متحدث أصلي</h3><p data-ar="شرح مشكلة وطلب المساعدة مع ساعة تفاعل مباشر مع متحدث أصلي للألمانية." data-de="Ein Problem erklären, um Hilfe bitten und eine Stunde mit einem deutschen Muttersprachler sprechen.">شرح مشكلة وطلب المساعدة مع ساعة تفاعل مباشر مع متحدث أصلي للألمانية.</p></div></div>
-      <div class="day"><div class="day-number">07</div><div><h3 data-ar="المحادثة الحرة والمحاكاة النهائية" data-de="Freies Sprechen und Abschlusssimulation">المحادثة الحرة والمحاكاة النهائية</h3><p data-ar="تطبيق شامل وتمثيل مواقف حياتية مع ساعة تفاعل مباشر أخرى مع متحدث أصلي." data-de="Abschließende Übungen und Rollenspiele mit einer weiteren Stunde Austausch mit einem Muttersprachler.">تطبيق شامل وتمثيل مواقف حياتية مع ساعة تفاعل مباشر أخرى مع متحدث أصلي.</p></div></div>
+      <div class="day">
+        <div class="day-number">01</div>
+        <div>
+          <h3 data-ar="التعريف بالنفس وبدء المحادثة" data-de="Sich vorstellen und Gespräche beginnen">التعريف بالنفس وبدء المحادثة</h3>
+          <p data-ar="تقديم نفسك، طرح الأسئلة، بدء المحادثات والتعارف مع الآخرين. تدريب على حوار تعارف قصير وتعبيرات طبيعية لبدء الكلام." data-de="Dich vorstellen, Fragen stellen und andere kennenlernen. Du übst einen kurzen Kennenlerndialog und natürliche Gesprächseinstiege.">تقديم نفسك، طرح الأسئلة، بدء المحادثات والتعارف مع الآخرين. تدريب على حوار تعارف قصير وتعبيرات طبيعية لبدء الكلام.</p>
+          <span class="day-note role-note" data-ar="🎭 تمثيل أدوار: أول لقاء" data-de="🎭 Rollenspiel: Erstes Kennenlernen">🎭 تمثيل أدوار: أول لقاء</span>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-number">02</div>
+        <div>
+          <h3 data-ar="الحياة اليومية والمواضيع الشخصية" data-de="Alltag und persönliche Themen">الحياة اليومية والمواضيع الشخصية</h3>
+          <p data-ar="الروتين والأسرة والاهتمامات والعادات، مع مشهد مختار من مسلسل أو فيلم ألماني مناسب للتدرب على التعبيرات اليومية." data-de="Tagesablauf, Familie, Interessen und Gewohnheiten. Dazu kommt eine ausgewählte Szene aus einem deutschen Film oder einer Serie mit alltagsnahen Redewendungen.">الروتين والأسرة والاهتمامات والعادات، مع مشهد مختار من مسلسل أو فيلم ألماني مناسب للتدرب على التعبيرات اليومية.</p>
+          <span class="day-note film-note" data-ar="🎬 مشهد ألماني: تعبيرات الحياة اليومية" data-de="🎬 Deutsche Szene: Redewendungen im Alltag">🎬 مشهد ألماني: تعبيرات الحياة اليومية</span>
+          <span class="day-note role-note" data-ar="🎭 تطبيق وتمثيل أدوار" data-de="🎭 Üben und Rollenspiel">🎭 تطبيق وتمثيل أدوار</span>
+        </div>
+      </div>
+
+      <div class="day film-day">
+        <div class="day-number">03</div>
+        <div>
+          <span class="day-subtitle" data-ar="يوم مميز للتعلم من الشاشة" data-de="Ein besonderer Tag mit Filmszenen">يوم مميز للتعلم من الشاشة</span>
+          <h3 data-ar="التعبير عن الرأي والنقاش من خلال مشهد سينمائي" data-de="Meinungen und Diskussionen anhand einer Filmszene">التعبير عن الرأي والنقاش من خلال مشهد سينمائي</h3>
+          <p data-ar="مشاهدة مشهد مختار، وفهم الحوار في سياقه، واكتشاف التعبيرات المهمة وطريقة نطقها. بعدها تتدرب على تقليد الحوار والتنغيم، وتناقش الشخصيات أو الموقف، ثم تعبّر عن رأيك بنفسك." data-de="Du siehst eine ausgewählte Szene, verstehst den Dialog im Kontext und entdeckst wichtige Redewendungen und ihre Aussprache. Danach übst du Nachsprechen und Intonation, besprichst die Situation und formulierst deine eigene Meinung.">مشاهدة مشهد مختار، وفهم الحوار في سياقه، واكتشاف التعبيرات المهمة وطريقة نطقها. بعدها تتدرب على تقليد الحوار والتنغيم، وتناقش الشخصيات أو الموقف، ثم تعبّر عن رأيك بنفسك.</p>
+          <span class="day-note film-note" data-ar="🎬 مشاهدة وفهم مشهد" data-de="🎬 Szene ansehen und verstehen">🎬 مشاهدة وفهم مشهد</span>
+          <span class="day-note role-note" data-ar="🎭 تقليد الحوار وتمثيله" data-de="🎭 Dialog nachsprechen und spielen">🎭 تقليد الحوار وتمثيله</span>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-number">04</div>
+        <div>
+          <h3 data-ar="السفر والوقت الحر والتجارب" data-de="Reisen, Freizeit und Erfahrungen">السفر والوقت الحر والتجارب</h3>
+          <p data-ar="التحدث عن السفر والأماكن والتجارب والخطط، مع مشهد حواري مناسب يساعدك على فهم التعبيرات المستخدمة في المواقف الاجتماعية." data-de="Du sprichst über Reisen, Orte, Erfahrungen und Pläne. Eine passende Dialogszene zeigt dir Redewendungen aus sozialen Alltagssituationen.">التحدث عن السفر والأماكن والتجارب والخطط، مع مشهد حواري مناسب يساعدك على فهم التعبيرات المستخدمة في المواقف الاجتماعية.</p>
+          <span class="day-note film-note" data-ar="🎬 تعبيرات من مشهد مختار" data-de="🎬 Redewendungen aus einer Szene">🎬 تعبيرات من مشهد مختار</span>
+          <span class="day-note role-note" data-ar="🎭 حوار من واقع الحياة" data-de="🎭 Dialog aus dem Alltag">🎭 حوار من واقع الحياة</span>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-number">05</div>
+        <div>
+          <h3 data-ar="العمل والتواصل والمواقف المهنية" data-de="Arbeit, Kommunikation und berufliche Situationen">العمل والتواصل والمواقف المهنية</h3>
+          <p data-ar="محادثات العمل والتواصل مع الزملاء والمواقف المهنية اليومية. تتعلم كيف تطلب التوضيح، وتشرح مشكلة، وترد بصورة طبيعية ومحترمة." data-de="Gespräche im Arbeitsalltag und typische berufliche Situationen. Du übst, nachzufragen, ein Problem zu erklären und natürlich sowie höflich zu reagieren.">محادثات العمل والتواصل مع الزملاء والمواقف المهنية اليومية. تتعلم كيف تطلب التوضيح، وتشرح مشكلة، وترد بصورة طبيعية ومحترمة.</p>
+          <span class="day-note role-note" data-ar="🎭 تمثيل أدوار: موقف في العمل" data-de="🎭 Rollenspiel: Situation im Beruf">🎭 تمثيل أدوار: موقف في العمل</span>
+        </div>
+      </div>
+
+      <div class="day film-day">
+        <div class="day-number">06</div>
+        <div>
+          <span class="day-subtitle" data-ar="استمع ولاحظ طريقة الكلام الطبيعية" data-de="Höre genau hin und entdecke natürliches Deutsch">استمع ولاحظ طريقة الكلام الطبيعية</span>
+          <h3 data-ar="حل المشكلات ومشهد ألماني مع متحدث أصلي" data-de="Probleme lösen, eine deutsche Szene und Muttersprachler-Austausch">حل المشكلات ومشهد ألماني مع متحدث أصلي</h3>
+          <p data-ar="تتعلم التعبير عن مشكلة وطلب المساعدة والتعامل مع سوء الفهم. نحلل مشهدًا مختارًا للتعرف على العبارات وردود الفعل الطبيعية، ثم تطبق ما تعلمته في تمثيل أدوار. يتضمن اليوم ساعة تفاعل مباشر مع متحدث أصلي للألمانية." data-de="Du übst, Probleme zu erklären, um Hilfe zu bitten und Missverständnisse zu klären. Anhand einer ausgewählten Szene lernst du natürliche Redewendungen und Reaktionen kennen und setzt sie im Rollenspiel ein. Außerdem gibt es eine Stunde direkten Austausch mit einem deutschen Muttersprachler.">تتعلم التعبير عن مشكلة وطلب المساعدة والتعامل مع سوء الفهم. نحلل مشهدًا مختارًا للتعرف على العبارات وردود الفعل الطبيعية، ثم تطبق ما تعلمته في تمثيل أدوار. يتضمن اليوم ساعة تفاعل مباشر مع متحدث أصلي للألمانية.</p>
+          <span class="day-note film-note" data-ar="🎬 تحليل مشهد وتعبيراته" data-de="🎬 Szene und Redewendungen analysieren">🎬 تحليل مشهد وتعبيراته</span>
+          <span class="day-note role-note" data-ar="🎭 تطبيق عملي" data-de="🎭 Praktische Anwendung">🎭 تطبيق عملي</span>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-number">07</div>
+        <div>
+          <h3 data-ar="المحادثة الحرة والتحدي النهائي" data-de="Freies Sprechen und die Abschluss-Challenge">المحادثة الحرة والتحدي النهائي</h3>
+          <p data-ar="تطبيق شامل لما تعلمته خلال الأسبوع. تختار تعبيرات ومواقف تدربت عليها، وتعيد أداء حوار أو مشهد بطريقتك، ثم تشارك في محادثة حرة وساعة تفاعل مباشر أخرى مع متحدث أصلي." data-de="Du setzt das Gelernte aus der Woche um. Du verwendest ausgewählte Redewendungen, spielst einen Dialog oder eine Szene auf deine Weise nach und führst freie Gespräche. Außerdem gibt es eine weitere Stunde Austausch mit einem deutschen Muttersprachler.">تطبيق شامل لما تعلمته خلال الأسبوع. تختار تعبيرات ومواقف تدربت عليها، وتعيد أداء حوار أو مشهد بطريقتك، ثم تشارك في محادثة حرة وساعة تفاعل مباشر أخرى مع متحدث أصلي.</p>
+          <span class="day-note film-note" data-ar="🎬 أعد أداء مشهد بطريقتك" data-de="🎬 Spiele eine Szene auf deine Weise">🎬 أعد أداء مشهد بطريقتك</span>
+          <span class="day-note role-note" data-ar="🏆 تحدي المحادثة النهائي" data-de="🏆 Abschließende Sprech-Challenge">🏆 تحدي المحادثة النهائي</span>
+        </div>
+      </div>
     </div>
+
+    <div class="film-callout">
+      <h3 data-ar="🎬 مش مجرد مشاهدة أفلام… دي طريقة تتعلم بيها الألماني!" data-de="🎬 Nicht nur Filme schauen – Deutsch aktiv erleben!">🎬 مش مجرد مشاهدة أفلام… دي طريقة تتعلم بيها الألماني!</h3>
+      <p data-ar="هنستخدم مشاهد مختارة من أفلام ومسلسلات ألمانية باعتبارها مادة للتعلم والتطبيق. الهدف إنك تفهم التعبيرات في سياقها، وتلاحظ النطق والتنغيم، وبعدها تستخدم اللغة بنفسك بدل ما تكتفي بالمشاهدة." data-de="Ausgewählte Szenen aus deutschen Filmen und Serien dienen als Lernmaterial. Du verstehst Redewendungen im Kontext, achtest auf Aussprache und Intonation und verwendest die Sprache anschließend selbst, statt nur zuzuschauen.">هنستخدم مشاهد مختارة من أفلام ومسلسلات ألمانية باعتبارها مادة للتعلم والتطبيق. الهدف إنك تفهم التعبيرات في سياقها، وتلاحظ النطق والتنغيم، وبعدها تستخدم اللغة بنفسك بدل ما تكتفي بالمشاهدة.</p>
+
+      <div class="film-callout-grid">
+        <div class="film-step">
+          <strong data-ar="1. شاهد وافهم" data-de="1. Ansehen und verstehen">1. شاهد وافهم</strong>
+          <span data-ar="تابع المشهد وافهم الموقف والمعنى العام للحوار." data-de="Verstehe die Situation und die Kernaussage des Dialogs.">تابع المشهد وافهم الموقف والمعنى العام للحوار.</span>
+        </div>
+        <div class="film-step">
+          <strong data-ar="2. اكتشف التعبيرات" data-de="2. Redewendungen entdecken">2. اكتشف التعبيرات</strong>
+          <span data-ar="تعرّف على العبارات الجديدة والنطق والتنغيم." data-de="Entdecke neue Wendungen, Aussprache und Intonation.">تعرّف على العبارات الجديدة والنطق والتنغيم.</span>
+        </div>
+        <div class="film-step">
+          <strong data-ar="3. مثّل وتكلّم" data-de="3. Nachspielen und sprechen">3. مثّل وتكلّم</strong>
+          <span data-ar="أعد الحوار وغيّره واستخدم تعبيراته في موقف جديد." data-de="Spiele den Dialog nach, verändere ihn und nutze die Wendungen in einer neuen Situation.">أعد الحوار وغيّره واستخدم تعبيراته في موقف جديد.</span>
+        </div>
+      </div>
+
+      <p data-ar="يتم اختيار المقاطع بحسب موضوع الدرس ومستوى المتعلمين، مع استخدام مصادر متاحة بصورة قانونية أو روابط رسمية للمشاهد." data-de="Die Szenen werden passend zum Unterrichtsthema und Sprachniveau ausgewählt. Verwendet werden rechtmäßig verfügbare Materialien oder offizielle Szenenlinks.">يتم اختيار المقاطع بحسب موضوع الدرس ومستوى المتعلمين، مع استخدام مصادر متاحة بصورة قانونية أو روابط رسمية للمشاهد.</p>
+
+      <a href="#trial" class="film-cta" data-ar="🎁 جرّب طريقة التدريب في جلسة مجانية" data-de="🎁 Probiere die Methode in einer kostenlosen Probestunde">🎁 جرّب طريقة التدريب في جلسة مجانية</a>
+    </div>
+
     <div class="native-callout">
       <strong data-ar="لقاءان مباشران مع متحدث أصلي للألمانية" data-de="Zwei Live-Treffen mit einem deutschen Muttersprachler">لقاءان مباشران مع متحدث أصلي للألمانية</strong>
       <span data-ar="ساعة في اليوم السادس وساعة في اليوم السابع، ضمن إجمالي 14 ساعة التدريب." data-de="Je eine Stunde am sechsten und siebten Tag, enthalten in den insgesamt 14 Live-Stunden.">ساعة في اليوم السادس وساعة في اليوم السابع، ضمن إجمالي 14 ساعة التدريب.</span>
@@ -632,7 +883,7 @@ html[dir="ltr"] .trial-options { text-align:left; }
       <div class="detail"><span class="detail-label" data-ar="مدة الكورس" data-de="Dauer">مدة الكورس</span><span class="detail-value" data-ar="7 أيام متتالية" data-de="7 aufeinanderfolgende Tage">7 أيام متتالية</span></div>
       <div class="detail"><span class="detail-label" data-ar="الوقت اليومي" data-de="Pro Tag">الوقت اليومي</span><span class="detail-value" data-ar="ساعتان" data-de="2 Stunden">ساعتان</span></div>
       <div class="detail"><span class="detail-label" data-ar="إجمالي التدريب" data-de="Gesamtumfang">إجمالي التدريب</span><span class="detail-value" data-ar="14 ساعة مباشرة" data-de="14 Live-Stunden">14 ساعة مباشرة</span></div>
-      <div class="detail"><span class="detail-label" data-ar="نوع الكورس" data-de="Kursformat">نوع الكورس</span><span class="detail-value" data-ar="محادثة وتمثيل أدوار" data-de="Konversation und Rollenspiele">محادثة وتمثيل أدوار</span></div>
+      <div class="detail"><span class="detail-label" data-ar="نوع الكورس" data-de="Kursformat">نوع الكورس</span><span class="detail-value" data-ar="محادثة ومشاهد وتمثيل أدوار" data-de="Konversation, Szenen und Rollenspiele">محادثة ومشاهد وتمثيل أدوار</span></div>
       <div class="detail"><span class="detail-label" data-ar="المتحدث الأصلي" data-de="Muttersprachler">المتحدث الأصلي</span><span class="detail-value" data-ar="ساعة في اليومين 6 و7" data-de="Je 1 Stunde an Tag 6 und 7">ساعة في اليومين 6 و7</span></div>
       <div class="detail"><span class="detail-label" data-ar="السعر" data-de="Preis">السعر</span><span class="detail-value">€30</span></div>
     </div>
@@ -695,7 +946,7 @@ html[dir="ltr"] .trial-options { text-align:left; }
 <section class="cta" id="register">
   <div class="container">
     <h2 data-ar="جاهز تتدرّب على الكلام بالألماني؟" data-de="Bereit, aktiv Deutsch zu sprechen?">جاهز تتدرّب على الكلام بالألماني؟</h2>
-    <p data-ar="7 أيام، 14 ساعة من الممارسة المباشرة، ومشاهد حوارية وتمثيل أدوار، بالإضافة إلى لقاء مع متحدث أصلي في اليوم السادس والسابع. مناسب لمستوى A2+ فما فوق." data-de="7 Tage, 14 Live-Stunden, Dialogszenen und Rollenspiele sowie Austausch mit einem Muttersprachler an Tag 6 und 7. Für Lernende ab A2+.">7 أيام، 14 ساعة من الممارسة المباشرة، ومشاهد حوارية وتمثيل أدوار، بالإضافة إلى لقاء مع متحدث أصلي في اليوم السادس والسابع. مناسب لمستوى A2+ فما فوق.</p>
+    <p data-ar="7 أيام، 14 ساعة من الممارسة المباشرة، ومشاهد مختارة من الأفلام والمسلسلات الألمانية، وتمثيل أدوار، بالإضافة إلى لقاء مع متحدث أصلي في اليوم السادس والسابع. مناسب لمستوى A2+ فما فوق." data-de="7 Tage, 14 Live-Stunden, ausgewählte Szenen aus deutschen Filmen und Serien, Rollenspiele sowie Austausch mit einem Muttersprachler an Tag 6 und 7. Für Lernende ab A2+.">7 أيام، 14 ساعة من الممارسة المباشرة، ومشاهد مختارة من الأفلام والمسلسلات الألمانية، وتمثيل أدوار، بالإضافة إلى لقاء مع متحدث أصلي في اليوم السادس والسابع. مناسب لمستوى A2+ فما فوق.</p>
     <a href="https://wa.me/201159682355" id="courseBookingButton" class="btn" target="_blank" rel="noopener noreferrer" data-ar="تواصل للحجز — €30" data-de="Jetzt anmelden — 30 €">تواصل للحجز — €30</a>
   </div>
 </section>
