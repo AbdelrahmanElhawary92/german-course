@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Praktischer Deutsch-Konversationskurs ab A2+. 7 Tage, 14 Live-Stunden, Rollenspiele und KI-gestütztes Sprech- und Schreibtraining.">
+<meta name="description" content="Praktisches Deutsch – Deutsch-Konversationskurs ab A2+.">
 <title>Praktisches Deutsch | كورس محادثة ألماني</title>
 
 <style>
@@ -12,338 +12,438 @@
   --blue:#2563eb;
   --blue-dark:#1d4ed8;
   --purple:#7c3aed;
+  --green:#16a34a;
   --ink:#172033;
   --muted:#64748b;
   --line:#e5e7eb;
   --bg:#f8fafc;
   --white:#fff;
 }
-* { margin:0; padding:0; box-sizing:border-box; }
+* { box-sizing:border-box; margin:0; padding:0; }
 html { scroll-behavior:smooth; scroll-padding-top:90px; }
 body {
   font-family:Inter,"Segoe UI",Tahoma,Arial,sans-serif;
-  background:var(--bg); color:var(--ink); line-height:1.7;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
 }
-a { text-decoration:none; color:inherit; }
-button { font:inherit; }
-img,video { max-width:100%; display:block; }
-.container { width:min(1120px,calc(100% - 40px)); margin:auto; }
+a { color:inherit; text-decoration:none; }
+button { font:inherit; cursor:pointer; }
+.container { width:min(1120px,calc(100% - 36px)); margin:auto; }
+section { padding:76px 0; }
+h1,h2,h3 { line-height:1.3; }
+p { color:var(--muted); }
+button,a { -webkit-tap-highlight-color:transparent; }
 
 header {
-  position:sticky; top:0; z-index:1000;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(14px);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.97);
   border-bottom:1px solid var(--line);
+  backdrop-filter:blur(12px);
 }
 .nav {
-  min-height:76px; display:flex; align-items:center;
-  justify-content:space-between; gap:20px;
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
 }
-.logo { display:flex; align-items:center; gap:10px; font-size:21px; font-weight:900; }
+.logo {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:20px;
+  font-weight:900;
+}
 .logo-icon {
-  width:40px; height:40px; display:grid; place-items:center;
-  border-radius:12px; background:linear-gradient(135deg,var(--blue),var(--purple));
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  border-radius:13px;
   color:white;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
 }
-.nav-right { display:flex; align-items:center; gap:15px; }
+.nav-right {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 .lang-btn {
-  border:1px solid #dbe2ea; background:white; color:var(--ink);
-  padding:9px 15px; border-radius:10px; font-weight:700; cursor:pointer;
+  border:1px solid #cbd5e1;
+  background:white;
+  color:var(--ink);
+  padding:10px 15px;
+  border-radius:10px;
+  font-weight:850;
+  min-width:76px;
 }
 .lang-btn:hover { border-color:var(--blue); color:var(--blue); }
-.nav-cta,.primary-btn,.secondary-btn {
-  display:inline-flex; align-items:center; justify-content:center;
-  border-radius:12px; font-weight:850; transition:.2s;
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:13px 20px;
+  border:0;
+  border-radius:12px;
+  font-weight:850;
+  text-align:center;
+  transition:transform .2s,background .2s;
 }
-.nav-cta { background:var(--blue); color:white; padding:10px 18px; }
-.nav-cta:hover,.primary-btn:hover { background:var(--blue-dark); transform:translateY(-2px); }
+.btn:hover { transform:translateY(-2px); }
+.btn-blue { background:var(--blue); color:white; }
+.btn-blue:hover { background:var(--blue-dark); }
+.btn-green { background:var(--green); color:white; }
+.btn-green:hover { background:#15803d; }
+.btn-light { background:white; color:var(--ink); border:1px solid #dbe2ea; }
+.btn-light:hover { color:var(--blue); border-color:var(--blue); }
+.btn-purple { background:linear-gradient(135deg,var(--blue),var(--purple)); color:white; }
+.full-btn { width:100%; }
 
 .hero {
-  padding:85px 0 70px;
+  padding:70px 0;
   background:
     radial-gradient(circle at 10% 20%,rgba(37,99,235,.10),transparent 35%),
     radial-gradient(circle at 90% 10%,rgba(124,58,237,.10),transparent 30%);
 }
-.hero-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:60px; align-items:center; }
-.badge {
-  display:inline-flex; align-items:center; gap:8px; padding:7px 13px;
-  border-radius:999px; background:#eff6ff; color:var(--blue-dark);
-  border:1px solid #dbeafe; font-size:14px; font-weight:800; margin-bottom:20px;
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  align-items:center;
+  gap:48px;
 }
-.badge:before { content:""; width:7px; height:7px; border-radius:50%; background:var(--blue); }
+.badge {
+  display:inline-block;
+  padding:7px 13px;
+  border-radius:999px;
+  background:#eff6ff;
+  color:var(--blue-dark);
+  border:1px solid #dbeafe;
+  font-size:14px;
+  font-weight:850;
+  margin-bottom:18px;
+}
 .hero h1 {
-  font-size:clamp(42px,6vw,72px); line-height:1.12;
-  letter-spacing:-1.7px; margin-bottom:22px; color:#111827;
+  font-size:clamp(38px,5.5vw,65px);
+  letter-spacing:-1px;
+  margin-bottom:20px;
+  color:#111827;
 }
 .hero h1 span { color:var(--blue); }
-.hero-text { font-size:19px; color:var(--muted); max-width:680px; margin-bottom:30px; }
-.hero-actions { display:flex; flex-wrap:wrap; gap:13px; margin-bottom:32px; }
-.primary-btn {
-  padding:15px 24px; background:var(--blue); color:white;
-  box-shadow:0 10px 25px rgba(37,99,235,.2);
-}
-.secondary-btn { padding:15px 24px; background:white; border:1px solid #dbe2ea; color:var(--ink); }
-.secondary-btn:hover { border-color:var(--blue); color:var(--blue); }
-.hero-mini { display:flex; flex-wrap:wrap; gap:22px; color:var(--muted); font-size:14px; font-weight:700; }
+.hero-text { font-size:18px; margin-bottom:24px; }
+.hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:25px; }
+.hero-mini { display:flex; flex-wrap:wrap; gap:18px; font-size:14px; font-weight:750; }
 .hero-mini strong { color:var(--ink); }
 
 .price-card {
-  position:relative; background:white; border:1px solid var(--line);
-  border-radius:25px; padding:32px; box-shadow:0 25px 70px rgba(15,23,42,.1);
+  position:relative;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:30px;
+  box-shadow:0 22px 65px rgba(15,23,42,.09);
+  overflow:hidden;
 }
 .price-card:before {
-  content:""; position:absolute; top:0; left:0; right:0; height:5px;
-  border-radius:25px 25px 0 0; background:linear-gradient(90deg,var(--blue),var(--purple));
+  content:"";
+  position:absolute;
+  top:0;
+  inset-inline:0;
+  height:5px;
+  background:linear-gradient(90deg,var(--blue),var(--purple));
 }
-.price-label,.price-desc,.local-price { color:var(--muted); }
-.price-label { font-weight:700; margin-bottom:5px; }
-.price { display:flex; align-items:baseline; gap:8px; margin:8px 0; }
-.price-number { font-size:60px; line-height:1; font-weight:950; color:#111827; }
-.price-currency { font-size:20px; font-weight:900; color:var(--muted); }
-.local-price { font-size:14px; font-weight:700; margin-bottom:20px; }
-.price-desc { margin-bottom:22px; }
-.price-list { list-style:none; display:grid; gap:12px; margin-bottom:26px; }
-.price-list li { display:flex; align-items:flex-start; gap:10px; font-weight:700; }
-.check {
-  width:22px; height:22px; flex:0 0 22px; display:grid; place-items:center;
-  border-radius:50%; background:#dcfce7; color:#16a34a;
-  font-size:13px; font-weight:900; margin-top:3px;
-}
-.full-btn { width:100%; text-align:center; }
-.small-note { text-align:center; margin-top:13px; font-size:13px; color:#94a3b8; }
+.price-label { color:var(--muted); font-weight:750; }
+.price { display:flex; align-items:baseline; gap:9px; margin:8px 0; }
+.price-number { font-size:60px; line-height:1.1; font-weight:950; color:#111827; }
+.price-currency { font-size:22px; font-weight:900; }
+.local-price { font-size:13px; margin-bottom:16px; }
+.price-list { list-style:none; display:grid; gap:10px; margin:20px 0 24px; }
+.price-list li { display:flex; align-items:flex-start; gap:9px; }
+.check { color:#16a34a; font-weight:950; }
+.small-note { font-size:12px; text-align:center; margin-top:12px; }
 
-.stats { padding:25px 0 70px; }
-.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:15px; }
-.stat { background:white; border:1px solid var(--line); border-radius:16px; padding:22px; text-align:center; }
-.stat-number { font-size:27px; font-weight:950; color:var(--blue); margin-bottom:4px; }
-.stat-text { color:var(--muted); font-size:14px; font-weight:700; }
-section { padding:78px 0; }
-.section-head { max-width:760px; margin:0 auto 42px; text-align:center; }
-.section-kicker { color:var(--blue); font-size:14px; font-weight:900; letter-spacing:.5px; margin-bottom:8px; }
-.section-head h2 {
-  font-size:clamp(31px,4vw,46px); line-height:1.2;
-  letter-spacing:-.8px; margin-bottom:15px; color:#111827;
-}
-.section-head p { color:var(--muted); font-size:17px; }
+.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.stat { background:white; border:1px solid var(--line); border-radius:16px; padding:20px; text-align:center; }
+.stat-number { font-size:27px; color:var(--blue); font-weight:950; }
+.stat-text { color:var(--muted); font-size:14px; font-weight:750; }
+
+.section-head { max-width:760px; margin:0 auto 38px; text-align:center; }
+.section-kicker { color:var(--blue); font-weight:900; font-size:14px; margin-bottom:8px; }
+.section-head h2 { font-size:clamp(29px,4vw,44px); margin-bottom:13px; color:#111827; }
+.section-head p { font-size:17px; }
 
 .video-section { background:#111827; color:white; }
 .video-section .section-head h2 { color:white; }
 .video-section .section-head p { color:#cbd5e1; }
 .video-frame {
-  max-width:900px; margin:auto; aspect-ratio:16/9; border-radius:24px;
-  overflow:hidden; background:linear-gradient(135deg,#172033,#26334d);
+  max-width:900px;
+  aspect-ratio:16/9;
+  margin:auto;
+  border-radius:22px;
+  background:linear-gradient(135deg,#172033,#26334d);
   border:1px solid rgba(255,255,255,.12);
-  box-shadow:0 25px 70px rgba(0,0,0,.3);
-  display:grid; place-items:center; position:relative;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:25px;
 }
-.video-frame iframe { width:100%; height:100%; border:0; }
-.video-message { text-align:center; padding:25px; color:#e2e8f0; }
-.video-message .play-symbol {
-  width:70px; height:70px; border-radius:50%; display:grid; place-items:center;
-  background:white; color:var(--blue); font-size:25px; margin:0 auto 15px;
+.play-symbol {
+  display:grid;
+  place-items:center;
+  width:65px;
+  height:65px;
+  margin:0 auto 15px;
+  border-radius:50%;
+  background:white;
+  color:var(--blue);
+  font-size:24px;
 }
-.video-message p { color:#cbd5e1; }
-.video-caption { font-size:13px; color:#cbd5e1; text-align:center; margin-top:12px; }
+.video-frame strong { display:block; margin-bottom:8px; }
+.video-frame p { color:#cbd5e1; }
+.video-caption { text-align:center; font-size:12px; margin-top:12px; }
 
 .features { background:white; }
-.features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 .feature {
-  padding:28px; border:1px solid var(--line); border-radius:20px;
-  background:white; transition:.25s;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:25px;
+  transition:.2s;
 }
-.feature:hover { transform:translateY(-4px); box-shadow:0 20px 50px rgba(15,23,42,.08); border-color:#dbeafe; }
+.feature:hover { transform:translateY(-3px); box-shadow:0 15px 35px rgba(15,23,42,.07); }
 .feature-icon {
-  width:48px; height:48px; display:grid; place-items:center;
-  border-radius:14px; background:#eff6ff; color:var(--blue);
-  font-size:22px; margin-bottom:16px;
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:#eff6ff;
+  font-size:23px;
+  margin-bottom:14px;
 }
-.feature h3 { font-size:20px; margin-bottom:8px; }
-.feature p { color:var(--muted); }
-.ai-feature { border-color:#ddd6fe; background:linear-gradient(145deg,#fff,#faf5ff); }
-.ai-feature .feature-icon { background:#f3e8ff; color:#7c3aed; }
+.feature h3 { font-size:19px; margin-bottom:8px; }
+.feature p { font-size:15px; }
+.ai-feature { background:#faf5ff; border-color:#ddd6fe; }
 
-.ai-section { background:linear-gradient(180deg,#f5f3ff 0%,#f8fafc 100%); }
+.ai-section { background:linear-gradient(180deg,#f5f3ff,#f8fafc); }
 .ai-banner {
-  max-width:1000px; margin:auto; border:1px solid #ddd6fe; border-radius:28px;
-  background:rgba(255,255,255,.92); padding:clamp(24px,5vw,48px);
-  box-shadow:0 24px 65px rgba(91,33,182,.08);
+  max-width:1000px;
+  margin:auto;
+  padding:clamp(22px,4vw,42px);
+  border:1px solid #ddd6fe;
+  border-radius:25px;
+  background:white;
+  box-shadow:0 20px 50px rgba(91,33,182,.07);
 }
+.ai-heading { text-align:center; max-width:780px; margin:0 auto 28px; }
+.ai-heading h2 { font-size:clamp(28px,4vw,42px); margin:12px 0; }
 .ai-label {
-  display:inline-flex; align-items:center; gap:8px; padding:7px 13px;
-  border-radius:999px; background:#f3e8ff; color:#6d28d9;
-  font-size:13px; font-weight:900; margin-bottom:16px;
+  display:inline-block;
+  background:#f3e8ff;
+  color:#6d28d9;
+  border-radius:999px;
+  padding:6px 12px;
+  font-weight:850;
+  font-size:13px;
 }
-.ai-heading { text-align:center; max-width:780px; margin:0 auto 30px; }
-.ai-heading h2 { font-size:clamp(30px,4vw,44px); line-height:1.25; margin-bottom:15px; color:#111827; }
-.ai-heading p { font-size:17px; color:var(--muted); }
-.ai-cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; margin:30px 0; }
-.ai-card { padding:25px; border:1px solid var(--line); border-radius:20px; background:#fff; }
-.ai-card-icon {
-  width:54px; height:54px; display:grid; place-items:center;
-  border-radius:16px; background:#eff6ff; font-size:26px; margin-bottom:15px;
-}
-.ai-card h3 { font-size:21px; margin-bottom:9px; }
-.ai-card p { color:var(--muted); }
-.ai-bottom { text-align:center; padding-top:8px; }
-.ai-bottom p { color:var(--muted); margin-bottom:20px; }
-.ai-bottom .primary-btn { background:linear-gradient(135deg,var(--blue),var(--purple)); }
-.ai-trial-note { font-size:13px; color:#64748b; margin-top:13px; }
+.ai-cards { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-bottom:25px; }
+.ai-card { border:1px solid var(--line); border-radius:17px; padding:23px; }
+.ai-card h3 { margin:10px 0; }
+.ai-bottom { text-align:center; }
+.ai-bottom p { margin-bottom:18px; }
+.ai-trial-note { font-size:12px; margin-top:12px; }
 
 .curriculum { background:var(--bg); }
-.days { max-width:880px; margin:auto; display:grid; gap:14px; }
+.days { max-width:880px; margin:auto; display:grid; gap:13px; }
 .day {
-  display:grid; grid-template-columns:70px 1fr; gap:20px; align-items:center;
-  background:white; border:1px solid var(--line); border-radius:17px;
-  padding:18px 22px; transition:.2s;
+  display:grid;
+  grid-template-columns:65px 1fr;
+  gap:18px;
+  align-items:center;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:17px 20px;
 }
-.day:hover { border-color:#bfdbfe; }
 .day-number {
-  width:58px; height:58px; border-radius:15px; display:grid; place-items:center;
-  background:#eff6ff; color:var(--blue); font-size:18px; font-weight:950;
+  display:grid;
+  place-items:center;
+  width:55px;
+  height:55px;
+  border-radius:14px;
+  background:#eff6ff;
+  color:var(--blue);
+  font-size:18px;
+  font-weight:950;
 }
-.day h3 { font-size:18px; margin-bottom:3px; }
-.day p { color:var(--muted); font-size:14px; }
+.day h3 { font-size:17px; margin-bottom:4px; }
+.day p { font-size:14px; }
 .day-note {
-  display:inline-block; margin-top:8px; padding:4px 9px;
-  border-radius:8px; background:#f5f3ff; color:#6d28d9;
-  font-size:12px; font-weight:800;
+  display:inline-block;
+  margin-top:7px;
+  padding:3px 9px;
+  background:#f5f3ff;
+  color:#6d28d9;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:800;
 }
 .native-callout {
-  max-width:880px; margin:22px auto 0; padding:20px 22px;
-  border:1px solid #c7d2fe; background:#eef2ff; border-radius:17px; color:#3730a3;
+  max-width:880px;
+  margin:20px auto 0;
+  padding:18px;
+  border:1px solid #c7d2fe;
+  border-radius:16px;
+  background:#eef2ff;
+  color:#3730a3;
 }
 .native-callout strong { display:block; margin-bottom:4px; }
 
 .instructor { background:white; }
 .instructor-box {
-  max-width:900px; margin:auto; display:grid; grid-template-columns:250px 1fr;
-  gap:40px; align-items:center; background:var(--bg);
-  border:1px solid var(--line); border-radius:25px; padding:30px;
+  max-width:900px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:230px 1fr;
+  gap:32px;
+  align-items:center;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:28px;
 }
-.instructor-photo { width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:20px; background:#e2e8f0; }
-.instructor-role { color:var(--blue); font-weight:900; font-size:14px; margin-bottom:8px; }
-.instructor h2 { font-size:30px; margin-bottom:14px; }
-.instructor p { color:var(--muted); margin-bottom:15px; }
+.instructor-photo {
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:18px;
+  background:#e2e8f0;
+}
+.instructor-role { color:var(--blue); font-weight:900; margin-bottom:7px; font-size:14px; }
+.instructor h2 { margin-bottom:12px; font-size:27px; }
+.instructor p { margin-bottom:14px; }
 .instructor-tags { display:flex; flex-wrap:wrap; gap:8px; }
-.tag { background:white; border:1px solid #dbe2ea; padding:6px 10px; border-radius:999px; font-size:12px; font-weight:800; color:#475569; }
+.tag { background:white; border:1px solid #dbe2ea; border-radius:999px; padding:5px 10px; font-size:12px; font-weight:800; }
 
-.details { background:var(--bg); }
-.details-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:900px; margin:auto; }
+.details-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; max-width:900px; margin:auto; }
 .detail {
-  background:white; border:1px solid var(--line); border-radius:18px;
-  padding:22px; display:flex; justify-content:space-between; gap:18px;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:18px;
 }
-.detail-label { color:var(--muted); font-weight:700; }
+.detail-label { color:var(--muted); }
 .detail-value { color:#111827; font-weight:900; text-align:end; }
 
-.consultation { background:#fff; }
-.consult-card {
-  max-width:940px; margin:auto; display:grid; grid-template-columns:1.1fr .9fr;
-  gap:28px; align-items:center; padding:32px; border:1px solid var(--line);
-  border-radius:24px; background:linear-gradient(135deg,#fff,#f5f7ff);
-  box-shadow:0 18px 45px rgba(15,23,42,.06);
-}
-.consult-label {
-  display:inline-block; padding:6px 11px; border-radius:999px;
-  background:#eff6ff; color:#1d4ed8; font-size:13px; font-weight:900; margin-bottom:12px;
-}
-.consult-card h3 { font-size:clamp(25px,3vw,34px); line-height:1.25; margin-bottom:12px; color:#111827; }
-.consult-card p { color:var(--muted); margin-bottom:15px; }
-.consult-list { list-style:none; display:grid; gap:9px; margin:18px 0; }
-.consult-list li { display:flex; gap:10px; align-items:flex-start; }
-.consult-price-box { background:white; border:1px solid #dbeafe; border-radius:20px; padding:25px; text-align:center; }
-.consult-price { font-size:48px; line-height:1.15; font-weight:950; color:#111827; }
-.consult-duration { font-weight:800; color:var(--muted); margin:4px 0 18px; }
-.consult-note { font-size:12px; color:#64748b; margin-top:12px; }
-.consult-disclaimer { font-size:13px; color:#64748b; margin-top:18px; text-align:center; }
-.consult-price-box .primary-btn { width:100%; }
-
-.trial-section { background:linear-gradient(180deg,#eff6ff 0%,#f8fafc 100%); }
+.trial-section { background:linear-gradient(180deg,#eff6ff,#f8fafc); }
 .trial-card {
-  max-width:900px; margin:auto; padding:clamp(24px,5vw,42px);
-  background:#fff; border:1px solid #dbeafe; border-radius:24px;
-  box-shadow:0 20px 55px rgba(37,99,235,.08); text-align:center;
+  max-width:900px;
+  margin:auto;
+  padding:clamp(23px,5vw,42px);
+  background:white;
+  border:1px solid #dbeafe;
+  border-radius:24px;
+  box-shadow:0 20px 50px rgba(37,99,235,.08);
+  text-align:center;
 }
 .trial-icon {
-  width:64px; height:64px; display:grid; place-items:center; margin:0 auto 18px;
-  border-radius:18px; background:#eff6ff; font-size:30px;
+  display:grid;
+  place-items:center;
+  width:62px;
+  height:62px;
+  margin:0 auto 15px;
+  border-radius:18px;
+  background:#eff6ff;
+  font-size:30px;
 }
-.trial-card h2 { font-size:clamp(28px,4vw,40px); line-height:1.3; margin-bottom:14px; color:#111827; }
-.trial-card > p { max-width:680px; margin:0 auto 22px; color:var(--muted); font-size:17px; }
-.trial-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:28px 0; text-align:start; }
-.trial-option { padding:22px; border:1px solid var(--line); border-radius:18px; background:#fff; }
-.trial-option h3 { margin-bottom:8px; font-size:19px; }
-.trial-option p { color:var(--muted); font-size:14px; }
-.trial-booking-button {
-  display:inline-flex; justify-content:center; align-items:center; gap:8px;
-  width:100%; max-width:380px; padding:15px 22px; border-radius:12px;
-  background:#16a34a; color:white; font-weight:850; transition:.2s;
-}
-.trial-booking-button:hover { background:#15803d; transform:translateY(-2px); }
-.trial-note { margin-top:14px; color:#64748b; font-size:13px; }
+.trial-card h2 { font-size:clamp(28px,4vw,40px); margin-bottom:12px; }
+.trial-card > p { max-width:680px; margin:0 auto 20px; }
+.trial-options { display:grid; grid-template-columns:repeat(2,1fr); gap:15px; margin:25px 0; text-align:start; }
+.trial-option { border:1px solid var(--line); border-radius:16px; padding:20px; }
+.trial-option h3 { font-size:18px; margin-bottom:7px; }
+.trial-option p { font-size:14px; }
+.trial-note { margin-top:12px; font-size:12px; }
 
-.cta { padding:85px 0; background:linear-gradient(135deg,#1d4ed8,#5b21b6); color:white; text-align:center; }
-.cta h2 { font-size:clamp(33px,5vw,50px); line-height:1.2; margin-bottom:15px; }
-.cta p { max-width:700px; margin:0 auto 28px; color:rgba(255,255,255,.86); font-size:17px; }
-.cta .primary-btn { background:white; color:#1d4ed8; box-shadow:none; }
-.cta .primary-btn:hover { background:#f8fafc; }
-footer { background:#0f172a; color:white; padding:32px 0; }
-.footer-content { display:flex; align-items:center; justify-content:space-between; gap:20px; }
-.footer-logo { font-weight:900; font-size:18px; }
-.footer-text { color:#94a3b8; font-size:13px; }
+.consultation { background:white; }
+.consult-card {
+  max-width:940px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:25px;
+  align-items:center;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:23px;
+  background:linear-gradient(135deg,#fff,#f5f7ff);
+}
+.consult-label { display:inline-block; padding:6px 11px; border-radius:999px; background:#eff6ff; color:var(--blue-dark); font-size:13px; font-weight:900; margin-bottom:12px; }
+.consult-card h3 { font-size:clamp(24px,3vw,33px); margin-bottom:12px; }
+.consult-card p { margin-bottom:12px; }
+.consult-list { list-style:none; display:grid; gap:8px; margin:16px 0; }
+.consult-list li { display:flex; gap:9px; align-items:flex-start; }
+.consult-price-box { background:white; border:1px solid #dbeafe; border-radius:18px; padding:24px; text-align:center; }
+.consult-price { font-size:47px; font-weight:950; line-height:1.2; }
+.consult-duration { color:var(--muted); font-weight:800; margin:5px 0 18px; }
+.consult-note,.consult-disclaimer { font-size:12px; margin-top:12px; }
+.consult-disclaimer { text-align:center; margin-top:18px; }
+
+.cta {
+  padding:75px 0;
+  color:white;
+  text-align:center;
+  background:linear-gradient(135deg,#1d4ed8,#5b21b6);
+}
+.cta h2 { font-size:clamp(31px,5vw,48px); margin-bottom:13px; }
+.cta p { color:rgba(255,255,255,.88); max-width:700px; margin:0 auto 24px; }
+.cta .btn { background:white; color:var(--blue-dark); }
+footer { background:#0f172a; color:white; padding:28px 0; }
+.footer-content { display:flex; justify-content:space-between; align-items:center; gap:15px; }
+.footer-logo { font-size:18px; font-weight:900; }
+.footer-text { font-size:13px; color:#94a3b8; }
 
 html[dir="ltr"] .detail-value { text-align:right; }
-html[dir="ltr"] .day { direction:ltr; }
 html[dir="ltr"] .trial-options { text-align:left; }
 
 @media(max-width:900px) {
-  .hero-grid { grid-template-columns:1fr; gap:35px; }
-  .hero { padding-top:58px; }
-  .stats-grid { grid-template-columns:repeat(2,1fr); }
+  .hero-grid { grid-template-columns:1fr; gap:30px; }
   .features-grid { grid-template-columns:repeat(2,1fr); }
-  .instructor-box { grid-template-columns:1fr; text-align:center; max-width:620px; }
-  .instructor-photo { max-width:250px; margin:auto; }
-  .instructor-tags { justify-content:center; }
+  .instructor-box { grid-template-columns:190px 1fr; gap:22px; }
 }
-@media(max-width:750px) {
-  .consult-card { grid-template-columns:1fr; padding:22px; }
-  .consult-price-box { padding:22px; }
-}
-@media(max-width:650px) {
-  .container { width:min(100% - 28px,1120px); }
+@media(max-width:700px) {
+  section { padding:55px 0; }
   .nav { min-height:68px; }
   .logo { font-size:16px; }
-  .logo-icon { width:34px; height:34px; }
-  .nav-cta { display:none; }
-  .hero { padding:48px 0; }
-  .hero h1 { font-size:42px; letter-spacing:-1px; }
-  .hero-text { font-size:17px; }
+  .logo-icon { width:35px; height:35px; }
+  .hero { padding:45px 0; }
+  .hero h1 { font-size:40px; }
   .hero-actions { flex-direction:column; }
-  .primary-btn,.secondary-btn { width:100%; }
-  .stats-grid { gap:10px; }
-  .stat { padding:16px 8px; }
-  section { padding:58px 0; }
-  .section-head { margin-bottom:30px; }
-  .section-head h2 { font-size:32px; }
-  .features-grid { grid-template-columns:1fr; }
-  .ai-cards { grid-template-columns:1fr; }
-  .ai-banner { padding:22px; }
-  .ai-heading h2 { font-size:31px; }
-  .day { grid-template-columns:48px 1fr; gap:13px; padding:14px; }
-  .day-number { width:46px; height:46px; font-size:15px; }
-  .day h3 { font-size:16px; }
-  .day p { font-size:13px; }
-  .price-card { padding:25px 20px; }
-  .price-number { font-size:52px; }
-  .instructor-box { padding:20px; }
-  .instructor h2 { font-size:26px; }
-  .details-grid { grid-template-columns:1fr; }
-  .detail { padding:18px; }
+  .hero-actions .btn { width:100%; }
+  .stats-grid { grid-template-columns:repeat(2,1fr); }
+  .features-grid,.ai-cards,.trial-options,.details-grid { grid-template-columns:1fr; }
+  .instructor-box { grid-template-columns:1fr; text-align:center; }
+  .instructor-photo { max-width:220px; margin:auto; }
+  .instructor-tags { justify-content:center; }
+  .consult-card { grid-template-columns:1fr; padding:20px; }
+  .day { grid-template-columns:48px 1fr; gap:12px; padding:14px; }
+  .day-number { width:45px; height:45px; }
+  .detail { padding:15px; }
   .footer-content { flex-direction:column; text-align:center; }
-  .native-callout { padding:17px; }
-  .video-message .play-symbol { width:58px; height:58px; }
-  .trial-options { grid-template-columns:1fr; }
-  .trial-card { padding:22px; }
+}
+@media(max-width:420px) {
+  .container { width:calc(100% - 24px); }
+  .nav-right { gap:6px; }
+  .lang-btn { padding:9px 10px; min-width:65px; }
+  .price-card { padding:23px 18px; }
+  .price-number { font-size:52px; }
 }
 </style>
 </head>
@@ -353,11 +453,11 @@ html[dir="ltr"] .trial-options { text-align:left; }
   <div class="container nav">
     <a href="#top" class="logo">
       <span class="logo-icon">D</span>
-      <span data-i18n="brand">Praktisches Deutsch</span>
+      <span>Praktisches Deutsch</span>
     </a>
     <div class="nav-right">
-      <a href="#course" class="nav-cta" data-i18n="navCta">الدورة</a>
-      <button class="lang-btn" id="languageToggle" type="button" aria-label="Switch language">DE</button>
+      <button class="lang-btn" id="languageToggle" type="button" aria-label="Switch language">DE / عربي</button>
+      <a href="#course" class="btn btn-blue" data-ar="الكورس" data-de="Kurs">الكورس</a>
     </div>
   </div>
 </header>
@@ -367,83 +467,90 @@ html[dir="ltr"] .trial-options { text-align:left; }
 <section class="hero" id="course">
   <div class="container hero-grid">
     <div>
-      <div class="badge" data-i18n="badge">مستوى A2+ فما فوق</div>
-      <h1 data-i18n="heroTitle">اتكلم ألماني <span>بشكل طبيعي.</span></h1>
-      <p class="hero-text" data-i18n="heroText">كورس محادثة عملي لمدة 7 أيام، تتكلم فيه وتسمع وتشارك في مواقف واقعية، وتمثّل مشاهد حوارية وتستخدم التعبيرات بنفسك.</p>
+      <div class="badge" data-ar="مستوى A2+ فما فوق" data-de="Ab Niveau A2+">مستوى A2+ فما فوق</div>
+      <h1>
+        <span data-ar="اتكلم ألماني" data-de="Sprich Deutsch">اتكلم ألماني</span>
+        <span data-ar="بشكل طبيعي." data-de="ganz natürlich.">بشكل طبيعي.</span>
+      </h1>
+      <p class="hero-text"
+         data-ar="كورس محادثة عملي لمدة 7 أيام، تتكلم فيه وتسمع وتشارك في مواقف واقعية، وتمثّل مشاهد حوارية وتستخدم التعبيرات بنفسك."
+         data-de="Ein praktischer Konversationskurs über 7 Tage: Du sprichst, hörst zu, übst realistische Situationen und spielst Dialogszenen selbst nach.">
+        كورس محادثة عملي لمدة 7 أيام، تتكلم فيه وتسمع وتشارك في مواقف واقعية، وتمثّل مشاهد حوارية وتستخدم التعبيرات بنفسك.
+      </p>
       <div class="hero-actions">
-        <a href="#register" class="primary-btn" data-i18n="heroButton">احجز مكانك الآن</a>
-        <a href="#curriculum" class="secondary-btn" data-i18n="heroSecondary">شوف محتوى الكورس</a>
+        <a href="#register" class="btn btn-blue" data-ar="احجز مكانك الآن" data-de="Jetzt Platz sichern">احجز مكانك الآن</a>
+        <a href="#trial" class="btn btn-green" data-ar="🎁 احجز جلسة تجريبية مجانية" data-de="🎁 Kostenlose Probestunde buchen">🎁 احجز جلسة تجريبية مجانية</a>
+        <a href="#curriculum" class="btn btn-light" data-ar="شوف محتوى الكورس" data-de="Kursinhalte ansehen">شوف محتوى الكورس</a>
       </div>
       <div class="hero-mini">
-        <span>✓ <strong data-i18n="mini1">7 أيام</strong></span>
-        <span>✓ <strong data-i18n="mini2">14 ساعة Live</strong></span>
-        <span>✓ <strong data-i18n="mini3">A2+</strong></span>
+        <span>✓ <strong data-ar="7 أيام" data-de="7 Tage">7 أيام</strong></span>
+        <span>✓ <strong data-ar="14 ساعة مباشرة" data-de="14 Live-Stunden">14 ساعة مباشرة</strong></span>
+        <span>✓ <strong>A2+</strong></span>
       </div>
     </div>
 
     <div class="price-card">
-      <div class="price-label" data-i18n="priceLabel">سعر الكورس بالكامل</div>
+      <div class="price-label" data-ar="سعر الكورس بالكامل" data-de="Gesamtpreis des Kurses">سعر الكورس بالكامل</div>
       <div class="price"><div class="price-number">30</div><div class="price-currency">€</div></div>
-      <div class="local-price" data-i18n="localPrice">أو ما يعادلها بالعملة المحلية</div>
-      <p class="price-desc" data-i18n="priceDesc">أسبوع من التدريب المباشر والممارسة الفعلية باللغة الألمانية.</p>
+      <p class="local-price" data-ar="أو ما يعادلها بالعملة المحلية" data-de="Oder der entsprechende Betrag in der Landeswährung">أو ما يعادلها بالعملة المحلية</p>
+      <p data-ar="أسبوع من التدريب المباشر والممارسة الفعلية باللغة الألمانية." data-de="Eine Woche mit Live-Training und aktiver Sprechpraxis auf Deutsch.">أسبوع من التدريب المباشر والممارسة الفعلية باللغة الألمانية.</p>
       <ul class="price-list">
-        <li><span class="check">✓</span><span data-i18n="price1">7 أيام متتالية</span></li>
-        <li><span class="check">✓</span><span data-i18n="price2">ساعتان يوميًا</span></li>
-        <li><span class="check">✓</span><span data-i18n="price3">14 ساعة Live</span></li>
-        <li><span class="check">✓</span><span data-i18n="price4">من مستوى A2+ فما فوق</span></li>
-        <li><span class="check">✓</span><span data-i18n="price5">محادثة وتمثيل أدوار ومشاهد حوارية</span></li>
-        <li><span class="check">✓</span><span data-i18n="price6">لقاء مع متحدث أصلي في اليومين السادس والسابع</span></li>
-        <li><span class="check">✓</span><span data-i18n="price7">إمكانية التدريب على المحادثة والكتابة باستخدام الذكاء الاصطناعي</span></li>
+        <li><span class="check">✓</span><span data-ar="7 أيام متتالية" data-de="7 aufeinanderfolgende Tage">7 أيام متتالية</span></li>
+        <li><span class="check">✓</span><span data-ar="ساعتان يوميًا" data-de="2 Stunden täglich">ساعتان يوميًا</span></li>
+        <li><span class="check">✓</span><span data-ar="14 ساعة مباشرة" data-de="14 Live-Stunden">14 ساعة مباشرة</span></li>
+        <li><span class="check">✓</span><span data-ar="من مستوى A2+ فما فوق" data-de="Ab Niveau A2+">من مستوى A2+ فما فوق</span></li>
+        <li><span class="check">✓</span><span data-ar="محادثة وتمثيل أدوار ومشاهد حوارية" data-de="Gespräche, Rollenspiele und Dialogszenen">محادثة وتمثيل أدوار ومشاهد حوارية</span></li>
+        <li><span class="check">✓</span><span data-ar="لقاء مع متحدث أصلي في اليومين السادس والسابع" data-de="Austausch mit einem Muttersprachler an Tag 6 und 7">لقاء مع متحدث أصلي في اليومين السادس والسابع</span></li>
+        <li><span class="check">✓</span><span data-ar="تدريب على المحادثة والكتابة باستخدام الذكاء الاصطناعي" data-de="Sprech- und Schreibübungen mit KI">تدريب على المحادثة والكتابة باستخدام الذكاء الاصطناعي</span></li>
       </ul>
-      <a href="#register" class="primary-btn full-btn" data-i18n="priceButton">أريد الاشتراك</a>
-      <div class="small-note" data-i18n="priceNote">تفاصيل المواعيد والتسجيل عند التواصل</div>
+      <a href="#register" class="btn btn-blue full-btn" data-ar="أريد الاشتراك" data-de="Jetzt anmelden">أريد الاشتراك</a>
+      <div class="small-note" data-ar="تفاصيل المواعيد والتسجيل عند التواصل" data-de="Termine und Anmeldung auf Anfrage">تفاصيل المواعيد والتسجيل عند التواصل</div>
     </div>
   </div>
 </section>
 
-<section class="stats">
+<section>
   <div class="container stats-grid">
-    <div class="stat"><div class="stat-number">7</div><div class="stat-text" data-i18n="stat1">أيام</div></div>
-    <div class="stat"><div class="stat-number">14</div><div class="stat-text" data-i18n="stat2">ساعة مباشرة</div></div>
-    <div class="stat"><div class="stat-number">A2+</div><div class="stat-text" data-i18n="stat3">المستوى المطلوب</div></div>
-    <div class="stat"><div class="stat-number">€30</div><div class="stat-text" data-i18n="stat4">السعر</div></div>
+    <div class="stat"><div class="stat-number">7</div><div class="stat-text" data-ar="أيام" data-de="Tage">أيام</div></div>
+    <div class="stat"><div class="stat-number">14</div><div class="stat-text" data-ar="ساعة مباشرة" data-de="Live-Stunden">ساعة مباشرة</div></div>
+    <div class="stat"><div class="stat-number">A2+</div><div class="stat-text" data-ar="المستوى المطلوب" data-de="Mindestniveau">المستوى المطلوب</div></div>
+    <div class="stat"><div class="stat-number">€30</div><div class="stat-text" data-ar="السعر" data-de="Preis">السعر</div></div>
   </div>
 </section>
 
 <section class="video-section">
   <div class="container">
     <div class="section-head">
-      <div class="section-kicker" style="color:#93c5fd" data-i18n="videoKicker">شاهد قبل أن تبدأ</div>
-      <h2 data-i18n="videoTitle">شوف طريقة التدريب بنفسك</h2>
-      <p data-i18n="videoText">هنا تقدر تضيف فيديو تعريفي قصير يوضح أسلوب الكورس والتمارين التفاعلية.</p>
+      <div class="section-kicker" style="color:#93c5fd" data-ar="شاهد قبل أن تبدأ" data-de="Vor dem Start">شاهد قبل أن تبدأ</div>
+      <h2 data-ar="شوف طريقة التدريب بنفسك" data-de="Lerne die Trainingsmethode kennen">شوف طريقة التدريب بنفسك</h2>
+      <p data-ar="هنا تقدر تضيف فيديو تعريفي قصير يوضح أسلوب الكورس والتمارين التفاعلية." data-de="Hier kannst du ein kurzes Vorstellungsvideo über den Kurs und die interaktiven Übungen einbinden.">هنا تقدر تضيف فيديو تعريفي قصير يوضح أسلوب الكورس والتمارين التفاعلية.</p>
     </div>
-    <div class="video-frame" id="introVideo">
-      <div class="video-message">
+    <div class="video-frame">
+      <div>
         <div class="play-symbol">▶</div>
-        <strong data-i18n="videoPlaceholderTitle">فيديو تعريفي قريبًا</strong>
-        <p data-i18n="videoPlaceholderText">أضف رابط فيديو YouTube أو Vimeo داخل الكود لعرض الفيديو هنا.</p>
+        <strong data-ar="فيديو تعريفي قريبًا" data-de="Vorstellungsvideo folgt">فيديو تعريفي قريبًا</strong>
+        <p data-ar="أضف رابط فيديو YouTube أو Vimeo داخل الكود لعرض الفيديو هنا." data-de="Füge einen YouTube- oder Vimeo-Link in den Code ein, um das Video hier anzuzeigen.">أضف رابط فيديو YouTube أو Vimeo داخل الكود لعرض الفيديو هنا.</p>
       </div>
     </div>
-    <p class="video-caption" data-i18n="videoCaption">هذا المكان مخصص لفيديو تعريفي بالكورس، وليس لمقطع فيلم محمي بحقوق النشر.</p>
+    <p class="video-caption" data-ar="هذا المكان مخصص لفيديو تعريفي بالكورس." data-de="Dieser Bereich ist für ein Vorstellungsvideo des Kurses vorgesehen.">هذا المكان مخصص لفيديو تعريفي بالكورس.</p>
   </div>
 </section>
 
 <section class="features">
   <div class="container">
     <div class="section-head">
-      <div class="section-kicker" data-i18n="featuresKicker">لماذا هذا الكورس؟</div>
-      <h2 data-i18n="featuresTitle">اتعلم الكلام من خلال الكلام.</h2>
-      <p data-i18n="featuresText">مشاهدة قصيرة، فهم للتعبيرات، تمثيل للأدوار، وبعدها استخدام اللغة في حوار جديد من عندك.</p>
+      <div class="section-kicker" data-ar="لماذا هذا الكورس؟" data-de="Warum dieser Kurs?">لماذا هذا الكورس؟</div>
+      <h2 data-ar="اتعلم الكلام من خلال الكلام." data-de="Sprechen lernst du durch Sprechen.">اتعلم الكلام من خلال الكلام.</h2>
+      <p data-ar="شاهد، افهم التعبيرات، مثّل الأدوار، وبعدها استخدم اللغة في حوار جديد من عندك." data-de="Sieh dir Szenen an, lerne Redewendungen, spiele Rollen und wende die Sprache in eigenen Dialogen an.">شاهد، افهم التعبيرات، مثّل الأدوار، وبعدها استخدم اللغة في حوار جديد من عندك.</p>
     </div>
-
     <div class="features-grid">
-      <div class="feature"><div class="feature-icon">💬</div><h3 data-i18n="feature1Title">محادثات واقعية</h3><p data-i18n="feature1Text">تتدرب على طرح الأسئلة والرد والتعبير عن رأيك في مواقف قريبة من الحياة اليومية.</p></div>
-      <div class="feature"><div class="feature-icon">🎭</div><h3 data-i18n="feature2Title">مشاهد وتمثيل أدوار</h3><p data-i18n="feature2Text">تتعلم تعبيرات من مشاهد حوارية مختارة، ثم تمثّل الأدوار مع المجموعة وتعيد صياغة الحوار بطريقتك.</p></div>
-      <div class="feature"><div class="feature-icon">🇩🇪</div><h3 data-i18n="feature3Title">تفاعل مع متحدث أصلي</h3><p data-i18n="feature3Text">ساعة تفاعل مباشر مع متحدث أصلي للألمانية في اليوم السادس، وساعة أخرى في اليوم السابع.</p></div>
-      <div class="feature"><div class="feature-icon">⚡</div><h3 data-i18n="feature4Title">تدريب عملي</h3><p data-i18n="feature4Text">الهدف هو استخدام اللغة فعليًا بدل الاكتفاء بالحفظ أو الترجمة كلمة بكلمة.</p></div>
-      <div class="feature"><div class="feature-icon">🗣️</div><h3 data-i18n="feature5Title">فرص أكثر للكلام</h3><p data-i18n="feature5Text">تمارين فردية وثنائية وجماعية تساعدك على المشاركة والتفاعل طوال اللقاء.</p></div>
-      <div class="feature"><div class="feature-icon">🎯</div><h3 data-i18n="feature6Title">خطوة واضحة نحو الطلاقة</h3><p data-i18n="feature6Text">تطبّق التعبيرات في سياقات مختلفة وتتدرب على التحدث بوضوح وثقة أكبر.</p></div>
-      <div class="feature ai-feature"><div class="feature-icon">🤖</div><h3 data-i18n="feature7Title">تدرّب مع الذكاء الاصطناعي</h3><p data-i18n="feature7Text">مارس المحادثة والكتابة بالألمانية مع تدريبات تفاعلية تساعدك على صياغة أفكارك والتدرّب على التعبير في مواقف متنوعة.</p></div>
+      <div class="feature"><div class="feature-icon">💬</div><h3 data-ar="محادثات واقعية" data-de="Realistische Gespräche">محادثات واقعية</h3><p data-ar="تتدرب على طرح الأسئلة والرد والتعبير عن رأيك في مواقف قريبة من الحياة اليومية." data-de="Übe Fragen, Antworten und Meinungsäußerungen in Alltagssituationen.">تتدرب على طرح الأسئلة والرد والتعبير عن رأيك في مواقف قريبة من الحياة اليومية.</p></div>
+      <div class="feature"><div class="feature-icon">🎭</div><h3 data-ar="مشاهد وتمثيل أدوار" data-de="Szenen und Rollenspiele">مشاهد وتمثيل أدوار</h3><p data-ar="تتعلم تعبيرات من مشاهد حوارية ثم تمثّل الأدوار وتعيد صياغة الحوار بطريقتك." data-de="Lerne Redewendungen aus Dialogen, spiele Rollen und formuliere Gespräche neu.">تتعلم تعبيرات من مشاهد حوارية ثم تمثّل الأدوار وتعيد صياغة الحوار بطريقتك.</p></div>
+      <div class="feature"><div class="feature-icon">🇩🇪</div><h3 data-ar="متحدث أصلي" data-de="Deutscher Muttersprachler">متحدث أصلي</h3><p data-ar="ساعة تفاعل مباشر مع متحدث أصلي في اليوم السادس، وساعة أخرى في اليوم السابع." data-de="Je eine Stunde direkter Austausch mit einem Muttersprachler an Tag 6 und 7.">ساعة تفاعل مباشر مع متحدث أصلي في اليوم السادس، وساعة أخرى في اليوم السابع.</p></div>
+      <div class="feature"><div class="feature-icon">⚡</div><h3 data-ar="تدريب عملي" data-de="Praktisches Training">تدريب عملي</h3><p data-ar="استخدم اللغة فعليًا بدل الاكتفاء بالحفظ أو الترجمة كلمة بكلمة." data-de="Wende die Sprache aktiv an, statt nur auswendig zu lernen oder Wort für Wort zu übersetzen.">استخدم اللغة فعليًا بدل الاكتفاء بالحفظ أو الترجمة كلمة بكلمة.</p></div>
+      <div class="feature"><div class="feature-icon">🗣️</div><h3 data-ar="فرص أكثر للكلام" data-de="Mehr Sprechpraxis">فرص أكثر للكلام</h3><p data-ar="تمارين فردية وثنائية وجماعية تساعدك على المشاركة والتفاعل." data-de="Einzel-, Partner- und Gruppenübungen fördern deine aktive Teilnahme.">تمارين فردية وثنائية وجماعية تساعدك على المشاركة والتفاعل.</p></div>
+      <div class="feature"><div class="feature-icon">🎯</div><h3 data-ar="خطوة نحو الطلاقة" data-de="Ein Schritt zur Sprachsicherheit">خطوة نحو الطلاقة</h3><p data-ar="تطبّق التعبيرات في سياقات مختلفة وتتدرب على التحدث بوضوح وثقة أكبر." data-de="Verwende Redewendungen in verschiedenen Situationen und sprich klarer und sicherer.">تطبّق التعبيرات في سياقات مختلفة وتتدرب على التحدث بوضوح وثقة أكبر.</p></div>
+      <div class="feature ai-feature"><div class="feature-icon">🤖</div><h3 data-ar="تدرّب مع الذكاء الاصطناعي" data-de="Mit KI Deutsch üben">تدرّب مع الذكاء الاصطناعي</h3><p data-ar="مارس المحادثة والكتابة بالألمانية مع تدريبات تفاعلية تساعدك على التعبير في مواقف متنوعة." data-de="Trainiere Gespräche und Schreiben mit interaktiven KI-Übungen für unterschiedliche Situationen.">مارس المحادثة والكتابة بالألمانية مع تدريبات تفاعلية تساعدك على التعبير في مواقف متنوعة.</p></div>
     </div>
   </div>
 </section>
@@ -452,18 +559,18 @@ html[dir="ltr"] .trial-options { text-align:left; }
   <div class="container">
     <div class="ai-banner">
       <div class="ai-heading">
-        <div class="ai-label" data-i18n="aiKicker">🤖 مساحة تدريب ذكية</div>
-        <h2 data-i18n="aiTitle">مساعدك الذكي لممارسة الألمانية وتطوير مهاراتك</h2>
-        <p data-i18n="aiIntro">مش لازم تستنى موعد الدرس عشان تتدرّب. جرّب المحادثة والكتابة بالألمانية من خلال تجربة تفاعلية مجانية، واستفد من مساحة التدريب بالذكاء الاصطناعي كجزء من تجربة الكورس عند الاشتراك.</p>
+        <div class="ai-label" data-ar="🤖 مساحة تدريب ذكية" data-de="🤖 Dein digitaler Sprachpartner">🤖 مساحة تدريب ذكية</div>
+        <h2 data-ar="مساعدك الذكي لممارسة الألمانية وتطوير مهاراتك" data-de="Dein KI-Partner für mehr Deutschpraxis">مساعدك الذكي لممارسة الألمانية وتطوير مهاراتك</h2>
+        <p data-ar="مش لازم تستنى موعد الدرس عشان تتدرّب. جرّب المحادثة والكتابة بالألمانية من خلال تجربة تفاعلية مجانية." data-de="Du musst nicht bis zur nächsten Unterrichtsstunde warten. Probiere die interaktive KI-Praxis für Gespräche und Schreiben kostenlos aus.">مش لازم تستنى موعد الدرس عشان تتدرّب. جرّب المحادثة والكتابة بالألمانية من خلال تجربة تفاعلية مجانية.</p>
       </div>
       <div class="ai-cards">
-        <div class="ai-card"><div class="ai-card-icon">🗣️</div><h3 data-i18n="aiConversationTitle">تدرّب على المحادثة</h3><p data-i18n="aiConversationText">ابدأ حوارًا بالألمانية في مواقف يومية أو مهنية، وتدرّب على تكوين الجمل وطرح الأسئلة والتعبير عن رأيك بثقة أكبر.</p></div>
-        <div class="ai-card"><div class="ai-card-icon">✍️</div><h3 data-i18n="aiWritingTitle">طوّر كتابتك بالألمانية</h3><p data-i18n="aiWritingText">تدرّب على كتابة الرسائل والنصوص القصيرة وصياغة أفكارك بالألمانية، واستفد من الملاحظات التي تساعدك على تطوير أسلوبك في التعبير.</p></div>
+        <div class="ai-card"><div class="feature-icon">🗣️</div><h3 data-ar="تدرّب على المحادثة" data-de="Gespräche trainieren">تدرّب على المحادثة</h3><p data-ar="ابدأ حوارًا بالألمانية في مواقف يومية أو مهنية، وتدرّب على تكوين الجمل وطرح الأسئلة." data-de="Führe Dialoge zu alltäglichen oder beruflichen Situationen und übe Sätze und Fragen.">ابدأ حوارًا بالألمانية في مواقف يومية أو مهنية، وتدرّب على تكوين الجمل وطرح الأسئلة.</p></div>
+        <div class="ai-card"><div class="feature-icon">✍️</div><h3 data-ar="طوّر كتابتك بالألمانية" data-de="Dein schriftliches Deutsch verbessern">طوّر كتابتك بالألمانية</h3><p data-ar="تدرّب على كتابة الرسائل والنصوص القصيرة وصياغة أفكارك بالألمانية." data-de="Übe Nachrichten und kurze Texte und formuliere deine Gedanken auf Deutsch.">تدرّب على كتابة الرسائل والنصوص القصيرة وصياغة أفكارك بالألمانية.</p></div>
       </div>
       <div class="ai-bottom">
-        <p data-i18n="aiBottomText">ابدأ بتجربة المحادثة والكتابة مجانًا، واكتشف طريقة جديدة لممارسة الألمانية بصورة تفاعلية.</p>
-        <a class="primary-btn" id="aiTrialButton" href="https://wa.me/201159682355" target="_blank" rel="noopener noreferrer" data-i18n="aiTrialButton">جرّب التدريب المجاني</a>
-        <div class="ai-trial-note" data-i18n="aiTrialNote">التجربة المجانية متاحة لغير المشتركين في المحادثة والكتابة. تواصل معنا لمعرفة طريقة الوصول.</div>
+        <p data-ar="ابدأ بتجربة المحادثة والكتابة مجانًا." data-de="Probiere die Gesprächs- und Schreibpraxis kostenlos aus.">ابدأ بتجربة المحادثة والكتابة مجانًا.</p>
+        <a class="btn btn-purple" id="aiTrialButton" href="https://wa.me/201159682355" target="_blank" rel="noopener noreferrer" data-ar="جرّب التدريب المجاني" data-de="Kostenlos ausprobieren">جرّب التدريب المجاني</a>
+        <div class="ai-trial-note" data-ar="تواصل معنا عبر واتساب لمعرفة طريقة الوصول." data-de="Kontaktiere uns über WhatsApp, um zu erfahren, wie du starten kannst.">تواصل معنا عبر واتساب لمعرفة طريقة الوصول.</div>
       </div>
     </div>
   </div>
@@ -472,22 +579,22 @@ html[dir="ltr"] .trial-options { text-align:left; }
 <section class="curriculum" id="curriculum">
   <div class="container">
     <div class="section-head">
-      <div class="section-kicker" data-i18n="curriculumKicker">البرنامج</div>
-      <h2 data-i18n="curriculumTitle">7 أيام من المحادثة العملية</h2>
-      <p data-i18n="curriculumText">كل يوم له موضوع واضح، مع تمارين كلام وتطبيق. ندمج المشاهد والتمثيل في بعض اللقاءات من دون زيادة مدة الكورس.</p>
+      <div class="section-kicker" data-ar="البرنامج" data-de="Kursprogramm">البرنامج</div>
+      <h2 data-ar="7 أيام من المحادثة العملية" data-de="7 Tage praktische Konversation">7 أيام من المحادثة العملية</h2>
+      <p data-ar="كل يوم له موضوع واضح مع تمارين كلام وتطبيق ومواقف عملية." data-de="Jeder Tag hat ein klares Thema mit Sprechübungen und praktischen Situationen.">كل يوم له موضوع واضح مع تمارين كلام وتطبيق ومواقف عملية.</p>
     </div>
     <div class="days">
-      <div class="day"><div class="day-number">01</div><div><h3 data-i18n="day1Title">التعريف بالنفس وبدء المحادثة</h3><p data-i18n="day1Text">تقديم نفسك، طرح الأسئلة، بدء المحادثات والتعارف مع الآخرين.</p></div></div>
-      <div class="day"><div class="day-number">02</div><div><h3 data-i18n="day2Title">الحياة اليومية والمواضيع الشخصية</h3><p data-i18n="day2Text">الروتين والأسرة والاهتمامات والعادات، مع تدريب على حوار قصير وتمثيله.</p><span class="day-note" data-i18n="day2Note">تمثيل أدوار</span></div></div>
-      <div class="day"><div class="day-number">03</div><div><h3 data-i18n="day3Title">التعبير عن الرأي والنقاش</h3><p data-i18n="day3Text">التعبير عن رأيك، الموافقة والاختلاف وشرح وجهة نظرك بطريقة طبيعية.</p></div></div>
-      <div class="day"><div class="day-number">04</div><div><h3 data-i18n="day4Title">السفر والوقت الحر والتجارب</h3><p data-i18n="day4Text">التحدث عن السفر والأماكن والتجارب والخطط، مع مشهد حواري قصير وإعادة تمثيله.</p><span class="day-note" data-i18n="day4Note">مشهد حواري وتطبيق</span></div></div>
-      <div class="day"><div class="day-number">05</div><div><h3 data-i18n="day5Title">العمل والتواصل</h3><p data-i18n="day5Text">محادثات العمل والتواصل مع الزملاء والأسئلة والردود والمواقف المهنية اليومية.</p></div></div>
-      <div class="day"><div class="day-number">06</div><div><h3 data-i18n="day6Title">حل المشكلات والتفاعل مع متحدث أصلي</h3><p data-i18n="day6Text">شرح مشكلة وطلب المساعدة والتدرّب على حوار واقعي، مع ساعة تفاعل مباشر مع متحدث أصلي للألمانية.</p><span class="day-note" data-i18n="day6Note">ساعة مع متحدث أصلي</span></div></div>
-      <div class="day"><div class="day-number">07</div><div><h3 data-i18n="day7Title">المحادثة الحرة والمحاكاة النهائية</h3><p data-i18n="day7Text">تطبيق شامل وتمثيل مواقف حياتية، مع ساعة تفاعل مباشر أخرى مع متحدث أصلي للألمانية.</p><span class="day-note" data-i18n="day7Note">ساعة مع متحدث أصلي</span></div></div>
+      <div class="day"><div class="day-number">01</div><div><h3 data-ar="التعريف بالنفس وبدء المحادثة" data-de="Sich vorstellen und Gespräche beginnen">التعريف بالنفس وبدء المحادثة</h3><p data-ar="تقديم نفسك، طرح الأسئلة، بدء المحادثات والتعارف مع الآخرين." data-de="Dich vorstellen, Fragen stellen und andere kennenlernen.">تقديم نفسك، طرح الأسئلة، بدء المحادثات والتعارف مع الآخرين.</p></div></div>
+      <div class="day"><div class="day-number">02</div><div><h3 data-ar="الحياة اليومية والمواضيع الشخصية" data-de="Alltag und persönliche Themen">الحياة اليومية والمواضيع الشخصية</h3><p data-ar="الروتين والأسرة والاهتمامات والعادات مع تدريب على حوار قصير." data-de="Tagesablauf, Familie, Interessen und Gewohnheiten mit einem kurzen Dialog.">الروتين والأسرة والاهتمامات والعادات مع تدريب على حوار قصير.</p><span class="day-note" data-ar="تمثيل أدوار" data-de="Rollenspiel">تمثيل أدوار</span></div></div>
+      <div class="day"><div class="day-number">03</div><div><h3 data-ar="التعبير عن الرأي والنقاش" data-de="Meinung ausdrücken und diskutieren">التعبير عن الرأي والنقاش</h3><p data-ar="التعبير عن رأيك والموافقة والاختلاف وشرح وجهة نظرك." data-de="Deine Meinung ausdrücken, zustimmen, widersprechen und deinen Standpunkt erklären.">التعبير عن رأيك والموافقة والاختلاف وشرح وجهة نظرك.</p></div></div>
+      <div class="day"><div class="day-number">04</div><div><h3 data-ar="السفر والوقت الحر والتجارب" data-de="Reisen, Freizeit und Erfahrungen">السفر والوقت الحر والتجارب</h3><p data-ar="التحدث عن السفر والأماكن والتجارب والخطط وتمثيل مشهد حواري." data-de="Über Reisen, Orte, Erfahrungen und Pläne sprechen und einen Dialog nachspielen.">التحدث عن السفر والأماكن والتجارب والخطط وتمثيل مشهد حواري.</p></div></div>
+      <div class="day"><div class="day-number">05</div><div><h3 data-ar="العمل والتواصل" data-de="Arbeit und Kommunikation">العمل والتواصل</h3><p data-ar="محادثات العمل والتواصل مع الزملاء والمواقف المهنية اليومية." data-de="Gespräche im Arbeitsalltag und typische berufliche Situationen.">محادثات العمل والتواصل مع الزملاء والمواقف المهنية اليومية.</p></div></div>
+      <div class="day"><div class="day-number">06</div><div><h3 data-ar="حل المشكلات والتفاعل مع متحدث أصلي" data-de="Probleme lösen und mit einem Muttersprachler sprechen">حل المشكلات والتفاعل مع متحدث أصلي</h3><p data-ar="شرح مشكلة وطلب المساعدة مع ساعة تفاعل مباشر مع متحدث أصلي للألمانية." data-de="Ein Problem erklären, um Hilfe bitten und eine Stunde mit einem deutschen Muttersprachler sprechen.">شرح مشكلة وطلب المساعدة مع ساعة تفاعل مباشر مع متحدث أصلي للألمانية.</p></div></div>
+      <div class="day"><div class="day-number">07</div><div><h3 data-ar="المحادثة الحرة والمحاكاة النهائية" data-de="Freies Sprechen und Abschlusssimulation">المحادثة الحرة والمحاكاة النهائية</h3><p data-ar="تطبيق شامل وتمثيل مواقف حياتية مع ساعة تفاعل مباشر أخرى مع متحدث أصلي." data-de="Abschließende Übungen und Rollenspiele mit einer weiteren Stunde Austausch mit einem Muttersprachler.">تطبيق شامل وتمثيل مواقف حياتية مع ساعة تفاعل مباشر أخرى مع متحدث أصلي.</p></div></div>
     </div>
     <div class="native-callout">
-      <strong data-i18n="nativeCalloutTitle">لقاءان مباشران مع متحدث أصلي للألمانية</strong>
-      <span data-i18n="nativeCalloutText">ساعة في اليوم السادس وساعة في اليوم السابع، ضمن إجمالي 14 ساعة التدريب، وليست إضافة إلى مدة الكورس.</span>
+      <strong data-ar="لقاءان مباشران مع متحدث أصلي للألمانية" data-de="Zwei Live-Treffen mit einem deutschen Muttersprachler">لقاءان مباشران مع متحدث أصلي للألمانية</strong>
+      <span data-ar="ساعة في اليوم السادس وساعة في اليوم السابع، ضمن إجمالي 14 ساعة التدريب." data-de="Je eine Stunde am sechsten und siebten Tag, enthalten in den insgesamt 14 Live-Stunden.">ساعة في اليوم السادس وساعة في اليوم السابع، ضمن إجمالي 14 ساعة التدريب.</span>
     </div>
   </div>
 </section>
@@ -495,67 +602,62 @@ html[dir="ltr"] .trial-options { text-align:left; }
 <section class="instructor">
   <div class="container">
     <div class="section-head">
-      <div class="section-kicker" data-i18n="instructorKicker">المدرّس</div>
-      <h2 data-i18n="instructorTitle">اتعلم مع شخص بيجمع بين اللغة والخلفية التقنية</h2>
+      <div class="section-kicker" data-ar="المدرّس" data-de="Dozent">المدرّس</div>
+      <h2 data-ar="اتعلم مع شخص بيجمع بين اللغة والخلفية التقنية" data-de="Lerne mit einem Dozenten mit Sprach- und Technikkenntnissen">اتعلم مع شخص بيجمع بين اللغة والخلفية التقنية</h2>
     </div>
     <div class="instructor-box">
       <img src="x.jpg" alt="Abdelrahman Elhawary" class="instructor-photo" loading="lazy">
       <div>
-        <div class="instructor-role" data-i18n="instructorRole">المؤسس والمحاضر</div>
+        <div class="instructor-role" data-ar="المؤسس والمحاضر" data-de="Gründer und Dozent">المؤسس والمحاضر</div>
         <h2>Abdelrahman Elhawary</h2>
-        <p data-i18n="instructorBio">مهندس ومحاضر لغة ألمانية لديه أكثر من 7 سنوات من الخبرة مع الشركات الألمانية، وخبرة في تنفيذ المشاريع الهندسية والتقنية، بالإضافة إلى أكثر من 4 سنوات في التدريب. تساعده خلفيته الهندسية والتقنية على تقديم الألمانية بشكل عملي في سياقات الحياة والعمل والمجالات المهنية المختلفة.</p>
+        <p data-ar="مهندس ومحاضر لغة ألمانية لديه خبرة في المشاريع الهندسية والتقنية والتدريب. يساعده خلفه التقني على تقديم الألمانية بشكل عملي في سياقات الحياة والعمل والمجالات المهنية المختلفة." data-de="Ingenieur und Deutschdozent mit Erfahrung in technischen Projekten und im Training. Sein technischer Hintergrund hilft ihm, Deutsch praxisnah für Alltag und Beruf zu vermitteln.">مهندس ومحاضر لغة ألمانية لديه خبرة في المشاريع الهندسية والتقنية والتدريب. يساعده خلفه التقني على تقديم الألمانية بشكل عملي في سياقات الحياة والعمل والمجالات المهنية المختلفة.</p>
         <div class="instructor-tags">
-          <span class="tag">Deutsch</span>
-          <span class="tag">Engineering</span>
-          <span class="tag" data-i18n="tag3">تدريب عملي</span>
-          <span class="tag" data-i18n="tag4">Kommunikation</span>
+          <span class="tag">Deutsch</span><span class="tag">Engineering</span>
+          <span class="tag" data-ar="تدريب عملي" data-de="Praktisches Training">تدريب عملي</span>
+          <span class="tag">Kommunikation</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="details">
+<section>
   <div class="container">
     <div class="section-head">
-      <div class="section-kicker" data-i18n="detailsKicker">التفاصيل</div>
-      <h2 data-i18n="detailsTitle">كل اللي تحتاج تعرفه قبل الاشتراك</h2>
+      <div class="section-kicker" data-ar="التفاصيل" data-de="Details">التفاصيل</div>
+      <h2 data-ar="كل اللي تحتاج تعرفه قبل الاشتراك" data-de="Alles Wichtige vor der Anmeldung">كل اللي تحتاج تعرفه قبل الاشتراك</h2>
     </div>
     <div class="details-grid">
-      <div class="detail"><span class="detail-label" data-i18n="detail1Label">المستوى</span><span class="detail-value" data-i18n="detail1Value">A2+ فما فوق</span></div>
-      <div class="detail"><span class="detail-label" data-i18n="detail2Label">مدة الكورس</span><span class="detail-value" data-i18n="detail2Value">7 أيام متتالية</span></div>
-      <div class="detail"><span class="detail-label" data-i18n="detail3Label">الوقت اليومي</span><span class="detail-value" data-i18n="detail3Value">ساعتان</span></div>
-      <div class="detail"><span class="detail-label" data-i18n="detail4Label">إجمالي التدريب</span><span class="detail-value" data-i18n="detail4Value">14 ساعة مباشرة</span></div>
-      <div class="detail"><span class="detail-label" data-i18n="detail5Label">نوع الكورس</span><span class="detail-value" data-i18n="detail5Value">محادثة وتمثيل أدوار</span></div>
-      <div class="detail"><span class="detail-label" data-i18n="detail6Label">المتحدث الأصلي</span><span class="detail-value" data-i18n="detail6Value">ساعة في اليومين 6 و7</span></div>
-      <div class="detail"><span class="detail-label" data-i18n="detail7Label">السعر</span><span class="detail-value">€30</span></div>
+      <div class="detail"><span class="detail-label" data-ar="المستوى" data-de="Niveau">المستوى</span><span class="detail-value" data-ar="A2+ فما فوق" data-de="Ab A2+">A2+ فما فوق</span></div>
+      <div class="detail"><span class="detail-label" data-ar="مدة الكورس" data-de="Dauer">مدة الكورس</span><span class="detail-value" data-ar="7 أيام متتالية" data-de="7 aufeinanderfolgende Tage">7 أيام متتالية</span></div>
+      <div class="detail"><span class="detail-label" data-ar="الوقت اليومي" data-de="Pro Tag">الوقت اليومي</span><span class="detail-value" data-ar="ساعتان" data-de="2 Stunden">ساعتان</span></div>
+      <div class="detail"><span class="detail-label" data-ar="إجمالي التدريب" data-de="Gesamtumfang">إجمالي التدريب</span><span class="detail-value" data-ar="14 ساعة مباشرة" data-de="14 Live-Stunden">14 ساعة مباشرة</span></div>
+      <div class="detail"><span class="detail-label" data-ar="نوع الكورس" data-de="Kursformat">نوع الكورس</span><span class="detail-value" data-ar="محادثة وتمثيل أدوار" data-de="Konversation und Rollenspiele">محادثة وتمثيل أدوار</span></div>
+      <div class="detail"><span class="detail-label" data-ar="المتحدث الأصلي" data-de="Muttersprachler">المتحدث الأصلي</span><span class="detail-value" data-ar="ساعة في اليومين 6 و7" data-de="Je 1 Stunde an Tag 6 und 7">ساعة في اليومين 6 و7</span></div>
+      <div class="detail"><span class="detail-label" data-ar="السعر" data-de="Preis">السعر</span><span class="detail-value">€30</span></div>
     </div>
   </div>
 </section>
 
-<!-- قسم حجز الجلسة التجريبية المجانية -->
 <section class="trial-section" id="trial">
   <div class="container">
     <div class="trial-card">
       <div class="trial-icon">🎁</div>
-      <div class="section-kicker" data-i18n="trialKicker">جرّب قبل الاشتراك</div>
-      <h2 data-i18n="trialTitle">احجز جلستك التجريبية المجانية</h2>
-      <p data-i18n="trialDescription">تعرّف على طريقة التدريب، وجرّب ممارسة الألمانية بنفسك قبل اتخاذ قرار الاشتراك في الكورس.</p>
+      <div class="section-kicker" data-ar="جرّب قبل الاشتراك" data-de="Vor der Anmeldung ausprobieren">جرّب قبل الاشتراك</div>
+      <h2 data-ar="احجز جلستك التجريبية المجانية" data-de="Buche deine kostenlose Probestunde">احجز جلستك التجريبية المجانية</h2>
+      <p data-ar="تعرّف على طريقة التدريب وجرّب ممارسة الألمانية بنفسك قبل اتخاذ قرار الاشتراك في الكورس." data-de="Lerne die Trainingsmethode kennen und probiere die Deutschpraxis aus, bevor du dich für den Kurs entscheidest.">تعرّف على طريقة التدريب وجرّب ممارسة الألمانية بنفسك قبل اتخاذ قرار الاشتراك في الكورس.</p>
       <div class="trial-options">
         <div class="trial-option">
-          <h3 data-i18n="trialSpeakingTitle">🗣️ تجربة المحادثة</h3>
-          <p data-i18n="trialSpeakingText">جرّب التحدث بالألمانية والتدرب على التعبير عن أفكارك في مواقف عملية.</p>
+          <h3 data-ar="🗣️ تجربة المحادثة" data-de="🗣️ Sprechen ausprobieren">🗣️ تجربة المحادثة</h3>
+          <p data-ar="جرّب التحدث بالألمانية والتدرب على التعبير عن أفكارك في مواقف عملية." data-de="Übe Deutsch in praktischen Situationen und lerne, deine Gedanken auszudrücken.">جرّب التحدث بالألمانية والتدرب على التعبير عن أفكارك في مواقف عملية.</p>
         </div>
         <div class="trial-option">
-          <h3 data-i18n="trialWritingTitle">✍️ تجربة الكتابة</h3>
-          <p data-i18n="trialWritingText">تعرّف على تدريبات الكتابة وصياغة الرسائل والجمل باللغة الألمانية.</p>
+          <h3 data-ar="✍️ تجربة الكتابة" data-de="✍️ Schreiben ausprobieren">✍️ تجربة الكتابة</h3>
+          <p data-ar="تعرّف على تدريبات الكتابة وصياغة الرسائل والجمل باللغة الألمانية." data-de="Lerne Schreibübungen kennen und formuliere deutsche Nachrichten und Sätze.">تعرّف على تدريبات الكتابة وصياغة الرسائل والجمل باللغة الألمانية.</p>
         </div>
       </div>
-      <a class="trial-booking-button" id="trialBookingButton"
-         href="https://wa.me/201159682355"
-         target="_blank" rel="noopener noreferrer"
-         data-i18n="trialButton">احجز جلستك التجريبية مجانًا عبر واتساب</a>
-      <p class="trial-note" data-i18n="trialNote">أرسل طلبك عبر واتساب لتنسيق الموعد وتأكيد تفاصيل الجلسة.</p>
+      <a class="btn btn-green full-btn" id="trialBookingButton" href="https://wa.me/201159682355" target="_blank" rel="noopener noreferrer" data-ar="احجز جلستك التجريبية مجانًا عبر واتساب" data-de="Kostenlose Probestunde per WhatsApp buchen">احجز جلستك التجريبية مجانًا عبر واتساب</a>
+      <p class="trial-note" data-ar="أرسل طلبك عبر واتساب لتنسيق الموعد وتأكيد تفاصيل الجلسة." data-de="Sende deine Anfrage über WhatsApp, um einen Termin zu vereinbaren.">أرسل طلبك عبر واتساب لتنسيق الموعد وتأكيد تفاصيل الجلسة.</p>
     </div>
   </div>
 </section>
@@ -563,38 +665,38 @@ html[dir="ltr"] .trial-options { text-align:left; }
 <section class="consultation" id="consultation">
   <div class="container">
     <div class="section-head">
-      <div class="section-kicker" data-i18n="consultKicker">استشارة فردية</div>
-      <h2 data-i18n="consultTitle">خطوتك القادمة نحو ألمانيا تبدأ بخطة أوضح</h2>
-      <p data-i18n="consultIntro">جلسة فردية عبر Zoom لمناقشة أسئلتك وترتيب خطواتك بخصوص الدراسة أو العمل أو السفر إلى ألمانيا.</p>
+      <div class="section-kicker" data-ar="استشارة فردية" data-de="Persönliche Beratung">استشارة فردية</div>
+      <h2 data-ar="خطوتك القادمة نحو ألمانيا تبدأ بخطة أوضح" data-de="Dein nächster Schritt nach Deutschland – mit mehr Klarheit">خطوتك القادمة نحو ألمانيا تبدأ بخطة أوضح</h2>
+      <p data-ar="جلسة فردية عبر Zoom لمناقشة أسئلتك وترتيب خطواتك بخصوص الدراسة أو العمل أو السفر إلى ألمانيا." data-de="Ein persönliches Zoom-Gespräch über deine Fragen zu Studium, Arbeit oder deinem Weg nach Deutschland.">جلسة فردية عبر Zoom لمناقشة أسئلتك وترتيب خطواتك بخصوص الدراسة أو العمل أو السفر إلى ألمانيا.</p>
     </div>
     <div class="consult-card">
       <div>
-        <span class="consult-label" data-i18n="consultBadge">جلسة شخصية عبر Zoom</span>
-        <h3 data-i18n="consultHeading">خلّي عندك تصور أوضح بدل الحيرة بين الخيارات</h3>
-        <p data-i18n="consultDescription">نتكلم عن وضعك الحالي وهدفك، ونرتب معًا الأسئلة والخطوات التالية بشكل عملي يناسب ظروفك.</p>
+        <span class="consult-label" data-ar="جلسة شخصية عبر Zoom" data-de="Persönliche Beratung per Zoom">جلسة شخصية عبر Zoom</span>
+        <h3 data-ar="خلّي عندك تصور أوضح بدل الحيرة بين الخيارات" data-de="Mehr Klarheit statt Unsicherheit bei deinen Optionen">خلّي عندك تصور أوضح بدل الحيرة بين الخيارات</h3>
+        <p data-ar="نتكلم عن وضعك الحالي وهدفك ونرتب معًا الأسئلة والخطوات التالية بشكل عملي." data-de="Wir besprechen deine aktuelle Situation und ordnen gemeinsam die wichtigsten Fragen und nächsten Schritte.">نتكلم عن وضعك الحالي وهدفك ونرتب معًا الأسئلة والخطوات التالية بشكل عملي.</p>
         <ul class="consult-list">
-          <li><span class="check">✓</span><span data-i18n="consultItem1">الدراسة في ألمانيا واختيار الخطوات الأولية</span></li>
-          <li><span class="check">✓</span><span data-i18n="consultItem2">الاستعداد للعمل وتحسين عرض خبراتك وخطتك</span></li>
-          <li><span class="check">✓</span><span data-i18n="consultItem3">ترتيب المعلومات والأسئلة المتعلقة بالسفر إلى ألمانيا</span></li>
+          <li><span class="check">✓</span><span data-ar="الدراسة في ألمانيا والخطوات الأولية" data-de="Studium in Deutschland und erste Schritte">الدراسة في ألمانيا والخطوات الأولية</span></li>
+          <li><span class="check">✓</span><span data-ar="الاستعداد للعمل وعرض خبراتك" data-de="Berufliche Vorbereitung und Darstellung deiner Erfahrungen">الاستعداد للعمل وعرض خبراتك</span></li>
+          <li><span class="check">✓</span><span data-ar="ترتيب الأسئلة المتعلقة بالسفر إلى ألمانيا" data-de="Fragen rund um den Weg nach Deutschland strukturieren">ترتيب الأسئلة المتعلقة بالسفر إلى ألمانيا</span></li>
         </ul>
-        <p data-i18n="consultPrep">للاستفادة من وقت الجلسة، ابعت موضوعك وأسئلتك الأساسية عند الحجز.</p>
+        <p data-ar="ابعت موضوعك وأسئلتك الأساسية عند الحجز." data-de="Sende uns bei der Buchung dein Anliegen und deine wichtigsten Fragen.">ابعت موضوعك وأسئلتك الأساسية عند الحجز.</p>
       </div>
       <div class="consult-price-box">
         <div class="consult-price">€10</div>
-        <div class="consult-duration" data-i18n="consultDuration">20 دقيقة عبر Zoom</div>
-        <a href="https://wa.me/201159682355" id="consultButton" class="primary-btn" target="_blank" rel="noopener noreferrer" data-i18n="consultButton">احجز استشارتك</a>
-        <div class="consult-note" data-i18n="consultNote">الحجز وتأكيد الموعد يتمان عبر واتساب.</div>
+        <div class="consult-duration" data-ar="20 دقيقة عبر Zoom" data-de="20 Minuten per Zoom">20 دقيقة عبر Zoom</div>
+        <a href="https://wa.me/201159682355" id="consultButton" class="btn btn-blue full-btn" target="_blank" rel="noopener noreferrer" data-ar="احجز استشارتك" data-de="Beratung buchen">احجز استشارتك</a>
+        <div class="consult-note" data-ar="الحجز وتأكيد الموعد عبر واتساب." data-de="Buchung und Terminbestätigung über WhatsApp.">الحجز وتأكيد الموعد عبر واتساب.</div>
       </div>
     </div>
-    <p class="consult-disclaimer" data-i18n="consultDisclaimer">الاستشارة إرشادية عامة وليست استشارة قانونية أو هجرة رسمية، ولا تضمن القبول أو التوظيف أو الحصول على التأشيرة.</p>
+    <p class="consult-disclaimer" data-ar="الاستشارة إرشادية عامة وليست استشارة قانونية أو هجرة رسمية، ولا تضمن القبول أو التوظيف أو الحصول على التأشيرة." data-de="Die Beratung ist eine allgemeine Orientierung, keine Rechts- oder offizielle Einwanderungsberatung. Zulassung, Beschäftigung oder Visumerteilung werden nicht garantiert.">الاستشارة إرشادية عامة وليست استشارة قانونية أو هجرة رسمية، ولا تضمن القبول أو التوظيف أو الحصول على التأشيرة.</p>
   </div>
 </section>
 
 <section class="cta" id="register">
   <div class="container">
-    <h2 data-i18n="ctaTitle">جاهز تتدرّب على الكلام بالألماني؟</h2>
-    <p data-i18n="ctaText">7 أيام، 14 ساعة من الممارسة المباشرة، ومشاهد حوارية وتمثيل أدوار، بالإضافة إلى لقاء مع متحدث أصلي في اليوم السادس والسابع. مناسب لمستوى A2+ فما فوق.</p>
-    <a href="https://wa.me/201159682355" id="courseBookingButton" class="primary-btn" target="_blank" rel="noopener noreferrer" data-i18n="ctaButton">تواصل للحجز — €30</a>
+    <h2 data-ar="جاهز تتدرّب على الكلام بالألماني؟" data-de="Bereit, aktiv Deutsch zu sprechen?">جاهز تتدرّب على الكلام بالألماني؟</h2>
+    <p data-ar="7 أيام، 14 ساعة من الممارسة المباشرة، ومشاهد حوارية وتمثيل أدوار، بالإضافة إلى لقاء مع متحدث أصلي في اليوم السادس والسابع. مناسب لمستوى A2+ فما فوق." data-de="7 Tage, 14 Live-Stunden, Dialogszenen und Rollenspiele sowie Austausch mit einem Muttersprachler an Tag 6 und 7. Für Lernende ab A2+.">7 أيام، 14 ساعة من الممارسة المباشرة، ومشاهد حوارية وتمثيل أدوار، بالإضافة إلى لقاء مع متحدث أصلي في اليوم السادس والسابع. مناسب لمستوى A2+ فما فوق.</p>
+    <a href="https://wa.me/201159682355" id="courseBookingButton" class="btn" target="_blank" rel="noopener noreferrer" data-ar="تواصل للحجز — €30" data-de="Jetzt anmelden — 30 €">تواصل للحجز — €30</a>
   </div>
 </section>
 
@@ -602,334 +704,104 @@ html[dir="ltr"] .trial-options { text-align:left; }
 
 <footer>
   <div class="container footer-content">
-    <div class="footer-logo" data-i18n="brand">Praktisches Deutsch</div>
-    <div class="footer-text" data-i18n="footer">Deutsch praktisch lernen. Sprechen. Verstehen. Anwenden.</div>
+    <div class="footer-logo">Praktisches Deutsch</div>
+    <div class="footer-text" data-ar="اتعلم الألمانية عمليًا. اتكلم. افهم. طبّق." data-de="Deutsch praktisch lernen. Sprechen. Verstehen. Anwenden.">اتعلم الألمانية عمليًا. اتكلم. افهم. طبّق.</div>
   </div>
 </footer>
 
 <script>
-"use strict";
-
-const translations = {
-ar: {
-brand:"Praktisches Deutsch", navCta:"الدورة",
-badge:"مستوى A2+ فما فوق",
-heroTitle:'اتكلم ألماني <span>بشكل طبيعي.</span>',
-heroText:"كورس محادثة عملي لمدة 7 أيام، تتكلم فيه وتسمع وتشارك في مواقف واقعية، وتمثّل مشاهد حوارية وتستخدم التعبيرات بنفسك.",
-heroButton:"احجز مكانك الآن", heroSecondary:"شوف محتوى الكورس",
-mini1:"7 أيام", mini2:"14 ساعة Live", mini3:"A2+",
-priceLabel:"سعر الكورس بالكامل", localPrice:"أو ما يعادلها بالعملة المحلية",
-priceDesc:"أسبوع من التدريب المباشر والممارسة الفعلية باللغة الألمانية.",
-price1:"7 أيام متتالية", price2:"ساعتان يوميًا", price3:"14 ساعة Live",
-price4:"من مستوى A2+ فما فوق", price5:"محادثة وتمثيل أدوار ومشاهد حوارية",
-price6:"لقاء مع متحدث أصلي في اليومين السادس والسابع",
-price7:"إمكانية التدريب على المحادثة والكتابة باستخدام الذكاء الاصطناعي",
-priceButton:"أريد الاشتراك", priceNote:"تفاصيل المواعيد والتسجيل عند التواصل",
-stat1:"أيام", stat2:"ساعة مباشرة", stat3:"المستوى المطلوب", stat4:"السعر",
-videoKicker:"شاهد قبل أن تبدأ", videoTitle:"شوف طريقة التدريب بنفسك",
-videoText:"هنا تقدر تضيف فيديو تعريفي قصير يوضح أسلوب الكورس والتمارين التفاعلية.",
-videoPlaceholderTitle:"فيديو تعريفي قريبًا",
-videoPlaceholderText:"أضف رابط فيديو YouTube أو Vimeo داخل الكود لعرض الفيديو هنا.",
-videoCaption:"هذا المكان مخصص لفيديو تعريفي بالكورس، وليس لمقطع فيلم محمي بحقوق النشر.",
-featuresKicker:"لماذا هذا الكورس؟", featuresTitle:"اتعلم الكلام من خلال الكلام.",
-featuresText:"مشاهدة قصيرة، فهم للتعبيرات، تمثيل للأدوار، وبعدها استخدام اللغة في حوار جديد من عندك.",
-feature1Title:"محادثات واقعية",
-feature1Text:"تتدرب على طرح الأسئلة والرد والتعبير عن رأيك في مواقف قريبة من الحياة اليومية.",
-feature2Title:"مشاهد وتمثيل أدوار",
-feature2Text:"تتعلم تعبيرات من مشاهد حوارية مختارة، ثم تمثّل الأدوار مع المجموعة وتعيد صياغة الحوار بطريقتك.",
-feature3Title:"تفاعل مع متحدث أصلي",
-feature3Text:"ساعة تفاعل مباشر مع متحدث أصلي للألمانية في اليوم السادس، وساعة أخرى في اليوم السابع.",
-feature4Title:"تدريب عملي",
-feature4Text:"الهدف هو استخدام اللغة فعليًا بدل الاكتفاء بالحفظ أو الترجمة كلمة بكلمة.",
-feature5Title:"فرص أكثر للكلام",
-feature5Text:"تمارين فردية وثنائية وجماعية تساعدك على المشاركة والتفاعل طوال اللقاء.",
-feature6Title:"خطوة واضحة نحو الطلاقة",
-feature6Text:"تطبّق التعبيرات في سياقات مختلفة وتتدرب على التحدث بوضوح وثقة أكبر.",
-feature7Title:"تدرّب مع الذكاء الاصطناعي",
-feature7Text:"مارس المحادثة والكتابة بالألمانية مع تدريبات تفاعلية تساعدك على صياغة أفكارك والتدرّب على التعبير في مواقف متنوعة.",
-aiKicker:"🤖 مساحة تدريب ذكية",
-aiTitle:"مساعدك الذكي لممارسة الألمانية وتطوير مهاراتك",
-aiIntro:"مش لازم تستنى موعد الدرس عشان تتدرّب. جرّب المحادثة والكتابة بالألمانية من خلال تجربة تفاعلية مجانية، واستفد من مساحة التدريب بالذكاء الاصطناعي كجزء من تجربة الكورس عند الاشتراك.",
-aiConversationTitle:"تدرّب على المحادثة",
-aiConversationText:"ابدأ حوارًا بالألمانية في مواقف يومية أو مهنية، وتدرّب على تكوين الجمل وطرح الأسئلة والتعبير عن رأيك بثقة أكبر.",
-aiWritingTitle:"طوّر كتابتك بالألمانية",
-aiWritingText:"تدرّب على كتابة الرسائل والنصوص القصيرة وصياغة أفكارك بالألمانية، واستفد من الملاحظات التي تساعدك على تطوير أسلوبك في التعبير.",
-aiBottomText:"ابدأ بتجربة المحادثة والكتابة مجانًا، واكتشف طريقة جديدة لممارسة الألمانية بصورة تفاعلية.",
-aiTrialButton:"جرّب التدريب المجاني",
-aiTrialNote:"التجربة المجانية متاحة لغير المشتركين في المحادثة والكتابة. تواصل معنا لمعرفة طريقة الوصول.",
-curriculumKicker:"البرنامج", curriculumTitle:"7 أيام من المحادثة العملية",
-curriculumText:"كل يوم له موضوع واضح، مع تمارين كلام وتطبيق. ندمج المشاهد والتمثيل في بعض اللقاءات من دون زيادة مدة الكورس.",
-day1Title:"التعريف بالنفس وبدء المحادثة",
-day1Text:"تقديم نفسك، طرح الأسئلة، بدء المحادثات والتعارف مع الآخرين.",
-day2Title:"الحياة اليومية والمواضيع الشخصية",
-day2Text:"الروتين والأسرة والاهتمامات والعادات، مع تدريب على حوار قصير وتمثيله.",
-day2Note:"تمثيل أدوار",
-day3Title:"التعبير عن الرأي والنقاش",
-day3Text:"التعبير عن رأيك، الموافقة والاختلاف وشرح وجهة نظرك بطريقة طبيعية.",
-day4Title:"السفر والوقت الحر والتجارب",
-day4Text:"التحدث عن السفر والأماكن والتجارب والخطط، مع مشهد حواري قصير وإعادة تمثيله.",
-day4Note:"مشهد حواري وتطبيق",
-day5Title:"العمل والتواصل",
-day5Text:"محادثات العمل والتواصل مع الزملاء والأسئلة والردود والمواقف المهنية اليومية.",
-day6Title:"حل المشكلات والتفاعل مع متحدث أصلي",
-day6Text:"شرح مشكلة وطلب المساعدة والتدرّب على حوار واقعي، مع ساعة تفاعل مباشر مع متحدث أصلي للألمانية.",
-day6Note:"ساعة مع متحدث أصلي",
-day7Title:"المحادثة الحرة والمحاكاة النهائية",
-day7Text:"تطبيق شامل وتمثيل مواقف حياتية، مع ساعة تفاعل مباشر أخرى مع متحدث أصلي للألمانية.",
-day7Note:"ساعة مع متحدث أصلي",
-nativeCalloutTitle:"لقاءان مباشران مع متحدث أصلي للألمانية",
-nativeCalloutText:"ساعة في اليوم السادس وساعة في اليوم السابع، ضمن إجمالي 14 ساعة التدريب، وليست إضافة إلى مدة الكورس.",
-instructorKicker:"المدرّس",
-instructorTitle:"اتعلم مع شخص بيجمع بين اللغة والخلفية التقنية",
-instructorRole:"المؤسس والمحاضر",
-instructorBio:"مهندس ومحاضر لغة ألمانية لديه أكثر من 7 سنوات من الخبرة مع الشركات الألمانية، وخبرة في تنفيذ المشاريع الهندسية والتقنية، بالإضافة إلى أكثر من 4 سنوات في التدريب. تساعده خلفيته الهندسية والتقنية على تقديم الألمانية بشكل عملي في سياقات الحياة والعمل والمجالات المهنية المختلفة.",
-tag3:"تدريب عملي", tag4:"Kommunikation",
-detailsKicker:"التفاصيل", detailsTitle:"كل اللي تحتاج تعرفه قبل الاشتراك",
-detail1Label:"المستوى", detail1Value:"A2+ فما فوق",
-detail2Label:"مدة الكورس", detail2Value:"7 أيام متتالية",
-detail3Label:"الوقت اليومي", detail3Value:"ساعتان",
-detail4Label:"إجمالي التدريب", detail4Value:"14 ساعة مباشرة",
-detail5Label:"نوع الكورس", detail5Value:"محادثة وتمثيل أدوار",
-detail6Label:"المتحدث الأصلي", detail6Value:"ساعة في اليومين 6 و7",
-detail7Label:"السعر",
-trialKicker:"جرّب قبل الاشتراك",
-trialTitle:"احجز جلستك التجريبية المجانية",
-trialDescription:"تعرّف على طريقة التدريب، وجرّب ممارسة الألمانية بنفسك قبل اتخاذ قرار الاشتراك في الكورس.",
-trialSpeakingTitle:"🗣️ تجربة المحادثة",
-trialSpeakingText:"جرّب التحدث بالألمانية والتدرب على التعبير عن أفكارك في مواقف عملية.",
-trialWritingTitle:"✍️ تجربة الكتابة",
-trialWritingText:"تعرّف على تدريبات الكتابة وصياغة الرسائل والجمل باللغة الألمانية.",
-trialButton:"احجز جلستك التجريبية مجانًا عبر واتساب",
-trialNote:"أرسل طلبك عبر واتساب لتنسيق الموعد وتأكيد تفاصيل الجلسة.",
-consultKicker:"استشارة فردية",
-consultTitle:"خطوتك القادمة نحو ألمانيا تبدأ بخطة أوضح",
-consultIntro:"جلسة فردية عبر Zoom لمناقشة أسئلتك وترتيب خطواتك بخصوص الدراسة أو العمل أو السفر إلى ألمانيا.",
-consultBadge:"جلسة شخصية عبر Zoom",
-consultHeading:"خلّي عندك تصور أوضح بدل الحيرة بين الخيارات",
-consultDescription:"نتكلم عن وضعك الحالي وهدفك، ونرتب معًا الأسئلة والخطوات التالية بشكل عملي يناسب ظروفك.",
-consultItem1:"الدراسة في ألمانيا واختيار الخطوات الأولية",
-consultItem2:"الاستعداد للعمل وتحسين عرض خبراتك وخطتك",
-consultItem3:"ترتيب المعلومات والأسئلة المتعلقة بالسفر إلى ألمانيا",
-consultPrep:"للاستفادة من وقت الجلسة، ابعت موضوعك وأسئلتك الأساسية عند الحجز.",
-consultDuration:"20 دقيقة عبر Zoom", consultButton:"احجز استشارتك",
-consultNote:"الحجز وتأكيد الموعد يتمان عبر واتساب.",
-consultDisclaimer:"الاستشارة إرشادية عامة وليست استشارة قانونية أو هجرة رسمية، ولا تضمن القبول أو التوظيف أو الحصول على التأشيرة.",
-ctaTitle:"جاهز تتدرّب على الكلام بالألماني؟",
-ctaText:"7 أيام، 14 ساعة من الممارسة المباشرة، ومشاهد حوارية وتمثيل أدوار، بالإضافة إلى لقاء مع متحدث أصلي في اليوم السادس والسابع. مناسب لمستوى A2+ فما فوق.",
-ctaButton:"تواصل للحجز — €30",
-footer:"Deutsch praktisch lernen. Sprechen. Verstehen. Anwenden."
-},
-
-de: {
-brand:"Praktisches Deutsch", navCta:"Kurs",
-badge:"Ab Niveau A2+",
-heroTitle:'Sprich Deutsch <span>ganz natürlich.</span>',
-heroText:"Ein praktischer Konversationskurs über 7 Tage: Du sprichst, hörst zu, übst realistische Situationen und spielst Dialogszenen selbst nach.",
-heroButton:"Jetzt Platz sichern", heroSecondary:"Kursinhalt ansehen",
-mini1:"7 Tage", mini2:"14 Live-Stunden", mini3:"A2+",
-priceLabel:"Gesamtpreis für den Kurs",
-localPrice:"oder der entsprechende Betrag in der jeweiligen Landeswährung",
-priceDesc:"Eine Woche mit Live-Training und aktiver Sprechpraxis auf Deutsch.",
-price1:"7 aufeinanderfolgende Tage", price2:"2 Stunden täglich", price3:"14 Live-Stunden",
-price4:"Ab Niveau A2+", price5:"Gespräche, Rollenspiele und Dialogszenen",
-price6:"Gespräch mit einem Muttersprachler am 6. und 7. Tag",
-price7:"Zusätzliche Sprech- und Schreibübungen mit KI",
-priceButton:"Ich möchte teilnehmen", priceNote:"Termine und Anmeldung auf Anfrage",
-stat1:"Tage", stat2:"Live-Stunden", stat3:"Mindestniveau", stat4:"Preis",
-videoKicker:"Vor dem Start", videoTitle:"So läuft das Training ab",
-videoText:"Hier kannst du ein kurzes Vorstellungsvideo einbinden, das den Kurs und die interaktiven Übungen zeigt.",
-videoPlaceholderTitle:"Vorstellungsvideo folgt",
-videoPlaceholderText:"Füge im Code einen YouTube- oder Vimeo-Link ein, um das Video hier anzuzeigen.",
-videoCaption:"Dieser Platz ist für ein Kursvideo gedacht, nicht für urheberrechtlich geschützte Filmszenen.",
-featuresKicker:"Warum dieser Kurs?", featuresTitle:"Sprechen lernst du durch Sprechen.",
-featuresText:"Eine kurze Szene ansehen, Redewendungen verstehen, Rollen spielen und die Sprache anschließend in einem eigenen Dialog anwenden.",
-feature1Title:"Realistische Gespräche",
-feature1Text:"Du übst Fragen, Antworten und Meinungsäußerungen in Situationen aus dem Alltag.",
-feature2Title:"Szenen und Rollenspiele",
-feature2Text:"Du lernst Redewendungen aus ausgewählten Dialogszenen, spielst Rollen in der Gruppe und formulierst den Dialog anschließend neu.",
-feature3Title:"Austausch mit einem Muttersprachler",
-feature3Text:"Am sechsten Tag gibt es eine Stunde direkten Austausch mit einem deutschen Muttersprachler und am siebten Tag eine weitere Stunde.",
-feature4Title:"Praktisches Training",
-feature4Text:"Im Mittelpunkt steht die aktive Anwendung der Sprache statt reinem Auswendiglernen oder Wort-für-Wort-Übersetzen.",
-feature5Title:"Mehr eigene Sprechzeit",
-feature5Text:"Einzel-, Partner- und Gruppenübungen helfen dir, aktiv mitzumachen und zu reagieren.",
-feature6Title:"Ein klarer Schritt nach vorn",
-feature6Text:"Du verwendest Redewendungen in unterschiedlichen Situationen und trainierst, klarer und selbstbewusster zu sprechen.",
-feature7Title:"Mit KI Deutsch üben",
-feature7Text:"Trainiere deine mündliche und schriftliche Kommunikation mit interaktiven KI-Übungen und übe, deine Gedanken in verschiedenen Situationen auf Deutsch auszudrücken.",
-aiKicker:"🤖 Dein digitaler Sprachpartner",
-aiTitle:"Dein KI-Partner für mehr Deutschpraxis",
-aiIntro:"Du musst nicht bis zur nächsten Unterrichtsstunde warten, um Deutsch zu üben. Probiere die interaktive KI-Praxis für Gespräche und Schreiben kostenlos aus. Als Kursteilnehmer erhältst du außerdem Zugang zum KI-Trainingsbereich als Teil deines Lernerlebnisses.",
-aiConversationTitle:"Gespräche auf Deutsch trainieren",
-aiConversationText:"Führe Dialoge zu alltäglichen oder beruflichen Situationen. Übe, Sätze zu bilden, Fragen zu stellen und deine Meinung sicherer auszudrücken.",
-aiWritingTitle:"Dein schriftliches Deutsch verbessern",
-aiWritingText:"Übe das Schreiben von Nachrichten und kurzen Texten und formuliere deine Gedanken auf Deutsch. Hilfreiche Rückmeldungen unterstützen dich dabei, deinen Ausdruck weiterzuentwickeln.",
-aiBottomText:"Probiere die kostenlose Gesprächs- und Schreibpraxis aus und entdecke eine interaktive Möglichkeit, Deutsch zu üben.",
-aiTrialButton:"Kostenlos ausprobieren",
-aiTrialNote:"Die kostenlose Testmöglichkeit für Gespräche und Schreiben ist auch für Nichtmitglieder verfügbar. Kontaktiere uns, um zu erfahren, wie du starten kannst.",
-curriculumKicker:"Kursprogramm", curriculumTitle:"7 Tage praktische Konversation",
-curriculumText:"Jeder Tag hat ein klares Thema und bietet Zeit zum Sprechen und Üben. Szenen und Rollenspiele werden an ausgewählten Tagen integriert, ohne den Kurs zu verlängern.",
-day1Title:"Sich vorstellen und Gespräche beginnen",
-day1Text:"Dich vorstellen, Fragen stellen, Gespräche beginnen und andere kennenlernen.",
-day2Title:"Alltag und persönliche Themen",
-day2Text:"Tagesablauf, Familie, Interessen und Gewohnheiten – mit einem kurzen Dialog zum Nachspielen.",
-day2Note:"Rollenspiel",
-day3Title:"Meinung ausdrücken und diskutieren",
-day3Text:"Deine Meinung ausdrücken, zustimmen, widersprechen und deinen Standpunkt erklären.",
-day4Title:"Reisen, Freizeit und Erfahrungen",
-day4Text:"Über Reisen, Orte, Erfahrungen und Pläne sprechen – mit einer kurzen Dialogszene zum Nachspielen.",
-day4Note:"Dialogszenen und Anwendung",
-day5Title:"Arbeit und Kommunikation",
-day5Text:"Gespräche im Arbeitsalltag, Kommunikation mit Kollegen, Fragen, Antworten und typische berufliche Situationen.",
-day6Title:"Probleme lösen und Austausch mit einem Muttersprachler",
-day6Text:"Ein Problem erklären, um Hilfe bitten und einen realistischen Dialog üben – mit einer Stunde direktem Austausch mit einem deutschen Muttersprachler.",
-day6Note:"Eine Stunde mit Muttersprachler",
-day7Title:"Freies Sprechen und Abschlusssimulation",
-day7Text:"Abschließendes Training und Rollenspiele zu Alltagssituationen sowie eine weitere Stunde direkter Austausch mit einem deutschen Muttersprachler.",
-day7Note:"Eine Stunde mit Muttersprachler",
-nativeCalloutTitle:"Zwei Live-Treffen mit einem deutschen Muttersprachler",
-nativeCalloutText:"Je eine Stunde am sechsten und siebten Tag. Beide Treffen sind in den insgesamt 14 Live-Stunden enthalten.",
-instructorKicker:"Dozent",
-instructorTitle:"Lerne mit jemandem, der Sprache und technischen Hintergrund verbindet",
-instructorRole:"Gründer & Dozent",
-instructorBio:"Ingenieur und Deutschdozent mit mehr als 7 Jahren Erfahrung mit deutschen Unternehmen, Erfahrung in technischen und ingenieurwissenschaftlichen Projekten sowie mehr als 4 Jahren Erfahrung im Training. Sein technischer Hintergrund hilft ihm, Deutsch praxisnah für Alltag, Kommunikation und Beruf zu vermitteln.",
-tag3:"Praktisches Training", tag4:"Kommunikation",
-detailsKicker:"Details", detailsTitle:"Alles, was du vor der Anmeldung wissen musst",
-detail1Label:"Niveau", detail1Value:"Ab A2+",
-detail2Label:"Dauer", detail2Value:"7 aufeinanderfolgende Tage",
-detail3Label:"Pro Tag", detail3Value:"2 Stunden",
-detail4Label:"Gesamtumfang", detail4Value:"14 Live-Stunden",
-detail5Label:"Kursformat", detail5Value:"Konversation und Rollenspiele",
-detail6Label:"Muttersprachler", detail6Value:"Je 1 Stunde an Tag 6 und 7",
-detail7Label:"Preis",
-trialKicker:"Vor der Anmeldung ausprobieren",
-trialTitle:"Buche deine kostenlose Probestunde",
-trialDescription:"Lerne die Trainingsmethode kennen und probiere die Deutschpraxis selbst aus, bevor du dich für den Kurs entscheidest.",
-trialSpeakingTitle:"🗣️ Sprechen ausprobieren",
-trialSpeakingText:"Übe Deutsch in praktischen Situationen und lerne, deine Gedanken verständlich auszudrücken.",
-trialWritingTitle:"✍️ Schreiben ausprobieren",
-trialWritingText:"Lerne Schreibübungen kennen und übe das Formulieren deutscher Nachrichten und Sätze.",
-trialButton:"Kostenlose Probestunde per WhatsApp buchen",
-trialNote:"Schicke deine Anfrage über WhatsApp, damit wir einen Termin und die Einzelheiten vereinbaren können.",
-consultKicker:"Persönliche Beratung",
-consultTitle:"Dein nächster Schritt nach Deutschland – mit mehr Klarheit",
-consultIntro:"Ein persönliches Zoom-Gespräch, um deine Fragen zu besprechen und nächste Schritte rund um Studium, Arbeit oder einen Aufenthalt in Deutschland zu strukturieren.",
-consultBadge:"Persönliche Beratung per Zoom",
-consultHeading:"Mehr Klarheit statt Unsicherheit bei deinen Optionen",
-consultDescription:"Wir schauen auf deine aktuelle Situation und dein Ziel und ordnen gemeinsam die wichtigsten Fragen und nächsten Schritte – passend zu deiner Ausgangslage.",
-consultItem1:"Studium in Deutschland und erste Planungsschritte",
-consultItem2:"Berufliche Vorbereitung und Darstellung deiner Erfahrungen",
-consultItem3:"Informationen und Fragen rund um den Weg nach Deutschland strukturieren",
-consultPrep:"Schicke bei der Buchung bitte dein Anliegen und deine wichtigsten Fragen, damit wir die Zeit gut nutzen.",
-consultDuration:"20 Minuten per Zoom", consultButton:"Beratung buchen",
-consultNote:"Buchung und Terminbestätigung erfolgen über WhatsApp.",
-consultDisclaimer:"Die Beratung ist eine allgemeine Orientierung, keine Rechts- oder offizielle Einwanderungsberatung. Eine Zulassung, Beschäftigung oder Visumerteilung wird nicht garantiert.",
-ctaTitle:"Bereit, Deutsch aktiv zu sprechen?",
-ctaText:"7 Tage, 14 Stunden Live-Sprechpraxis, Dialogszenen und Rollenspiele sowie Austausch mit einem Muttersprachler am sechsten und siebten Tag. Für Lernende ab A2+.",
-ctaButton:"Jetzt anmelden — 30 €",
-footer:"Deutsch praktisch lernen. Sprechen. Verstehen. Anwenden."
-};
-
-let currentLanguage = "ar";
-
-function updateLanguage(language) {
-  if (!Object.prototype.hasOwnProperty.call(translations, language)) {
-    language = "ar";
-  }
-
-  currentLanguage = language;
-  const dictionary = translations[language];
-
-  document.documentElement.lang = language;
-  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
-
-  document.querySelectorAll("[data-i18n]").forEach((element) => {
-    const key = element.getAttribute("data-i18n");
-    if (Object.prototype.hasOwnProperty.call(dictionary, key)) {
-      element.innerHTML = dictionary[key];
-    }
-  });
+(function () {
+  "use strict";
 
   const languageButton = document.getElementById("languageToggle");
-  if (languageButton) {
+  const supportedLanguages = ["ar", "de"];
+  let currentLanguage = "ar";
+
+  const whatsappMessages = {
+    ar: {
+      trial: "مرحبًا، أرغب في حجز جلسة تجريبية مجانية لكورس المحادثة الألمانية. أرجو إخباري بالمواعيد المتاحة.",
+      ai: "مرحبًا، أرغب في تجربة التدريب المجاني للمحادثة والكتابة بالألمانية.",
+      consultation: "مرحبًا، أرغب في حجز استشارة لمدة 20 دقيقة حول الدراسة أو العمل أو السفر إلى ألمانيا.",
+      course: "مرحبًا، أرغب في الاستفسار عن التسجيل في كورس المحادثة الألمانية لمدة 7 أيام بسعر 30 يورو."
+    },
+    de: {
+      trial: "Hallo, ich möchte eine kostenlose Probestunde für den deutschen Konversationskurs buchen. Bitte teilen Sie mir die verfügbaren Termine mit.",
+      ai: "Hallo, ich möchte die kostenlose Übung für deutsche Gespräche und Texte ausprobieren.",
+      consultation: "Hallo, ich möchte eine 20-minütige Beratung über Studium, Arbeit oder den Weg nach Deutschland buchen.",
+      course: "Hallo, ich interessiere mich für den 7-tägigen Deutsch-Konversationskurs für 30 Euro."
+    }
+  };
+
+  function updateWhatsAppLink(elementId, message) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+
+    element.href =
+      "https://wa.me/201159682355?text=" +
+      encodeURIComponent(message);
+
+    element.target = "_blank";
+    element.rel = "noopener noreferrer";
+  }
+
+  function setLanguage(language) {
+    if (!supportedLanguages.includes(language)) {
+      language = "ar";
+    }
+
+    currentLanguage = language;
+
+    document.documentElement.lang = language;
+    document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+
+    document.querySelectorAll("[data-ar][data-de]").forEach(function (element) {
+      const translatedText = element.getAttribute("data-" + language);
+      if (translatedText !== null) {
+        element.textContent = translatedText;
+      }
+    });
+
     languageButton.textContent = language === "ar" ? "DE" : "عربي";
     languageButton.setAttribute(
       "aria-label",
       language === "ar" ? "Switch to German" : "التبديل إلى العربية"
     );
+    languageButton.setAttribute("title", language === "ar" ? "Deutsch" : "العربية");
+
+    document.title = language === "ar"
+      ? "Praktisches Deutsch | كورس محادثة ألماني"
+      : "Praktisches Deutsch | Deutsch-Konversationskurs";
+
+    updateWhatsAppLink("trialBookingButton", whatsappMessages[language].trial);
+    updateWhatsAppLink("aiTrialButton", whatsappMessages[language].ai);
+    updateWhatsAppLink("consultButton", whatsappMessages[language].consultation);
+    updateWhatsAppLink("courseBookingButton", whatsappMessages[language].course);
+
+    try {
+      localStorage.setItem("preferredLanguage", language);
+    } catch (error) {
+      // يعمل تغيير اللغة حتى لو كان التخزين المحلي غير متاح.
+    }
   }
 
-  document.title = language === "ar"
-    ? "Praktisches Deutsch | كورس محادثة ألماني"
-    : "Praktisches Deutsch | Deutsch sprechen";
+  languageButton.addEventListener("click", function () {
+    setLanguage(currentLanguage === "ar" ? "de" : "ar");
+  });
 
-  const aiMessage = language === "ar"
-    ? "أرغب في تجربة التدريب المجاني بالذكاء الاصطناعي للمحادثة والكتابة بالألمانية."
-    : "Ich möchte die kostenlose KI-Übung für deutsche Gespräche und Texte ausprobieren.";
-
-  setWhatsAppLink("aiTrialButton", aiMessage);
-
-  const trialMessage = language === "ar"
-    ? "مرحبًا، أرغب في حجز جلسة تجريبية مجانية لكورس المحادثة الألمانية. أرجو إخباري بالمواعيد المتاحة."
-    : "Hallo, ich möchte eine kostenlose Probestunde für den deutschen Konversationskurs buchen. Bitte teilen Sie mir die verfügbaren Termine mit.";
-
-  setWhatsAppLink("trialBookingButton", trialMessage);
-
-  const consultationMessage = language === "ar"
-    ? "مرحبًا، أرغب في حجز استشارة لمدة 20 دقيقة حول الدراسة أو العمل أو السفر إلى ألمانيا."
-    : "Hallo, ich möchte eine 20-minütige Beratung über Studium, Arbeit oder den Weg nach Deutschland buchen.";
-
-  setWhatsAppLink("consultButton", consultationMessage);
-
-  const courseMessage = language === "ar"
-    ? "مرحبًا، أرغب في الاستفسار عن التسجيل في كورس المحادثة الألمانية لمدة 7 أيام، بسعر 30 يورو."
-    : "Hallo, ich interessiere mich für die Anmeldung zum 7-tägigen Deutsch-Konversationskurs für 30 Euro.";
-
-  setWhatsAppLink("courseBookingButton", courseMessage);
+  let initialLanguage = "ar";
 
   try {
-    localStorage.setItem("preferredLanguage", language);
-  } catch (error) {
-    // Die Sprachumschaltung funktioniert auch ohne localStorage.
-  }
-}
-
-function setWhatsAppLink(elementId, message) {
-  const element = document.getElementById(elementId);
-  if (!element) return;
-
-  element.href =
-    "https://wa.me/201159682355?text=" + encodeURIComponent(message);
-}
-
-function initializePage() {
-  const languageButton = document.getElementById("languageToggle");
-
-  if (languageButton) {
-    languageButton.addEventListener("click", () => {
-      updateLanguage(currentLanguage === "ar" ? "de" : "ar");
-    });
-  }
-
-  let savedLanguage = "ar";
-
-  try {
-    const storedLanguage = localStorage.getItem("preferredLanguage");
-    if (storedLanguage === "ar" || storedLanguage === "de") {
-      savedLanguage = storedLanguage;
+    const savedLanguage = localStorage.getItem("preferredLanguage");
+    if (supportedLanguages.includes(savedLanguage)) {
+      initialLanguage = savedLanguage;
     }
   } catch (error) {
-    // Arabisch bleibt die Standardsprache.
+    // العربية هي اللغة الافتراضية.
   }
 
-  updateLanguage(savedLanguage);
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initializePage, { once:true });
-} else {
-  initializePage();
-}
+  setLanguage(initialLanguage);
+})();
 </script>
+
 </body>
 </html>
