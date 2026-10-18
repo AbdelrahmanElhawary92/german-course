@@ -861,6 +861,321 @@
       .contact-card {
         padding: 32px 20px;
       }
+
+      
+/* =========================================
+   COURSES & CERTIFICATIONS
+   ========================================= */
+
+.certifications-section {
+  padding: 90px 24px;
+  background: #f8fafc;
+  color: #0f172a;
+  overflow: hidden;
+}
+
+.certifications-container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.certifications-heading {
+  max-width: 720px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #2563eb;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.certifications-heading h2 {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.certifications-heading p {
+  margin: 0;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Carousel layout */
+
+.cert-carousel {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 48px;
+  align-items: center;
+  gap: 18px;
+}
+
+.cert-viewport {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.cert-track {
+  display: flex;
+  align-items: stretch;
+  transition: transform 0.55s cubic-bezier(.22, 1, .36, 1);
+  will-change: transform;
+}
+
+.cert-card {
+  flex: 0 0 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 36px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.055);
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.cert-platform {
+  color: #64748b;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.cert-category {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 7px 12px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.76rem;
+  font-weight: 750;
+}
+
+.cert-card h3 {
+  margin: 0 0 16px;
+  color: #0f172a;
+  font-size: clamp(1.35rem, 2.8vw, 2rem);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.cert-card-description {
+  margin: 0 0 28px;
+  color: #64748b;
+  line-height: 1.85;
+  font-size: 0.98rem;
+  flex: 1;
+}
+
+.cert-card-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  color: #475569;
+  font-size: 0.88rem;
+}
+
+.cert-status-dot {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  background: #16a34a;
+  border-radius: 50%;
+}
+
+.cert-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cert-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid #2563eb;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cert-link:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.cert-link-secondary {
+  background: #ffffff;
+  color: #2563eb;
+}
+
+.cert-link-secondary:hover {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.cert-arrow {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 1.35rem;
+  cursor: pointer;
+  transition: background 0.2s ease,
+              color 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.cert-arrow:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.cert-arrow:focus-visible,
+.cert-link:focus-visible,
+.cert-dot:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 4px;
+}
+
+.cert-carousel-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.cert-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.cert-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: width 0.25s ease, background 0.25s ease;
+}
+
+.cert-dot.is-active {
+  width: 26px;
+  background: #2563eb;
+}
+
+.cert-counter {
+  color: #64748b;
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.cert-note {
+  margin: 24px auto 0;
+  max-width: 700px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+  .certifications-section {
+    padding: 64px 16px;
+  }
+
+  .certifications-heading {
+    margin-bottom: 28px;
+  }
+
+  .cert-carousel {
+    grid-template-columns: 36px minmax(0, 1fr) 36px;
+    gap: 8px;
+  }
+
+  .cert-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .cert-card {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .cert-card-top {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .cert-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .cert-links {
+    flex-direction: column;
+  }
+
+  .cert-link {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .cert-carousel-footer {
+    margin-top: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cert-track,
+  .cert-dot,
+  .cert-arrow,
+  .cert-link {
+    transition: none;
+  }
+}
+
     }
   </style>
 </head>
@@ -1586,6 +1901,71 @@
         </div>
       </div>
     </section>
+
+<!-- Courses & Certifications Section -->
+<section id="certifications" class="certifications-section">
+  <div class="certifications-container">
+
+    <div class="certifications-heading">
+      <span class="section-eyebrow"
+            data-en="CONTINUOUS LEARNING"
+            data-de="KONTINUIERLICHES LERNEN">
+        CONTINUOUS LEARNING
+      </span>
+
+      <h2 data-en="Courses & Certifications"
+          data-de="Kurse & Zertifikate">
+        Courses & Certifications
+      </h2>
+
+      <p data-en="Technical courses and professional learning in networking, cloud computing, system administration and IT service management."
+         data-de="Technische Kurse und berufliche Weiterbildung in Netzwerktechnik, Cloud Computing, Systemadministration und IT-Service-Management.">
+        Technical courses and professional learning in networking,
+        cloud computing, system administration and IT service management.
+      </p>
+    </div>
+
+    <div class="cert-carousel" aria-roledescription="carousel"
+         aria-label="Courses and certifications">
+
+      <button class="cert-arrow cert-prev"
+              type="button"
+              aria-label="Previous course">
+        &#8592;
+      </button>
+
+      <div class="cert-viewport">
+        <div class="cert-track" id="certTrack">
+          <!-- Cards are generated from the JavaScript array -->
+        </div>
+      </div>
+
+      <button class="cert-arrow cert-next"
+              type="button"
+              aria-label="Next course">
+        &#8594;
+      </button>
+    </div>
+
+    <div class="cert-carousel-footer">
+      <div class="cert-dots" id="certDots"
+           aria-label="Choose a course">
+      </div>
+
+      <span class="cert-counter" id="certCounter"
+            aria-live="polite">
+        01 / 06
+      </span>
+    </div>
+
+    <p class="cert-note"
+       data-en="Course completion and certification are displayed separately where applicable."
+       data-de="Kursabschlüsse und Zertifikate werden, soweit zutreffend, getrennt dargestellt.">
+      Course completion and certification are displayed separately where applicable.
+    </p>
+
+  </div>
+</section>
 
     <!-- EXPERIENCE & EDUCATION -->
     <section class="section experience-section" id="experience">
